@@ -103,6 +103,12 @@ Use ``requirements-dev.txt`` instead of ``requirements-dep.txt``::
 
     pip install -r requirements-dev.txt
 
+Command line tools
+------------------
+
+Use ``./manage.py import_form <file.json>`` to import a survey definition.
+
+
 Contacts
 ========
 
