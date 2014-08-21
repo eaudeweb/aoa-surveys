@@ -37,6 +37,8 @@ INSTALLED_APPS = (
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'django.contrib.sites',
+    'aoasurveys.manager',
+    'aoasurveys.reports',
     'forms_builder.forms',
 )
 
