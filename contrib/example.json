@@ -1,0 +1,40 @@
+{
+    "title": "FormTitle1",
+    "questions": [
+        {
+            "slug": "slug1",
+            "title": "Title1",
+            "type": "TextAreaWidget",
+            "sortorder": 20,
+            "required": true,
+            "rows": 2,
+            "columns": 5
+        },
+        {
+            "slug": "slug2",
+            "title": "Title2",
+            "type": "StringWidget",
+            "sortorder": 30,
+            "required": true,
+            "size_max": 30,
+            "width": 30
+        },
+        {
+            "slug": "slug3",
+            "title": "Title3",
+            "type": "CheckboxesWidget",
+            "sortorder": 20,
+            "required": true
+        },
+        {
+            "slug": "slug4",
+            "title": "Title4",
+            "type": "StringWidget",
+            "sortorder": 30,
+            "required": true,
+            "size_max": 30,
+            "width": 30
+        }
+    ],
+    "labels": []
+}
