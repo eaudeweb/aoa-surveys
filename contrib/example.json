@@ -2,35 +2,87 @@
     "title": "FormTitle1",
     "questions": [
         {
-            "slug": "slug1",
-            "title": "Title1",
-            "type": "TextAreaWidget",
-            "sortorder": 20,
+            "slug": "FileWidget",
+            "title": "File",
+            "type": "FileWidget",
+            "sortorder": 1,
             "required": true,
-            "rows": 2,
-            "columns": 5
+            "size_max": 30
         },
         {
-            "slug": "slug2",
-            "title": "Title2",
+            "slug": "StringWidget",
+            "title": "String",
             "type": "StringWidget",
-            "sortorder": 30,
+            "sortorder": 1,
             "required": true,
             "size_max": 30,
             "width": 30
         },
         {
-            "slug": "slug3",
-            "title": "Title3",
+            "slug": "CheckboxesWidget",
+            "title": "Checkboxes",
             "type": "CheckboxesWidget",
-            "sortorder": 20,
+            "sortorder": 1,
+            "required": true,
+            "display": true,
+            "choices": ["check1", "check2", "check3", "check4"]
+        },
+        {
+            "slug": "RadioWidget",
+            "title": "Radio",
+            "type": "RadioWidget",
+            "sortorder": 1,
+            "required": true,
+            "display": true,
+            "add_extra_choice": false,
+            "choices": ["radio1", "radio2", "radio3"]
+        },
+        {
+            "slug": "TextAreaWidget",
+            "title": "TextArea",
+            "type": "TextAreaWidget",
+            "sortorder": 1,
+            "required": true,
+            "rows": 2,
+            "columns": 5
+        },
+        {
+            "slug": "ComboboxWidget",
+            "title": "Combobox",
+            "type": "ComboboxWidget",
+            "sortorder": 1,
+            "required": true,
+            "choices": ["combo1", "combo2", "combo3", "combo4"]
+        },
+        {
+            "slug": "CheckboxMatrixWidget",
+            "title": "CheckboxMatrix",
+            "type": "CheckboxMatrixWidget",
+            "sortorder": 1,
+            "required": true,
+            "choices": ["check1", "check2", "check3", "check4"]
+        },
+        {
+            "slug": "LocalizedTextAreaWidget",
+            "title": "LocalizedTextArea",
+            "type": "LocalizedTextAreaWidget",
+            "sortorder": 1,
+            "required": true,
+            "rows": 2,
+            "columns": 5
+        },
+        {
+            "slug": "GeoWidget",
+            "title": "Geo",
+            "type": "GeoWidget",
+            "sortorder": 1,
             "required": true
         },
         {
-            "slug": "slug4",
-            "title": "Title4",
-            "type": "StringWidget",
-            "sortorder": 30,
+            "slug": "LocalizedStringWidget",
+            "title": "LocalizedString",
+            "type": "LocalizedStringWidget",
+            "sortorder": 1,
             "required": true,
             "size_max": 30,
             "width": 30
