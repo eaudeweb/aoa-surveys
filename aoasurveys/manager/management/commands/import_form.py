@@ -1,5 +1,5 @@
 from django.core.management.base import BaseCommand
-from forms_builder.forms.models import Form, Field, FormEntry, FieldEntry
+from forms_builder.forms.models import Form, Field
 from forms_builder.forms.fields import *
 import json
 
@@ -9,56 +9,62 @@ class Command(BaseCommand):
     help = 'Import a dynamic form exported from Naaya-Survey'
 
     def _parseForm(self, data):
-        if "title" in data and "questions" in data and "labels" in data:
+        if all(x in data for x in ["title", "questions", "labels"]):
             form = Form.objects.create(title=data["title"])
             for question in data["questions"]:
-                params = {"label": question["title"],
-                          "slug": question["slug"],
-                          "order": question["sortorder"],
-                          "required": question["required"],
-                          "form": form}
+                params = {
+                    "label": question["title"],
+                    "slug": question["slug"],
+                    "order": question["sortorder"],
+                    "required": question["required"],
+                    "form": form
+                }
 
                 if question["type"] == "FileWidget":
                     #TODO size_max
                     params["field_type"] = FILE
 
-                if question["type"] == "StringWidget":
+                elif question["type"] == "StringWidget":
                     #TODO set width, size_max
                     params["field_type"] = TEXT
 
-                if question["type"] == "CheckboxesWidget":
+                elif question["type"] == "CheckboxesWidget":
                     params["visible"] = question["display"]
                     params["choices"] = ",".join(question["choices"])
                     params["field_type"] = CHECKBOX_MULTIPLE
 
-                if question["type"] == "RadioWidget":
+                elif question["type"] == "RadioWidget":
                     #TODO set add_extra_choice
                     params["visible"] = question["display"]
                     params["choices"] = ",".join(question["choices"])
                     params["field_type"] = RADIO_MULTIPLE
 
-                if question["type"] == "TextAreaWidget":
+                elif question["type"] == "TextAreaWidget":
                     #TODO set columns, rows
                     params["field_type"] = TEXTAREA
 
-                if question["type"] == "ComboboxWidget":
+                elif question["type"] == "ComboboxWidget":
                     params["choices"] = ",".join(question["choices"])
                     params["field_type"] = SELECT
 
-                if question["type"] == "CheckboxMatrixWidget":
+                elif question["type"] == "CheckboxMatrixWidget":
                     params["choices"] = ",".join(question["choices"])
                     params["field_type"] = CHECKBOX_MULTIPLE
 
-                if question["type"] == "LocalizedTextAreaWidget":
+                elif question["type"] == "LocalizedTextAreaWidget":
                     #TODO set columns, rows
                     params["field_type"] = TEXTAREA
 
-                if question["type"] == "GeoWidget":
+                elif question["type"] == "GeoWidget":
                     params["field_type"] = TEXT
 
-                if question["type"] == "LocalizedStringWidget":
+                elif question["type"] == "LocalizedStringWidget":
                     #TODO set width, size_max
                     params["field_type"] = TEXTAREA
+
+                else:
+                    self.stdout.write('Unrecognized type in JSON.')
+                    return
 
                 Field.objects.create(**params)
 
