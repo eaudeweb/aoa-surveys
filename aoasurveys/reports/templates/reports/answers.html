@@ -1,0 +1,28 @@
+{% extends '_layout.html' %}
+
+{% block scripts %}
+
+  <script>
+    $(function () {
+      $('#answers_listing').dataTable();
+    });
+  </script>
+
+{% endblock %}
+
+{% block content %}
+  <h1>Answers</h1>
+
+  <table id="answers_listing" class="table table-condensed table-bordered">
+    <thead>
+    <tr>
+      <th>Answer</th>
+    </tr>
+    </thead>
+    {% for answer in object.entries.all %}
+      <tr>
+        <td>{{ answer.id }}</td>
+      </tr>
+    {% endfor %}
+  </table>
+{% endblock %}
