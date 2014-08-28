@@ -1,6 +1,8 @@
+from django.db import transaction
 from django.core.management.base import BaseCommand
 from forms_builder.forms.models import Form, Field
-from forms_builder.forms.fields import *
+from forms_builder.forms.fields import TEXT, FILE, CHECKBOX_MULTIPLE, \
+    RADIO_MULTIPLE, TEXTAREA, SELECT
 import json
 
 
@@ -9,7 +11,8 @@ class Command(BaseCommand):
     help = 'Import a dynamic form exported from Naaya-Survey'
 
     def _parseForm(self, data):
-        if all(x in data for x in ["title", "questions", "labels"]):
+        transaction.set_autocommit(False)
+        try:
             form = Form.objects.create(title=data["title"])
             for question in data["questions"]:
                 params = {
@@ -68,9 +71,13 @@ class Command(BaseCommand):
 
                 Field.objects.create(**params)
 
-        else:
+        except KeyError:
             self.stdout.write('JSON is not in expected format.')
+            transaction.rollback()
             return
+
+        transaction.commit()
+        transaction.set_autocommit(True)
 
     def handle(self, *args, **options):
         if not args:
