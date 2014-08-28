@@ -37,6 +37,9 @@ INSTALLED_APPS = (
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'django.contrib.sites',
+    'django_assets',
+    'frame',
+    'aoasurveys',
     'aoasurveys.manager',
     'aoasurveys.reports',
     'forms_builder.forms',
@@ -88,6 +91,8 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/1.6/howto/static-files/
 
 STATIC_URL = '/static/'
+
+STATIC_ROOT = os.path.join(BASE_DIR, 'static')
 
 # Custom settings
 SITE_ID = 1
