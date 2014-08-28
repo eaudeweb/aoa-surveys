@@ -13,7 +13,7 @@ class Command(BaseCommand):
     def _parseForm(self, data):
         transaction.set_autocommit(False)
         try:
-            form = Form.objects.create(title=data["title"])
+            form = Form.objects.create(title=data["title"], slug=data["slug"])
             for question in data["questions"]:
                 params = {
                     "label": question["title"],

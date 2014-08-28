@@ -1,8 +1,9 @@
 {
+    "slug": "Form1",
     "title": "FormTitle1",
     "questions": [
         {
-            "slug": "FileWidget",
+            "slug": "slug1",
             "title": "File",
             "type": "FileWidget",
             "sortorder": 1,
@@ -10,7 +11,7 @@
             "size_max": 30
         },
         {
-            "slug": "StringWidget",
+            "slug": "slug2",
             "title": "String",
             "type": "StringWidget",
             "sortorder": 1,
@@ -19,7 +20,7 @@
             "width": 30
         },
         {
-            "slug": "CheckboxesWidget",
+            "slug": "slug3",
             "title": "Checkboxes",
             "type": "CheckboxesWidget",
             "sortorder": 1,
@@ -28,7 +29,7 @@
             "choices": ["check1", "check2", "check3", "check4"]
         },
         {
-            "slug": "RadioWidget",
+            "slug": "slug4",
             "title": "Radio",
             "type": "RadioWidget",
             "sortorder": 1,
@@ -38,7 +39,7 @@
             "choices": ["radio1", "radio2", "radio3"]
         },
         {
-            "slug": "TextAreaWidget",
+            "slug": "slug5",
             "title": "TextArea",
             "type": "TextAreaWidget",
             "sortorder": 1,
@@ -47,7 +48,7 @@
             "columns": 5
         },
         {
-            "slug": "ComboboxWidget",
+            "slug": "slug6",
             "title": "Combobox",
             "type": "ComboboxWidget",
             "sortorder": 1,
@@ -55,7 +56,7 @@
             "choices": ["combo1", "combo2", "combo3", "combo4"]
         },
         {
-            "slug": "CheckboxMatrixWidget",
+            "slug": "slug7",
             "title": "CheckboxMatrix",
             "type": "CheckboxMatrixWidget",
             "sortorder": 1,
@@ -63,7 +64,7 @@
             "choices": ["check1", "check2", "check3", "check4"]
         },
         {
-            "slug": "LocalizedTextAreaWidget",
+            "slug": "slug8",
             "title": "LocalizedTextArea",
             "type": "LocalizedTextAreaWidget",
             "sortorder": 1,
@@ -72,14 +73,14 @@
             "columns": 5
         },
         {
-            "slug": "GeoWidget",
+            "slug": "slug9",
             "title": "Geo",
             "type": "GeoWidget",
             "sortorder": 1,
             "required": true
         },
         {
-            "slug": "LocalizedStringWidget",
+            "slug": "slug10",
             "title": "LocalizedString",
             "type": "LocalizedStringWidget",
             "sortorder": 1,

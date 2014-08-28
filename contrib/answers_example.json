@@ -1,0 +1,23 @@
+{
+   "form_id": "Form1",
+   "answer_sets": [
+       {
+           "id": "answer1",
+           "respondent": "Don Juan",
+           "draft": false,
+           "modification_time": "2012-04-23T18:25:43.511Z",
+           "answers": {
+               "slug1": "file.txt",
+               "slug2": "StringWidget",
+               "slug3": ["check1", "check2"],
+               "slug4": "radio1",
+               "slug5": "TextAreaWidget",
+               "slug6": "Combobox",
+               "slug7": ["checkmatrix1", "checkmatrix2", "checkmatrix3"],
+               "slug8": "LocalizedTextareawidget",
+               "slug9": "GeoWidget",
+               "slug10": "LocalizedStringWidget"
+           }
+       }
+   ]
+}
