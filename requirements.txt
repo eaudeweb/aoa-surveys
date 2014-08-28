@@ -1,7 +1,14 @@
--e git://github.com/eaudeweb/eea.frame@aa582fdf903cfc7bdc4f1b1113f8a1ce17caa9af#egg=eea.frame-master
 Django==1.6.3
+Unidecode==0.04.16
+cssmin==0.2.0
+django-assets==0.10
 django-email-extras==0.3
 django-forms-builder==0.11.1
+eea.frame==0.2
+future==0.9.0
+jsmin==2.0.11
 python-gnupg==0.3.6
 requests==2.2.1
+sphinx-me==0.3
+webassets==0.10
 wsgiref==0.1.2

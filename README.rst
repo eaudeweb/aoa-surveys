@@ -81,6 +81,10 @@ be run as an unprivileged user in the product directory::
 
     ./manage.py syncdb
 
+9. Collect static assets::
+
+    ./manage.py collectstatic --no-input
+
 
 Build production
 ----------------

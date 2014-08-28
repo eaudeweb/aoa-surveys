@@ -1,0 +1,30 @@
+{% extends 'frame.html' %}
+{% load assets %}
+
+{% block head %}
+  {% assets "css" %}
+    <link href="{{ ASSET_URL }}" rel="stylesheet">
+  {% endassets %}
+
+  <title>
+    {% block title %}
+      AoA Surveys
+    {% endblock %}
+  </title>
+{% endblock %}
+
+
+{% block zope_content %}
+
+  <div class="content clearfix">
+    <h1>AoA Surveys</h1>
+
+    {% block content %}{% endblock %}
+  </div>
+
+  {% assets "js" %}
+    <script src="{{ ASSET_URL }}"></script>
+  {% endassets %}
+
+  {% block scripts %}{% endblock %}
+{% endblock %}
