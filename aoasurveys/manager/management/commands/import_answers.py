@@ -1,5 +1,4 @@
 import json
-from datetime import datetime
 
 from django.db import transaction
 from django.core.management.base import BaseCommand
@@ -14,24 +13,31 @@ class Command(BaseCommand):
         transaction.set_autocommit(False)
         try:
             form = Form.objects.filter(slug=data["form_id"]).first()
-            for answer in data["answer_sets"]:
-                formentry = FormEntry.objects.create(
-                    form=form,
-                    entry_time=answer["modification_time"]
-                )
-                #TODO set id, respondent, draft
-                for slug, value in answer["answers"].items():
-                    field = Field.objects.filter(slug=slug).first()
-                    if field:
-                        FieldEntry.objects.create(
-                            entry=formentry,
-                            value=",".join(value) if isinstance(value, list) else value,
-                            field_id=field.pk
-                        )
+            if form:
+                for answer in data["answer_sets"]:
+                    formentry = FormEntry.objects.create(
+                        form=form,
+                        entry_time=answer["modification_time"]
+                    )
+                    #TODO set id, respondent, draft
+                    for slug, value in answer["answers"].items():
+                        field = Field.objects.filter(slug=slug).first()
+                        if field:
+                            FieldEntry.objects.create(
+                                entry=formentry,
+                                value=",".join(value) if isinstance(value, list) else value,
+                                field_id=field.pk
+                            )
+                        else:
+                            self.stdout.write(
+                                'Field with slug=%s doesnt exist' % slug)
+            else:
+                self.stdout.write('Form doesnt exist.')
 
         except KeyError:
             self.stdout.write('JSON is not in expected format.')
             transaction.rollback()
+            transaction.set_autocommit(True)
             return
 
         transaction.commit()
@@ -42,13 +48,12 @@ class Command(BaseCommand):
             self.stdout.write('Expecting a filename.')
             return
 
-        datafile = open(args[0])
-        try:
-            data = json.load(datafile)
-        except ValueError:
-            self.stdout.write('File is not in JSON format.')
-            return
+        with open(args[0]) as datafile:
+            try:
+                data = json.load(datafile)
+            except ValueError:
+                self.stdout.write('File is not in JSON format.')
+                return
 
-        self._parseAnswers(data)
-
-        datafile.close()
+            self._parseAnswers(data)
+            datafile.close()

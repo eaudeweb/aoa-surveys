@@ -74,6 +74,7 @@ class Command(BaseCommand):
         except KeyError:
             self.stdout.write('JSON is not in expected format.')
             transaction.rollback()
+            transaction.set_autocommit(True)
             return
 
         transaction.commit()
