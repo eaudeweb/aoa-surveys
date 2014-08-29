@@ -56,14 +56,14 @@ class Command(BaseCommand):
 
                 elif question["type"] == "LocalizedTextAreaWidget":
                     #TODO set columns, rows
-                    params["field_type"] = TEXTAREA
+                    params["field_type"] = 101
 
                 elif question["type"] == "GeoWidget":
                     params["field_type"] = TEXT
 
                 elif question["type"] == "LocalizedStringWidget":
                     #TODO set width, size_max
-                    params["field_type"] = TEXTAREA
+                    params["field_type"] = 100
 
                 else:
                     self.stdout.write('Unrecognized type in JSON.')
