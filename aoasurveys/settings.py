@@ -98,17 +98,7 @@ STATIC_ROOT = os.path.join(BASE_DIR, 'static')
 SITE_ID = 1
 FORMS_BUILDER_USE_SITES = False
 
-LOCAL_INSTALLED_APPS = ()
 try:
     from local_settings import *
-    INSTALLED_APPS += LOCAL_INSTALLED_APPS
 except ImportError:
     pass
-
-import sys
-if 'test' in sys.argv:
-    try:
-        from test_settings import *
-    except ImportError:
-        pass
-
