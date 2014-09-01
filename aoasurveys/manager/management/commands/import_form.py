@@ -1,8 +1,11 @@
 from django.db import transaction
 from django.core.management.base import BaseCommand
+
 from forms_builder.forms.models import Form, Field
 from forms_builder.forms.fields import TEXT, FILE, CHECKBOX_MULTIPLE, \
     RADIO_MULTIPLE, TEXTAREA, SELECT
+from aoasurveys.forms import LOCALIZEDSTRING, LOCALIZEDTEXTAREA
+
 import json
 
 
@@ -56,14 +59,14 @@ class Command(BaseCommand):
 
                 elif question["type"] == "LocalizedTextAreaWidget":
                     #TODO set columns, rows
-                    params["field_type"] = 101
+                    params["field_type"] = LOCALIZEDTEXTAREA
 
                 elif question["type"] == "GeoWidget":
                     params["field_type"] = TEXT
 
                 elif question["type"] == "LocalizedStringWidget":
                     #TODO set width, size_max
-                    params["field_type"] = 100
+                    params["field_type"] = LOCALIZEDSTRING
 
                 else:
                     self.stdout.write('Unrecognized type in JSON.')

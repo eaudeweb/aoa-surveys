@@ -1,6 +1,9 @@
 from django.forms.fields import MultiValueField, CharField
-from django.forms.widgets import MultiWidget, Widget
+from django.forms.widgets import MultiWidget
 from django.forms import TextInput, Textarea
+
+LOCALIZEDSTRING = 100
+LOCALIZEDTEXTAREA = 101
 
 class StringMultiWidget(MultiWidget):
     def __init__(self, attrs=None):
@@ -37,12 +40,5 @@ class TextAreaMultiWidget(MultiWidget):
             return ['', '']
 
 
-class LocalizedTextAreaField(MultiValueField):
+class LocalizedTextAreaField(LocalizedStringField):
     widget = TextAreaMultiWidget
-
-    def __init__(self, *args, **kwargs):
-        list_fields = [CharField(), CharField()]
-        super(LocalizedTextAreaField, self).__init__(list_fields, *args, **kwargs)
-
-    def compress(self, values):
-        return "\n".join(values)
