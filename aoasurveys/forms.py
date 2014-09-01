@@ -5,10 +5,11 @@ from django.forms import TextInput, Textarea
 LOCALIZEDSTRING = 100
 LOCALIZEDTEXTAREA = 101
 
-class StringMultiWidget(MultiWidget):
-    def __init__(self, attrs=None):
-        widgets = [TextInput(), TextInput()]
-        super(StringMultiWidget, self).__init__(widgets, attrs)
+
+class LocalizedMultiWidget(MultiWidget):
+    def __init__(self, languages, widgets, attrs=None):
+        self.languages = languages
+        super(LocalizedMultiWidget, self).__init__(widgets, attrs)
 
     def decompress(self, value):
         if value:
@@ -16,9 +17,19 @@ class StringMultiWidget(MultiWidget):
         else:
             return ['', '']
 
+    def format_output(self, rendered_widgets):
+
+        def _make_field(field):
+            return "<br/><label>%s</label><br/>%s" % field
+
+        return ''.join(map(_make_field, zip(self.languages, rendered_widgets)))
+
 
 class LocalizedStringField(MultiValueField):
-    widget = StringMultiWidget
+    widget = LocalizedMultiWidget(
+        languages=["English", "Russian"],
+        widgets=[TextInput, TextInput]
+    )
 
     def __init__(self, *args, **kwargs):
         list_fields = [CharField(), CharField()]
@@ -28,17 +39,8 @@ class LocalizedStringField(MultiValueField):
         return "\n".join(values)
 
 
-class TextAreaMultiWidget(MultiWidget):
-    def __init__(self, attrs=None):
-        widgets = [Textarea(), Textarea()]
-        super(TextAreaMultiWidget, self).__init__(widgets, attrs)
-
-    def decompress(self, value):
-        if value:
-            return value.split("\n")
-        else:
-            return ['', '']
-
-
 class LocalizedTextAreaField(LocalizedStringField):
-    widget = TextAreaMultiWidget
+    widget = LocalizedMultiWidget(
+        languages=["English", "Russian"],
+        widgets=[Textarea, Textarea]
+    )
