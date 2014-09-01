@@ -7,8 +7,8 @@ LOCALIZEDTEXTAREA = 101
 
 
 class LocalizedMultiWidget(MultiWidget):
-    def __init__(self, languages, widgets, attrs=None):
-        self.languages = languages
+    def __init__(self, labels, widgets, attrs=None):
+        self.labels = labels
         super(LocalizedMultiWidget, self).__init__(widgets, attrs)
 
     def decompress(self, value):
@@ -22,12 +22,12 @@ class LocalizedMultiWidget(MultiWidget):
         def _make_field(field):
             return "<br/><label>%s</label><br/>%s" % field
 
-        return ''.join(map(_make_field, zip(self.languages, rendered_widgets)))
+        return ''.join(map(_make_field, zip(self.labels, rendered_widgets)))
 
 
 class LocalizedStringField(MultiValueField):
     widget = LocalizedMultiWidget(
-        languages=["English", "Russian"],
+        labels=["English", "Russian"],
         widgets=[TextInput, TextInput]
     )
 
@@ -41,6 +41,6 @@ class LocalizedStringField(MultiValueField):
 
 class LocalizedTextAreaField(LocalizedStringField):
     widget = LocalizedMultiWidget(
-        languages=["English", "Russian"],
+        labels=["English", "Russian"],
         widgets=[Textarea, Textarea]
     )
