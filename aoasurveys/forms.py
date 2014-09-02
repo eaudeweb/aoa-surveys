@@ -1,9 +1,7 @@
 from django.forms.fields import MultiValueField, CharField
+from django.conf import settings
 from django.forms.widgets import MultiWidget
 from django.forms import TextInput, Textarea
-
-LOCALIZEDSTRING = 100
-LOCALIZEDTEXTAREA = 101
 
 
 class LocalizedMultiWidget(MultiWidget):
@@ -27,7 +25,7 @@ class LocalizedMultiWidget(MultiWidget):
 
 class LocalizedStringField(MultiValueField):
     widget = LocalizedMultiWidget(
-        labels=["English", "Russian"],
+        labels=settings.LOCALIZED_LANGUAGES,
         widgets=[TextInput, TextInput]
     )
 
@@ -41,6 +39,6 @@ class LocalizedStringField(MultiValueField):
 
 class LocalizedTextAreaField(LocalizedStringField):
     widget = LocalizedMultiWidget(
-        labels=["English", "Russian"],
+        labels=settings.LOCALIZED_LANGUAGES,
         widgets=[Textarea, Textarea]
     )

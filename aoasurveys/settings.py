@@ -80,9 +80,17 @@ STATIC_URL = '/static/'
 STATIC_ROOT = os.path.join(BASE_DIR, 'static')
 
 # Custom fields
+LOCALIZEDSTRING = 100
+LOCALIZEDTEXTAREA = 101
+
 FORMS_BUILDER_EXTRA_FIELDS = (
-    (100, "aoasurveys.forms.LocalizedStringField", "LocalizedStringField"),
-    (101, "aoasurveys.forms.LocalizedTextAreaField", "LocalizedTextAreaField"),
+    (LOCALIZEDSTRING, "aoasurveys.forms.LocalizedStringField", "LocalizedStringField"),
+    (LOCALIZEDTEXTAREA, "aoasurveys.forms.LocalizedTextAreaField", "LocalizedTextAreaField"),
+)
+
+LOCALIZED_LANGUAGES = (
+    "English",
+    "Russian"
 )
 FORMS_BUILDER_UPLOAD_ROOT = os.path.join(BASE_DIR, 'forms')
 
