@@ -24,7 +24,13 @@
     {% for answer in object.entries.all %}
       <tr>
       {% for field in answer.fields.all %}
-        <td>{{ field.value }}</td>
+        <td>
+        {% if field.extra.is_file %}
+          <a href="{{ field.extra.file_properties.url }}">{{ field.extra.file_properties.value }}</a>
+        {% else %}
+          {{ field.value }}
+        {% endif %}
+        </td>
       {% endfor %}
       </tr>
     {% endfor %}

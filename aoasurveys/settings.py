@@ -84,6 +84,7 @@ FORMS_BUILDER_EXTRA_FIELDS = (
     (100, "aoasurveys.forms.LocalizedStringField", "LocalizedStringField"),
     (101, "aoasurveys.forms.LocalizedTextAreaField", "LocalizedTextAreaField"),
 )
+FORMS_BUILDER_UPLOAD_ROOT = os.path.join(BASE_DIR, 'forms')
 
 # Custom settings
 SITE_ID = 1
