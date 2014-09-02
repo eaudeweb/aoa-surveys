@@ -15,13 +15,17 @@
 
   <table id="answers_listing" class="table table-condensed table-bordered">
     <thead>
-    <tr>
-      <th>Answer</th>
-    </tr>
+      <tr>
+      {% for field in object.fields.all %}
+        <th>{{ field.label }}</th>
+      {% endfor %}
+      </tr>
     </thead>
     {% for answer in object.entries.all %}
       <tr>
-        <td>{{ answer.id }}</td>
+      {% for field in answer.fields.all %}
+        <td>{{ field.value }}</td>
+      {% endfor %}
       </tr>
     {% endfor %}
   </table>
