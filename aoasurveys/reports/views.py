@@ -66,9 +66,9 @@ class FormExtraView(DetailView, FormView):
 def file_view(request, field_entry_id):
     field_entry = get_object_or_404(FieldEntry, pk=field_entry_id)
     path = os.path.join(settings.FORMS_BUILDER_UPLOAD_ROOT, field_entry.value)
-    response = HttpResponse(content_type=mimetypes.guess_type(path)[0])
+    content_type = mimetypes.guess_type(path)[0]
+    filename = os.path.split(path)[1]
     with open(path, 'rb') as f:
-        response['Content-Disposition'] = 'attachment; filename={0}'.format(
-            os.path.split(f.name)[1])
-        response.write(f.read())
+        response = HttpResponse(f.read(), content_type=content_type)
+        response['Content-Disposition'] = 'attachment; filename=' + filename
     return response
