@@ -24,6 +24,16 @@ class AnswersView(DetailView):
     model = Form
     slug_url_kwarg = 'slug'
 
+    def get_object(self):
+        form = super(AnswersView, self).get_object()
+        form.answers = form.entries.all()
+        for answer in form.answers:
+            answer.selected_fields = [
+                answer.fields.get(field_id=field.id) for field in
+                form.extra.selected_fields
+            ]
+        return form
+
 
 class FormExtraView(DetailView, FormView):
 

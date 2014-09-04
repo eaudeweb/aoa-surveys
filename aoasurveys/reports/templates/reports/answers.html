@@ -16,14 +16,14 @@
   <table id="answers_listing" class="table table-condensed table-bordered">
     <thead>
       <tr>
-      {% for field in object.fields.all %}
+      {% for field in object.extra.selected_fields %}
         <th>{{ field.label }}</th>
       {% endfor %}
       </tr>
     </thead>
-    {% for answer in object.entries.all %}
+    {% for answer in object.answers %}
       <tr>
-      {% for field in answer.fields.all %}
+      {% for field in answer.selected_fields %}
         <td>
         {% if field.extra.is_file %}
           <a href="{{ field.extra.file_properties.url }}">{{ field.extra.file_properties.value }}</a>
