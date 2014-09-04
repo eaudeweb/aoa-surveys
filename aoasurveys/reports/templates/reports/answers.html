@@ -16,14 +16,14 @@
   <table id="answers_listing" class="table table-condensed table-bordered">
     <thead>
       <tr>
-      {% for field in object.extra.selected_fields %}
+      {% for field in object.extra.visible_fields %}
         <th>{{ field.label }}</th>
       {% endfor %}
       </tr>
     </thead>
     {% for answer in object.answers %}
       <tr>
-      {% for field in answer.selected_fields %}
+      {% for field in answer.visible_fields %}
         <td>
         {% if field.url %}
           <a href="{{ field.url }}">{{ field.value }}</a>

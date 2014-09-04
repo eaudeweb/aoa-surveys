@@ -29,11 +29,11 @@ class AnswersView(DetailView):
         form = super(AnswersView, self).get_object()
         form.answers = form.entries.all()
         for answer in form.answers:
-            answer.selected_fields = [
+            answer.visible_fields = [
                 answer.fields.get(field_id=field.id) for field in
-                form.extra.selected_fields
+                form.extra.visible_fields
             ]
-            for field in answer.selected_fields:
+            for field in answer.visible_fields:
                 form_field = get_object_or_404(Field, pk=field.field_id)
                 if form_field.is_a(fields.FILE):
                     field.url = reverse('file_view', args=(field.id,))

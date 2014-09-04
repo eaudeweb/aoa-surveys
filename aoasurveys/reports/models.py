@@ -8,7 +8,7 @@ class FormExtra(Model):
     visible_fields_slugs = CharField(max_length=255)
 
     @property
-    def selected_fields(self):
+    def visible_fields(self):
         slugs = self.visible_fields_slugs.split(settings.FIELDS_SEPARATOR)
         visible_fields = list(Field.objects.filter(slug__in=slugs))
         visible_fields.sort(key=lambda x: slugs.index(x.slug))
