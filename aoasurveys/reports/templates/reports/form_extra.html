@@ -1,0 +1,21 @@
+{% extends '_layout.html' %}
+
+{% block content %}
+  <h1>Select visible fields</h1>
+
+  <p>Available fields:</p>
+  <ul>
+  {% for field in object.fields.all %}
+  <li>{{ field.label }}: {{ field.slug }}</li>
+  {% endfor %}
+  </ul>
+
+  <p>Please enter the selected fields' slugs separated by "," in the textbox
+  below</p>
+
+  <form action="" method="POST">{% csrf_token %}
+      {{ form.as_p }}
+      <input type="submit" value="Save" />
+  </form>
+
+{% endblock %}

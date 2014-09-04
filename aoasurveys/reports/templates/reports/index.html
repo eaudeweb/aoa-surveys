@@ -8,7 +8,8 @@
 {% for survey in object_list %}
   <li>
     <a href="{% url 'form_detail' survey.slug %}">{{ survey }}</a> -
-    <a href="{% url 'answers_list' slug=survey.slug %}">View answers</a>
+    <a href="{% url 'answers_list' slug=survey.slug %}">View answers</a> |
+    <a href="{% url 'select_fields' slug=survey.slug %}">Select visible fields</a>
   </li>
 {% endfor %}
 </ul>
