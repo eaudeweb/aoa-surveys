@@ -25,8 +25,8 @@
       <tr>
       {% for field in answer.selected_fields %}
         <td>
-        {% if field.extra.is_file %}
-          <a href="{{ field.extra.file_properties.url }}">{{ field.extra.file_properties.value }}</a>
+        {% if field.url %}
+          <a href="{{ field.url }}">{{ field.value }}</a>
         {% else %}
           {{ field.value }}
         {% endif %}

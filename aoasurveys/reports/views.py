@@ -6,7 +6,8 @@ from django.views.generic.edit import FormView
 from django.conf import settings
 from django.http import HttpResponse
 from django.core.urlresolvers import reverse
-from forms_builder.forms.models import Form, FieldEntry
+from forms_builder.forms.models import Form, FieldEntry, Field
+from forms_builder.forms import fields
 
 from aoasurveys.reports.forms import SelectFieldsForm
 from aoasurveys.reports.models import FormExtra
@@ -32,6 +33,11 @@ class AnswersView(DetailView):
                 answer.fields.get(field_id=field.id) for field in
                 form.extra.selected_fields
             ]
+            for field in answer.selected_fields:
+                form_field = get_object_or_404(Field, pk=field.field_id)
+                if form_field.is_a(fields.FILE):
+                    field.url = reverse('file_view', args=(field.id,))
+                    field.value = os.path.split(field.value)[1]
         return form
 
 
