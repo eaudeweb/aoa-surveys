@@ -6,12 +6,11 @@ from django.views.generic.edit import FormView
 from django.conf import settings
 from django.http import HttpResponse
 from django.core.urlresolvers import reverse
-from django.conf import settings
-from forms_builder.forms.models import Form, FieldEntry, Field
-from forms_builder.forms import fields
+from forms_builder.forms.models import Form, FieldEntry
 
 from aoasurveys.reports.forms import SelectFieldsForm
 from aoasurveys.reports.models import FormExtra
+from aoasurveys.reports.utils import set_visible_fields, set_url_value
 
 
 class FormsIndex(ListView):
@@ -30,15 +29,9 @@ class AnswersView(DetailView):
         form = super(AnswersView, self).get_object()
         form.answers = form.entries.all()
         for answer in form.answers:
-            answer.visible_fields = [
-                answer.fields.get(field_id=field.id) for field in
-                form.extra.visible_fields
-            ]
+            set_visible_fields(answer, form.extra.visible_fields)
             for field in answer.visible_fields:
-                form_field = get_object_or_404(Field, pk=field.field_id)
-                if form_field.is_a(fields.FILE):
-                    field.url = reverse('file_view', args=(field.id,))
-                    field.value = os.path.split(field.value)[1]
+                set_url_value(field)
         return form
 
 
