@@ -55,7 +55,8 @@ class FormExtraView(DetailView, FormView):
 
     def form_valid(self, form):
         extra, _ = FormExtra.objects.get_or_create(form=self.get_object())
-        extra.visible_fields_slugs = form.cleaned_data['fields_list']
+        extra.visible_fields_slugs = form.cleaned_data['visible_fields']
+        extra.filtering_fields_slugs = form.cleaned_data['filtering_fields']
         extra.save()
         return super(FormExtraView, self).form_valid(form)
 

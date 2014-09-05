@@ -1,6 +1,7 @@
 import os
 
 from django.core.urlresolvers import reverse
+from django.conf import settings
 from forms_builder.forms.models import Field
 from forms_builder.forms import fields
 
@@ -15,3 +16,10 @@ def set_url_value(field_entry):
     if field and field.is_a(fields.FILE):
         field_entry.url = reverse('file_view', args=(field.id,))
         field_entry.value = os.path.split(field.value)[1]
+
+
+def get_ordered_fields(slugs):
+        slugs = [s.strip() for s in slugs.split(settings.FIELDS_SEPARATOR)]
+        fields = list(Field.objects.filter(slug__in=slugs))
+        fields.sort(key=lambda x: slugs.index(x.slug))
+        return fields

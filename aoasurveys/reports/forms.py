@@ -2,4 +2,5 @@ from django.forms import Form, CharField
 
 
 class SelectFieldsForm(Form):
-    fields_list = CharField(max_length=255, required=False)
+    visible_fields = CharField(max_length=255, required=False)
+    filtering_fields = CharField(max_length=255, required=False)
