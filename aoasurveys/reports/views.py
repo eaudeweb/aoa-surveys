@@ -6,6 +6,7 @@ from django.views.generic.edit import FormView
 from django.conf import settings
 from django.http import HttpResponse
 from django.core.urlresolvers import reverse
+from django.conf import settings
 from forms_builder.forms.models import Form, FieldEntry, Field
 from forms_builder.forms import fields
 
@@ -53,7 +54,10 @@ class FormExtraView(DetailView, FormView):
 
     def get_context_data(self, **kwargs):
         context = super(FormExtraView, self).get_context_data(**kwargs)
-        context.update({'form': SelectFieldsForm()})
+        context.update({
+            'form': SelectFieldsForm(),
+            'separator': settings.FIELDS_SEPARATOR,
+        })
         return context
 
     def form_valid(self, form):

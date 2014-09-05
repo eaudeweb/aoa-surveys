@@ -9,7 +9,8 @@ class FormExtra(Model):
 
     @property
     def visible_fields(self):
-        slugs = self.visible_fields_slugs.split(settings.FIELDS_SEPARATOR)
+        slugs = [slug.strip() for slug in
+                 self.visible_fields_slugs.split(settings.FIELDS_SEPARATOR)]
         visible_fields = list(Field.objects.filter(slug__in=slugs))
         visible_fields.sort(key=lambda x: slugs.index(x.slug))
         return visible_fields

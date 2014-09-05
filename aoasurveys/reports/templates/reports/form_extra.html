@@ -10,8 +10,8 @@
   {% endfor %}
   </ul>
 
-  <p>Please enter the selected fields' slugs separated by "," in the textbox
-  below</p>
+  <p>Please enter the selected fields' slugs separated by "{{ separator }}" in
+  the textbox below</p>
 
   <form action="" method="POST">{% csrf_token %}
       {{ form.as_p }}
