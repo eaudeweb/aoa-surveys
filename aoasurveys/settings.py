@@ -10,6 +10,7 @@ https://docs.djangoproject.com/en/1.6/ref/settings/
 
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 import os
+
 BASE_DIR = os.path.dirname(os.path.dirname(__file__))
 
 # Application definition
@@ -31,6 +32,8 @@ INSTALLED_APPS = (
 )
 
 MIDDLEWARE_CLASSES = (
+    'frame.middleware.RequestMiddleware',
+    'frame.middleware.UserMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.common.CommonMiddleware',
     'django.middleware.csrf.CsrfViewMiddleware',
@@ -39,14 +42,27 @@ MIDDLEWARE_CLASSES = (
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
 )
 
+TEMPLATE_LOADERS = (
+    'frame.middleware.Loader',
+    'django.template.loaders.filesystem.Loader',
+    'django.template.loaders.app_directories.Loader',
+)
+
+TEMPLATE_CONTEXT_PROCESSORS = (
+    'django.contrib.auth.context_processors.auth',
+    'django.core.context_processors.debug',
+    'django.core.context_processors.i18n',
+    'django.core.context_processors.media',
+    'django.core.context_processors.static',
+    'django.core.context_processors.tz',
+    'django.contrib.messages.context_processors.messages',
+    'django.core.context_processors.request',
+)
+
 ROOT_URLCONF = 'aoasurveys.urls'
 
 WSGI_APPLICATION = 'aoasurveys.wsgi.application'
 
-TEMPLATE_CONTEXT_PROCESSORS = (
-    "django.core.context_processors.request",
-    'django.contrib.auth.context_processors.auth',
-)
 
 # Database
 # https://docs.djangoproject.com/en/1.6/ref/settings/#databases
@@ -84,8 +100,10 @@ LOCALIZEDSTRING = 100
 LOCALIZEDTEXTAREA = 101
 
 FORMS_BUILDER_EXTRA_FIELDS = (
-    (LOCALIZEDSTRING, "aoasurveys.forms.LocalizedStringField", "LocalizedStringField"),
-    (LOCALIZEDTEXTAREA, "aoasurveys.forms.LocalizedTextAreaField", "LocalizedTextAreaField"),
+    (LOCALIZEDSTRING, "aoasurveys.forms.LocalizedStringField",
+     "LocalizedStringField"),
+    (LOCALIZEDTEXTAREA, "aoasurveys.forms.LocalizedTextAreaField",
+     "LocalizedTextAreaField"),
 )
 
 LOCALIZED_LANGUAGES = (

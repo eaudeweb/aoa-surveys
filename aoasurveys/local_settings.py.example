@@ -11,3 +11,5 @@ ASSETS_DEBUG = True
 ALLOWED_HOSTS = []
 
 FIELDS_SEPARATOR = ','
+
+# FRAME_URL = 'http://example.com/flis_templates/frame'
