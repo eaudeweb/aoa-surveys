@@ -1,6 +1,23 @@
 {
-    "labels": [],
-    "slug": "virtual-library-extended",
+    "labels": [
+        {
+            "title": {
+                "ru": "Контактные данные лица, загрузившего данные",
+                "en": "Information about the data uploader"
+            },
+            "slug": "w_information-about-data-uploader",
+            "order": 160
+        },
+        {
+            "title": {
+                "ru": "Укажите какие из следующих тем рассматриваются в оценке",
+                "en": "Specify which of the following topics are addressed by the assessment."
+            },
+            "slug": "w_specify-topics",
+            "order": 75
+        }
+    ],
+    "slug": "bibliography-details-each-assessment",
     "questions": [
         {
             "title": {
@@ -24,6 +41,41 @@
             },
             "order": 70,
             "type": "RadioWidget",
+            "display": "vertical"
+        },
+        {
+            "title": {
+                "ru": "Водные ресурсы  и экосистемы, связанные с водой",
+                "en": "Water Resources topics"
+            },
+            "required": false,
+            "slug": "w_water-resources-topics",
+            "choices": {
+                "ru": [
+                    "Количество воды и уязвимость (в том числе экстремальные природные явления)",
+                    "Опустынивание",
+                    "Живые ресурсы (рыбное хозяйство)",
+                    "Определение характеристик естественной среды обитания",
+                    "Экосистема и биологическое разнообразие",
+                    "Охраняемые и мигрирующие виды и охраняемые территории",
+                    "Инвазивные виды",
+                    "Болезни, передаваемые посредством воды",
+                    "Качество воды и уязвимость"
+                ],
+                "en": [
+                    "Water quantity and vulnerability (including extreme natural events)",
+                    "Desertification",
+                    "Living resources (fisheries)",
+                    "Habitat characterization",
+                    "Ecosystems and biodiversity",
+                    "Protected and migratory species and protected areas",
+                    "Invasive species",
+                    "Water-borne diseases",
+                    "Water quality and vulnerability"
+                ]
+            },
+            "order": 80,
+            "type": "CheckboxesWidget",
             "display": "vertical"
         },
         {
@@ -72,6 +124,18 @@
         },
         {
             "title": {
+                "ru": "Электронная почта",
+                "en": "Email"
+            },
+            "required": true,
+            "size_max": 0,
+            "order": 180,
+            "width": 50,
+            "type": "StringWidget",
+            "slug": "w_submitter-email"
+        },
+        {
+            "title": {
                 "ru": "Оценка является официальной",
                 "en": "Assessment is formal"
             },
@@ -100,6 +164,39 @@
         },
         {
             "title": {
+                "ru": "\"Зеленная\" экономика",
+                "en": "Green Economy topics"
+            },
+            "required": false,
+            "slug": "w_green-economy-topics",
+            "choices": {
+                "ru": [
+                    "Энергия из возобновляемых источников (напр., гидроэнергия, биотопливо и биомасса)",
+                    "Энергоэффективность",
+                    "Мобильность (качество воздуха, выбросы и шум)",
+                    "Промышленность (выбросы и отходы)",
+                    "Оценка воздействия на окружающую среду (ОВОС) и Оценка стратегического воздействия (ОСВ/SIA)",
+                    "Управление (в том числе институциональные схемы и многосторонние соглашения по окружающей среде и обзоры экологической результативности)",
+                    "Корпоративная социальная ответственность и экологическая отчетность",
+                    "Будущее и сценарии (в том числе уязвимость, возможности, конкурентоспособность и миграция)"
+                ],
+                "en": [
+                    "Renewable energy (e.g. hydropower, biofuels and biomass)",
+                    "Energy efficiency",
+                    "Mobility (air quality, emissions and noise)",
+                    "Industry (emissions and waste)",
+                    "Environmental impact assessment (EIA) and strategic impact assessment (SIA)",
+                    "Governance (including institutional arrangements and multilateral environmental agreements) and environmental performance reviews",
+                    "Corporate social responsibility and environmental reporting",
+                    "Futures and scenarios (including vulnerability, opportunities, competitiveness and migration)"
+                ]
+            },
+            "order": 90,
+            "type": "CheckboxesWidget",
+            "display": "vertical"
+        },
+        {
+            "title": {
                 "ru": "Загрузить оценку",
                 "en": "Upload assessment"
             },
@@ -120,6 +217,18 @@
             "width": 80,
             "type": "LocalizedStringWidget",
             "slug": "w_main-criterion"
+        },
+        {
+            "title": {
+                "ru": "Имя",
+                "en": "Name"
+            },
+            "required": true,
+            "size_max": 0,
+            "order": 170,
+            "width": 50,
+            "type": "StringWidget",
+            "slug": "w_submitter-name"
         },
         {
             "title": {
@@ -147,6 +256,18 @@
         },
         {
             "title": {
+                "ru": "Тип организации",
+                "en": "Type of organisation"
+            },
+            "required": true,
+            "size_max": 0,
+            "order": 190,
+            "width": 50,
+            "type": "StringWidget",
+            "slug": "w_submitter-organisation"
+        },
+        {
+            "title": {
                 "ru": "Публично доступная",
                 "en": "Publicly available"
             },
@@ -165,6 +286,35 @@
             },
             "order": 60,
             "type": "RadioWidget",
+            "display": "vertical"
+        },
+        {
+            "title": {
+                "ru": "Эффективность использования ресурсов",
+                "en": "Resource Efficiency topics"
+            },
+            "required": false,
+            "slug": "w_resource-efficiency-topics",
+            "choices": {
+                "ru": [
+                    "Использование природного капитала (в том числе лесоводство, сельское хозяйство, урбанизация, связанные с деградацией земли, почвы, вод и биологического разнообразия)",
+                    "Эффективность использования воды в промышленных, сельских и городских зонах",
+                    "Анализ жизненного цикла",
+                    "Экологический учёт",
+                    "Модели потребления и производства",
+                    "Туризм"
+                ],
+                "en": [
+                    "Use of natural capital (including forestry, agriculture, urbanization linked to the use and degradation of land, soil, water and biodiversity)",
+                    "Water efficiency in industrial, rural and urban areas",
+                    "Life-cycle analysis",
+                    "Environmental accounting",
+                    "Consumption and production patterns",
+                    "Tourism"
+                ]
+            },
+            "order": 97,
+            "type": "CheckboxesWidget",
             "display": "vertical"
         },
         {
@@ -191,6 +341,41 @@
         },
         {
             "title": {
+                "ru": "Управление водными ресурсами",
+                "en": "Water Resource Management topics"
+            },
+            "required": false,
+            "slug": "w_water-resource-management-topics",
+            "choices": {
+                "ru": [
+                    "Количество воды (в том числе ледники и экстремальные явления)",
+                    "Управление водными ресурсами (в том числе меры по эффективности и адаптации)",
+                    "Инфраструктура (в том числе финансовые аспекты, энергия, сточные воды, обессоливание, трубы/каналы/резервуары)",
+                    "Потребление воды",
+                    "Управление (в том числе трансграничные вопросы)",
+                    "Экосистемные услуги и восстановление экосистем",
+                    "Борьба с загрязнением воды",
+                    "Социально-экономические аспекты (доступ к питьевой воде)",
+                    "Уязвимость"
+                ],
+                "en": [
+                    "Water quantity (including glaciers and extreme events)",
+                    "Water management (including efficiency and adaptation measures)",
+                    "Infrastructure (including financial aspects, energy, wastewater, desalinisation, pipes/channels/reservoirs)",
+                    "Water consumption",
+                    "Governance (including transboundary issues)",
+                    "Ecosystem services and restoration",
+                    "Water pollution control",
+                    "Socio-economic aspects (e.g. access to drinking water)",
+                    "Vulnerability"
+                ]
+            },
+            "order": 85,
+            "type": "CheckboxesWidget",
+            "display": "vertical"
+        },
+        {
+            "title": {
                 "ru": "Год, в котором оценка была опубликована",
                 "en": "Year in which the assessment was published"
             },
@@ -210,25 +395,33 @@
             "slug": "w_theme",
             "choices": {
                 "ru": [
-                    "Bода",
-                    "«Зеленая» экономика и устойчивое развитие",
-                    "биоразнообразие",
-                    "воздух",
-                    "отходы",
-                    "изменение климата"
+                    "\"Зеленая\" экономика",
+                    "Водные ресурсы",
+                    "Управление водными ресурсами",
+                    "Эффективность использования ресурсов"
                 ],
                 "en": [
-                    "Water",
-                    "Green economy and resource efficiency",
-                    "Biodiversity",
-                    "Air",
-                    "Waste",
-                    "Climate change"
+                    "Green economy",
+                    "Water resources",
+                    "Water resource management",
+                    "Resource efficiency"
                 ]
             },
             "order": 71,
             "type": "CheckboxesWidget",
             "display": "vertical"
+        },
+        {
+            "title": {
+                "ru": "Страна или международная организация",
+                "en": "Country or international organisation"
+            },
+            "required": true,
+            "size_max": 0,
+            "order": 200,
+            "width": 50,
+            "type": "StringWidget",
+            "slug": "w_country-or-international-organisation"
         },
         {
             "title": {
@@ -551,6 +744,6 @@
     ],
     "title": {
         "ru": "Добро пожаловать в виртуальную библиотеку Оценки оценок",
-        "en": "Welcome to the thematic extended Virtual Library of the Assessment of Assessments -- DRAFT"
+        "en": "Welcome to the Virtual Library of the Assessment of Assessments."
     }
 }
