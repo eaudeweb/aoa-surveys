@@ -13,6 +13,11 @@
 {% block content %}
   <h2>Answers</h2>
 
+  <form action="" method="POST">{% csrf_token %}
+      {{ form.as_p }}
+      <input type="submit" value="Filter" />
+  </form>
+
   <table id="answers_listing" class="table table-condensed table-bordered">
     <thead>
       <tr>

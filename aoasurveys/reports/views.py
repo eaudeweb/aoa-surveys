@@ -8,7 +8,7 @@ from django.http import HttpResponse
 from django.core.urlresolvers import reverse
 from forms_builder.forms.models import Form, FieldEntry
 
-from aoasurveys.reports.forms import SelectFieldsForm
+from aoasurveys.reports.forms import SelectFieldsForm, FilteringForm
 from aoasurveys.reports.models import FormExtra
 from aoasurveys.reports.utils import set_visible_fields, set_url_value
 
@@ -19,11 +19,15 @@ class FormsIndex(ListView):
     model = Form
 
 
-class AnswersView(DetailView):
+class AnswersView(DetailView, FormView):
 
     template_name = 'reports/answers.html'
     model = Form
     slug_url_kwarg = 'slug'
+    form_class = FilteringForm
+
+    def get_success_url(self):
+        return reverse('answers_list', args=(self.get_object().slug,))
 
     def get_object(self):
         form = super(AnswersView, self).get_object()
@@ -33,6 +37,15 @@ class AnswersView(DetailView):
             for field in answer.visible_fields:
                 set_url_value(field)
         return form
+
+    def get_context_data(self, **kwargs):
+        context = super(AnswersView, self).get_context_data(**kwargs)
+        form = FilteringForm()
+        form.set_fields(self.object.extra.filtering_fields)
+        context.update({
+            'form': form,
+        })
+        return context
 
 
 class FormExtraView(DetailView, FormView):
