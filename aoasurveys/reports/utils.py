@@ -15,7 +15,7 @@ def set_url_value(field_entry):
     field = Field.objects.filter(pk=field_entry.field_id).first()
     if field and field.is_a(fields.FILE):
         field_entry.url = reverse('file_view', args=(field.id,))
-        field_entry.value = os.path.split(field.value)[1]
+        field_entry.value = os.path.split(field_entry.value)[1]
 
 
 def get_ordered_fields(slugs):
