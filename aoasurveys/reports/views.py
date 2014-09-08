@@ -1,5 +1,6 @@
 import os
 import mimetypes
+
 from django.shortcuts import get_object_or_404
 from django.views.generic import ListView, DetailView
 from django.views.generic.edit import FormView
@@ -10,7 +11,9 @@ from forms_builder.forms.models import Form, FieldEntry
 
 from aoasurveys.reports.forms import SelectFieldsForm, FilteringForm
 from aoasurveys.reports.models import FormExtra
-from aoasurveys.reports.utils import set_visible_fields, set_url_value
+from aoasurveys.reports.utils import (
+    set_visible_fields, set_url_value, filter_answers,
+)
 
 
 class DetailFormView(DetailView, FormView):
@@ -36,18 +39,17 @@ class AnswersView(DetailFormView):
     slug_url_kwarg = 'slug'
     form_class = FilteringForm
     context_object_name = 'survey'
+    filter_query = {}
 
-    def get_success_url(self):
-        return reverse('answers_list', args=(self.get_object().slug,))
+    def get_context_data(self, **kwargs):
+        answers = self.object.entries.all()
+        self.object.answers = list(filter_answers(answers, self.filter_query))
 
-    def get_object(self):
-        form = super(AnswersView, self).get_object()
-        form.answers = form.entries.all()
-        for answer in form.answers:
-            set_visible_fields(answer, form.extra.visible_fields)
+        for answer in self.object.answers:
+            set_visible_fields(answer, self.object.extra.visible_fields)
             for field in answer.visible_fields:
                 set_url_value(field)
-        return form
+        return super(AnswersView, self).get_context_data(**kwargs)
 
     def get_form_kwargs(self):
         kwargs = super(AnswersView, self).get_form_kwargs()
@@ -55,7 +57,11 @@ class AnswersView(DetailFormView):
         return kwargs
 
     def form_valid(self, form):
-        return super(AnswersView, self).form_valid(form)
+        self.filter_query = {int(k.split('_')[1]): v for k, v in
+                             form.cleaned_data.iteritems() if v}
+        self.object = self.get_object()
+        return self.render_to_response(self.get_context_data(
+            object=self.object, form=form))
 
 
 class FormExtraView(DetailFormView):
