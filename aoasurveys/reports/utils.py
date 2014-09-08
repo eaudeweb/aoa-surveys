@@ -19,7 +19,7 @@ def set_url_value(field_entry):
 
 
 def get_ordered_fields(slugs):
-        slugs = [s.strip() for s in slugs.split(settings.FIELDS_SEPARATOR)]
-        fields = list(Field.objects.filter(slug__in=slugs))
-        fields.sort(key=lambda x: slugs.index(x.slug))
-        return fields
+    slugs = [s.strip() for s in slugs.split(settings.FIELDS_SEPARATOR)]
+    fields = list(Field.objects.filter(slug__in=slugs))
+    fields.sort(key=lambda x: slugs.index(x.slug))
+    return fields
