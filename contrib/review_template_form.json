@@ -1,0 +1,1662 @@
+{
+  "labels": [
+    {
+      "title": {
+        "ru": "ЧАСТЬ 0 ОБЩАЯ ИНФОРМАЦИЯ",
+        "en": "PART  0\tGENERAL INFORMATION"
+      },
+      "slug": "w_part-0-general-information",
+      "order": 0
+    },
+    {
+      "title": {
+        "ru": "УПРАВЛЕНИЕ",
+        "en": "GOVERNANCE"
+      },
+      "slug": "w_governance",
+      "order": 50
+    },
+    {
+      "title": {
+        "ru": "ЧАСТЬ 1 ИНСТИТУЦИОНАЛЬНЫЕ СХЕМЫ И СОЗДАНИЕ СЕТЕЙ",
+        "en": "PART  1\tINSTITUTIONAL ARRANGEMENTS AND NETWORKING"
+      },
+      "slug": "w_part-1-institutional-arrangements-and-networking",
+      "order": 51
+    },
+    {
+      "title": {
+        "ru": "ЧАСТЬ 2 ШИРОТА ОХВАТА",
+        "en": "PART  2\tSCOPE"
+      },
+      "slug": "w_part-2-scope",
+      "order": 70
+    },
+    {
+      "title": {
+        "ru": "ЧАСТЬ 3 ВЗАИМОДЕЙСТВИЕ",
+        "en": "PART  3\tINTERACTION"
+      },
+      "slug": "w_part-3-interaction",
+      "order": 100
+    },
+    {
+      "title": {
+        "ru": "ЧАСТЬ 4 ПРЕДСТАВЛЕНИЕ ИНФОРМАЦИИ",
+        "en": "PART  4\tCOMMUNICATION"
+      },
+      "slug": "w_part-4-communication",
+      "order": 150
+    },
+    {
+      "title": {
+        "ru": "ИНФРАСТРУКТУРА И УСЛУГИ",
+        "en": "INFRASTRUCTURE & SERVICES"
+      },
+      "slug": "w_infrastructure-services",
+      "order": 200
+    },
+    {
+      "title": {
+        "ru": "ЧАСТЬ 5  ИНФРАСТРУКТУРА",
+        "en": "PART  5\tINFRASTRUCTURE"
+      },
+      "slug": "w_part-5-infrastructure",
+      "order": 201
+    },
+    {
+      "title": {
+        "ru": "ЧАСТЬ 6 УСЛУГИ",
+        "en": "PART  6\tSERVICES"
+      },
+      "slug": "w_part-6-services",
+      "order": 210
+    },
+    {
+      "title": {
+        "ru": "СОДЕРЖАНИЕ",
+        "en": "CONTENT"
+      },
+      "slug": "w_content",
+      "order": 230
+    },
+    {
+      "title": {
+        "ru": "ЧАСТЬ 7 ИНФОРМАЦИЯ, ДАННЫЕ И КОНТРОЛЬ КАЧЕСТВА",
+        "en": "PART  7\tINFORMATION, DATA AND QUALITY CONTROL"
+      },
+      "slug": "w_part-7-information-data-and-quality-control",
+      "order": 231
+    },
+    {
+      "title": {
+        "ru": "ЧАСТЬ 8 ПОКАЗАТЕЛИ И ИНСТРУМЕНТЫ ОЦЕНКИ",
+        "en": "PART  8\tINDICATORS AND ASSESSMENT TOOLS"
+      },
+      "slug": "w_part-8-indicators-and-assessment-tools",
+      "order": 290
+    },
+    {
+      "title": {
+        "ru": "ЧАСТЬ 9  РЕЗУЛЬТАТЫ",
+        "en": "PART  9\tOUTPUTS"
+      },
+      "slug": "w_part-9-outputs",
+      "order": 340
+    },
+    {
+      "title": {
+        "ru": "ЧАСТЬ 11 КОНТАКТНЫЕ ДАННЫЕ ЛИЦА, ЗАПОЛНИВШЕГО ОПРОСНЫЙ ЛИСТ",
+        "en": "PART 11  INFORMATION ABOUT THE DATA UPLOADER"
+      },
+      "slug": "w_part-10-information-about-data-uploader",
+      "order": 420
+    },
+    {
+      "title": {
+        "ru": "Q.3 Год публикации оценочного доклада.",
+        "en": "Q.3 Publishing year of the assessment report."
+      },
+      "slug": "w_q3-publishing-year-assessment-report",
+      "order": 30
+    },
+    {
+      "title": {
+        "ru": "Если оценочный доклад содержит анализ прошедшего промежутка времени, укажите освещаемый период (отметьте все подходящие варианты)",
+        "en": "If the assessment report includes backwards analysis, specify the time-span explored (tick as many boxes as necessary)."
+      },
+      "slug": "w_if-assessment-report-includes-backwards-analysis",
+      "order": 92
+    },
+    {
+      "title": {
+        "ru": "ЧАСТЬ 10 ТЕМАТИЧЕСКАЯ ОЦЕНКА",
+        "en": "PART 10  THEMATIC ASSESSMENT"
+      },
+      "slug": "w_part-10-thematic-assessment",
+      "order": 380
+    },
+    {
+      "title": {
+        "ru": "Q.38 Какие виды анализа включает оценочный доклад?",
+        "en": "Q.38 Which are the analyses covered by the assessment report?"
+      },
+      "slug": "w_q38-which-are-analyses-covered-assessment-report",
+      "order": 381
+    },
+    {
+      "title": {
+        "ru": "Если оценочный доклад содержит анализ будущего промежутка времени, укажите освещаемый период (отметьте все подходящие варианты)",
+        "en": "If the assessment report includes forwards analysis, specify the time-span explored (tick as many boxes as necessary)."
+      },
+      "slug": "w_if-assessment-report-includes-forwards-analysis",
+      "order": 96
+    },
+    {
+      "title": {},
+      "slug": "w_",
+      "order": 91
+    }
+  ],
+  "slug": "general-template",
+  "questions": [
+    {
+      "title": {
+        "ru": "Q.2 Название органа, подготовившего оценочный доклад",
+        "en": "Q.2\tName of the body conducting the assessment."
+      },
+      "required": false,
+      "size_max": 0,
+      "order": 20,
+      "width": 125,
+      "type": "LocalizedStringWidget",
+      "slug": "w_q2-name-body-conducting-assessment"
+    },
+    {
+      "title": {
+        "ru": "Онлайн",
+        "en": "Online"
+      },
+      "required": false,
+      "size_max": 0,
+      "order": 31,
+      "width": 10,
+      "type": "StringWidget",
+      "slug": "w_q3-publishing-year-assessment"
+    },
+    {
+      "title": {
+        "ru": "Q.4 Является ли оценочный доклад частью регулярного процесса составления оценочных докладов?",
+        "en": "Q.4\tIs the assessment part of a regular process for assessment?"
+      },
+      "required": false,
+      "add_extra_choice": false,
+      "slug": "w_q4-assessment-part-regular-process-if-yes-how",
+      "choices": {
+        "ru": [
+          "Да",
+          "Нет",
+          "Нет доступной информации"
+        ],
+        "en": [
+          "Yes",
+          "No",
+          "Information not available"
+        ]
+      },
+      "order": 40,
+      "type": "RadioWidget",
+      "display": "vertical"
+    },
+    {
+      "title": {
+        "ru": "Если \"Да\", укажите частоту в годах",
+        "en": "If Yes, specify the frequency in years"
+      },
+      "required": false,
+      "size_max": 0,
+      "order": 45,
+      "width": 50,
+      "type": "LocalizedStringWidget",
+      "slug": "w_if-yes-specify-frequency-years"
+    },
+    {
+      "title": {
+        "ru": "Q.5 Являлся ли оценочный доклад результатом инициативы подготовившей его организации? Если \"Нет\" был ли он заказан другой организацией или  являлся требованием законодательства?",
+        "en": "Q.5\tWas the assessment the result of an initiative by the body who conducted the assessment? If not, was the assessment commissioned by another body or required by a piece of legislation?"
+      },
+      "required": false,
+      "add_extra_choice": false,
+      "slug": "w_q5-was-assessment-result-initiative-body-carrying",
+      "choices": {
+        "ru": [
+          "Да",
+          "Нет",
+          "Нет доступной информации"
+        ],
+        "en": [
+          "Yes",
+          "No",
+          "Information not available"
+        ]
+      },
+      "order": 52,
+      "type": "RadioWidget",
+      "display": "vertical"
+    },
+    {
+      "title": {
+        "ru": "Если \"Нет\", укажите, был ли оценочный доклад заказан",
+        "en": "If No, specify if commissioned by"
+      },
+      "required": false,
+      "add_extra_choice": false,
+      "slug": "w_if-no-specify-if-commissioned",
+      "choices": {
+        "ru": [
+          "другой организацией",
+          "являлся требованием законодательства",
+          "другое"
+        ],
+        "en": [
+          "Another body",
+          "Required by a piece of legislation",
+          "Other"
+        ]
+      },
+      "order": 55,
+      "type": "RadioWidget",
+      "display": "vertical"
+    },
+    {
+      "title": {
+        "ru": "Q.6 Участвовала ли в составлении оценочного доклада более чем одна организация? Если \"Да\", укажите, какие, и связаны ли они сетью.",
+        "en": "Q.6\tWas more than one body involved in producing the assessment? If yes, specify which one(s) and whether these bodies are networked."
+      },
+      "required": false,
+      "add_extra_choice": false,
+      "slug": "w_q6-was-more-one-body-involved-producing",
+      "choices": {
+        "ru": [
+          "Да",
+          "Нет",
+          "Нет доступной информации"
+        ],
+        "en": [
+          "Yes",
+          "No",
+          "Information not available"
+        ]
+      },
+      "order": 60,
+      "type": "RadioWidget",
+      "display": "vertical"
+    },
+    {
+      "title": {
+        "ru": "Если \"Да\", укажите название (-ия) вовлеченной(-ых)  организации(-ий)",
+        "en": "If Yes, specify the name(s) of the body(ies) involved"
+      },
+      "required": false,
+      "size_max": 0,
+      "order": 63,
+      "width": 125,
+      "type": "LocalizedStringWidget",
+      "slug": "w_if-yes-specify-names-bodyies-involved"
+    },
+    {
+      "title": {
+        "ru": "Если \"Да\", укажите, связаны ли эти организации информационной сетью:",
+        "en": "If Yes, specify whether these bodies are networked"
+      },
+      "required": false,
+      "add_extra_choice": false,
+      "slug": "w_if-yes-specify-whether-these-bodies-are-networked",
+      "choices": {
+        "ru": [
+          "Да",
+          "Нет",
+          "Нет доступной информации"
+        ],
+        "en": [
+          "Yes",
+          "No",
+          "Information not available"
+        ]
+      },
+      "order": 66,
+      "type": "RadioWidget",
+      "display": "vertical"
+    },
+    {
+      "title": {
+        "ru": "Если они входят в информационную сеть, приведите название или тип сети",
+        "en": "If networked, provide the name or the type of the network"
+      },
+      "required": false,
+      "size_max": 0,
+      "order": 68,
+      "width": 125,
+      "type": "LocalizedStringWidget",
+      "slug": "w_if-networked-provide-details-nature-network"
+    },
+    {
+      "title": {
+        "ru": "Если \"Региональный\", укажите регион",
+        "en": "If Regional, specify the region"
+      },
+      "required": false,
+      "size_max": 0,
+      "order": 75,
+      "width": 125,
+      "type": "LocalizedStringWidget",
+      "slug": "w_if-regional-specify-region"
+    },
+    {
+      "title": {
+        "ru": "Q.8 Имела ли оценка четкие цели?",
+        "en": "Q.8\tWere there explicit objectives for the assessment?"
+      },
+      "required": false,
+      "add_extra_choice": false,
+      "slug": "w_q8-were-there-explicit-objectives-assessment",
+      "choices": {
+        "ru": [
+          "Да",
+          "Нет",
+          "Нет доступной информации"
+        ],
+        "en": [
+          "Yes",
+          "No",
+          "Information not available"
+        ]
+      },
+      "order": 80,
+      "type": "RadioWidget",
+      "display": "vertical"
+    },
+    {
+      "title": {
+        "ru": "Если \"Да\", укажите основные цели",
+        "en": "If Yes, list the top main objectives"
+      },
+      "required": false,
+      "size_max": 0,
+      "order": 85,
+      "width": 125,
+      "type": "LocalizedStringWidget",
+      "slug": "w_if-yes-specify"
+    },
+    {
+      "title": {
+        "ru": "Q.9 Укажите тип рассматриваемого оценочного доклада (отметьте все подходящие варианты",
+        "en": "Q.9\tSpecify the type of assessment report under review (tick as many boxes as necessary)."
+      },
+      "required": false,
+      "slug": "w_q9-specify-type-assessment-tick-many-boxes",
+      "choices": {
+        "ru": [
+          "Оценка состояния и тенденций (или процессов)",
+          "Тематическая оценка",
+          "Оценка реагирования",
+          "Секторальная оценка",
+          "Оценка воздействия",
+          "Оценка, связанная с проектом",
+          "Интегральная oценка",
+          "Другое"
+        ],
+        "en": [
+          "Status and trend (or process) assessment",
+          "Thematic assessment",
+          "Response assessment",
+          "Sectoral assessment",
+          "Impact assessment",
+          "Project-related assessment",
+          "Integrated assessment"
+        ]
+      },
+      "order": 90,
+      "type": "CheckboxesWidget",
+      "display": "vertical"
+    },
+    {
+      "title": {
+        "ru": "Если Вы отметили \"Интегральная оценка\", то укажите, если оценочный доклад охватывал (отметьте все подходящие варианты):",
+        "en": "If you ticked Integrated assessment, specify if integration was across (tick as many boxes as necessary)"
+      },
+      "required": false,
+      "slug": "w_if-you-ticked-integrated-assessment-specify-if",
+      "choices": {
+        "ru": [
+          "Экологические, экономические и социальные аспекты",
+          "Тематические области",
+          "Экосистемы"
+        ],
+        "en": [
+          "Environmental, economic and social aspects",
+          "Thematic areas",
+          "Ecosystems"
+        ]
+      },
+      "order": 99,
+      "type": "CheckboxesWidget",
+      "display": "vertical"
+    },
+    {
+      "title": {
+        "ru": "Q.10 Как отбирались эксперты для составления оценочного доклада?",
+        "en": "Q.10 How was the expertise to carry out the assessment selected?"
+      },
+      "required": false,
+      "add_extra_choice": false,
+      "slug": "w_q10-it-specified-how-scientific-expertise-was",
+      "choices": {
+        "ru": [
+          "Использование внутренних ресурсов организации(ий), участвующей(их) в составлении оценочного доклада.",
+          "Использование экспертов из доступных сетей (смотри Q.6)",
+          "Средствами открытой конкуренции (тендер или конкурсное предложение и т.п.)",
+          "Путем прямого контракта/отбора",
+          "Информация отсутствует",
+          "Другое"
+        ],
+        "en": [
+          "Using in-house expertise within the body(ies) involved in producing the assessment report.",
+          "Using expertise within available networks (see Q.6)",
+          "By means of open competition (tender or application, etc)",
+          "By direct agreement/selection",
+          "Information not available",
+          "Other"
+        ]
+      },
+      "order": 101,
+      "type": "RadioWidget",
+      "display": "vertical"
+    },
+    {
+      "title": {
+        "ru": "Q.11 Есть ли в докладе информация о том, проводились ли консультации (например, с разработчиками политики и/или общественными организациями) в процессе подготовки оценочного доклада?",
+        "en": "Q.11\tDoes the report indicate whether a consultation process (e.g. with policy makers and/or civil society organisations) was held during the preparation of the assessment?"
+      },
+      "required": false,
+      "add_extra_choice": false,
+      "slug": "w_q11-was-interactionconsultation-policy-makers",
+      "choices": {
+        "ru": [
+          "Да",
+          "Нет"
+        ],
+        "en": [
+          "Yes",
+          "No"
+        ]
+      },
+      "order": 110,
+      "type": "RadioWidget",
+      "display": "vertical"
+    },
+    {
+      "title": {
+        "ru": "Если \"Да\", укажите, какими средствами был достигнут обмен информацией и проведены консультации",
+        "en": "If Yes, specify by what means this interaction/consultation was achieved"
+      },
+      "required": false,
+      "size_max": 0,
+      "order": 115,
+      "width": 125,
+      "type": "LocalizedStringWidget",
+      "slug": "w_if-yes-how"
+    },
+    {
+      "title": {
+        "ru": "Q.12 Проводилось ли рецензирование оценочного доклада другими экспертами, не принимавшими участие в составлении доклада, до публикации окончательного текста?",
+        "en": "Q.12 Was the assessment report reviewed by other experts than those writing the assessment, before the final text was published?"
+      },
+      "required": false,
+      "add_extra_choice": false,
+      "slug": "w_q12-was-there-peer-review-assessment-during",
+      "choices": {
+        "ru": [
+          "Да",
+          "Нет",
+          "Нет доступной информации"
+        ],
+        "en": [
+          "Yes",
+          "No",
+          "Information not available"
+        ]
+      },
+      "order": 120,
+      "type": "RadioWidget",
+      "display": "vertical"
+    },
+    {
+      "title": {
+        "ru": "Если \"Да\", укажите подробности",
+        "en": "If Yes, provide details"
+      },
+      "required": false,
+      "size_max": 0,
+      "order": 125,
+      "width": 125,
+      "type": "LocalizedStringWidget",
+      "slug": "w_if-yes-provide-details9388"
+    },
+    {
+      "title": {
+        "ru": "Q.13 Были ли предприняты конкретные меры по координации составления оценочного доклада с другими происходящими в то же время процессами оценок?",
+        "en": "Q.13\t Were any specific arrangements made to coordinate the preparation of the assessment report with other ongoing assessment processes?"
+      },
+      "required": false,
+      "add_extra_choice": false,
+      "slug": "w_q13-were-any-specific-arrangements-made",
+      "choices": {
+        "ru": [
+          "Да",
+          "Нет",
+          "Нет доступной информации"
+        ],
+        "en": [
+          "Yes",
+          "No",
+          "Information not available"
+        ]
+      },
+      "order": 130,
+      "type": "RadioWidget",
+      "display": "vertical"
+    },
+    {
+      "title": {
+        "ru": "Если \"Да\",  укажите подробности",
+        "en": "If Yes, provide details"
+      },
+      "required": false,
+      "size_max": 0,
+      "order": 135,
+      "width": 125,
+      "type": "LocalizedStringWidget",
+      "slug": "w_if-yes-provide-details6433"
+    },
+    {
+      "title": {
+        "ru": "Q.14 Были ли предприняты конкретные действия для усиления институционального, научного и/или технического потенциала для процесса составления оценочного доклада?",
+        "en": "Q.14 Were specific efforts made to strengthen the institutional, scientific and/or technical capacities for the assessment as part of the process?"
+      },
+      "required": false,
+      "add_extra_choice": false,
+      "slug": "w_q14-were-specific-efforts-made-strengthen",
+      "choices": {
+        "ru": [
+          "Да",
+          "Нет",
+          "Нет доступной информации"
+        ],
+        "en": [
+          "Yes",
+          "No",
+          "Information not available"
+        ]
+      },
+      "order": 140,
+      "type": "RadioWidget",
+      "display": "vertical"
+    },
+    {
+      "title": {
+        "ru": "Если \"Другое\", укажите",
+        "en": "If Other, specify"
+      },
+      "required": false,
+      "size_max": 0,
+      "order": 155,
+      "width": 125,
+      "type": "LocalizedStringWidget",
+      "slug": "w_if-others-specify8707"
+    },
+    {
+      "title": {
+        "ru": "Q.18 Было ли подготовлено резюме оценочного доклада в качестве отдельного издания?",
+        "en": "Q.18 Was a summary of the assessment produced as a separate output?"
+      },
+      "required": false,
+      "add_extra_choice": false,
+      "slug": "w_q17-was-summary-assessment-produced-separate",
+      "choices": {
+        "ru": [
+          "Да",
+          "Нет"
+        ],
+        "en": [
+          "Yes",
+          "No"
+        ]
+      },
+      "order": 180,
+      "type": "RadioWidget",
+      "display": "vertical"
+    },
+    {
+      "title": {
+        "ru": "Q.17 На каких языках имеется оценочный доклад?",
+        "en": "Q.17 In which languages is the assessment report available?"
+      },
+      "required": false,
+      "size_max": 0,
+      "order": 170,
+      "width": 125,
+      "type": "LocalizedStringWidget",
+      "slug": "w_q18-which-languages-main-report-assessment"
+    },
+    {
+      "title": {
+        "ru": "Q.19 Проста ли оценка для понимания и доступна для читателей-неспециалистов?",
+        "en": "Q.19 Does the assessment appear to be easy to understand and accessible to non-specialist readers?"
+      },
+      "required": false,
+      "add_extra_choice": false,
+      "slug": "w_q19-does-assessment-appear-be-easy-understand-and",
+      "choices": {
+        "ru": [
+          "Недоступна/непроста для понимания",
+          "Более ли менее доступна/понятна",
+          "Проста для понимания и доступна"
+        ],
+        "en": [
+          "Not accessible/understandable",
+          "Averagely accessible/understandable",
+          "Easy to understand and accessible"
+        ]
+      },
+      "order": 190,
+      "type": "RadioWidget",
+      "display": "vertical"
+    },
+    {
+      "title": {
+        "ru": "Q.20 Существовали ли какие-либо информационные системы для поддержки управления/совместного пользования/обмена данными в процессе подготовки оценочного доклада?",
+        "en": "Q.20 Was there any information system supporting data management/sharing/exchange while preparing the assessment report?"
+      },
+      "required": false,
+      "add_extra_choice": false,
+      "slug": "w_q20-there-any-support-information-systems-data",
+      "choices": {
+        "ru": [
+          "Да",
+          "Нет",
+          "Нет доступной информации"
+        ],
+        "en": [
+          "Yes",
+          "No",
+          "Information not available"
+        ]
+      },
+      "order": 202,
+      "type": "RadioWidget",
+      "display": "vertical"
+    },
+    {
+      "title": {
+        "ru": "Если \"Да\", укажите подробности",
+        "en": "If Yes, provide details"
+      },
+      "required": false,
+      "size_max": 0,
+      "order": 205,
+      "width": 125,
+      "type": "LocalizedStringWidget",
+      "slug": "w_if-yes-provide-details1833"
+    },
+    {
+      "title": {
+        "ru": "Q.21 Использовались ли какие-либо поставщики услуг, поддерживающие управление/совместное пользование/обмен данными в процессе подготовки оценочного доклада?",
+        "en": "Q.21 Was there any service provider supporting data management/sharing/exchange while preparing the assessment report?"
+      },
+      "required": false,
+      "add_extra_choice": false,
+      "slug": "w_q21-are-any-inspiregmesreportnet-compatible",
+      "choices": {
+        "ru": [
+          "Да",
+          "Нет",
+          "Нет доступной информации"
+        ],
+        "en": [
+          "Yes",
+          "No",
+          "Information not available"
+        ]
+      },
+      "order": 211,
+      "type": "RadioWidget",
+      "display": "vertical"
+    },
+    {
+      "title": {
+        "ru": "Если \"Да\", укажите, кто предоставлял эти услуги",
+        "en": "If Yes, specify who has provided these service"
+      },
+      "required": false,
+      "size_max": 0,
+      "order": 215,
+      "width": 125,
+      "type": "LocalizedStringWidget",
+      "slug": "w_if-yes-list-and-provide-details"
+    },
+    {
+      "title": {
+        "ru": "Q.22 Упоминаются ли в оценочном докладе разработки, сходные с INSPIRE/GMES/Reportnet?",
+        "en": "Q.22 Are any INSPIRE/GMES/Reportnet compatible developments mentioned in the assessment report?"
+      },
+      "required": false,
+      "add_extra_choice": false,
+      "slug": "w_q22-are-processes-data-managementsharingexchange",
+      "choices": {
+        "ru": [
+          "Да",
+          "Нет",
+          "Нет доступной информации"
+        ],
+        "en": [
+          "Yes",
+          "No",
+          "Information not available"
+        ]
+      },
+      "order": 220,
+      "type": "RadioWidget",
+      "display": "vertical"
+    },
+    {
+      "title": {
+        "ru": "Если \"Да\", коротко опишите",
+        "en": "If Yes, briefly explain"
+      },
+      "required": false,
+      "size_max": 0,
+      "order": 225,
+      "width": 125,
+      "type": "LocalizedStringWidget",
+      "slug": "w_if-yes-provide-details8215"
+    },
+    {
+      "title": {
+        "ru": "Q.23 Есть ли в оценочном докладе ссылки на тип информации и источники используемых данных или упомянуты ли они в явной форме?",
+        "en": "Q.23 Does the assessment report explicitly mention or acknowledge the type of information and sources of data used?"
+      },
+      "required": false,
+      "add_extra_choice": false,
+      "slug": "w_q23-were-type-information-and-sources-data",
+      "choices": {
+        "ru": [
+          "Да",
+          "Нет"
+        ],
+        "en": [
+          "Yes",
+          "No"
+        ]
+      },
+      "order": 232,
+      "type": "RadioWidget",
+      "display": "vertical"
+    },
+    {
+      "title": {
+        "ru": "Q.24 На какой информации основан оценочный доклад? (отметьте все подходящие варианты)",
+        "en": "Q.24 On what information is the assessment based? (tick as many boxes as necessary)"
+      },
+      "required": false,
+      "slug": "w_q24-what-information-assessment-based-tick-many",
+      "choices": {
+        "ru": [
+          "данные (полностью)",
+          "данные (частично)",
+          "экспертное мнение (полностью)",
+          "экспертное мнение (частично)",
+          "местные знания (полностью)",
+          "местные знания (частично)"
+        ],
+        "en": [
+          "data (wholly)",
+          "data (partly)",
+          "expert opinion (wholly)",
+          "expert opinion (partly)",
+          "'local knowledge' (wholly)",
+          "'local knowledge' (partly)"
+        ]
+      },
+      "order": 240,
+      "type": "CheckboxesWidget",
+      "display": "vertical"
+    },
+    {
+      "title": {
+        "ru": "Q.25 Что было основными источниками данных? (отметьте все подходящие варианты)",
+        "en": "Q.25 Which were the main sources of data? (tick as many boxes as necessary)"
+      },
+      "required": false,
+      "slug": "w_q25-which-were-main-sources-data",
+      "choices": {
+        "ru": [
+          "Регулярные потоки данных",
+          "Статистические публикации",
+          "Инициативы, связанные с проектами",
+          "Специальные мероприятия по сбору данных",
+          "Другое"
+        ],
+        "en": [
+          "Regular data flows",
+          "Statistical publications",
+          "Project-based initiatives",
+          "Ad-hoc collection exercises",
+          "Other"
+        ]
+      },
+      "order": 250,
+      "type": "CheckboxesWidget",
+      "display": "vertical"
+    },
+    {
+      "title": {
+        "ru": "Если \"Другое\", укажите",
+        "en": "If Other, specify"
+      },
+      "required": false,
+      "size_max": 0,
+      "order": 255,
+      "width": 125,
+      "type": "LocalizedStringWidget",
+      "slug": "w_if-others-specify1353"
+    },
+    {
+      "title": {
+        "ru": "Q.26 Были ли доступны метаданные об использованных данных/информации?",
+        "en": "Q.26 Were metadata available on the data/information used?"
+      },
+      "required": false,
+      "add_extra_choice": false,
+      "slug": "w_q26-were-metadata-available-information-used",
+      "choices": {
+        "ru": [
+          "Да",
+          "Частично (т.е. не для всех используемых данных и не для всей используемой информации)",
+          "Нет доступной информации"
+        ],
+        "en": [
+          "Yes",
+          "Partially (i.e. not for all the data/information used)",
+          "No"
+        ]
+      },
+      "order": 260,
+      "type": "RadioWidget",
+      "display": "vertical"
+    },
+    {
+      "title": {
+        "ru": "Если \"Да\"или \"Частично\", предоставьте подробности о типе метаданных, включенных в оценочный доклад",
+        "en": "If Yes or Partially, provide details on the type of metadata included in the assessment report"
+      },
+      "required": false,
+      "size_max": 0,
+      "order": 265,
+      "width": 125,
+      "type": "LocalizedStringWidget",
+      "slug": "w_if-yes-provide-details7874"
+    },
+    {
+      "title": {
+        "ru": "Q.27 Были ли заключены какие-либо юридические/институциональные соглашения для обеспечения регулярных потоков данных/информации, включенных в оценочный доклад?",
+        "en": "Q.27 Were any legal agreements/institutional arrangements made for ensuring regular flows of the data/information included in the assessment report?"
+      },
+      "required": false,
+      "add_extra_choice": false,
+      "slug": "w_q27-were-any-legal-institutional-agreements-made",
+      "choices": {
+        "ru": [
+          "Да",
+          "Нет",
+          "Нет доступной информации"
+        ],
+        "en": [
+          "Yes",
+          "No",
+          "Information not available"
+        ]
+      },
+      "order": 270,
+      "type": "RadioWidget",
+      "display": "vertical"
+    },
+    {
+      "title": {
+        "ru": "Если \"Да\", предоставьте подробности",
+        "en": "If Yes, provide details"
+      },
+      "required": false,
+      "size_max": 0,
+      "order": 275,
+      "width": 125,
+      "type": "LocalizedStringWidget",
+      "slug": "w_if-yes-provide-details7707"
+    },
+    {
+      "title": {
+        "ru": "Q.28 Упомянуты ли в докладе в явной форме методы контроля качества/достоверности данных/мнений экспертов/местных знаний, на которых основана оценка?",
+        "en": "Q.28 Was any quality control/assurance of the data/expert opinion/local knowledge supporting the assessment explicitly mentioned in the report?"
+      },
+      "required": false,
+      "add_extra_choice": false,
+      "slug": "w_q29-did-assessment-control-quality-dataexpert",
+      "choices": {
+        "ru": [
+          "Да",
+          "Частично (т.е. не для всех используемых данных и используемой информации)",
+          "Нет"
+        ],
+        "en": [
+          "Yes",
+          "Partially (i.e. not for all the data/information used)",
+          "No"
+        ]
+      },
+      "order": 280,
+      "type": "RadioWidget",
+      "display": "vertical"
+    },
+    {
+      "title": {
+        "ru": "Если \"Да\"или \"Частично\", предоставьте подробности осуществления контроля качества/достоверности",
+        "en": "If Yes or Partially, provide details on how quality was controlled/assured"
+      },
+      "required": false,
+      "size_max": 0,
+      "order": 285,
+      "width": 125,
+      "type": "LocalizedStringWidget",
+      "slug": "w_if-yes-provide-details-how-quality-was-controlled"
+    },
+    {
+      "title": {
+        "ru": "Q.29 Использовались ли в оценочном докладе какие-либо виды показателей/индикаторов?",
+        "en": "Q.29 Did the assessment use any type of indicators?"
+      },
+      "required": false,
+      "add_extra_choice": false,
+      "slug": "w_q30-did-assessment-use-any-form-indicators",
+      "choices": {
+        "ru": [
+          "Да",
+          "Нет"
+        ],
+        "en": [
+          "Yes",
+          "No"
+        ]
+      },
+      "order": 291,
+      "type": "RadioWidget",
+      "display": "vertical"
+    },
+    {
+      "title": {
+        "ru": "Q. 30 Базируются ли использованные в оценочном докладе показатели/индикаторы на регулярных потоках предоставления отчетных данных/информации?",
+        "en": "Q.30 Are the indicators used in the assessment report based on regular data/information reporting flows?"
+      },
+      "required": false,
+      "add_extra_choice": false,
+      "slug": "w_q31-are-any-indicators-produced-based-major",
+      "choices": {
+        "ru": [
+          "Да",
+          "Частично (т.е. не для всех используемых показателей/индикаторов)",
+          "Нет",
+          "Нет доступной информации"
+        ],
+        "en": [
+          "Yes",
+          "Partially (i.e. not for all the indicators used)",
+          "No",
+          "Information not available"
+        ]
+      },
+      "order": 300,
+      "type": "RadioWidget",
+      "display": "vertical"
+    },
+    {
+      "title": {
+        "ru": "Если \"Да\"или \"Частично\", предоставьте подробности",
+        "en": "If Yes or Partially, provide details"
+      },
+      "required": false,
+      "size_max": 0,
+      "order": 305,
+      "width": 125,
+      "type": "LocalizedStringWidget",
+      "slug": "w_if-yes-specify2554"
+    },
+    {
+      "title": {
+        "ru": "Q.31 Разработаны ли использованные в оценочном докладе показатели/индикаторы на основе стандартных/согласованных методик?",
+        "en": "Q.31 Are the indicators used in the assessment report produced on the basis of standard/agreed methodologies?"
+      },
+      "required": false,
+      "add_extra_choice": false,
+      "slug": "w_q32-are-there-common-methodologies-production",
+      "choices": {
+        "ru": [
+          "Да",
+          "Частично (т.е. не все используемые показатели/индикаторы)",
+          "Нет",
+          "Нет доступной информации"
+        ],
+        "en": [
+          "Yes",
+          "Partially (i.e. not for all the indicators used)",
+          "No",
+          "Information not available"
+        ]
+      },
+      "order": 310,
+      "type": "RadioWidget",
+      "display": "vertical"
+    },
+    {
+      "title": {
+        "ru": "Если \"Другой\", укажите",
+        "en": "If Other, specify"
+      },
+      "required": false,
+      "size_max": 0,
+      "order": 318,
+      "width": 125,
+      "type": "LocalizedStringWidget",
+      "slug": "w_if-yes-specify3390"
+    },
+    {
+      "title": {
+        "ru": "Q.32 Использовались ли в оценочном докладе инструменты моделирования и разработки сценариев?",
+        "en": "Q.32 Were modelling and scenarios tools used in the assessment report?"
+      },
+      "required": false,
+      "add_extra_choice": false,
+      "slug": "w_q33-were-modelling-and-scenarios-tools",
+      "choices": {
+        "ru": [
+          "Да",
+          "Нет"
+        ],
+        "en": [
+          "Yes",
+          "No"
+        ]
+      },
+      "order": 320,
+      "type": "RadioWidget",
+      "display": "vertical"
+    },
+    {
+      "title": {
+        "ru": "Если \"Да\", укажите какие инструменты",
+        "en": "If Yes, specify which tools"
+      },
+      "required": false,
+      "size_max": 0,
+      "order": 325,
+      "width": 125,
+      "type": "LocalizedStringWidget",
+      "slug": "w_if-yes-specify9255"
+    },
+    {
+      "title": {
+        "ru": "Q.33 Использовалась ли для составления оценочного доклада концептуальная структура подобная типу ДС-Д-С-В-Р?",
+        "en": "Q.33 Was a DPSIR-type of framework used to organise the assessment?"
+      },
+      "required": false,
+      "add_extra_choice": false,
+      "slug": "w_q34-was-any-particular-conceptual-framework-used",
+      "choices": {
+        "ru": [
+          "Да",
+          "Нет",
+          "Нет доступной информации"
+        ],
+        "en": [
+          "Yes",
+          "No",
+          "Information not available"
+        ]
+      },
+      "order": 330,
+      "type": "RadioWidget",
+      "display": "vertical"
+    },
+    {
+      "title": {
+        "ru": "Если \"Да\", укажите какая конкретно концептуальная структура",
+        "en": "If Yes, specify which type of framework"
+      },
+      "required": false,
+      "size_max": 0,
+      "order": 335,
+      "width": 125,
+      "type": "LocalizedStringWidget",
+      "slug": "w_if-yes-specify2297"
+    },
+    {
+      "title": {
+        "ru": "Q.34 Идентифицировала ли оценка приоритетные проблемы?",
+        "en": "Q.34 Did the assessment identify priority concerns?"
+      },
+      "required": false,
+      "add_extra_choice": false,
+      "slug": "w_q36-did-assessment-identify-priority-concerns",
+      "choices": {
+        "ru": [
+          "Да",
+          "Нет"
+        ],
+        "en": [
+          "Yes",
+          "No"
+        ]
+      },
+      "order": 341,
+      "type": "RadioWidget",
+      "display": "vertical"
+    },
+    {
+      "title": {
+        "ru": "Q.35 Идентифицировала ли оценка конкретные потребности и/или возникшие проблемы, требующие внимания?",
+        "en": "Q.35 Did the assessment identify specific needs and/or emerging issues to be addressed?"
+      },
+      "required": false,
+      "add_extra_choice": false,
+      "slug": "w_q37-did-assessment-identify-specific-needs-andor",
+      "choices": {
+        "ru": [
+          "Да",
+          "Нет"
+        ],
+        "en": [
+          "Yes",
+          "No"
+        ]
+      },
+      "order": 350,
+      "type": "RadioWidget",
+      "display": "vertical"
+    },
+    {
+      "title": {
+        "ru": "Q.36 Выявила ли оценка пробелы в информации, необходимой для анализа или научного понимания соответстствующих процессов?",
+        "en": "Q.36 Did the assessment indicate gaps in the information needed for the analysis or in the scientific understanding of relevant processes?"
+      },
+      "required": false,
+      "add_extra_choice": false,
+      "slug": "w_q38-did-assessment-indicate-gaps-information",
+      "choices": {
+        "ru": [
+          "Да",
+          "Нет"
+        ],
+        "en": [
+          "Yes",
+          "No"
+        ]
+      },
+      "order": 360,
+      "type": "RadioWidget",
+      "display": "vertical"
+    },
+    {
+      "title": {
+        "ru": "Если \"Да\", укажите основные",
+        "en": "If Yes, specify the major ones"
+      },
+      "required": false,
+      "size_max": 0,
+      "order": 365,
+      "width": 125,
+      "type": "LocalizedStringWidget",
+      "slug": "w_if-yes-specify2610"
+    },
+    {
+      "title": {
+        "ru": "Q.37 Предлагает ли оценка варианты на будущее?",
+        "en": "Q.37 Did the assessment provide options for the future?"
+      },
+      "required": false,
+      "add_extra_choice": false,
+      "slug": "w_q39-did-assessment-provide-options-future",
+      "choices": {
+        "ru": [
+          "Да",
+          "Нет"
+        ],
+        "en": [
+          "Yes",
+          "No"
+        ]
+      },
+      "order": 370,
+      "type": "RadioWidget",
+      "display": "vertical"
+    },
+    {
+      "title": {
+        "ru": "Если \"Другое\", укажите",
+        "en": "If Other, specify"
+      },
+      "required": false,
+      "size_max": 0,
+      "order": 165,
+      "width": 125,
+      "type": "LocalizedStringWidget",
+      "slug": "w_if-others-specify1421"
+    },
+    {
+      "title": {
+        "ru": "Имя",
+        "en": "Name"
+      },
+      "required": true,
+      "size_max": 0,
+      "order": 421,
+      "width": 75,
+      "type": "LocalizedStringWidget",
+      "slug": "w_name"
+    },
+    {
+      "title": {
+        "ru": "Электронная почта",
+        "en": "Email"
+      },
+      "required": true,
+      "size_max": 0,
+      "order": 423,
+      "width": 75,
+      "type": "StringWidget",
+      "slug": "w_email"
+    },
+    {
+      "title": {
+        "ru": "Организация",
+        "en": "Organisation"
+      },
+      "required": false,
+      "size_max": 0,
+      "order": 424,
+      "width": 75,
+      "type": "LocalizedStringWidget",
+      "slug": "w_organisation"
+    },
+    {
+      "title": {
+        "ru": "Печатная копия",
+        "en": "As hardcopy:"
+      },
+      "required": false,
+      "size_max": 0,
+      "order": 32,
+      "width": 10,
+      "type": "StringWidget",
+      "slug": "w_hardcopy"
+    },
+    {
+      "title": {
+        "ru": "Q.7 Каков географический охват оценочного доклада? (отметьте все подходящие варианты)",
+        "en": "Q.7 Which is the geographical coverage of the assessment? (tick as many boxes as necessary)"
+      },
+      "required": false,
+      "slug": "w_q7-which-geographical-coverage-assessment-tick",
+      "choices": {
+        "ru": [
+          "Глобальный",
+          "Региональный (над национальным уровнем)",
+          "Национальный",
+          "Субнациональный и/или локальный"
+        ],
+        "en": [
+          "Global",
+          "Regional(above national level)",
+          "National",
+          "Sub-national and/or local"
+        ]
+      },
+      "order": 71,
+      "type": "CheckboxesWidget",
+      "display": "vertical"
+    },
+    {
+      "title": {
+        "ru": "ПРОШЕДШИЙ ПЕРИОД",
+        "en": "PAST"
+      },
+      "required": false,
+      "slug": "w_past",
+      "choices": {
+        "ru": [
+          "5-ти летний период",
+          "10-ти летний период",
+          "20-ти летний период",
+          "более чем 20-ти летний период"
+        ],
+        "en": [
+          "5-year time series",
+          "10-year time series",
+          "20-year time series",
+          "over 20-year time series"
+        ]
+      },
+      "order": 94,
+      "type": "CheckboxesWidget",
+      "display": "horizontal"
+    },
+    {
+      "title": {
+        "ru": "БУДУЩИЙ ПЕРИОД",
+        "en": "FUTURE"
+      },
+      "required": false,
+      "slug": "w_future",
+      "choices": {
+        "ru": [
+          "Следующие 5 лет",
+          "Следующие 10 лет",
+          "Следующие более чем 10 лет"
+        ],
+        "en": [
+          "next 5 years",
+          "next 10 years",
+          "over next 10 years"
+        ]
+      },
+      "order": 98,
+      "type": "CheckboxesWidget",
+      "display": "horizontal"
+    },
+    {
+      "title": {
+        "ru": "Если \"Да\", укажите тип действий (отметьте все подходящие варианты):",
+        "en": "If Yes, specify the type of efforts (tick as many boxes as necessary)"
+      },
+      "required": false,
+      "slug": "w_if-yes-specify-type-efforts-tick-many-boxes",
+      "choices": {
+        "ru": [
+          "Техническое содействие",
+          "Укрепление институционального потенциала",
+          "Финансовые",
+          "Технологические"
+        ],
+        "en": [
+          "Technical assistance",
+          "Capacity building",
+          "Financial",
+          "Technology"
+        ]
+      },
+      "order": 143,
+      "type": "CheckboxesWidget",
+      "display": "vertical"
+    },
+    {
+      "title": {
+        "ru": "Q.15 Как был представлен оценочный доклад и сообщены выводы? (отметьте все подходящие варианты)",
+        "en": "Q.15 How was the assessment report presented and the findings communicated? (tick as many boxes as necessary)"
+      },
+      "required": false,
+      "slug": "w_q15-how-was-assessment-report-presented-and",
+      "choices": {
+        "ru": [
+          "Пресс-релиз(-ы)",
+          "Радио, телевидение или подобные СМИ",
+          "Конференция(–и) или аналогичное(-ые) мероприятие(-я)",
+          "Рассылка(-и) новостей",
+          "Другое"
+        ],
+        "en": [
+          "Press release(s)",
+          "Radio, TV or similar media",
+          "Conference(s) or similar event(s)",
+          "Newsletter(s)",
+          "Other"
+        ]
+      },
+      "order": 151,
+      "type": "CheckboxesWidget",
+      "display": "vertical"
+    },
+    {
+      "title": {
+        "ru": "Q.16 Как был обеспечен доступ к оценке?",
+        "en": "Q.16 How is the assessment made available? (tick as many boxes as necessary)"
+      },
+      "required": false,
+      "slug": "w_q16-how-assessment-made-available-tick-many-boxes",
+      "choices": {
+        "ru": [
+          "PDF файл",
+          "Другой доступный для скачивания электронный файл, например MS Word файл",
+          "HTLM страница",
+          "Печатная копия",
+          "Другое"
+        ],
+        "en": [
+          "PDF file",
+          "Other downloadable electronic file e.g. MS Word",
+          "HTML page",
+          "Hardcopy",
+          "Other"
+        ]
+      },
+      "order": 160,
+      "type": "CheckboxesWidget",
+      "display": "vertical"
+    },
+    {
+      "title": {
+        "ru": "Если \"Да\", укажите, относятся ли эти варианты к одной из следующих стадий разработки политики (отметьте все подходящие варианты)",
+        "en": "If Yes, specify if these options refer to one of the following policy-making stages (tick as many boxes as necessary)"
+      },
+      "required": false,
+      "slug": "w_if-yes-specify-if-these-options-refer-one",
+      "choices": {
+        "ru": [
+          "Определение проблем и целей политики",
+          "Разработка политики",
+          "Утверждение политики",
+          "Реализация политики",
+          "Оценка политики"
+        ],
+        "en": [
+          "Framing",
+          "Formulation",
+          "Adoption",
+          "Implementation",
+          "Evaluation"
+        ]
+      },
+      "order": 375,
+      "type": "CheckboxesWidget",
+      "display": "vertical"
+    },
+    {
+      "title": {
+        "ru": "Страна или международная организация",
+        "en": "Country or international organisation"
+      },
+      "required": false,
+      "size_max": 0,
+      "order": 425,
+      "width": 75,
+      "type": "LocalizedStringWidget",
+      "slug": "w_country"
+    },
+    {
+      "title": {
+        "ru": "Тематика по водным ресурсам",
+        "en": "Water resources topics"
+      },
+      "required": false,
+      "slug": "w_water-resources-topics",
+      "order": 385
+    },
+    {
+      "title": {
+        "ru": "Тематика по управлению водными  ресурсами",
+        "en": "Water resource management topics"
+      },
+      "required": false,
+      "slug": "w_water-resource-management-topics",
+      "order": 390
+    },
+    {
+      "title": {
+        "ru": "Тематика по “Зеленой” экономике",
+        "en": "Green economy topics"
+      },
+      "required": false,
+      "slug": "w_green-economy-topics",
+      "order": 400
+    },
+    {
+      "title": {
+        "ru": "Тематика по эффективности использования ресурсов",
+        "en": "Resource efficiency topics"
+      },
+      "required": false,
+      "slug": "w_resource-efficiency-topics",
+      "order": 410
+    },
+    {
+      "title": {
+        "ru": "Если \"Да\", перечислите основные",
+        "en": "If Yes, list the main ones"
+      },
+      "required": false,
+      "slug": "w_if-yes-list-main-ones",
+      "order": 355
+    },
+    {
+      "title": {
+        "ru": "Если \"Да\", укажите основные приоритетные проблемы",
+        "en": "If Yes, specify the major priority concerns"
+      },
+      "required": false,
+      "slug": "w_if-yes-specify-major-priority-concerns",
+      "order": 345
+    },
+    {
+      "title": {
+        "ru": "Если \"Да\", укажите основной(-ые)",
+        "en": "If Yes, list main(s) one(s)"
+      },
+      "required": false,
+      "slug": "w_if-yes-list-mains-ones6917",
+      "order": 295
+    },
+    {
+      "title": {
+        "ru": "Если \"Да\"или \"Частично\", укажите уровень, на котором эти методики были стандатизированы/согласованы",
+        "en": "If Yes or Partially, specify the level at which these methodologies are standardized/agreed:"
+      },
+      "required": false,
+      "add_extra_choice": false,
+      "slug": "w_if-yes-or-partially-specify-level-which-these",
+      "choices": {
+        "ru": [
+          "Международный",
+          "Региональный",
+          "Национальный",
+          "Другой"
+        ],
+        "en": [
+          "International",
+          "Regional",
+          "National",
+          "Other"
+        ]
+      },
+      "order": 315,
+      "type": "RadioWidget",
+      "display": "vertical"
+    },
+    {
+      "title": {
+        "ru": "Если \"Да\", укажите на каких языках оно имеется?",
+        "en": "If Yes, specify in which languages it is available"
+      },
+      "required": false,
+      "size_max": 0,
+      "order": 185,
+      "width": 125,
+      "type": "LocalizedStringWidget",
+      "slug": "w_if-yes-specify-which-languages-it-available"
+    },
+    {
+      "title": {
+        "ru": "Q.1 Название оценочного доклада.",
+        "en": "Q.1 Name of the assessment report."
+      },
+      "required": false,
+      "size_max": 0,
+      "order": 10,
+      "width": 75,
+      "type": "LocalizedStringWidget",
+      "slug": "w_q1-name-assessment-report"
+    },
+    {
+      "title": {
+        "ru": "Подтверждение",
+        "en": "Confirmation"
+      },
+      "required": true,
+      "type": "ComboboxWidget",
+      "slug": "w_confirmation",
+      "order": 15
+    },
+    {
+      "title": {
+        "en": "Geo-coverage: country"
+      },
+      "required": false,
+      "size_max": 0,
+      "order": 22,
+      "width": 75,
+      "type": "StringWidget",
+      "slug": "w_official-country-region"
+    },
+    {
+      "title": {
+        "en": "Geo coverage: region"
+      },
+      "required": false,
+      "size_max": 0,
+      "order": 23,
+      "width": 75,
+      "type": "StringWidget",
+      "slug": "w_geo-coverage-region"
+    },
+    {
+      "title": {
+        "en": "VL Assessment Report ID"
+      },
+      "required": false,
+      "size_max": 0,
+      "order": 11,
+      "width": 50,
+      "type": "StringWidget",
+      "slug": "w_vlid"
+    }
+  ],
+  "title": {
+    "ru": "Опросный лист для обзора AoA",
+    "en": "AoA REVIEW TEMPLATE"
+  }
+}

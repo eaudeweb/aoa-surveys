@@ -1,556 +1,556 @@
 {
-    "labels": [],
-    "slug": "virtual-library-extended",
-    "questions": [
-        {
-            "title": {
-                "ru": "Охват отчета",
-                "en": "Report coverage"
-            },
-            "required": true,
-            "add_extra_choice": false,
-            "slug": "w_theme-coverage",
-            "choices": {
-                "ru": [
-                    "Глобальный",
-                    "Региональный/Трансграничный",
-                    "Национальный/Локальный"
-                ],
-                "en": [
-                    "Global",
-                    "Regional/Transboundary",
-                    "National/Local"
-                ]
-            },
-            "order": 70,
-            "type": "RadioWidget",
-            "display": "vertical"
-        },
-        {
-            "title": {
-                "ru": "Существуют ли другие критерии, на основании которых Вы бы назначили приоритет выбора этой оценки",
-                "en": "Other criteria"
-            },
-            "required": true,
-            "add_extra_choice": false,
-            "slug": "w_other-criteria",
-            "choices": {
-                "ru": [
-                    "Да",
-                    "Нет"
-                ],
-                "en": [
-                    "Yes",
-                    "No"
-                ]
-            },
-            "order": 65,
-            "type": "RadioWidget",
-            "display": "vertical"
-        },
-        {
-            "title": {
-                "ru": "Имеет ли публикация оценки какие-либо конкретные рамки или цели",
-                "en": "Has the assessment been published for any specific scope or purpose"
-            },
-            "required": true,
-            "add_extra_choice": false,
-            "slug": "w_specific-scope-or-purpose",
-            "choices": {
-                "ru": [
-                    "Да",
-                    "Нет"
-                ],
-                "en": [
-                    "Yes",
-                    "No"
-                ]
-            },
-            "order": 40,
-            "type": "RadioWidget",
-            "display": "vertical"
-        },
-        {
-            "title": {
-                "ru": "Оценка является официальной",
-                "en": "Assessment is formal"
-            },
-            "required": true,
-            "add_extra_choice": false,
-            "slug": "w_is-formal",
-            "choices": {
-                "ru": [
-                    "Да",
-                    "Нет (НПО)",
-                    "Нет (Академическая организация)",
-                    "Нет (Предприятие)",
-                    "Нет (Другое)"
-                ],
-                "en": [
-                    "Yes",
-                    "No (NGO)",
-                    "No (Academic organization)",
-                    "No (Enterprise)",
-                    "No (Other)"
-                ]
-            },
-            "order": 50,
-            "type": "RadioWidget",
-            "display": "vertical"
-        },
-        {
-            "title": {
-                "ru": "Загрузить оценку",
-                "en": "Upload assessment"
-            },
-            "required": false,
-            "size_max": 104857600,
-            "order": 31,
-            "type": "FileWidget",
-            "slug": "w_assessment-upload"
-        },
-        {
-            "title": {
-                "ru": "Если да, укажите основные критерии",
-                "en": "If yes, specify the main criterion"
-            },
-            "required": false,
-            "size_max": 0,
-            "order": 68,
-            "width": 80,
-            "type": "LocalizedStringWidget",
-            "slug": "w_main-criterion"
-        },
-        {
-            "title": {
-                "ru": "Название оценки",
-                "en": "Name of the Assessment"
-            },
-            "required": true,
-            "size_max": 0,
-            "order": 20,
-            "width": 80,
-            "type": "LocalizedStringWidget",
-            "slug": "w_assessment-name"
-        },
-        {
-            "title": {
-                "ru": "Название организации, которая проводить оценку",
-                "en": "Name of the organisation conducting the assessment"
-            },
-            "required": true,
-            "size_max": 0,
-            "order": 25,
-            "width": 80,
-            "type": "LocalizedStringWidget",
-            "slug": "w_body-conducting-assessment"
-        },
-        {
-            "title": {
-                "ru": "Публично доступная",
-                "en": "Publicly available"
-            },
-            "required": true,
-            "add_extra_choice": false,
-            "slug": "w_publicly-available",
-            "choices": {
-                "ru": [
-                    "Да",
-                    "Нет"
-                ],
-                "en": [
-                    "Yes",
-                    "No"
-                ]
-            },
-            "order": 60,
-            "type": "RadioWidget",
-            "display": "vertical"
-        },
-        {
-            "title": {
-                "ru": "Локализовать Вашу оценку",
-                "en": "Address of the organisation"
-            },
-            "required": true,
-            "type": "GeoWidget",
-            "slug": "w_location",
-            "order": 27
-        },
-        {
-            "title": {
-                "ru": "URL адрес",
-                "en": "URL"
-            },
-            "required": false,
-            "size_max": 0,
-            "order": 30,
-            "width": 80,
-            "type": "StringWidget",
-            "slug": "w_assessment-url"
-        },
-        {
-            "title": {
-                "ru": "Год, в котором оценка была опубликована",
-                "en": "Year in which the assessment was published"
-            },
-            "required": true,
-            "size_max": 0,
-            "order": 21,
-            "width": 20,
-            "type": "StringWidget",
-            "slug": "w_assessment-year"
-        },
-        {
-            "title": {
-                "ru": "Тема",
-                "en": "Theme"
-            },
-            "required": true,
-            "slug": "w_theme",
-            "choices": {
-                "ru": [
-                    "Bода",
-                    "«Зеленая» экономика и устойчивое развитие",
-                    "биоразнообразие",
-                    "воздух",
-                    "отходы",
-                    "изменение климата"
-                ],
-                "en": [
-                    "Water",
-                    "Green economy and resource efficiency",
-                    "Biodiversity",
-                    "Air",
-                    "Waste",
-                    "Climate change"
-                ]
-            },
-            "order": 71,
-            "type": "CheckboxesWidget",
-            "display": "vertical"
-        },
-        {
-            "title": {
-                "ru": "Только на бумаге",
-                "en": "Paper only"
-            },
-            "required": false,
-            "slug": "w_paper-only",
-            "choices": {
-                "ru": [
-                    "Оценка была опубликована только на бумаге"
-                ],
-                "en": [
-                    "The assessment was published on paper only"
-                ]
-            },
-            "order": 32,
-            "type": "CheckboxesWidget",
-            "display": "vertical"
-        },
-        {
-            "title": {
-                "ru": "Географический охват: cтрана",
-                "en": "Geo-coverage: country"
-            },
-            "required": false,
-            "slug": "w_official-country-region",
-            "choices": {
-                "ru": [
-                    "Albania",
-                    "Andorra",
-                    "Armenia",
-                    "Austria",
-                    "Azerbaijan",
-                    "Belarus",
-                    "Belgium",
-                    "Bosnia and Herzegovina",
-                    "Bulgaria",
-                    "Croatia",
-                    "Cyprus",
-                    "Czech Republic",
-                    "Denmark",
-                    "Estonia",
-                    "Finland",
-                    "France",
-                    "Georgia",
-                    "Germany",
-                    "Greece",
-                    "Hungary",
-                    "Iceland",
-                    "Ireland",
-                    "Italy",
-                    "Kazakhstan",
-                    "Kyrgyzstan",
-                    "Latvia",
-                    "Liechtenstein",
-                    "Lithuania",
-                    "Luxembourg",
-                    "FYR of Macedonia",
-                    "Malta",
-                    "Republic of Moldova",
-                    "Monaco",
-                    "Montenegro",
-                    "the Netherlands",
-                    "Norway",
-                    "Poland",
-                    "Portugal",
-                    "Romania",
-                    "Russian Federation",
-                    "San Marino",
-                    "Serbia",
-                    "Slovakia",
-                    "Slovenia",
-                    "Spain",
-                    "Sweden",
-                    "Switzerland",
-                    "Tajikistan",
-                    "Turkey",
-                    "Turkmenistan",
-                    "Ukraine",
-                    "the United Kingdom",
-                    "Uzbekistan",
-                    "Kosovo under un security council 1244/9950",
-                    "Afghanistan",
-                    "Algeria",
-                    "Australia",
-                    "Brazil",
-                    "Cambodia",
-                    "Cameroun",
-                    "Canada",
-                    "China",
-                    "Costa Rica",
-                    "Egypt",
-                    "Honduras",
-                    "India",
-                    "Indonesia",
-                    "Iran",
-                    "Israel",
-                    "Japan",
-                    "Jordan",
-                    "Kenya",
-                    "Korea",
-                    "Lebanon",
-                    "Libya",
-                    "Mauritius",
-                    "Morocco",
-                    "Nepal",
-                    "Nigeria",
-                    "Palestinian territory",
-                    "Singapore",
-                    "Syria",
-                    "Tunisia",
-                    "Uganda",
-                    "USA",
-                    "others"
-                ],
-                "en": [
-                    "Albania",
-                    "Andorra",
-                    "Armenia",
-                    "Austria",
-                    "Azerbaijan",
-                    "Belarus",
-                    "Belgium",
-                    "Bosnia and Herzegovina",
-                    "Bulgaria",
-                    "Croatia",
-                    "Cyprus",
-                    "Czech Republic",
-                    "Denmark",
-                    "Estonia",
-                    "Finland",
-                    "France",
-                    "Georgia",
-                    "Germany",
-                    "Greece",
-                    "Hungary",
-                    "Iceland",
-                    "Ireland",
-                    "Italy",
-                    "Kazakhstan",
-                    "Kyrgyzstan",
-                    "Latvia",
-                    "Liechtenstein",
-                    "Lithuania",
-                    "Luxembourg",
-                    "Former Yugoslav Republic of Macedonia",
-                    "Malta",
-                    "Republic of Moldova",
-                    "Monaco",
-                    "Montenegro",
-                    "the Netherlands",
-                    "Norway",
-                    "Poland",
-                    "Portugal",
-                    "Romania",
-                    "Russian Federation",
-                    "San Marino",
-                    "Serbia",
-                    "Slovakia",
-                    "Slovenia",
-                    "Spain",
-                    "Sweden",
-                    "Switzerland",
-                    "Tajikistan",
-                    "Turkey",
-                    "Turkmenistan",
-                    "Ukraine",
-                    "the United Kingdom",
-                    "Uzbekistan",
-                    "Kosovo under UN Security Council Resolution 1244",
-                    "Afghanistan",
-                    "Algeria",
-                    "Australia",
-                    "Brazil",
-                    "Cambodia",
-                    "Cameroun",
-                    "Canada",
-                    "China",
-                    "Costa Rica",
-                    "Egypt",
-                    "Honduras",
-                    "India",
-                    "Indonesia",
-                    "Iran",
-                    "Israel",
-                    "Japan",
-                    "Jordan",
-                    "Kenya",
-                    "Korea",
-                    "Lebanon",
-                    "Libya",
-                    "Mauritius",
-                    "Morocco",
-                    "Nepal",
-                    "Nigeria",
-                    "Palestinian territory",
-                    "Singapore",
-                    "Syria",
-                    "Tunisia",
-                    "Uganda",
-                    "USA",
-                    "others"
-                ]
-            },
-            "order": 22,
-            "type": "CheckboxesWidget",
-            "display": "vertical"
-        },
-        {
-            "title": {
-                "ru": "Географический охват: pегион",
-                "en": "Geo-coverage: region"
-            },
-            "required": false,
-            "slug": "w_geo-coverage-region",
-            "choices": {
-                "ru": [
-                    "Caucasus",
-                    "Central Asia",
-                    "Eastern Europe",
-                    "EEA member countries",
-                    "Russian Federation",
-                    "Western Balkans",
-                    "Africa",
-                    "Asia",
-                    "Global",
-                    "Middle East",
-                    "North America",
-                    "Northen Africa",
-                    "Pacific countries",
-                    "other European",
-                    "other OECD countries"
-                ],
-                "en": [
-                    "Caucasus",
-                    "Central Asia",
-                    "Eastern Europe",
-                    "EEA member countries",
-                    "Russian Federation",
-                    "Western Balkans",
-                    "Africa",
-                    "Asia",
-                    "Global",
-                    "Middle East",
-                    "North America",
-                    "Northen Africa",
-                    "Pacific countries",
-                    "other European",
-                    "other OECD countries"
-                ]
-            },
-            "order": 23,
-            "type": "CheckboxesWidget",
-            "display": "vertical"
-        },
-        {
-            "title": {
-                "ru": "Тип документа",
-                "en": "Type of document"
-            },
-            "required": false,
-            "slug": "w_type-document",
-            "choices": {
-                "ru": [
-                    "Section in State of Environment report",
-                    "Section in environmental performance review",
-                    "State of water assessment/report – National level",
-                    "State of water assessment/report – Sub-national level",
-                    "State of water assessment/report – Regional level",
-                    "State of green economy assessment/report – National level",
-                    "State of green economy assessment/report – Sub-national level",
-                    "State of green economy assessment/report – Regional level",
-                    "Sectorial report",
-                    "Water sector or NGOs report",
-                    "Water statistics",
-                    "Environmental statistics",
-                    "Environmental indicator set – National",
-                    "Environmental indicator set – Sub-national",
-                    "Environmental indicator set – Regional",
-                    "Environmental compendium",
-                    "Water indicator set"
-                ],
-                "en": [
-                    "Section in State of Environment report",
-                    "Section in environmental performance review",
-                    "State of water assessment/report – National level",
-                    "State of water assessment/report – Sub-national level",
-                    "State of water assessment/report – Regional/Global level",
-                    "State of green economy assessment/report – National level",
-                    "State of green economy assessment/report – Sub-national level",
-                    "State of green economy assessment/report – Regional/Global level",
-                    "Sectorial report",
-                    "Water sector or NGOs report",
-                    "Water statistics",
-                    "Environmental statistics",
-                    "Environmental indicator set – National",
-                    "Environmental indicator set – Sub-national",
-                    "Environmental indicator set – Regional",
-                    "Environmental compendium",
-                    "Water indicator set"
-                ]
-            },
-            "order": 24,
-            "type": "CheckboxesWidget",
-            "display": "vertical"
-        },
-        {
-            "rows": 5,
-            "title": {
-                "ru": "Название на языке оригинала",
-                "en": "Title in original language"
-            },
-            "required": true,
-            "order": 10,
-            "type": "TextAreaWidget",
-            "slug": "w_title-original-language",
-            "columns": 50
-        }
-    ],
-    "title": {
-        "ru": "Добро пожаловать в виртуальную библиотеку Оценки оценок",
-        "en": "Welcome to the thematic extended Virtual Library of the Assessment of Assessments -- DRAFT"
+  "labels": [],
+  "slug": "virtual-library-extended",
+  "questions": [
+    {
+      "title": {
+        "ru": "Охват отчета",
+        "en": "Report coverage"
+      },
+      "required": true,
+      "add_extra_choice": false,
+      "slug": "w_theme-coverage",
+      "choices": {
+        "ru": [
+          "Глобальный",
+          "Региональный/Трансграничный",
+          "Национальный/Локальный"
+        ],
+        "en": [
+          "Global",
+          "Regional/Transboundary",
+          "National/Local"
+        ]
+      },
+      "order": 70,
+      "type": "RadioWidget",
+      "display": "vertical"
+    },
+    {
+      "title": {
+        "ru": "Существуют ли другие критерии, на основании которых Вы бы назначили приоритет выбора этой оценки",
+        "en": "Other criteria"
+      },
+      "required": true,
+      "add_extra_choice": false,
+      "slug": "w_other-criteria",
+      "choices": {
+        "ru": [
+          "Да",
+          "Нет"
+        ],
+        "en": [
+          "Yes",
+          "No"
+        ]
+      },
+      "order": 65,
+      "type": "RadioWidget",
+      "display": "vertical"
+    },
+    {
+      "title": {
+        "ru": "Имеет ли публикация оценки какие-либо конкретные рамки или цели",
+        "en": "Has the assessment been published for any specific scope or purpose"
+      },
+      "required": true,
+      "add_extra_choice": false,
+      "slug": "w_specific-scope-or-purpose",
+      "choices": {
+        "ru": [
+          "Да",
+          "Нет"
+        ],
+        "en": [
+          "Yes",
+          "No"
+        ]
+      },
+      "order": 40,
+      "type": "RadioWidget",
+      "display": "vertical"
+    },
+    {
+      "title": {
+        "ru": "Оценка является официальной",
+        "en": "Assessment is formal"
+      },
+      "required": true,
+      "add_extra_choice": false,
+      "slug": "w_is-formal",
+      "choices": {
+        "ru": [
+          "Да",
+          "Нет (НПО)",
+          "Нет (Академическая организация)",
+          "Нет (Предприятие)",
+          "Нет (Другое)"
+        ],
+        "en": [
+          "Yes",
+          "No (NGO)",
+          "No (Academic organization)",
+          "No (Enterprise)",
+          "No (Other)"
+        ]
+      },
+      "order": 50,
+      "type": "RadioWidget",
+      "display": "vertical"
+    },
+    {
+      "title": {
+        "ru": "Загрузить оценку",
+        "en": "Upload assessment"
+      },
+      "required": false,
+      "size_max": 104857600,
+      "order": 31,
+      "type": "FileWidget",
+      "slug": "w_assessment-upload"
+    },
+    {
+      "title": {
+        "ru": "Если да, укажите основные критерии",
+        "en": "If yes, specify the main criterion"
+      },
+      "required": false,
+      "size_max": 0,
+      "order": 68,
+      "width": 80,
+      "type": "LocalizedStringWidget",
+      "slug": "w_main-criterion"
+    },
+    {
+      "title": {
+        "ru": "Название оценки",
+        "en": "Name of the Assessment"
+      },
+      "required": true,
+      "size_max": 0,
+      "order": 20,
+      "width": 80,
+      "type": "LocalizedStringWidget",
+      "slug": "w_assessment-name"
+    },
+    {
+      "title": {
+        "ru": "Название организации, которая проводить оценку",
+        "en": "Name of the organisation conducting the assessment"
+      },
+      "required": true,
+      "size_max": 0,
+      "order": 25,
+      "width": 80,
+      "type": "LocalizedStringWidget",
+      "slug": "w_body-conducting-assessment"
+    },
+    {
+      "title": {
+        "ru": "Публично доступная",
+        "en": "Publicly available"
+      },
+      "required": true,
+      "add_extra_choice": false,
+      "slug": "w_publicly-available",
+      "choices": {
+        "ru": [
+          "Да",
+          "Нет"
+        ],
+        "en": [
+          "Yes",
+          "No"
+        ]
+      },
+      "order": 60,
+      "type": "RadioWidget",
+      "display": "vertical"
+    },
+    {
+      "title": {
+        "ru": "Локализовать Вашу оценку",
+        "en": "Address of the organisation"
+      },
+      "required": true,
+      "type": "GeoWidget",
+      "slug": "w_location",
+      "order": 27
+    },
+    {
+      "title": {
+        "ru": "URL адрес",
+        "en": "URL"
+      },
+      "required": false,
+      "size_max": 0,
+      "order": 30,
+      "width": 80,
+      "type": "StringWidget",
+      "slug": "w_assessment-url"
+    },
+    {
+      "title": {
+        "ru": "Год, в котором оценка была опубликована",
+        "en": "Year in which the assessment was published"
+      },
+      "required": true,
+      "size_max": 0,
+      "order": 21,
+      "width": 20,
+      "type": "StringWidget",
+      "slug": "w_assessment-year"
+    },
+    {
+      "title": {
+        "ru": "Тема",
+        "en": "Theme"
+      },
+      "required": true,
+      "slug": "w_theme",
+      "choices": {
+        "ru": [
+          "Bода",
+          "«Зеленая» экономика и устойчивое развитие",
+          "биоразнообразие",
+          "воздух",
+          "отходы",
+          "изменение климата"
+        ],
+        "en": [
+          "Water",
+          "Green economy and resource efficiency",
+          "Biodiversity",
+          "Air",
+          "Waste",
+          "Climate change"
+        ]
+      },
+      "order": 71,
+      "type": "CheckboxesWidget",
+      "display": "vertical"
+    },
+    {
+      "title": {
+        "ru": "Только на бумаге",
+        "en": "Paper only"
+      },
+      "required": false,
+      "slug": "w_paper-only",
+      "choices": {
+        "ru": [
+          "Оценка была опубликована только на бумаге"
+        ],
+        "en": [
+          "The assessment was published on paper only"
+        ]
+      },
+      "order": 32,
+      "type": "CheckboxesWidget",
+      "display": "vertical"
+    },
+    {
+      "title": {
+        "ru": "Географический охват: cтрана",
+        "en": "Geo-coverage: country"
+      },
+      "required": false,
+      "slug": "w_official-country-region",
+      "choices": {
+        "ru": [
+          "Albania",
+          "Andorra",
+          "Armenia",
+          "Austria",
+          "Azerbaijan",
+          "Belarus",
+          "Belgium",
+          "Bosnia and Herzegovina",
+          "Bulgaria",
+          "Croatia",
+          "Cyprus",
+          "Czech Republic",
+          "Denmark",
+          "Estonia",
+          "Finland",
+          "France",
+          "Georgia",
+          "Germany",
+          "Greece",
+          "Hungary",
+          "Iceland",
+          "Ireland",
+          "Italy",
+          "Kazakhstan",
+          "Kyrgyzstan",
+          "Latvia",
+          "Liechtenstein",
+          "Lithuania",
+          "Luxembourg",
+          "FYR of Macedonia",
+          "Malta",
+          "Republic of Moldova",
+          "Monaco",
+          "Montenegro",
+          "the Netherlands",
+          "Norway",
+          "Poland",
+          "Portugal",
+          "Romania",
+          "Russian Federation",
+          "San Marino",
+          "Serbia",
+          "Slovakia",
+          "Slovenia",
+          "Spain",
+          "Sweden",
+          "Switzerland",
+          "Tajikistan",
+          "Turkey",
+          "Turkmenistan",
+          "Ukraine",
+          "the United Kingdom",
+          "Uzbekistan",
+          "Kosovo under un security council 1244/9950",
+          "Afghanistan",
+          "Algeria",
+          "Australia",
+          "Brazil",
+          "Cambodia",
+          "Cameroun",
+          "Canada",
+          "China",
+          "Costa Rica",
+          "Egypt",
+          "Honduras",
+          "India",
+          "Indonesia",
+          "Iran",
+          "Israel",
+          "Japan",
+          "Jordan",
+          "Kenya",
+          "Korea",
+          "Lebanon",
+          "Libya",
+          "Mauritius",
+          "Morocco",
+          "Nepal",
+          "Nigeria",
+          "Palestinian territory",
+          "Singapore",
+          "Syria",
+          "Tunisia",
+          "Uganda",
+          "USA",
+          "others"
+        ],
+        "en": [
+          "Albania",
+          "Andorra",
+          "Armenia",
+          "Austria",
+          "Azerbaijan",
+          "Belarus",
+          "Belgium",
+          "Bosnia and Herzegovina",
+          "Bulgaria",
+          "Croatia",
+          "Cyprus",
+          "Czech Republic",
+          "Denmark",
+          "Estonia",
+          "Finland",
+          "France",
+          "Georgia",
+          "Germany",
+          "Greece",
+          "Hungary",
+          "Iceland",
+          "Ireland",
+          "Italy",
+          "Kazakhstan",
+          "Kyrgyzstan",
+          "Latvia",
+          "Liechtenstein",
+          "Lithuania",
+          "Luxembourg",
+          "Former Yugoslav Republic of Macedonia",
+          "Malta",
+          "Republic of Moldova",
+          "Monaco",
+          "Montenegro",
+          "the Netherlands",
+          "Norway",
+          "Poland",
+          "Portugal",
+          "Romania",
+          "Russian Federation",
+          "San Marino",
+          "Serbia",
+          "Slovakia",
+          "Slovenia",
+          "Spain",
+          "Sweden",
+          "Switzerland",
+          "Tajikistan",
+          "Turkey",
+          "Turkmenistan",
+          "Ukraine",
+          "the United Kingdom",
+          "Uzbekistan",
+          "Kosovo under UN Security Council Resolution 1244",
+          "Afghanistan",
+          "Algeria",
+          "Australia",
+          "Brazil",
+          "Cambodia",
+          "Cameroun",
+          "Canada",
+          "China",
+          "Costa Rica",
+          "Egypt",
+          "Honduras",
+          "India",
+          "Indonesia",
+          "Iran",
+          "Israel",
+          "Japan",
+          "Jordan",
+          "Kenya",
+          "Korea",
+          "Lebanon",
+          "Libya",
+          "Mauritius",
+          "Morocco",
+          "Nepal",
+          "Nigeria",
+          "Palestinian territory",
+          "Singapore",
+          "Syria",
+          "Tunisia",
+          "Uganda",
+          "USA",
+          "others"
+        ]
+      },
+      "order": 22,
+      "type": "CheckboxesWidget",
+      "display": "vertical"
+    },
+    {
+      "title": {
+        "ru": "Географический охват: pегион",
+        "en": "Geo-coverage: region"
+      },
+      "required": false,
+      "slug": "w_geo-coverage-region",
+      "choices": {
+        "ru": [
+          "Caucasus",
+          "Central Asia",
+          "Eastern Europe",
+          "EEA member countries",
+          "Russian Federation",
+          "Western Balkans",
+          "Africa",
+          "Asia",
+          "Global",
+          "Middle East",
+          "North America",
+          "Northen Africa",
+          "Pacific countries",
+          "other European",
+          "other OECD countries"
+        ],
+        "en": [
+          "Caucasus",
+          "Central Asia",
+          "Eastern Europe",
+          "EEA member countries",
+          "Russian Federation",
+          "Western Balkans",
+          "Africa",
+          "Asia",
+          "Global",
+          "Middle East",
+          "North America",
+          "Northen Africa",
+          "Pacific countries",
+          "other European",
+          "other OECD countries"
+        ]
+      },
+      "order": 23,
+      "type": "CheckboxesWidget",
+      "display": "vertical"
+    },
+    {
+      "title": {
+        "ru": "Тип документа",
+        "en": "Type of document"
+      },
+      "required": false,
+      "slug": "w_type-document",
+      "choices": {
+        "ru": [
+          "Section in State of Environment report",
+          "Section in environmental performance review",
+          "State of water assessment/report – National level",
+          "State of water assessment/report – Sub-national level",
+          "State of water assessment/report – Regional level",
+          "State of green economy assessment/report – National level",
+          "State of green economy assessment/report – Sub-national level",
+          "State of green economy assessment/report – Regional level",
+          "Sectorial report",
+          "Water sector or NGOs report",
+          "Water statistics",
+          "Environmental statistics",
+          "Environmental indicator set – National",
+          "Environmental indicator set – Sub-national",
+          "Environmental indicator set – Regional",
+          "Environmental compendium",
+          "Water indicator set"
+        ],
+        "en": [
+          "Section in State of Environment report",
+          "Section in environmental performance review",
+          "State of water assessment/report – National level",
+          "State of water assessment/report – Sub-national level",
+          "State of water assessment/report – Regional/Global level",
+          "State of green economy assessment/report – National level",
+          "State of green economy assessment/report – Sub-national level",
+          "State of green economy assessment/report – Regional/Global level",
+          "Sectorial report",
+          "Water sector or NGOs report",
+          "Water statistics",
+          "Environmental statistics",
+          "Environmental indicator set – National",
+          "Environmental indicator set – Sub-national",
+          "Environmental indicator set – Regional",
+          "Environmental compendium",
+          "Water indicator set"
+        ]
+      },
+      "order": 24,
+      "type": "CheckboxesWidget",
+      "display": "vertical"
+    },
+    {
+      "rows": 5,
+      "title": {
+        "ru": "Название на языке оригинала",
+        "en": "Title in original language"
+      },
+      "required": true,
+      "order": 10,
+      "type": "TextAreaWidget",
+      "slug": "w_title-original-language",
+      "columns": 50
     }
+  ],
+  "title": {
+    "ru": "Добро пожаловать в виртуальную библиотеку Оценки оценок",
+    "en": "Welcome to the thematic extended Virtual Library of the Assessment of Assessments -- DRAFT"
+  }
 }

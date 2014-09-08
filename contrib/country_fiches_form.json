@@ -1,0 +1,248 @@
+{
+  "labels": [],
+  "slug": "country_fiches",
+  "questions": [
+    {
+      "title": {
+        "en": "Title"
+      },
+      "required": true,
+      "size_max": 0,
+      "order": 10,
+      "width": 150,
+      "type": "LocalizedStringWidget",
+      "slug": "w_title"
+    },
+    {
+      "title": {
+        "en": "URL"
+      },
+      "required": false,
+      "size_max": 0,
+      "order": 20,
+      "width": 150,
+      "type": "StringWidget",
+      "slug": "w_url"
+    },
+    {
+      "title": {
+        "en": "Author"
+      },
+      "required": false,
+      "size_max": 0,
+      "order": 30,
+      "width": 150,
+      "type": "LocalizedStringWidget",
+      "slug": "w_author"
+    },
+    {
+      "title": {
+        "en": "Type of document"
+      },
+      "required": true,
+      "slug": "w_type-document",
+      "choices": {
+        "ru": [
+          "Water sector or NGOs report",
+          "Water statistics",
+          "Environmental statistics",
+          "Environmental indicator set – National",
+          "Environmental indicator set – Sub-national",
+          "Environmental indicator set – Regional",
+          "Environmental compendium",
+          "Water indicator set",
+          "Website",
+          "Library services",
+          "Country profiles",
+          "National Institution dealing with water",
+          "National Institution dealing with green economy"
+        ],
+        "en": [
+          "Water sector or NGOs report",
+          "Water statistics",
+          "Environmental statistics",
+          "Environmental indicator set – National",
+          "Environmental indicator set – Sub-national",
+          "Environmental indicator set – Regional",
+          "Environmental compendium",
+          "Water indicator set",
+          "Website",
+          "Library services",
+          "Country profiles",
+          "National Institution dealing with water",
+          "National Institution dealing with green economy"
+        ]
+      },
+      "order": 60,
+      "type": "CheckboxesWidget",
+      "display": "vertical"
+    },
+    {
+      "title": {
+        "en": "Publication year"
+      },
+      "required": false,
+      "size_max": 4,
+      "order": 40,
+      "width": 4,
+      "type": "StringWidget",
+      "slug": "w_publication-year"
+    },
+    {
+      "title": {
+        "en": "Theme"
+      },
+      "required": true,
+      "slug": "w_theme",
+      "choices": {
+        "ru": [
+          "Воды",
+          "\"Зеленая\" экономика"
+        ],
+        "en": [
+          "Water",
+          "Green Economy"
+        ]
+      },
+      "order": 50,
+      "type": "CheckboxesWidget",
+      "display": "horizontal"
+    },
+    {
+      "title": {
+        "en": "Country"
+      },
+      "required": true,
+      "slug": "w_country",
+      "choices": {
+        "ru": [
+          "Albania",
+          "Andorra",
+          "Armenia",
+          "Austria",
+          "Azerbaijan",
+          "Belarus",
+          "Belgium",
+          "Bosnia and Herzegovina",
+          "Bulgaria",
+          "Croatia",
+          "Cyprus",
+          "Czech Republic",
+          "Denmark",
+          "Estonia",
+          "Finland",
+          "France",
+          "Georgia",
+          "Germany",
+          "Greece",
+          "Hungary",
+          "Iceland",
+          "Ireland",
+          "Italy",
+          "Kazakhstan",
+          "Kyrgyzstan",
+          "Latvia",
+          "Liechtenstein",
+          "Lithuania",
+          "Luxembourg",
+          "FYR of Macedonia",
+          "Malta",
+          "Republic of Moldova",
+          "Monaco",
+          "Montenegro",
+          "the Netherlands",
+          "Norway",
+          "Poland",
+          "Portugal",
+          "Romania",
+          "Russian Federation",
+          "San Marino",
+          "Serbia",
+          "Slovakia",
+          "Slovenia",
+          "Spain",
+          "Sweden",
+          "Switzerland",
+          "Tajikistan",
+          "Turkey",
+          "Turkmenistan",
+          "Ukraine",
+          "the United Kingdom",
+          "Uzbekistan",
+          "Kosovo under un security council 1244/9950"
+        ],
+        "en": [
+          "Albania",
+          "Andorra",
+          "Armenia",
+          "Austria",
+          "Azerbaijan",
+          "Belarus",
+          "Belgium",
+          "Bosnia and Herzegovina",
+          "Bulgaria",
+          "Croatia",
+          "Cyprus",
+          "Czech Republic",
+          "Denmark",
+          "Estonia",
+          "Finland",
+          "France",
+          "Georgia",
+          "Germany",
+          "Greece",
+          "Hungary",
+          "Iceland",
+          "Ireland",
+          "Italy",
+          "Kazakhstan",
+          "Kyrgyzstan",
+          "Latvia",
+          "Liechtenstein",
+          "Lithuania",
+          "Luxembourg",
+          "Former Yugoslav Republic of Macedonia",
+          "Malta",
+          "Republic of Moldova",
+          "Monaco",
+          "Montenegro",
+          "the Netherlands",
+          "Norway",
+          "Poland",
+          "Portugal",
+          "Romania",
+          "Russian Federation",
+          "San Marino",
+          "Serbia",
+          "Slovakia",
+          "Slovenia",
+          "Spain",
+          "Sweden",
+          "Switzerland",
+          "Tajikistan",
+          "Turkey",
+          "Turkmenistan",
+          "Ukraine",
+          "the United Kingdom",
+          "Uzbekistan",
+          "Kosovo under UN Security Council Resolution 1244"
+        ]
+      },
+      "order": 70,
+      "type": "CheckboxesWidget",
+      "display": "horizontal"
+    },
+    {
+      "title": {
+        "en": "Sector"
+      },
+      "required": false,
+      "type": "ComboboxWidget",
+      "slug": "w_sector",
+      "order": 65
+    }
+  ],
+  "title": {
+    "en": "Country Fiches"
+  }
+}
