@@ -4,6 +4,13 @@ response = request.response
 mega_survey = "/aoa/tools/virtual_library/virtual-library-extended/"
 languages = ["en", "ru"]
 
+def filter_lang(mapping):
+    result = {}
+    for key, value in mapping.items():
+        result[key] = value[0]
+
+    return result
+
 form = {}
 survey = context.restrictedTraverse(mega_survey)
 survey_locals = context.get_local(survey)
@@ -16,20 +23,14 @@ for attribute in survey.objectValues():
         if attribute.meta_type != "Naaya Label Widget":
             field["required"] = attribute.required
 
-        local_properties = context.get_local(
-            attribute)  # get_local is an external method
-        title = {}
-        for lang in languages:
-            title[lang] = local_properties["title"][lang][0]
-        field["title"] = title
+        local_properties = context.get_local(attribute)
+        field["title"] = filter_lang(local_properties["title"])
 
         if attribute.meta_type == "Naaya Radio Widget":
             field["type"] = "RadioWidget"
             field["display"] = attribute.display
             field["add_extra_choice"] = attribute.add_extra_choice
-            field["choices"] = {}
-            for lang in languages:
-                field["choices"][lang] = local_properties["choices"][lang][0]
+            field["choices"] = filter_lang(local_properties["choices"])
 
         if attribute.meta_type == "Naaya File Widget":
             field["type"] = "FileWidget"
@@ -43,6 +44,9 @@ for attribute in survey.objectValues():
         if attribute.meta_type == "Naaya Geo Widget":
             field["type"] = "GeoWidget"
 
+        if attribute.meta_type == "Naaya Combobox Widget":
+            field["type"] = "ComboboxWidget"
+
         if attribute.meta_type == "Naaya String Widget":
             field["type"] = "StringWidget"
             field["size_max"] = attribute.size_max
@@ -51,9 +55,7 @@ for attribute in survey.objectValues():
         if attribute.meta_type == "Naaya Checkboxes Widget":
             field["type"] = "CheckboxesWidget"
             field["display"] = attribute.display
-            field["choices"] = {}
-            for lang in languages:
-                field["choices"][lang] = local_properties["choices"][lang][0]
+            field["choices"] = filter_lang(local_properties["choices"])
 
         if attribute.meta_type == "Naaya Text Area Widget":
             field["type"] = "TextAreaWidget"
@@ -68,9 +70,7 @@ for attribute in survey.objectValues():
 form["questions"] = questions
 form["labels"] = labels
 form["slug"] = survey.id
-form["title"] = {}
-for lang in languages:
-    form["title"][lang] = survey_locals["title"][lang][0]
+form["title"] = filter_lang(survey_locals["title"])
 
 print context.get_json(form)  # get_json is an external method
 
