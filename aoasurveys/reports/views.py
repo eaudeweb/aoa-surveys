@@ -13,18 +13,29 @@ from aoasurveys.reports.models import FormExtra
 from aoasurveys.reports.utils import set_visible_fields, set_url_value
 
 
+class DetailFormView(DetailView, FormView):
+
+    def get(self, request, *args, **kwargs):
+        form_class = self.get_form_class()
+        form = self.get_form(form_class)
+        self.object = self.get_object()
+        context = self.get_context_data(object=self.object, form=form)
+        return self.render_to_response(context)
+
+
 class FormsIndex(ListView):
 
     template_name = 'reports/index.html'
     model = Form
 
 
-class AnswersView(DetailView, FormView):
+class AnswersView(DetailFormView):
 
     template_name = 'reports/answers.html'
     model = Form
     slug_url_kwarg = 'slug'
     form_class = FilteringForm
+    context_object_name = 'survey'
 
     def get_success_url(self):
         return reverse('answers_list', args=(self.get_object().slug,))
@@ -38,22 +49,22 @@ class AnswersView(DetailView, FormView):
                 set_url_value(field)
         return form
 
-    def get_context_data(self, **kwargs):
-        context = super(AnswersView, self).get_context_data(**kwargs)
-        form = FilteringForm()
-        form.set_fields(self.object.extra.filtering_fields)
-        context.update({
-            'form': form,
-        })
-        return context
+    def get_form_kwargs(self):
+        kwargs = super(AnswersView, self).get_form_kwargs()
+        kwargs.update({'fields': self.get_object().extra.filtering_fields})
+        return kwargs
+
+    def form_valid(self, form):
+        return super(AnswersView, self).form_valid(form)
 
 
-class FormExtraView(DetailView, FormView):
+class FormExtraView(DetailFormView):
 
     template_name = 'reports/form_extra.html'
     model = Form
     slug_url_kwarg = 'slug'
     form_class = SelectFieldsForm
+    context_object_name = 'survey'
 
     def get_success_url(self):
         return reverse('homepage')
@@ -61,7 +72,6 @@ class FormExtraView(DetailView, FormView):
     def get_context_data(self, **kwargs):
         context = super(FormExtraView, self).get_context_data(**kwargs)
         context.update({
-            'form': SelectFieldsForm(),
             'separator': settings.FIELDS_SEPARATOR,
         })
         return context

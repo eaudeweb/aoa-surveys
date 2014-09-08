@@ -8,7 +8,9 @@ class SelectFieldsForm(Form):
 
 class FilteringForm(Form):
 
-    def set_fields(self, fields):
+    def __init__(self, *args, **kwargs):
+        fields = kwargs.pop('fields', [])
+        super(FilteringForm, self).__init__(*args, **kwargs)
         for field in fields:
             if field.choices:
                 self.fields[field.slug] = MultipleChoiceField(
