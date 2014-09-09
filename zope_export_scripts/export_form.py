@@ -57,6 +57,11 @@ for attribute in survey.objectValues():
             field["display"] = attribute.display
             field["choices"] = filter_lang(local_properties["choices"])
 
+        if attribute.meta_type == "Naaya Checkbox Matrix Widget":
+            field["type"] = "CheckboxMatrixWidget"
+            field["choices"] = filter_lang(local_properties["choices"])
+            field["rows"] = filter_lang(local_properties["rows"])
+
         if attribute.meta_type == "Naaya Text Area Widget":
             field["type"] = "TextAreaWidget"
             field["rows"] = attribute.rows

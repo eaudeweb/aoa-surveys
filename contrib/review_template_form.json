@@ -1499,40 +1499,236 @@
       "slug": "w_country"
     },
     {
+      "rows": {
+        "ru": [
+          "Качество воды и уязвимость",
+          "Количество воды и уязвимость (в том числе экстремальные природные явления)",
+          "Опустынивание",
+          "Биологические ресурсы (рыбное хозяйство)",
+          "Определение характеристик естественной среды обитания",
+          "Экосистемы и биологическое разнообразие",
+          "Охраняемые и мигрирующие виды и охраняемые территории",
+          "Инвазивные виды",
+          "Болезни, передаваемые через воду"
+        ],
+        "en": [
+          "Water quantity and vulnerability (including extreme natural events)",
+          "Desertification",
+          "Living resources (fisheries)",
+          "Habitat characterization",
+          "Ecosystems and biodiversity",
+          "Protected and migratory species and protected areas",
+          "Invasive species",
+          "Water-borne diseases",
+          "Water quality and vulnerability"
+        ]
+      },
       "title": {
         "ru": "Тематика по водным ресурсам",
         "en": "Water resources topics"
       },
       "required": false,
-      "slug": "w_water-resources-topics",
-      "order": 385
+      "choices": {
+        "ru": [
+          "Политика",
+          "Законодательство",
+          "Движущие силы",
+          "Давление",
+          "Состояние",
+          "Воздействие",
+          "Реагирование",
+          "Тенденции",
+          "Горячие точки",
+          "Трансграничные проблемы"
+        ],
+        "en": [
+          "Policy",
+          "Legal",
+          "Drivers",
+          "Pressure",
+          "State",
+          "Impact",
+          "Response",
+          "Trends",
+          "Hot spots",
+          "Transboundary"
+        ]
+      },
+      "order": 385,
+      "type": "CheckboxMatrixWidget",
+      "slug": "w_water-resources-topics"
     },
     {
+      "rows": {
+        "ru": [
+          "Количество воды (в том числе ледники и экстремальные явления)",
+          "Управление водными ресурсами (в том числе меры по эффективности и адаптации)",
+          "Инфраструктура (в том числе финансовые аспекты, энергия, сточные воды, обессоливание, трубы/каналы/резервуары)",
+          "Потребление воды",
+          "Управление (в том числе трансграничные вопросы)",
+          "Экосистемные услуги и восстановление экосистем",
+          "Борьба с загрязнением воды",
+          "Социально-экономические аспекты (напр., доступ к питьевой воде)",
+          "Уязвимость"
+        ],
+        "en": [
+          "Water quantity (including glaciers and extreme events)",
+          "Water management (including efficiency and adaptation measures)",
+          "Infrastructure (including financial aspects, energy, wastewater, desalinisation, pipes/channels/reservoirs)",
+          "Water consumption",
+          "Governance (including transboundary issues)",
+          "Ecosystem services and restoration",
+          "Water pollution control",
+          "Socio-economic aspects (e.g. access to drinking water)",
+          "Vulnerability"
+        ]
+      },
       "title": {
         "ru": "Тематика по управлению водными  ресурсами",
         "en": "Water resource management topics"
       },
       "required": false,
-      "slug": "w_water-resource-management-topics",
-      "order": 390
+      "choices": {
+        "ru": [
+          "Политика",
+          "Законодательство",
+          "Движущие силы",
+          "Давление",
+          "Состояние",
+          "Воздействие",
+          "Реагирование",
+          "Тенденции",
+          "Горячие точки",
+          "Трансграничные проблемы"
+        ],
+        "en": [
+          "Policy",
+          "Legal",
+          "Drivers",
+          "Pressure",
+          "State",
+          "Impact",
+          "Response",
+          "Trends",
+          "Hot spots",
+          "Transboundary"
+        ]
+      },
+      "order": 390,
+      "type": "CheckboxMatrixWidget",
+      "slug": "w_water-resource-management-topics"
     },
     {
+      "rows": {
+        "ru": [
+          "Энергия из возобновляемых источников (напр., гидроэнергия, биотопливо и биомасса)",
+          "Энергоэффективность",
+          "Мобильность (качество воздуха, выбросы и шум)",
+          "Промышленность (выбросы и отходы)",
+          "Оценка воздействия на окружающую среду (ОВОС) и стратегическая оценка воздействия на окружающую среду (СОВОС)",
+          "Управление (в том числе институциональные схемы и многосторонние соглашения по окружающей среде) и  обзоры экологической результативности",
+          "Корпоративная социальная ответственность и экологическая отчетность",
+          "Прогнозы и сценарии (в том числе уязвимость, возможности, конкурентоспособность и миграция)"
+        ],
+        "en": [
+          "Renewable energy (e.g. hydropower, biofuels and biomass)",
+          "Energy efficiency",
+          "Mobility (air quality, emissions and noise)",
+          "Industry (emissions and waste)",
+          "Environmental Impact Assessment (EIA) and Strategic Impact Assessment (SIA)",
+          "Governance (including institutional arrangements and multilateral environmental agreements) and environmental performance reviews",
+          "Corporate social responsibility and environmental reporting",
+          "Futures and scenarios (including vulnerability, opportunities, competitiveness and migration)"
+        ]
+      },
       "title": {
         "ru": "Тематика по “Зеленой” экономике",
         "en": "Green economy topics"
       },
       "required": false,
-      "slug": "w_green-economy-topics",
-      "order": 400
+      "choices": {
+        "ru": [
+          "Политика",
+          "Законодательство",
+          "Движущие силы",
+          "Давление",
+          "Состояние",
+          "Воздействие",
+          "Реагирование",
+          "Тенденции",
+          "Горячие точки",
+          "Трансграничные проблемы"
+        ],
+        "en": [
+          "Policy",
+          "Legal",
+          "Drivers",
+          "Pressure",
+          "State",
+          "Impact",
+          "Response",
+          "Trends",
+          "Hot spots",
+          "Transboundary"
+        ]
+      },
+      "order": 400,
+      "type": "CheckboxMatrixWidget",
+      "slug": "w_green-economy-topics"
     },
     {
+      "rows": {
+        "ru": [
+          "Использование природного капитала (в том числе лесное хозяйство, сельское хозяйство, урбанизация, связанная с деградацией земли, почвы, водных ресурсов и биологического разнообразия)",
+          "Эффективность использования воды в промышленных, сельских и городских зонах",
+          "Анализ жизненного цикла",
+          "Экологический учёт",
+          "Модели потребления и производства",
+          "Туризм"
+        ],
+        "en": [
+          "Use of natural capital (including forestry, agriculture, urbanization linked to the use and degradation of land, soil, water and biodiversity)",
+          "Water efficiency in industrial, rural and urban areas",
+          "Life-cycle analysis",
+          "Environmental accounting",
+          "Consumption and production patterns",
+          "Tourism"
+        ]
+      },
       "title": {
         "ru": "Тематика по эффективности использования ресурсов",
         "en": "Resource efficiency topics"
       },
       "required": false,
-      "slug": "w_resource-efficiency-topics",
-      "order": 410
+      "choices": {
+        "ru": [
+          "Политика",
+          "Законодательство",
+          "Движущие силы",
+          "Давление",
+          "Состояние",
+          "Воздействие",
+          "Реагирование",
+          "Тенденции",
+          "Горячие точки",
+          "Трансграничные проблемы"
+        ],
+        "en": [
+          "Policy",
+          "Legal",
+          "Drivers",
+          "Pressure",
+          "State",
+          "Impact",
+          "Response",
+          "Trends",
+          "Hot spots",
+          "Transboundary"
+        ]
+      },
+      "order": 410,
+      "type": "CheckboxMatrixWidget",
+      "slug": "w_resource-efficiency-topics"
     },
     {
       "title": {
