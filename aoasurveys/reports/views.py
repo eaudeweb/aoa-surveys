@@ -62,7 +62,9 @@ class AnswersView(DetailFormView):
             set_visible_fields(answer, self.object.extra.visible_fields)
             for field in answer.visible_fields:
                 set_url_value(field)
-        return super(AnswersView, self).get_context_data(**kwargs)
+        context = super(AnswersView, self).get_context_data(**kwargs)
+        context.update({'advanced_enabled': bool(self.filter_query)})
+        return context
 
     def get_form_kwargs(self):
         kwargs = super(AnswersView, self).get_form_kwargs()

@@ -4,7 +4,7 @@
 
   <script>
     $(function () {
-        var dataTable = $('#answers_listing').dataTable();
+        var dataTable = $('#answers-listing').dataTable();
 
         $('#searchbox').keyup(function() {
             dataTable.fnFilter(this.value);
@@ -21,12 +21,18 @@
     <input id="searchbox" type="text">
   </label>
 
-  <form action="" method="POST">{% csrf_token %}
-      {{ form.as_p }}
-      <input type="submit" value="Filter" />
-  </form>
+  <a href="" id="advanced-filtering-button"
+      >{% if advanced_enabled %}Hide advanced filtering{% else %}Advanced filtering{% endif %}</a>
 
-  <table id="answers_listing" class="table table-condensed table-bordered">
+  <div id="advanced-filtering-form"
+      {% if not advanced_enabled %}style="display: none;"{% endif %}>
+    <form action="" method="POST">{% csrf_token %}
+        {{ form.as_p }}
+        <input type="submit" value="Filter" />
+    </form>
+  </div>
+
+  <table id="answers-listing" class="table table-condensed table-bordered">
     <thead>
       <tr>
       {% for field in object.extra.visible_fields %}

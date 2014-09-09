@@ -15,6 +15,7 @@ JS_ASSETS = (
     'js/lib/moment.js',
     'js/lib/bootstrap-datetimepicker.min.js',
     'js/lib/jquery.dataTables.min.js',
+    'js/aoa.js',
 )
 
 
