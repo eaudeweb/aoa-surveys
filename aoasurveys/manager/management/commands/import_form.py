@@ -13,15 +13,26 @@ class Command(BaseCommand):
     args = '<filename>'
     help = 'Import a dynamic form exported from Naaya-Survey'
 
+    def _concat_lang(self, langs):
+        return "%s\n%s" % (langs["en"], langs.get("ru", ""))
+
+    def _get_choices(self, langs):
+        pairs = zip(langs['en'], langs['ru'])
+        elems = ["%s\n%s" % (en, ru) for en, ru in pairs]
+        return ",".join(elems)
+
     def _parseForm(self, data):
         transaction.set_autocommit(False)
         try:
-            form = Form.objects.create(title=data["title"], slug=data["slug"])
+            form = Form.objects.create(
+                title=self._concat_lang(data["title"]),
+                slug=data["slug"]
+            )
             for question in data["questions"]:
                 params = {
-                    "label": question["title"],
+                    "label": self._concat_lang(question["title"]),
                     "slug": question["slug"],
-                    "order": question["sortorder"],
+                    "order": question["order"],
                     "required": question["required"],
                     "form": form
                 }
@@ -36,13 +47,13 @@ class Command(BaseCommand):
 
                 elif question["type"] == "CheckboxesWidget":
                     params["visible"] = question["display"]
-                    params["choices"] = ",".join(question["choices"])
+                    params["choices"] = self._get_choices(question["choices"])
                     params["field_type"] = CHECKBOX_MULTIPLE
 
                 elif question["type"] == "RadioWidget":
                     #TODO set add_extra_choice
                     params["visible"] = question["display"]
-                    params["choices"] = ",".join(question["choices"])
+                    params["choices"] = self._get_choices(question["choices"])
                     params["field_type"] = RADIO_MULTIPLE
 
                 elif question["type"] == "TextAreaWidget":
@@ -50,11 +61,11 @@ class Command(BaseCommand):
                     params["field_type"] = TEXTAREA
 
                 elif question["type"] == "ComboboxWidget":
-                    params["choices"] = ",".join(question["choices"])
+                    params["choices"] = self._get_choices(question["choices"])
                     params["field_type"] = SELECT
 
                 elif question["type"] == "CheckboxMatrixWidget":
-                    params["choices"] = ",".join(question["choices"])
+                    params["choices"] = self._get_choices(question["choices"])
                     params["field_type"] = CHECKBOX_MULTIPLE
 
                 elif question["type"] == "LocalizedTextAreaWidget":
