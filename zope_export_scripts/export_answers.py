@@ -1,6 +1,13 @@
 request = container.REQUEST
 response = request.response
 
+def filter_lang(mapping):
+    result = {}
+    for key, value in mapping.items():
+        result[key] = value[0]
+
+    return result
+
 mega_survey = "/aoa/tools/virtual_library/bibliography-details-each-assessment/"
 languages = ["en", "ru"]
 
@@ -12,6 +19,7 @@ for answer in survey.objectValues():
     if answer.id.startswith("answer_"):
         answers = {}
 
+        local_properties = context.get_local(answer)
         attributes = context.get_dict(answer)
         for attr, value in attributes.items():
             if attr.startswith("w_"):
@@ -21,7 +29,11 @@ for answer in survey.objectValues():
                     answers[attr] = context.get_file(value)
                 else:
                     answers[attr] = value
-            
+
+        for attr, value in local_properties.items():
+            if attr.startswith("w_"):
+                answers[attr] = filter_lang(local_properties[attr])
+
         entry = {"id": attributes["id"], "respondent": attributes["respondent"],
                  "modification_time": attributes["modification_time"].ISO8601()}
         if "draft" in attributes:

@@ -9,6 +9,15 @@ class Command(BaseCommand):
     args = '<filename>'
     help = 'Import answers exported from Naaya-Survey'
 
+    def _to_string(self, obj):
+        if isinstance(obj, list):
+            return ",".join([str(x) for x in obj])
+
+        if isinstance(obj, dict):
+            return "%s\n%s" % (obj.get("en", ""), obj.get("ru", ""))
+
+        return obj
+
     def _parseAnswers(self, data):
         transaction.set_autocommit(False)
         try:
@@ -25,7 +34,7 @@ class Command(BaseCommand):
                         if field:
                             FieldEntry.objects.create(
                                 entry=formentry,
-                                value=",".join(value) if isinstance(value, list) else value,
+                                value=self._to_string(value),
                                 field_id=field.pk
                             )
                         else:
