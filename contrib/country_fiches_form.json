@@ -237,9 +237,33 @@
         "en": "Sector"
       },
       "required": false,
+      "choices": {
+        "ru": [
+          "Не применяется",
+          "Energy (incl. Climate, renewable energy)",
+          "Housing",
+          "Transport",
+          "Water",
+          "Industry",
+          "Mining",
+          "Agriculture",
+          "Other"
+        ],
+        "en": [
+          "Not applicable",
+          "Energy (incl. Climate, renewable energy)",
+          "Housing",
+          "Transport",
+          "Water",
+          "Industry",
+          "Mining",
+          "Agriculture",
+          "Other"
+        ]
+      },
+      "order": 65,
       "type": "ComboboxWidget",
-      "slug": "w_sector",
-      "order": 65
+      "slug": "w_sector"
     }
   ],
   "title": {

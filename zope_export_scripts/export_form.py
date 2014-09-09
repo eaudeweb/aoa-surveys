@@ -46,6 +46,7 @@ for attribute in survey.objectValues():
 
         if attribute.meta_type == "Naaya Combobox Widget":
             field["type"] = "ComboboxWidget"
+            field["choices"] = filter_lang(local_properties["choices"])
 
         if attribute.meta_type == "Naaya String Widget":
             field["type"] = "StringWidget"
