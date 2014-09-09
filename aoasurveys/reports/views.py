@@ -7,13 +7,12 @@ from django.views.generic.edit import FormView
 from django.conf import settings
 from django.http import HttpResponse
 from django.core.urlresolvers import reverse
+from django.db.models import Q
 from forms_builder.forms.models import Form, FieldEntry
 
 from aoasurveys.reports.forms import SelectFieldsForm, FilteringForm
 from aoasurveys.reports.models import FormExtra
-from aoasurveys.reports.utils import (
-    set_visible_fields, set_url_value, filter_answers,
-)
+from aoasurveys.reports.utils import set_visible_fields, set_url_value
 
 
 class DetailFormView(DetailView, FormView):
@@ -41,9 +40,23 @@ class AnswersView(DetailFormView):
     context_object_name = 'survey'
     filter_query = {}
 
+    def get_matching_answers(self):
+        answers = set(list(self.object.entries.all()))
+        for filter_id, filter_value in self.filter_query.iteritems():
+            if isinstance(filter_value, list):
+                q_expression = Q()
+                for choice in filter_value:
+                    q_expression |= Q(fields__value__contains=choice)
+            else:
+                q_expression = Q(fields__value__contains=filter_value)
+            q_expression &= Q(fields__field_id=filter_id)
+            answers &= set(list(self.object.entries.filter(q_expression)))
+            if not answers:
+                break
+        return answers
+
     def get_context_data(self, **kwargs):
-        answers = self.object.entries.all()
-        self.object.answers = list(filter_answers(answers, self.filter_query))
+        self.object.answers = self.get_matching_answers()
 
         for answer in self.object.answers:
             set_visible_fields(answer, self.object.extra.visible_fields)

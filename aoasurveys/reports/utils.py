@@ -4,7 +4,6 @@ from django.core.urlresolvers import reverse
 from django.conf import settings
 from forms_builder.forms.models import Field
 from forms_builder.forms import fields
-from forms_builder.forms.utils import split_choices
 
 
 def set_visible_fields(answer, form_visible_fields):
@@ -24,18 +23,3 @@ def get_ordered_fields(slugs):
     fields = list(Field.objects.filter(slug__in=slugs))
     fields.sort(key=lambda x: slugs.index(x.slug))
     return fields
-
-
-def filter_answers(answers, filter_query):
-    for answer in answers:
-        for field_id, filter_value in filter_query.iteritems():
-            field_value = answer.fields.get(field_id=field_id).value
-            if isinstance(filter_value, list):
-                field_choices = split_choices(field_value)
-                if not set(filter_value) & set(field_choices):
-                    break
-            else:
-                if filter_value not in field_value:
-                    break
-        else:
-            yield answer
