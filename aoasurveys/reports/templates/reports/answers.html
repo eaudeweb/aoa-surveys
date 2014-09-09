@@ -4,7 +4,11 @@
 
   <script>
     $(function () {
-      $('#answers_listing').dataTable();
+        var dataTable = $('#answers_listing').dataTable();
+
+        $('#searchbox').keyup(function() {
+            dataTable.fnFilter(this.value);
+        });
     });
   </script>
 
@@ -12,6 +16,10 @@
 
 {% block content %}
   <h2>Answers</h2>
+
+  <label>Search:
+    <input id="searchbox" type="text">
+  </label>
 
   <form action="" method="POST">{% csrf_token %}
       {{ form.as_p }}

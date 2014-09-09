@@ -4,7 +4,7 @@
 }
 
 .dataTables_filter {
-    float: right;
+    display: none;
 }
 
 .filters .first-filter {
