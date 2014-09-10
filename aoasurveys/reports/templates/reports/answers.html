@@ -15,7 +15,7 @@
 {% endblock %}
 
 {% block content %}
-  <h2>Answers</h2>
+<h2>{{ object.title }}</h2>
 
   <label>Search:
     <input id="searchbox" type="text">
@@ -24,13 +24,13 @@
   <a href="" id="advanced-filtering-button"
       >{% if advanced_enabled %}Hide advanced filtering{% else %}Advanced filtering{% endif %}</a>
 
-  <div id="advanced-filtering-form"
+  <table id="advanced-filtering-form"
       {% if not advanced_enabled %}style="display: none;"{% endif %}>
     <form action="" method="POST">{% csrf_token %}
-        {{ form.as_p }}
-        <input type="submit" value="Filter" />
+        {{ form.as_table }}
+        <tr><td><input type="submit" value="Filter" /></td></tr>
     </form>
-  </div>
+  </table>
 
   <table id="answers-listing" class="table table-condensed table-bordered">
     <thead>
