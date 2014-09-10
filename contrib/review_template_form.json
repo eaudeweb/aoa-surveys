@@ -1,4 +1,13 @@
 {
+  "description": {
+    "ru": "<p>Это &ndash; окончательная и консолидированная версия опросного листа для обзора оценочных докладов в рамках и по методологии процесса Оценки оценок (AoA). Эта версия была разработана в соответствии с пунктом 2 Плана действий &ndash; &lsquo;усовершенствование опросного листа&rsquo; &ndash; на основе отзывов и комментариев, полученных во время и после семинара, состоявшегося в ЕАОС 28 мая.  </p>\r\n<p>Этот опросный лист для обзора AoA позволяет начать выполнение пункта 4 Плана действий (&lsquo;заполнение опросных листов для выявленных оценочных докладов&rsquo;). Опросные листы заполняются только для тех оценочных докладов, которые загружены в Виртуальную библиотеку AoA  в соответствии с пунктом 3 Плана действий (&lsquo;регистрация соответствующих оценочных докладов в Виртуальной библиотеке&rsquo;). </p>\r\n<p>Пожалуйста, заполняйте опросный лист для обзора AoA только на основе информации в явной форме сформулированной или содержащейся в рассматриваемом оценочном докладе. &lsquo;Фоновая&rsquo; информация, которая может быть известна лицу, заполняющему опросный лист, но отсутствует в оценочном докладе, не должна включаться в опросный лист. </p>\r\n<p>Пожалуйста, обратите внимание, что заполнение части 10 опросного листа для обзора AoA &ndash;  &lsquo;Тематическая&nbsp;оценка&rsquo; &ndash; является более трудной задачей, чем заполнение частей 0 &ndash; 9, и может потребовать специальных знаний для того, чтобы предоставить наиболее точную информацию.</p>\r\n<p><span style=\"color: #ff0000;\">Заполнение полей, отмеченных *, является обязательным.</span></p>",
+    "en": "<p><span style=\"color: #ff0000;\">Please not that this review template is closed. As an administrator you can add/modify existing answers, but please don't make any changes if you are not requested to do so by the portal administrator.<br /></span></p>\r\n<p>This is the final and consolidated version of the template for the review of the assessment reports under the Assessment of <nobr>Assessments</nobr> (AoA) methodology and process. This version has been developed, as foreseen in Action Point 2 &lsquo;reviewing the template&rsquo;, on the basis of the feedback and comments received during and after the workshop held on 28th May at the EEA.<br /><br /> This AoA Review Template allows Action Point 4 to begin (&lsquo;filling out templates for identified assessments&rsquo;). The filling of templates is eligible only for those assessment reports uploaded on the <a href=\"/tools/virtual_library/bibliography-details-each-assessment\">Virtual Library of the AoA</a>, according to Action Point 3 (&lsquo;register relevant assessment reports in the Virtual Library&rsquo;).<br /><br /> Please fill the AoA Review Template only on the basis of the information explicitly stated/contained in the assessment report under review. &lsquo;Background&rsquo; information that may be known by the person filling the template but that cannot be found in the assessment report shall be omitted.<br /><br /> Please also note that Part 10 of the AoA Review Template \"Thematic&nbsp;assessment\" is more demanding than Parts 0 to 9, and that some specialised expertise may be needed in order to provide the most accurate information.</p>"
+  },
+  "title": {
+    "ru": "Опросный лист для обзора AoA",
+    "en": "AoA REVIEW TEMPLATE"
+  },
+  "allow_anonymous": false,
   "labels": [
     {
       "title": {
@@ -158,7 +167,11 @@
       "order": 91
     }
   ],
-  "slug": "general-template",
+  "last_day": "2013-01-01T00:00:00",
+  "multiple_reponses_one_user": 1,
+  "geographical_coverage": {},
+  "notify_owner": true,
+  "email_respondents_notify": "ALWAYS",
   "questions": [
     {
       "title": {
@@ -1872,8 +1885,6 @@
       "slug": "w_vlid"
     }
   ],
-  "title": {
-    "ru": "Опросный лист для обзора AoA",
-    "en": "AoA REVIEW TEMPLATE"
-  }
+  "first_day": "2010-04-29T00:00:00",
+  "slug": "general-template"
 }

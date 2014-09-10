@@ -1,6 +1,19 @@
 {
+  "description": {
+    "ru": "<p><strong><span style=\"font-size: small;\"><span style=\"color: #008000;\"><span style=\"font-size: medium;\">Регистрационная форма</span></span></span></strong></p>\r\n<p><strong>Это длительный процесс с целью составить всеобъемлющий обзор имеющейся литературы на национальном и международном уровнях по следующим двум основным тематическим областям: по воде и по экосистемами, связанными с водой, и по \"зеленой\" экономике. Предполагается, что в долгосрочной перспективе виртуальная библиотека будет продолжать расти и расширяться по темам.</strong></p>\r\n<p><span style=\"color: #ff0000;\">Заполнение полей, отмеченных *, является обязательным.</span></p>",
+    "en": "<p><strong><span style=\"font-size: small;\"><span style=\"color: #008000;\"><span style=\"font-size: medium;\">Registration Form</span></span></span></strong></p>\r\n<p><b>The AoA virtual library is entering in a new development phase. Initiated in the context of the preparatory work for Astana conference, the AoA portal was collecting relevant materials across the pan-European region in water and green economy areas.&nbsp; Since 2012 the thematic scope of the AoA virtual library was gradually extended with the addition of new areas such as air, climate change, biodiversity and waste.&nbsp; </b></p>\r\n<p><b>The Virtual library is publicly open for use and uploads; therefore we invite you all to contribute to its development and regular update. Please add relevant publications, reports, project documents etc. related to these areas you may consider useful and relevant to be shared with other colleagues across the pan-European region and beyond. Many thanks!</b></p>\r\n<p><span style=\"color: #ff0000;\">The fields marked with * are mandatory.</span></p>"
+  },
+  "title": {
+    "ru": "Добро пожаловать в виртуальную библиотеку Оценки оценок",
+    "en": "Welcome to the thematic extended Virtual Library of the Assessment of Assessments -- DRAFT"
+  },
+  "allow_anonymous": 0,
   "labels": [],
-  "slug": "virtual-library-extended",
+  "last_day": "2014-12-31T00:00:00",
+  "multiple_reponses_one_user": 1,
+  "geographical_coverage": {},
+  "notify_owner": true,
+  "email_respondents_notify": "ALWAYS",
   "questions": [
     {
       "title": {
@@ -549,8 +562,6 @@
       "columns": 50
     }
   ],
-  "title": {
-    "ru": "Добро пожаловать в виртуальную библиотеку Оценки оценок",
-    "en": "Welcome to the thematic extended Virtual Library of the Assessment of Assessments -- DRAFT"
-  }
+  "first_day": "2013-04-02T00:00:00",
+  "slug": "virtual-library-extended"
 }

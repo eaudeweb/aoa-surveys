@@ -1,4 +1,13 @@
 {
+  "description": {
+    "ru": "<p><strong><span style=\"font-size: small;\"><span style=\"color: #008000;\"><span style=\"font-size: medium;\">Регистрационная форма</span></span></span></strong></p>\r\n<p><strong>Это длительный процесс с целью составить всеобъемлющий обзор имеющейся литературы на национальном и международном уровнях по следующим двум основным тематическим областям: по воде и по экосистемами, связанными с водой, и по \"зеленой\" экономике. Предполагается, что в долгосрочной перспективе виртуальная библиотека будет продолжать расти и расширяться по темам.</strong></p>\r\n<p><span style=\"color: #ff0000;\">Заполнение полей, отмеченных *, является обязательным.</span></p>",
+    "en": "<p><strong><span style=\"font-size: small;\"><span style=\"color: #008000;\"><span style=\"font-size: medium;\">Registration Form</span></span></span></strong></p>\r\n<p><strong><span style=\"color: #ff0000;\">Please not that this review template is closed. As an administrator you can add/modify existing answers, but please don't make any changes if you are not requested to do so by the portal administrator.</span></strong></p>\r\n<p><strong>This is a&nbsp;long term&nbsp;process aiming to build a comprehensive&nbsp;overview of the available literature at national and international levels in two&nbsp;major thematic areas: water and related ecosystems and green economy. It is foreseen that in the long term the virtual&nbsp;library will continue to grow and&nbsp;&nbsp;thematically enlarged.</strong></p>"
+  },
+  "title": {
+    "ru": "Добро пожаловать в виртуальную библиотеку Оценки оценок",
+    "en": "Welcome to the Virtual Library of the Assessment of Assessments."
+  },
+  "allow_anonymous": false,
   "labels": [
     {
       "title": {
@@ -17,7 +26,11 @@
       "order": 75
     }
   ],
-  "slug": "bibliography-details-each-assessment",
+  "last_day": "2011-11-30T00:00:00",
+  "multiple_reponses_one_user": 1,
+  "geographical_coverage": {},
+  "notify_owner": true,
+  "email_respondents_notify": "ALWAYS",
   "questions": [
     {
       "title": {
@@ -742,8 +755,6 @@
       "columns": 50
     }
   ],
-  "title": {
-    "ru": "Добро пожаловать в виртуальную библиотеку Оценки оценок",
-    "en": "Welcome to the Virtual Library of the Assessment of Assessments."
-  }
+  "first_day": "2010-06-03T00:00:00",
+  "slug": "bibliography-details-each-assessment"
 }

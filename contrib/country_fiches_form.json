@@ -1,6 +1,17 @@
 {
+  "description": {
+    "en": "<p>salut</p>"
+  },
+  "title": {
+    "en": "Country Fiches"
+  },
+  "allow_anonymous": 0,
   "labels": [],
-  "slug": "country_fiches",
+  "last_day": "2011-10-31T00:00:00",
+  "multiple_reponses_one_user": 1,
+  "geographical_coverage": {},
+  "notify_owner": true,
+  "email_respondents_notify": "ALWAYS",
   "questions": [
     {
       "title": {
@@ -266,7 +277,6 @@
       "slug": "w_sector"
     }
   ],
-  "title": {
-    "en": "Country Fiches"
-  }
+  "first_day": "2011-05-29T00:00:00",
+  "slug": "country_fiches"
 }
