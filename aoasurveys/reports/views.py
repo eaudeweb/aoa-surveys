@@ -31,10 +31,6 @@ class FormsIndex(ListView, LoginRequiredMixin):
     template_name = 'reports/index.html'
     model = Form
 
-    def get_context_data(self, **kwargs):
-        context = super(FormsIndex, self).get_context_data(**kwargs)
-        return context
-
 
 class AnswersView(DetailFormView):
 
@@ -101,7 +97,6 @@ class FormExtraView(DetailFormView):
                 'filtering_fields': survey.extra.filtering_fields_slugs,
             })
         return initial
-
 
     def get_success_url(self):
         return reverse('homepage')

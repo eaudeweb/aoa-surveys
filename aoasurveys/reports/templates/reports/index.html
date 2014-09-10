@@ -1,6 +1,6 @@
 {% extends '_layout.html' %}
 
-{% load perms %}
+{% load extra_tags %}
 
 {% block content %}
 <h2>Surveys</h2>
@@ -8,18 +8,23 @@
 {% check_is_admin as is_admin %}
 
 {% if is_admin %}
-
-<ul>
-{% for survey in object_list %}
-  <li>
-    <a href="{% url 'form_detail' survey.slug %}">{{ survey }}</a> -
-    <a href="{% url 'answers_list' slug=survey.slug %}">View answers</a> |
-    <a href="{% url 'manage_form' slug=survey.slug %}">Manage</a>
-  </li>
-{% endfor %}
-</ul>
-
+  <ul>
+  {% for survey in object_list %}
+    <li>
+      <a href="{% url 'form_detail' survey.slug %}">{{ survey }}</a> -
+      <a href="{% url 'answers_list' slug=survey.slug %}">View answers</a> |
+      <a href="{% url 'manage_form' slug=survey.slug %}">Manage</a>
+    </li>
+  {% endfor %}
+  </ul>
 {% else %}
-You are not admin!
+  <ul>
+  {% for survey in object_list|published %}
+    <li>
+      <a href="{% url 'form_detail' survey.slug %}">{{ survey }}</a>
+    </li>
+  {% endfor %}
+  </ul>
 {% endif %}
+
 {% endblock %}
