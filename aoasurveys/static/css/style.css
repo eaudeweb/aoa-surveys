@@ -17,3 +17,11 @@
 a.btn-primary{
   color: white !important;
 }
+
+ul#id_status {
+    list-style-type: none;
+}
+
+ul#id_status li {
+    display: inline;
+}
