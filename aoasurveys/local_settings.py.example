@@ -13,3 +13,9 @@ ALLOWED_HOSTS = []
 FIELDS_SEPARATOR = ','
 
 # FRAME_URL = 'http://example.com/flis_templates/frame'
+
+# Authorization parameters (development only)
+SKIP_EDIT_AUTH = True
+USER_ID = 'chiriiul'
+USER_GROUPS = []
+USER_ROLES = ['Administrator']
