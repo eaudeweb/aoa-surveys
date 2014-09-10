@@ -82,6 +82,14 @@ form["questions"] = questions
 form["labels"] = labels
 form["slug"] = survey.id
 form["title"] = filter_lang(survey_locals["title"])
+#form["description"] = filter_lang(survey_locals["description"])
+#form["geographical_coverage"] = filter_lang(survey_locals["coverage"])
+form["first_day"] = survey.releasedate
+form["last_day"] = survey.expirationdate
+form["notify_owner"] = survey.notify_owner
+form["email_respondents_notify"] = survey.notify_respondents
+form["multiple_reponses_one_user"] = survey.allow_multiple_answers
+form["allow_anonymous"] = survey.allow_anonymous
 
 print context.get_json(form)  # get_json is an external method
 
