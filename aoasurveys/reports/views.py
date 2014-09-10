@@ -13,6 +13,7 @@ from forms_builder.forms.models import Form, FieldEntry
 from aoasurveys.reports.forms import SelectFieldsForm, FilteringForm
 from aoasurveys.reports.models import FormExtra
 from aoasurveys.reports.utils import set_visible_fields, set_url_value
+from auth.views import LoginRequiredMixin
 
 
 class DetailFormView(DetailView, FormView):
@@ -25,10 +26,14 @@ class DetailFormView(DetailView, FormView):
         return self.render_to_response(context)
 
 
-class FormsIndex(ListView):
+class FormsIndex(ListView, LoginRequiredMixin):
 
     template_name = 'reports/index.html'
     model = Form
+
+    def get_context_data(self, **kwargs):
+        context = super(FormsIndex, self).get_context_data(**kwargs)
+        return context
 
 
 class AnswersView(DetailFormView):
@@ -87,6 +92,17 @@ class FormExtraView(DetailFormView):
     form_class = SelectFieldsForm
     context_object_name = 'survey'
 
+    def get_initial(self):
+        survey = self.get_object()
+        initial = {'status': survey.status}
+        if survey.extra:
+            initial.update({
+                'visible_fields': survey.extra.visible_fields_slugs,
+                'filtering_fields': survey.extra.filtering_fields_slugs,
+            })
+        return initial
+
+
     def get_success_url(self):
         return reverse('homepage')
 
@@ -98,10 +114,15 @@ class FormExtraView(DetailFormView):
         return context
 
     def form_valid(self, form):
-        extra, _ = FormExtra.objects.get_or_create(form=self.get_object())
+        survey = self.get_object()
+        survey.status = form.cleaned_data['status']
+        survey.save()
+
+        extra, _ = FormExtra.objects.get_or_create(form=survey)
         extra.visible_fields_slugs = form.cleaned_data['visible_fields']
         extra.filtering_fields_slugs = form.cleaned_data['filtering_fields']
         extra.save()
+
         return super(FormExtraView, self).form_valid(form)
 
 
