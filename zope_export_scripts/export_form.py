@@ -67,6 +67,11 @@ for attribute in survey.objectValues():
             field["type"] = "TextAreaWidget"
             field["rows"] = attribute.rows
             field["columns"] = attribute.columns
+
+        if attribute.meta_type == "Naaya Localized Text Area Widget":
+            field["type"] = "LocalizedTextAreaWidget"
+            field["rows"] = attribute.rows
+            field["columns"] = attribute.columns
  
         if attribute.meta_type == "Naaya Label Widget":
             labels.append(field)

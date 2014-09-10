@@ -65,6 +65,7 @@ class Command(BaseCommand):
                     params["field_type"] = SELECT
 
                 elif question["type"] == "CheckboxMatrixWidget":
+                    #TODO set rows
                     params["choices"] = self._get_choices(question["choices"])
                     params["field_type"] = CHECKBOX_MULTIPLE
 
