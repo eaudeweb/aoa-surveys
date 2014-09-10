@@ -1731,31 +1731,40 @@
       "slug": "w_resource-efficiency-topics"
     },
     {
+      "rows": 10,
       "title": {
         "ru": "Если \"Да\", перечислите основные",
         "en": "If Yes, list the main ones"
       },
       "required": false,
+      "order": 355,
+      "type": "LocalizedTextAreaWidget",
       "slug": "w_if-yes-list-main-ones",
-      "order": 355
+      "columns": 50
     },
     {
+      "rows": 10,
       "title": {
         "ru": "Если \"Да\", укажите основные приоритетные проблемы",
         "en": "If Yes, specify the major priority concerns"
       },
       "required": false,
+      "order": 345,
+      "type": "LocalizedTextAreaWidget",
       "slug": "w_if-yes-specify-major-priority-concerns",
-      "order": 345
+      "columns": 50
     },
     {
+      "rows": 10,
       "title": {
         "ru": "Если \"Да\", укажите основной(-ые)",
         "en": "If Yes, list main(s) one(s)"
       },
       "required": false,
+      "order": 295,
+      "type": "LocalizedTextAreaWidget",
       "slug": "w_if-yes-list-mains-ones6917",
-      "order": 295
+      "columns": 50
     },
     {
       "title": {
@@ -1813,9 +1822,21 @@
         "en": "Confirmation"
       },
       "required": true,
+      "choices": {
+        "ru": [
+          "Пожалуйста выберите",
+          "ДА, я хочу продолжить и заполнить опросный лист для обзора для этого доклада, который был выбран для обзора в рамках процесса EE-AoA",
+          "НЕТ, я хочу выйти из опросного листа для обзора для этого доклада"
+        ],
+        "en": [
+          "Please select",
+          "YES, I want to continue and fill the Review Template for this report that has been selected for review within the EE-AoA process.",
+          "NO, I want to exit the Review Template for this report."
+        ]
+      },
+      "order": 15,
       "type": "ComboboxWidget",
-      "slug": "w_confirmation",
-      "order": 15
+      "slug": "w_confirmation"
     },
     {
       "title": {
