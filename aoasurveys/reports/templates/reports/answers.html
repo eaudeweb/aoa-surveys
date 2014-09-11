@@ -47,7 +47,7 @@
         {% if field.url %}
           <a href="{{ field.url }}">View attachment</a>
         {% else %}
-          {{ field.value }}
+          {{ field.processed_value }}
         {% endif %}
         </td>
       {% endfor %}
