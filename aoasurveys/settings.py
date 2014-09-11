@@ -99,12 +99,14 @@ STATIC_ROOT = os.path.join(BASE_DIR, 'static')
 # Custom fields
 LOCALIZEDSTRING = 100
 LOCALIZEDTEXTAREA = 101
+LABEL = 102
 
 FORMS_BUILDER_EXTRA_FIELDS = (
     (LOCALIZEDSTRING, "aoasurveys.forms.LocalizedStringField",
      "LocalizedStringField"),
     (LOCALIZEDTEXTAREA, "aoasurveys.forms.LocalizedTextAreaField",
      "LocalizedTextAreaField"),
+    (LABEL, "aoasurveys.forms.LabelField", "LabelField"),
 )
 
 LOCALIZED_LANGUAGES = (

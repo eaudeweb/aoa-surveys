@@ -28,6 +28,16 @@ class Command(BaseCommand):
                 title=self._concat_lang(data["title"]),
                 slug=data["slug"]
             )
+            for label in data["labels"]:
+                params = {
+                    "slug": label["slug"],
+                    "order": label["order"],
+                    "label": self._concat_lang(label["title"]),
+                    "field_type": settings.LABEL,
+                    "form": form
+                }
+                Field.objects.create(**params)
+
             for question in data["questions"]:
                 params = {
                     "label": self._concat_lang(question["title"]),

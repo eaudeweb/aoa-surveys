@@ -1,7 +1,8 @@
 from django.forms.fields import MultiValueField, CharField
 from django.conf import settings
-from django.forms.widgets import MultiWidget
+from django.forms.widgets import MultiWidget, Widget
 from django.forms import TextInput, Textarea
+from django.utils.html import mark_safe
 
 
 class LocalizedMultiWidget(MultiWidget):
@@ -42,3 +43,17 @@ class LocalizedTextAreaField(LocalizedStringField):
         labels=settings.LOCALIZED_LANGUAGES,
         widgets=[Textarea, Textarea]
     )
+
+
+class LabelWidget(Widget):
+    def render(self, name, value, attrs=None):
+        return mark_safe("<h4>%s</h4>" % self.attrs["value"])
+
+
+class LabelField(CharField):
+    widget = LabelWidget()
+
+    def widget_attrs(self, widget):
+        attrs = super(LabelField, self).widget_attrs(widget)
+        attrs.update({'value': self.label})
+        return attrs
