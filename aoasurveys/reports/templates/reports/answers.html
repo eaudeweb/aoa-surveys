@@ -35,7 +35,7 @@
   <table id="answers-listing" class="table table-condensed table-bordered">
     <thead>
       <tr>
-      {% for field in object.extra.visible_fields %}
+      {% for field in object.visible_fields %}
         <th>{{ field.label }}</th>
       {% endfor %}
       </tr>
@@ -45,7 +45,7 @@
       {% for field in answer.visible_fields %}
         <td>
         {% if field.url %}
-          <a href="{{ field.url }}">{{ field.value }}</a>
+          <a href="{{ field.url }}">View attachment</a>
         {% else %}
           {{ field.value }}
         {% endif %}

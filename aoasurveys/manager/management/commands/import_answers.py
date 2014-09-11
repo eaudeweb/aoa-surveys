@@ -2,7 +2,8 @@ import json
 
 from django.db import transaction
 from django.core.management.base import BaseCommand
-from forms_builder.forms.models import FormEntry, FieldEntry, Form, Field
+
+from aoasurveys.reports.models import FormEntry, FieldEntry, Form, Field
 
 
 class Command(BaseCommand):

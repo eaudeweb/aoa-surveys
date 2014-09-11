@@ -8,11 +8,9 @@ from django.conf import settings
 from django.http import HttpResponse
 from django.core.urlresolvers import reverse
 from django.db.models import Q
-from forms_builder.forms.models import Form, FieldEntry
 
 from aoasurveys.reports.forms import SelectFieldsForm, FilteringForm
-from aoasurveys.reports.models import FormExtra
-from aoasurveys.reports.utils import set_visible_fields, set_url_value
+from aoasurveys.reports.models import Form, FieldEntry
 from auth.views import LoginRequiredMixin
 
 
@@ -59,17 +57,13 @@ class AnswersView(DetailFormView):
     def get_context_data(self, **kwargs):
         self.object.answers = self.get_matching_answers()
 
-        for answer in self.object.answers:
-            set_visible_fields(answer, self.object.extra.visible_fields)
-            for field in answer.visible_fields:
-                set_url_value(field)
         context = super(AnswersView, self).get_context_data(**kwargs)
         context.update({'advanced_enabled': bool(self.filter_query)})
         return context
 
     def get_form_kwargs(self):
         kwargs = super(AnswersView, self).get_form_kwargs()
-        kwargs.update({'fields': self.get_object().extra.filtering_fields})
+        kwargs.update({'fields': self.get_object().filtering_fields})
         return kwargs
 
     def form_valid(self, form):
@@ -90,13 +84,11 @@ class FormExtraView(DetailFormView):
 
     def get_initial(self):
         survey = self.get_object()
-        initial = {'status': survey.status}
-        if survey.extra:
-            initial.update({
-                'visible_fields': survey.extra.visible_fields_slugs,
-                'filtering_fields': survey.extra.filtering_fields_slugs,
-            })
-        return initial
+        return {
+            'status': survey.status,
+            'visible_fields': survey.visible_fields_slugs,
+            'filtering_fields': survey.filtering_fields_slugs,
+        }
 
     def get_success_url(self):
         return reverse('homepage')
@@ -111,13 +103,9 @@ class FormExtraView(DetailFormView):
     def form_valid(self, form):
         survey = self.get_object()
         survey.status = form.cleaned_data['status']
+        survey.visible_fields_slugs = form.cleaned_data['visible_fields']
+        survey.filtering_fields_slugs = form.cleaned_data['filtering_fields']
         survey.save()
-
-        extra, _ = FormExtra.objects.get_or_create(form=survey)
-        extra.visible_fields_slugs = form.cleaned_data['visible_fields']
-        extra.filtering_fields_slugs = form.cleaned_data['filtering_fields']
-        extra.save()
-
         return super(FormExtraView, self).form_valid(form)
 
 

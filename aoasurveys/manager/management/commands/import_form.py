@@ -1,12 +1,12 @@
+import json
 from django.db import transaction
 from django.core.management.base import BaseCommand
 
-from forms_builder.forms.models import Form, Field
 from forms_builder.forms.fields import TEXT, FILE, CHECKBOX_MULTIPLE, \
     RADIO_MULTIPLE, TEXTAREA, SELECT
 from django.conf import settings
 
-import json
+from aoasurveys.reports.models import Form, Field
 
 
 class Command(BaseCommand):
