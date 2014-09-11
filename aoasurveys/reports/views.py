@@ -56,7 +56,6 @@ class AnswersView(DetailFormView):
 
     def get_context_data(self, **kwargs):
         self.object.answers = self.get_matching_answers()
-
         context = super(AnswersView, self).get_context_data(**kwargs)
         context.update({'advanced_enabled': bool(self.filter_query)})
         return context
@@ -67,7 +66,7 @@ class AnswersView(DetailFormView):
         return kwargs
 
     def form_valid(self, form):
-        self.filter_query = {int(k.split('_')[1]): v for k, v in
+        self.filter_query = {int(k.split('_')[0]): v for k, v in
                              form.cleaned_data.iteritems() if v}
         self.object = self.get_object()
         return self.render_to_response(self.get_context_data(

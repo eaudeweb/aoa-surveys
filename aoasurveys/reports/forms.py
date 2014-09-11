@@ -18,7 +18,7 @@ class FilteringForm(Form):
         fields = kwargs.pop('fields', [])
         super(FilteringForm, self).__init__(*args, **kwargs)
         for field in fields:
-            field_name = 'id_{}'.format(field.id)
+            field_name = '{0}_{1}'.format(field.id, field.slug)
             if field.choices:
                 self.fields[field_name] = MultipleChoiceField(
                     label=field.label,
