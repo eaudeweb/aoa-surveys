@@ -5,9 +5,7 @@
 {% block content %}
 <h2>Surveys</h2>
 
-{% check_is_admin as is_admin %}
-
-{% if is_admin %}
+{% if perms.aoasurveys.can_change_form %}
   <ul>
   {% for survey in object_list %}
     <li>
