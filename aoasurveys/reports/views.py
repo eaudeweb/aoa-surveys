@@ -11,7 +11,6 @@ from django.db.models import Q
 
 from aoasurveys.reports.forms import SelectFieldsForm, FilteringForm
 from aoasurveys.reports.models import Form, FieldEntry
-from auth.views import LoginRequiredMixin
 
 
 class DetailFormView(DetailView, FormView):
@@ -24,7 +23,7 @@ class DetailFormView(DetailView, FormView):
         return self.render_to_response(context)
 
 
-class FormsIndex(ListView, LoginRequiredMixin):
+class FormsIndex(ListView):
 
     template_name = 'reports/index.html'
     model = Form

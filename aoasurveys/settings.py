@@ -29,7 +29,6 @@ INSTALLED_APPS = (
     'aoasurveys.manager',
     'aoasurveys.reports',
     'forms_builder.forms',
-    'auth',
 )
 
 MIDDLEWARE_CLASSES = (
