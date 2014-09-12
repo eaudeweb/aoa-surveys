@@ -57,7 +57,10 @@ class AnswersView(DetailFormView):
     def get_context_data(self, **kwargs):
         self.object.answers = self.get_matching_answers()
         context = super(AnswersView, self).get_context_data(**kwargs)
-        context.update({'advanced_enabled': bool(self.filter_query)})
+        context.update({
+            'advanced_enabled': bool(self.filter_query),
+            'custom_js': settings.CUSTOM_JS.get(self.object.slug),
+        })
         return context
 
     def get_form_kwargs(self):

@@ -16,6 +16,13 @@ FIELDS_SEPARATOR = ','
 
 # Authorization parameters (development only)
 SKIP_EDIT_AUTH = True
-USER_ID = 'chiriiul'
+USER_ID = 'username'
 USER_GROUPS = []
 USER_ROLES = ['Administrator']
+
+DOWNLOAD_URL = 'http://aoa.ew.eea.europa.eu'
+
+CUSTOM_JS = {
+    'bibliography-details-each-assessment': 'js/theme-topics.js',
+    'general-template': 'js/theme-topics.js',
+}

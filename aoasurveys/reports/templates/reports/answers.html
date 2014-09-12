@@ -1,7 +1,7 @@
 {% extends '_layout.html' %}
+{% load assets %}
 
 {% block scripts %}
-
   <script>
     $(function () {
         var dataTable = $('#answers-listing').dataTable();
@@ -11,6 +11,12 @@
         });
     });
   </script>
+
+  {% if custom_js %}
+    {% assets filters="jsmin", output="custom_packed.js", custom_js %}
+      <script type="text/javascript" src="{{ ASSET_URL }}"></script>
+    {% endassets %}
+  {% endif %}
 
 {% endblock %}
 
