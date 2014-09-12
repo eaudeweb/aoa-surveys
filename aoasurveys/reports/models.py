@@ -1,3 +1,4 @@
+from django.contrib import admin
 from django.db.models import CharField, ForeignKey, IntegerField
 from django.utils.translation import ugettext_lazy as _
 from django.core.urlresolvers import reverse
@@ -70,3 +71,6 @@ class FieldEntry(AbstractFieldEntry):
             choices = dict(self.field.get_choices())
             return ', '.join([choices.get(id) for id in choice_ids])
         return self.value
+
+
+admin.site.register(Form)

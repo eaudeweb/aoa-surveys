@@ -2,7 +2,7 @@ from django.forms.fields import MultiValueField, CharField
 from django.conf import settings
 from django.forms.widgets import MultiWidget, Widget
 from django.forms import TextInput, Textarea
-from django.utils.html import mark_safe
+from django.utils.safestring import mark_safe
 
 
 class LocalizedMultiWidget(MultiWidget):
@@ -43,7 +43,6 @@ class LocalizedTextAreaField(LocalizedStringField):
         labels=settings.LOCALIZED_LANGUAGES,
         widgets=[Textarea, Textarea]
     )
-
 
 class LabelWidget(Widget):
     def render(self, name, value, attrs=None):

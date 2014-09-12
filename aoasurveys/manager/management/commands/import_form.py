@@ -7,6 +7,7 @@ from forms_builder.forms.fields import TEXT, FILE, CHECKBOX_MULTIPLE, \
 from django.conf import settings
 
 from aoasurveys.reports.models import Form, Field
+from aoasurveys.forms.models import Label
 
 
 class Command(BaseCommand):
@@ -36,7 +37,7 @@ class Command(BaseCommand):
                     "field_type": settings.LABEL,
                     "form": form
                 }
-                Field.objects.create(**params)
+                Label.objects.create(**params)
 
             for question in data["questions"]:
                 params = {
