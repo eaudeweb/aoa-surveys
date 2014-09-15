@@ -19,7 +19,7 @@ class Command(BaseCommand):
 
     def _get_choices(self, langs):
         pairs = zip(langs['en'], langs['ru'])
-        elems = ["%s\n%s" % (en, ru) for en, ru in pairs]
+        elems = ["`%s\n%s`" % (en, ru) for en, ru in pairs]
         return ",".join(elems)
 
     def _parseForm(self, data):
