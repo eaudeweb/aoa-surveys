@@ -1,5 +1,6 @@
 {% extends '_layout.html' %}
 {% load assets %}
+{% load extra_tags %}
 
 {% block scripts %}
   <script>
@@ -21,7 +22,7 @@
 {% endblock %}
 
 {% block content %}
-<h2>{{ object.title }}</h2>
+<h2>{{ object.title | translate:request.language }}</h2>
 
   <label>Search:
     <input id="searchbox" type="text">
@@ -42,7 +43,7 @@
     <thead>
       <tr>
       {% for field in object.visible_fields %}
-        <th>{{ field.label }}</th>
+        <th>{{ field.label | translate:request.language }}</th>
       {% endfor %}
       </tr>
     </thead>
@@ -52,8 +53,10 @@
         <td>
         {% if field.url %}
           <a href="{{ field.url }}">View attachment</a>
+        {% elif field.field.choices %}
+          {{ field | get_choices:request.language }}
         {% else %}
-          {{ field.processed_value }}
+          {{ field.value | translate:request.language }}
         {% endif %}
         </td>
       {% endfor %}

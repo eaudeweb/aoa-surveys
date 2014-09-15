@@ -64,7 +64,10 @@ class AnswersView(DetailFormView):
 
     def get_form_kwargs(self):
         kwargs = super(AnswersView, self).get_form_kwargs()
-        kwargs.update({'fields': self.get_object().filtering_fields})
+        kwargs.update({
+            'fields': self.get_object().filtering_fields,
+            'language': self.request.language,
+        })
         return kwargs
 
     def form_valid(self, form):

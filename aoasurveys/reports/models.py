@@ -64,13 +64,5 @@ class FieldEntry(AbstractFieldEntry):
             else:
                 return reverse('file_view', args=(self.id,))
 
-    @property
-    def processed_value(self):
-        if self.field.choices:
-            choice_ids = [int(c.strip()) for c in self.value.split(',')]
-            choices = dict(self.field.get_choices())
-            return ', '.join([choices.get(id) for id in choice_ids])
-        return self.value
-
 
 admin.site.register(Form)
