@@ -34,7 +34,6 @@ class Command(BaseCommand):
                     "slug": label["slug"],
                     "order": label["order"],
                     "label": self._concat_lang(label["title"]),
-                    "field_type": settings.LABEL,
                     "form": form
                 }
                 Label.objects.create(**params)
