@@ -10,7 +10,7 @@ from django.core.urlresolvers import reverse
 from django.db.models import Q
 
 from aoasurveys.reports.forms import SelectFieldsForm, FilteringForm
-from aoasurveys.reports.models import Form, FieldEntry
+from aoasurveys.aoaforms.models import Form, FieldEntry
 
 
 class DetailFormView(DetailView, FormView):

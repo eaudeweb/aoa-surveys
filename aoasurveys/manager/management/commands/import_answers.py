@@ -3,7 +3,7 @@ import json
 from django.db import transaction
 from django.core.management.base import BaseCommand
 
-from aoasurveys.reports.models import FormEntry, FieldEntry, Form, Field
+from aoasurveys.aoaforms.models import FormEntry, FieldEntry, Form, Field
 
 
 class Command(BaseCommand):

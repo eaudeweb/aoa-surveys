@@ -28,7 +28,7 @@ INSTALLED_APPS = (
     'aoasurveys',
     'aoasurveys.manager',
     'aoasurveys.reports',
-    'aoasurveys.forms',
+    'aoasurveys.aoaforms',
     'forms_builder.forms',
 )
 
@@ -101,9 +101,9 @@ LOCALIZEDSTRING = 100
 LOCALIZEDTEXTAREA = 101
 
 FORMS_BUILDER_EXTRA_FIELDS = (
-    (LOCALIZEDSTRING, "aoasurveys.forms.fields.LocalizedStringField",
+    (LOCALIZEDSTRING, "aoasurveys.aoaforms.fields.LocalizedStringField",
      "LocalizedStringField"),
-    (LOCALIZEDTEXTAREA, "aoasurveys.forms.fields.LocalizedTextAreaField",
+    (LOCALIZEDTEXTAREA, "aoasurveys.aoaforms.fields.LocalizedTextAreaField",
      "LocalizedTextAreaField"),
 )
 

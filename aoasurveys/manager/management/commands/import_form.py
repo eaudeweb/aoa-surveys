@@ -6,8 +6,7 @@ from forms_builder.forms.fields import TEXT, FILE, CHECKBOX_MULTIPLE, \
     RADIO_MULTIPLE, TEXTAREA, SELECT
 from django.conf import settings
 
-from aoasurveys.reports.models import Form, Field
-from aoasurveys.forms.models import Label
+from aoasurveys.aoaforms.models import Form, Field, Label
 
 
 class Command(BaseCommand):

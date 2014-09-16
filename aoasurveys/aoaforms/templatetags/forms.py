@@ -1,9 +1,9 @@
-from aoasurveys.forms.models import Label
 from django import template
 from django.forms.forms import BoundField
 from django.template.loader import get_template
 
-from aoasurveys.forms.forms import DisplayedForm
+from aoasurveys.aoaforms.forms import DisplayedForm
+from aoasurveys.aoaforms.models import Label
 
 register = template.Library()
 
@@ -26,7 +26,7 @@ class CustomFormNode(template.Node):
         labels = [(label, label.order) for label in form.labels.all()]
         fields = zip(
             form_for_form.fields.values(),
-            range(0, 10*len(form_for_form.fields), 10)
+            range(0, 10 * len(form_for_form.fields), 10)
         )
         fields_and_labels = [
             f[0] for f in sorted(
@@ -67,7 +67,6 @@ def render_built_form(parser, token):
         if name not in ("form", "id", "slug"):
             raise ValueError
     except ValueError:
-        e = ()
         raise template.TemplateSyntaxError(render_built_form.__doc__)
 
     return CustomFormNode(name, value)

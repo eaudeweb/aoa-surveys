@@ -1,5 +1,5 @@
 from django.views.generic import DetailView
-from aoasurveys.reports.models import Form
+from aoasurveys.aoaforms.models import Form
 
 
 class FormView(DetailView):

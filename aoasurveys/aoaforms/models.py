@@ -1,8 +1,10 @@
-from django.contrib import admin
-from django.db.models import CharField, ForeignKey, IntegerField
 from django.utils.translation import ugettext_lazy as _
+from django.contrib import admin
 from django.core.urlresolvers import reverse
 from django.conf import settings
+from django.db.models import (
+    CharField, ForeignKey, IntegerField, Model, SlugField,
+)
 from forms_builder.forms import fields as forms_builder_fields
 from forms_builder.forms.models import (
     AbstractForm, AbstractFormEntry, AbstractField, AbstractFieldEntry,
@@ -65,4 +67,16 @@ class FieldEntry(AbstractFieldEntry):
                 return reverse('file_view', args=(self.id,))
 
 
+class Label(Model):
+    form = ForeignKey(Form, related_name="labels")
+    order = IntegerField(_("Order"), null=True, blank=True)
+    slug = SlugField(_('Slug'), max_length=100, blank=True, default='')
+    label = CharField(_('Label'), max_length=255)
+
+    class Meta(AbstractField.Meta):
+        ordering = ("order",)
+        verbose_name = 'Label'
+        verbose_name_plural = 'Labels'
+
 admin.site.register(Form)
+admin.site.register(Label)
