@@ -2,36 +2,25 @@ import os
 import mimetypes
 
 from django.shortcuts import get_object_or_404
-from django.views.generic import ListView, DetailView
-from django.views.generic.edit import FormView
+from django.views.generic import ListView
 from django.conf import settings
 from django.http import HttpResponse
-from django.core.urlresolvers import reverse
 from django.db.models import Q
 
-from aoasurveys.reports.forms import SelectFieldsForm, FilteringForm
+from aoasurveys.reports.forms import FilteringForm
 from aoasurveys.aoaforms.models import Form, FieldEntry
-
-
-class DetailFormView(DetailView, FormView):
-
-    def get(self, request, *args, **kwargs):
-        form_class = self.get_form_class()
-        form = self.get_form(form_class)
-        self.object = self.get_object()
-        context = self.get_context_data(object=self.object, form=form)
-        return self.render_to_response(context)
+from aoasurveys.views import DetailFormView
 
 
 class FormsIndex(ListView):
 
-    template_name = 'reports/index.html'
+    template_name = 'index.html'
     model = Form
 
 
 class AnswersView(DetailFormView):
 
-    template_name = 'reports/answers.html'
+    template_name = 'answers.html'
     model = Form
     slug_url_kwarg = 'slug'
     form_class = FilteringForm
@@ -76,41 +65,6 @@ class AnswersView(DetailFormView):
         self.object = self.get_object()
         return self.render_to_response(self.get_context_data(
             object=self.object, form=form))
-
-
-class FormExtraView(DetailFormView):
-
-    template_name = 'reports/form_extra.html'
-    model = Form
-    slug_url_kwarg = 'slug'
-    form_class = SelectFieldsForm
-    context_object_name = 'survey'
-
-    def get_initial(self):
-        survey = self.get_object()
-        return {
-            'status': survey.status,
-            'visible_fields': survey.visible_fields_slugs,
-            'filtering_fields': survey.filtering_fields_slugs,
-        }
-
-    def get_success_url(self):
-        return reverse('homepage')
-
-    def get_context_data(self, **kwargs):
-        context = super(FormExtraView, self).get_context_data(**kwargs)
-        context.update({
-            'separator': settings.FIELDS_SEPARATOR,
-        })
-        return context
-
-    def form_valid(self, form):
-        survey = self.get_object()
-        survey.status = form.cleaned_data['status']
-        survey.visible_fields_slugs = form.cleaned_data['visible_fields']
-        survey.filtering_fields_slugs = form.cleaned_data['filtering_fields']
-        survey.save()
-        return super(FormExtraView, self).form_valid(form)
 
 
 def file_view(request, field_entry_id):
