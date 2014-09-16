@@ -56,7 +56,7 @@
         {% elif field.field.choices %}
           {{ field | get_choices:request.language }}
         {% else %}
-          {{ field.value | translate:request.language }}
+          {{ field.value | translate:request.language | default:'' }}
         {% endif %}
         </td>
       {% endfor %}
