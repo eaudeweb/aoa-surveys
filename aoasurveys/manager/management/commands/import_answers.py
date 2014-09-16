@@ -31,7 +31,9 @@ class Command(BaseCommand):
                     )
                     #TODO set id, respondent, draft
                     for slug, value in answer["answers"].items():
-                        field = Field.objects.filter(slug=slug).first()
+                        field = (
+                            Field.objects.filter(slug=slug, form=form).first()
+                        )
                         if field:
                             FieldEntry.objects.create(
                                 entry=formentry,

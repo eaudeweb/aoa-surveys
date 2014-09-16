@@ -15,7 +15,7 @@ class Command(BaseCommand):
     help = 'Import a dynamic form exported from Naaya-Survey'
 
     def _concat_lang(self, langs):
-        return "%s\n%s" % (langs["en"], langs.get("ru", ""))
+        return "%s\n%s" % (langs.get("en", ""), langs.get("ru", ""))
 
     def _get_choices(self, langs):
         pairs = zip(langs['en'], langs['ru'])
