@@ -1,0 +1,2406 @@
+[
+{
+    "pk": 1, 
+    "model": "reports.form", 
+    "fields": {
+        "status": 2, 
+        "email_message": "", 
+        "title": "Welcome to the Virtual Library of the Assessment of Assessments.\n\u0414\u043e\u0431\u0440\u043e \u043f\u043e\u0436\u0430\u043b\u043e\u0432\u0430\u0442\u044c \u0432 \u0432\u0438\u0440\u0442\u0443\u0430\u043b\u044c\u043d\u0443\u044e \u0431\u0438\u0431\u043b\u0438\u043e\u0442\u0435\u043a\u0443 \u041e\u0446\u0435\u043d\u043a\u0438 \u043e\u0446\u0435\u043d\u043e\u043a", 
+        "login_required": false, 
+        "email_copies": "", 
+        "button_text": "Submit", 
+        "slug": "bibliography-details-each-assessment", 
+        "send_email": true, 
+        "intro": "", 
+        "publish_date": null, 
+        "email_from": "", 
+        "email_subject": "", 
+        "sites": [], 
+        "visible_fields_slugs": "w_assessment-name, w_theme, w_submitter-name, w_body-conducting-assessment, w_location, w_official-country-region, w_geo-coverage-region", 
+        "response": "", 
+        "expiry_date": null, 
+        "filtering_fields_slugs": "w_assessment-name, w_assessment-year, w_official-country-region, w_geo-coverage-region, w_theme, w_green-economy-topics,  w_water-resources-topics, w_water-resource-management-topics,  w_resource-efficiency-topics"
+    }
+},
+{
+    "pk": 2, 
+    "model": "reports.form", 
+    "fields": {
+        "status": 2, 
+        "email_message": "", 
+        "title": "AoA REVIEW TEMPLATE\n\u041e\u043f\u0440\u043e\u0441\u043d\u044b\u0439 \u043b\u0438\u0441\u0442 \u0434\u043b\u044f \u043e\u0431\u0437\u043e\u0440\u0430 AoA", 
+        "login_required": false, 
+        "email_copies": "", 
+        "button_text": "Submit", 
+        "slug": "general-template", 
+        "send_email": true, 
+        "intro": "", 
+        "publish_date": null, 
+        "email_from": "", 
+        "email_subject": "", 
+        "sites": [], 
+        "visible_fields_slugs": "w_q1-name-assessment-report, w_name, w_official-country-region, w_geo-coverage-region,", 
+        "response": "", 
+        "expiry_date": null, 
+        "filtering_fields_slugs": "w_official-country-region, w_geo-coverage-region"
+    }
+},
+{
+    "pk": 3, 
+    "model": "reports.form", 
+    "fields": {
+        "status": 2, 
+        "email_message": "", 
+        "title": "Country Fiches\n", 
+        "login_required": false, 
+        "email_copies": "", 
+        "button_text": "Submit", 
+        "slug": "country_fiches", 
+        "send_email": true, 
+        "intro": "", 
+        "publish_date": null, 
+        "email_from": "", 
+        "email_subject": "", 
+        "sites": [], 
+        "visible_fields_slugs": "w_title, w_author,w_publication-year,  w_theme, w_sector, w_country", 
+        "response": "", 
+        "expiry_date": null, 
+        "filtering_fields_slugs": "w_publication-year,  w_theme, w_country"
+    }
+},
+{
+    "pk": 4, 
+    "model": "reports.form", 
+    "fields": {
+        "status": 1, 
+        "email_message": "", 
+        "title": "Welcome to the thematic extended Virtual Library of the Assessment of Assessments -- DRAFT\n\u0414\u043e\u0431\u0440\u043e \u043f\u043e\u0436\u0430\u043b\u043e\u0432\u0430\u0442\u044c \u0432 \u0432\u0438\u0440\u0442\u0443\u0430\u043b\u044c\u043d\u0443\u044e \u0431\u0438\u0431\u043b\u0438\u043e\u0442\u0435\u043a\u0443 \u041e\u0446\u0435\u043d\u043a\u0438 \u043e\u0446\u0435\u043d\u043e\u043a", 
+        "login_required": false, 
+        "email_copies": "", 
+        "button_text": "Submit", 
+        "slug": "virtual-library-extended", 
+        "send_email": true, 
+        "intro": "", 
+        "publish_date": null, 
+        "email_from": "", 
+        "email_subject": "", 
+        "sites": [], 
+        "visible_fields_slugs": "w_assessment-name, w_theme, w_assessment-upload, w_official-country-region, w_geo-coverage-region", 
+        "response": "", 
+        "expiry_date": null, 
+        "filtering_fields_slugs": "w_title-original-language, w_theme"
+    }
+},
+{
+    "pk": 1, 
+    "model": "reports.field", 
+    "fields": {
+        "field_type": 8, 
+        "form": 1, 
+        "default": "", 
+        "required": true, 
+        "choices": "`Global\n\u0413\u043b\u043e\u0431\u0430\u043b\u044c\u043d\u044b\u0439`,`Regional/Transboundary\n\u0420\u0435\u0433\u0438\u043e\u043d\u0430\u043b\u044c\u043d\u044b\u0439/\u0422\u0440\u0430\u043d\u0441\u0433\u0440\u0430\u043d\u0438\u0447\u043d\u044b\u0439`,`National/Local\n\u041d\u0430\u0446\u0438\u043e\u043d\u0430\u043b\u044c\u043d\u044b\u0439/\u041b\u043e\u043a\u0430\u043b\u044c\u043d\u044b\u0439`", 
+        "order": 70, 
+        "visible": true, 
+        "help_text": "", 
+        "placeholder_text": null, 
+        "label": "Report coverage\n\u041e\u0445\u0432\u0430\u0442 \u043e\u0442\u0447\u0435\u0442\u0430", 
+        "slug": "w_theme-coverage"
+    }
+},
+{
+    "pk": 2, 
+    "model": "reports.field", 
+    "fields": {
+        "field_type": 5, 
+        "form": 1, 
+        "default": "", 
+        "required": false, 
+        "choices": "`Water quantity and vulnerability (including extreme natural events)\n\u041a\u043e\u043b\u0438\u0447\u0435\u0441\u0442\u0432\u043e \u0432\u043e\u0434\u044b \u0438 \u0443\u044f\u0437\u0432\u0438\u043c\u043e\u0441\u0442\u044c (\u0432 \u0442\u043e\u043c \u0447\u0438\u0441\u043b\u0435 \u044d\u043a\u0441\u0442\u0440\u0435\u043c\u0430\u043b\u044c\u043d\u044b\u0435 \u043f\u0440\u0438\u0440\u043e\u0434\u043d\u044b\u0435 \u044f\u0432\u043b\u0435\u043d\u0438\u044f)`,`Desertification\n\u041e\u043f\u0443\u0441\u0442\u044b\u043d\u0438\u0432\u0430\u043d\u0438\u0435`,`Living resources (fisheries)\n\u0416\u0438\u0432\u044b\u0435 \u0440\u0435\u0441\u0443\u0440\u0441\u044b (\u0440\u044b\u0431\u043d\u043e\u0435 \u0445\u043e\u0437\u044f\u0439\u0441\u0442\u0432\u043e)`,`Habitat characterization\n\u041e\u043f\u0440\u0435\u0434\u0435\u043b\u0435\u043d\u0438\u0435 \u0445\u0430\u0440\u0430\u043a\u0442\u0435\u0440\u0438\u0441\u0442\u0438\u043a \u0435\u0441\u0442\u0435\u0441\u0442\u0432\u0435\u043d\u043d\u043e\u0439 \u0441\u0440\u0435\u0434\u044b \u043e\u0431\u0438\u0442\u0430\u043d\u0438\u044f`,`Ecosystems and biodiversity\n\u042d\u043a\u043e\u0441\u0438\u0441\u0442\u0435\u043c\u0430 \u0438 \u0431\u0438\u043e\u043b\u043e\u0433\u0438\u0447\u0435\u0441\u043a\u043e\u0435 \u0440\u0430\u0437\u043d\u043e\u043e\u0431\u0440\u0430\u0437\u0438\u0435`,`Protected and migratory species and protected areas\n\u041e\u0445\u0440\u0430\u043d\u044f\u0435\u043c\u044b\u0435 \u0438 \u043c\u0438\u0433\u0440\u0438\u0440\u0443\u044e\u0449\u0438\u0435 \u0432\u0438\u0434\u044b \u0438 \u043e\u0445\u0440\u0430\u043d\u044f\u0435\u043c\u044b\u0435 \u0442\u0435\u0440\u0440\u0438\u0442\u043e\u0440\u0438\u0438`,`Invasive species\n\u0418\u043d\u0432\u0430\u0437\u0438\u0432\u043d\u044b\u0435 \u0432\u0438\u0434\u044b`,`Water-borne diseases\n\u0411\u043e\u043b\u0435\u0437\u043d\u0438, \u043f\u0435\u0440\u0435\u0434\u0430\u0432\u0430\u0435\u043c\u044b\u0435 \u043f\u043e\u0441\u0440\u0435\u0434\u0441\u0442\u0432\u043e\u043c \u0432\u043e\u0434\u044b`,`Water quality and vulnerability\n\u041a\u0430\u0447\u0435\u0441\u0442\u0432\u043e \u0432\u043e\u0434\u044b \u0438 \u0443\u044f\u0437\u0432\u0438\u043c\u043e\u0441\u0442\u044c`", 
+        "order": 80, 
+        "visible": true, 
+        "help_text": "", 
+        "placeholder_text": null, 
+        "label": "Water Resources topics\n\u0412\u043e\u0434\u043d\u044b\u0435 \u0440\u0435\u0441\u0443\u0440\u0441\u044b  \u0438 \u044d\u043a\u043e\u0441\u0438\u0441\u0442\u0435\u043c\u044b, \u0441\u0432\u044f\u0437\u0430\u043d\u043d\u044b\u0435 \u0441 \u0432\u043e\u0434\u043e\u0439", 
+        "slug": "w_water-resources-topics"
+    }
+},
+{
+    "pk": 3, 
+    "model": "reports.field", 
+    "fields": {
+        "field_type": 8, 
+        "form": 1, 
+        "default": "", 
+        "required": true, 
+        "choices": "`Yes\n\u0414\u0430`,`No\n\u041d\u0435\u0442`", 
+        "order": 65, 
+        "visible": true, 
+        "help_text": "", 
+        "placeholder_text": null, 
+        "label": "Other criteria\n\u0421\u0443\u0449\u0435\u0441\u0442\u0432\u0443\u044e\u0442 \u043b\u0438 \u0434\u0440\u0443\u0433\u0438\u0435 \u043a\u0440\u0438\u0442\u0435\u0440\u0438\u0438, \u043d\u0430 \u043e\u0441\u043d\u043e\u0432\u0430\u043d\u0438\u0438 \u043a\u043e\u0442\u043e\u0440\u044b\u0445 \u0412\u044b \u0431\u044b \u043d\u0430\u0437\u043d\u0430\u0447\u0438\u043b\u0438 \u043f\u0440\u0438\u043e\u0440\u0438\u0442\u0435\u0442 \u0432\u044b\u0431\u043e\u0440\u0430 \u044d\u0442\u043e\u0439 \u043e\u0446\u0435\u043d\u043a\u0438", 
+        "slug": "w_other-criteria"
+    }
+},
+{
+    "pk": 4, 
+    "model": "reports.field", 
+    "fields": {
+        "field_type": 8, 
+        "form": 1, 
+        "default": "", 
+        "required": true, 
+        "choices": "`Yes\n\u0414\u0430`,`No\n\u041d\u0435\u0442`", 
+        "order": 40, 
+        "visible": true, 
+        "help_text": "", 
+        "placeholder_text": null, 
+        "label": "Has the assessment been published for any specific scope or purpose\n\u0418\u043c\u0435\u0435\u0442 \u043b\u0438 \u043f\u0443\u0431\u043b\u0438\u043a\u0430\u0446\u0438\u044f \u043e\u0446\u0435\u043d\u043a\u0438 \u043a\u0430\u043a\u0438\u0435-\u043b\u0438\u0431\u043e \u043a\u043e\u043d\u043a\u0440\u0435\u0442\u043d\u044b\u0435 \u0440\u0430\u043c\u043a\u0438 \u0438\u043b\u0438 \u0446\u0435\u043b\u0438", 
+        "slug": "w_specific-scope-or-purpose"
+    }
+},
+{
+    "pk": 5, 
+    "model": "reports.field", 
+    "fields": {
+        "field_type": 1, 
+        "form": 1, 
+        "default": "", 
+        "required": true, 
+        "choices": "", 
+        "order": 180, 
+        "visible": true, 
+        "help_text": "", 
+        "placeholder_text": null, 
+        "label": "Email\n\u042d\u043b\u0435\u043a\u0442\u0440\u043e\u043d\u043d\u0430\u044f \u043f\u043e\u0447\u0442\u0430", 
+        "slug": "w_submitter-email"
+    }
+},
+{
+    "pk": 6, 
+    "model": "reports.field", 
+    "fields": {
+        "field_type": 8, 
+        "form": 1, 
+        "default": "", 
+        "required": true, 
+        "choices": "`Yes\n\u0414\u0430`,`No (NGO)\n\u041d\u0435\u0442 (\u041d\u041f\u041e)`,`No (Academic organization)\n\u041d\u0435\u0442 (\u0410\u043a\u0430\u0434\u0435\u043c\u0438\u0447\u0435\u0441\u043a\u0430\u044f \u043e\u0440\u0433\u0430\u043d\u0438\u0437\u0430\u0446\u0438\u044f)`,`No (Enterprise)\n\u041d\u0435\u0442 (\u041f\u0440\u0435\u0434\u043f\u0440\u0438\u044f\u0442\u0438\u0435)`,`No (Other)\n\u041d\u0435\u0442 (\u0414\u0440\u0443\u0433\u043e\u0435)`", 
+        "order": 50, 
+        "visible": true, 
+        "help_text": "", 
+        "placeholder_text": null, 
+        "label": "Assessment is formal\n\u041e\u0446\u0435\u043d\u043a\u0430 \u044f\u0432\u043b\u044f\u0435\u0442\u0441\u044f \u043e\u0444\u0438\u0446\u0438\u0430\u043b\u044c\u043d\u043e\u0439", 
+        "slug": "w_is-formal"
+    }
+},
+{
+    "pk": 7, 
+    "model": "reports.field", 
+    "fields": {
+        "field_type": 5, 
+        "form": 1, 
+        "default": "", 
+        "required": false, 
+        "choices": "`Renewable energy (e.g. hydropower, biofuels and biomass)\n\u042d\u043d\u0435\u0440\u0433\u0438\u044f \u0438\u0437 \u0432\u043e\u0437\u043e\u0431\u043d\u043e\u0432\u043b\u044f\u0435\u043c\u044b\u0445 \u0438\u0441\u0442\u043e\u0447\u043d\u0438\u043a\u043e\u0432 (\u043d\u0430\u043f\u0440., \u0433\u0438\u0434\u0440\u043e\u044d\u043d\u0435\u0440\u0433\u0438\u044f, \u0431\u0438\u043e\u0442\u043e\u043f\u043b\u0438\u0432\u043e \u0438 \u0431\u0438\u043e\u043c\u0430\u0441\u0441\u0430)`,`Energy efficiency\n\u042d\u043d\u0435\u0440\u0433\u043e\u044d\u0444\u0444\u0435\u043a\u0442\u0438\u0432\u043d\u043e\u0441\u0442\u044c`,`Mobility (air quality, emissions and noise)\n\u041c\u043e\u0431\u0438\u043b\u044c\u043d\u043e\u0441\u0442\u044c (\u043a\u0430\u0447\u0435\u0441\u0442\u0432\u043e \u0432\u043e\u0437\u0434\u0443\u0445\u0430, \u0432\u044b\u0431\u0440\u043e\u0441\u044b \u0438 \u0448\u0443\u043c)`,`Industry (emissions and waste)\n\u041f\u0440\u043e\u043c\u044b\u0448\u043b\u0435\u043d\u043d\u043e\u0441\u0442\u044c (\u0432\u044b\u0431\u0440\u043e\u0441\u044b \u0438 \u043e\u0442\u0445\u043e\u0434\u044b)`,`Environmental impact assessment (EIA) and strategic impact assessment (SIA)\n\u041e\u0446\u0435\u043d\u043a\u0430 \u0432\u043e\u0437\u0434\u0435\u0439\u0441\u0442\u0432\u0438\u044f \u043d\u0430 \u043e\u043a\u0440\u0443\u0436\u0430\u044e\u0449\u0443\u044e \u0441\u0440\u0435\u0434\u0443 (\u041e\u0412\u041e\u0421) \u0438 \u041e\u0446\u0435\u043d\u043a\u0430 \u0441\u0442\u0440\u0430\u0442\u0435\u0433\u0438\u0447\u0435\u0441\u043a\u043e\u0433\u043e \u0432\u043e\u0437\u0434\u0435\u0439\u0441\u0442\u0432\u0438\u044f (\u041e\u0421\u0412/SIA)`,`Governance (including institutional arrangements and multilateral environmental agreements) and environmental performance reviews\n\u0423\u043f\u0440\u0430\u0432\u043b\u0435\u043d\u0438\u0435 (\u0432 \u0442\u043e\u043c \u0447\u0438\u0441\u043b\u0435 \u0438\u043d\u0441\u0442\u0438\u0442\u0443\u0446\u0438\u043e\u043d\u0430\u043b\u044c\u043d\u044b\u0435 \u0441\u0445\u0435\u043c\u044b \u0438 \u043c\u043d\u043e\u0433\u043e\u0441\u0442\u043e\u0440\u043e\u043d\u043d\u0438\u0435 \u0441\u043e\u0433\u043b\u0430\u0448\u0435\u043d\u0438\u044f \u043f\u043e \u043e\u043a\u0440\u0443\u0436\u0430\u044e\u0449\u0435\u0439 \u0441\u0440\u0435\u0434\u0435 \u0438 \u043e\u0431\u0437\u043e\u0440\u044b \u044d\u043a\u043e\u043b\u043e\u0433\u0438\u0447\u0435\u0441\u043a\u043e\u0439 \u0440\u0435\u0437\u0443\u043b\u044c\u0442\u0430\u0442\u0438\u0432\u043d\u043e\u0441\u0442\u0438)`,`Corporate social responsibility and environmental reporting\n\u041a\u043e\u0440\u043f\u043e\u0440\u0430\u0442\u0438\u0432\u043d\u0430\u044f \u0441\u043e\u0446\u0438\u0430\u043b\u044c\u043d\u0430\u044f \u043e\u0442\u0432\u0435\u0442\u0441\u0442\u0432\u0435\u043d\u043d\u043e\u0441\u0442\u044c \u0438 \u044d\u043a\u043e\u043b\u043e\u0433\u0438\u0447\u0435\u0441\u043a\u0430\u044f \u043e\u0442\u0447\u0435\u0442\u043d\u043e\u0441\u0442\u044c`,`Futures and scenarios (including vulnerability, opportunities, competitiveness and migration)\n\u0411\u0443\u0434\u0443\u0449\u0435\u0435 \u0438 \u0441\u0446\u0435\u043d\u0430\u0440\u0438\u0438 (\u0432 \u0442\u043e\u043c \u0447\u0438\u0441\u043b\u0435 \u0443\u044f\u0437\u0432\u0438\u043c\u043e\u0441\u0442\u044c, \u0432\u043e\u0437\u043c\u043e\u0436\u043d\u043e\u0441\u0442\u0438, \u043a\u043e\u043d\u043a\u0443\u0440\u0435\u043d\u0442\u043e\u0441\u043f\u043e\u0441\u043e\u0431\u043d\u043e\u0441\u0442\u044c \u0438 \u043c\u0438\u0433\u0440\u0430\u0446\u0438\u044f)`", 
+        "order": 90, 
+        "visible": true, 
+        "help_text": "", 
+        "placeholder_text": null, 
+        "label": "Green Economy topics\n\"\u0417\u0435\u043b\u0435\u043d\u043d\u0430\u044f\" \u044d\u043a\u043e\u043d\u043e\u043c\u0438\u043a\u0430", 
+        "slug": "w_green-economy-topics"
+    }
+},
+{
+    "pk": 8, 
+    "model": "reports.field", 
+    "fields": {
+        "field_type": 9, 
+        "form": 1, 
+        "default": "", 
+        "required": false, 
+        "choices": "", 
+        "order": 31, 
+        "visible": true, 
+        "help_text": "", 
+        "placeholder_text": null, 
+        "label": "Upload assessment\n\u0417\u0430\u0433\u0440\u0443\u0437\u0438\u0442\u044c \u043e\u0446\u0435\u043d\u043a\u0443", 
+        "slug": "w_assessment-upload"
+    }
+},
+{
+    "pk": 9, 
+    "model": "reports.field", 
+    "fields": {
+        "field_type": 100, 
+        "form": 1, 
+        "default": "", 
+        "required": false, 
+        "choices": "", 
+        "order": 68, 
+        "visible": true, 
+        "help_text": "", 
+        "placeholder_text": null, 
+        "label": "If yes, specify the main criterion\n\u0415\u0441\u043b\u0438 \u0434\u0430, \u0443\u043a\u0430\u0436\u0438\u0442\u0435 \u043e\u0441\u043d\u043e\u0432\u043d\u044b\u0435 \u043a\u0440\u0438\u0442\u0435\u0440\u0438\u0438", 
+        "slug": "w_main-criterion"
+    }
+},
+{
+    "pk": 10, 
+    "model": "reports.field", 
+    "fields": {
+        "field_type": 1, 
+        "form": 1, 
+        "default": "", 
+        "required": true, 
+        "choices": "", 
+        "order": 170, 
+        "visible": true, 
+        "help_text": "", 
+        "placeholder_text": null, 
+        "label": "Name\n\u0418\u043c\u044f", 
+        "slug": "w_submitter-name"
+    }
+},
+{
+    "pk": 11, 
+    "model": "reports.field", 
+    "fields": {
+        "field_type": 100, 
+        "form": 1, 
+        "default": "", 
+        "required": true, 
+        "choices": "", 
+        "order": 20, 
+        "visible": true, 
+        "help_text": "", 
+        "placeholder_text": null, 
+        "label": "Name of the Assessment\n\u041d\u0430\u0437\u0432\u0430\u043d\u0438\u0435 \u043e\u0446\u0435\u043d\u043a\u0438", 
+        "slug": "w_assessment-name"
+    }
+},
+{
+    "pk": 12, 
+    "model": "reports.field", 
+    "fields": {
+        "field_type": 100, 
+        "form": 1, 
+        "default": "", 
+        "required": true, 
+        "choices": "", 
+        "order": 25, 
+        "visible": true, 
+        "help_text": "", 
+        "placeholder_text": null, 
+        "label": "Name of the organisation conducting the assessment\n\u041d\u0430\u0437\u0432\u0430\u043d\u0438\u0435 \u043e\u0440\u0433\u0430\u043d\u0438\u0437\u0430\u0446\u0438\u0438, \u043a\u043e\u0442\u043e\u0440\u0430\u044f \u043f\u0440\u043e\u0432\u043e\u0434\u0438\u0442\u044c \u043e\u0446\u0435\u043d\u043a\u0443", 
+        "slug": "w_body-conducting-assessment"
+    }
+},
+{
+    "pk": 13, 
+    "model": "reports.field", 
+    "fields": {
+        "field_type": 1, 
+        "form": 1, 
+        "default": "", 
+        "required": true, 
+        "choices": "", 
+        "order": 190, 
+        "visible": true, 
+        "help_text": "", 
+        "placeholder_text": null, 
+        "label": "Type of organisation\n\u0422\u0438\u043f \u043e\u0440\u0433\u0430\u043d\u0438\u0437\u0430\u0446\u0438\u0438", 
+        "slug": "w_submitter-organisation"
+    }
+},
+{
+    "pk": 14, 
+    "model": "reports.field", 
+    "fields": {
+        "field_type": 8, 
+        "form": 1, 
+        "default": "", 
+        "required": true, 
+        "choices": "`Yes\n\u0414\u0430`,`No\n\u041d\u0435\u0442`", 
+        "order": 60, 
+        "visible": true, 
+        "help_text": "", 
+        "placeholder_text": null, 
+        "label": "Publicly available\n\u041f\u0443\u0431\u043b\u0438\u0447\u043d\u043e \u0434\u043e\u0441\u0442\u0443\u043f\u043d\u0430\u044f", 
+        "slug": "w_publicly-available"
+    }
+},
+{
+    "pk": 15, 
+    "model": "reports.field", 
+    "fields": {
+        "field_type": 5, 
+        "form": 1, 
+        "default": "", 
+        "required": false, 
+        "choices": "`Use of natural capital (including forestry, agriculture, urbanization linked to the use and degradation of land, soil, water and biodiversity)\n\u0418\u0441\u043f\u043e\u043b\u044c\u0437\u043e\u0432\u0430\u043d\u0438\u0435 \u043f\u0440\u0438\u0440\u043e\u0434\u043d\u043e\u0433\u043e \u043a\u0430\u043f\u0438\u0442\u0430\u043b\u0430 (\u0432 \u0442\u043e\u043c \u0447\u0438\u0441\u043b\u0435 \u043b\u0435\u0441\u043e\u0432\u043e\u0434\u0441\u0442\u0432\u043e, \u0441\u0435\u043b\u044c\u0441\u043a\u043e\u0435 \u0445\u043e\u0437\u044f\u0439\u0441\u0442\u0432\u043e, \u0443\u0440\u0431\u0430\u043d\u0438\u0437\u0430\u0446\u0438\u044f, \u0441\u0432\u044f\u0437\u0430\u043d\u043d\u044b\u0435 \u0441 \u0434\u0435\u0433\u0440\u0430\u0434\u0430\u0446\u0438\u0435\u0439 \u0437\u0435\u043c\u043b\u0438, \u043f\u043e\u0447\u0432\u044b, \u0432\u043e\u0434 \u0438 \u0431\u0438\u043e\u043b\u043e\u0433\u0438\u0447\u0435\u0441\u043a\u043e\u0433\u043e \u0440\u0430\u0437\u043d\u043e\u043e\u0431\u0440\u0430\u0437\u0438\u044f)`,`Water efficiency in industrial, rural and urban areas\n\u042d\u0444\u0444\u0435\u043a\u0442\u0438\u0432\u043d\u043e\u0441\u0442\u044c \u0438\u0441\u043f\u043e\u043b\u044c\u0437\u043e\u0432\u0430\u043d\u0438\u044f \u0432\u043e\u0434\u044b \u0432 \u043f\u0440\u043e\u043c\u044b\u0448\u043b\u0435\u043d\u043d\u044b\u0445, \u0441\u0435\u043b\u044c\u0441\u043a\u0438\u0445 \u0438 \u0433\u043e\u0440\u043e\u0434\u0441\u043a\u0438\u0445 \u0437\u043e\u043d\u0430\u0445`,`Life-cycle analysis\n\u0410\u043d\u0430\u043b\u0438\u0437 \u0436\u0438\u0437\u043d\u0435\u043d\u043d\u043e\u0433\u043e \u0446\u0438\u043a\u043b\u0430`,`Environmental accounting\n\u042d\u043a\u043e\u043b\u043e\u0433\u0438\u0447\u0435\u0441\u043a\u0438\u0439 \u0443\u0447\u0451\u0442`,`Consumption and production patterns\n\u041c\u043e\u0434\u0435\u043b\u0438 \u043f\u043e\u0442\u0440\u0435\u0431\u043b\u0435\u043d\u0438\u044f \u0438 \u043f\u0440\u043e\u0438\u0437\u0432\u043e\u0434\u0441\u0442\u0432\u0430`,`Tourism\n\u0422\u0443\u0440\u0438\u0437\u043c`", 
+        "order": 97, 
+        "visible": true, 
+        "help_text": "", 
+        "placeholder_text": null, 
+        "label": "Resource Efficiency topics\n\u042d\u0444\u0444\u0435\u043a\u0442\u0438\u0432\u043d\u043e\u0441\u0442\u044c \u0438\u0441\u043f\u043e\u043b\u044c\u0437\u043e\u0432\u0430\u043d\u0438\u044f \u0440\u0435\u0441\u0443\u0440\u0441\u043e\u0432", 
+        "slug": "w_resource-efficiency-topics"
+    }
+},
+{
+    "pk": 16, 
+    "model": "reports.field", 
+    "fields": {
+        "field_type": 1, 
+        "form": 1, 
+        "default": "", 
+        "required": true, 
+        "choices": "", 
+        "order": 27, 
+        "visible": true, 
+        "help_text": "", 
+        "placeholder_text": null, 
+        "label": "Address of the organisation\n\u041b\u043e\u043a\u0430\u043b\u0438\u0437\u043e\u0432\u0430\u0442\u044c \u0412\u0430\u0448\u0443 \u043e\u0446\u0435\u043d\u043a\u0443", 
+        "slug": "w_location"
+    }
+},
+{
+    "pk": 17, 
+    "model": "reports.field", 
+    "fields": {
+        "field_type": 1, 
+        "form": 1, 
+        "default": "", 
+        "required": false, 
+        "choices": "", 
+        "order": 30, 
+        "visible": true, 
+        "help_text": "", 
+        "placeholder_text": null, 
+        "label": "URL\nURL \u0430\u0434\u0440\u0435\u0441", 
+        "slug": "w_assessment-url"
+    }
+},
+{
+    "pk": 18, 
+    "model": "reports.field", 
+    "fields": {
+        "field_type": 5, 
+        "form": 1, 
+        "default": "", 
+        "required": false, 
+        "choices": "`Water quantity (including glaciers and extreme events)\n\u041a\u043e\u043b\u0438\u0447\u0435\u0441\u0442\u0432\u043e \u0432\u043e\u0434\u044b (\u0432 \u0442\u043e\u043c \u0447\u0438\u0441\u043b\u0435 \u043b\u0435\u0434\u043d\u0438\u043a\u0438 \u0438 \u044d\u043a\u0441\u0442\u0440\u0435\u043c\u0430\u043b\u044c\u043d\u044b\u0435 \u044f\u0432\u043b\u0435\u043d\u0438\u044f)`,`Water management (including efficiency and adaptation measures)\n\u0423\u043f\u0440\u0430\u0432\u043b\u0435\u043d\u0438\u0435 \u0432\u043e\u0434\u043d\u044b\u043c\u0438 \u0440\u0435\u0441\u0443\u0440\u0441\u0430\u043c\u0438 (\u0432 \u0442\u043e\u043c \u0447\u0438\u0441\u043b\u0435 \u043c\u0435\u0440\u044b \u043f\u043e \u044d\u0444\u0444\u0435\u043a\u0442\u0438\u0432\u043d\u043e\u0441\u0442\u0438 \u0438 \u0430\u0434\u0430\u043f\u0442\u0430\u0446\u0438\u0438)`,`Infrastructure (including financial aspects, energy, wastewater, desalinisation, pipes/channels/reservoirs)\n\u0418\u043d\u0444\u0440\u0430\u0441\u0442\u0440\u0443\u043a\u0442\u0443\u0440\u0430 (\u0432 \u0442\u043e\u043c \u0447\u0438\u0441\u043b\u0435 \u0444\u0438\u043d\u0430\u043d\u0441\u043e\u0432\u044b\u0435 \u0430\u0441\u043f\u0435\u043a\u0442\u044b, \u044d\u043d\u0435\u0440\u0433\u0438\u044f, \u0441\u0442\u043e\u0447\u043d\u044b\u0435 \u0432\u043e\u0434\u044b, \u043e\u0431\u0435\u0441\u0441\u043e\u043b\u0438\u0432\u0430\u043d\u0438\u0435, \u0442\u0440\u0443\u0431\u044b/\u043a\u0430\u043d\u0430\u043b\u044b/\u0440\u0435\u0437\u0435\u0440\u0432\u0443\u0430\u0440\u044b)`,`Water consumption\n\u041f\u043e\u0442\u0440\u0435\u0431\u043b\u0435\u043d\u0438\u0435 \u0432\u043e\u0434\u044b`,`Governance (including transboundary issues)\n\u0423\u043f\u0440\u0430\u0432\u043b\u0435\u043d\u0438\u0435 (\u0432 \u0442\u043e\u043c \u0447\u0438\u0441\u043b\u0435 \u0442\u0440\u0430\u043d\u0441\u0433\u0440\u0430\u043d\u0438\u0447\u043d\u044b\u0435 \u0432\u043e\u043f\u0440\u043e\u0441\u044b)`,`Ecosystem services and restoration\n\u042d\u043a\u043e\u0441\u0438\u0441\u0442\u0435\u043c\u043d\u044b\u0435 \u0443\u0441\u043b\u0443\u0433\u0438 \u0438 \u0432\u043e\u0441\u0441\u0442\u0430\u043d\u043e\u0432\u043b\u0435\u043d\u0438\u0435 \u044d\u043a\u043e\u0441\u0438\u0441\u0442\u0435\u043c`,`Water pollution control\n\u0411\u043e\u0440\u044c\u0431\u0430 \u0441 \u0437\u0430\u0433\u0440\u044f\u0437\u043d\u0435\u043d\u0438\u0435\u043c \u0432\u043e\u0434\u044b`,`Socio-economic aspects (e.g. access to drinking water)\n\u0421\u043e\u0446\u0438\u0430\u043b\u044c\u043d\u043e-\u044d\u043a\u043e\u043d\u043e\u043c\u0438\u0447\u0435\u0441\u043a\u0438\u0435 \u0430\u0441\u043f\u0435\u043a\u0442\u044b (\u0434\u043e\u0441\u0442\u0443\u043f \u043a \u043f\u0438\u0442\u044c\u0435\u0432\u043e\u0439 \u0432\u043e\u0434\u0435)`,`Vulnerability\n\u0423\u044f\u0437\u0432\u0438\u043c\u043e\u0441\u0442\u044c`", 
+        "order": 85, 
+        "visible": true, 
+        "help_text": "", 
+        "placeholder_text": null, 
+        "label": "Water Resource Management topics\n\u0423\u043f\u0440\u0430\u0432\u043b\u0435\u043d\u0438\u0435 \u0432\u043e\u0434\u043d\u044b\u043c\u0438 \u0440\u0435\u0441\u0443\u0440\u0441\u0430\u043c\u0438", 
+        "slug": "w_water-resource-management-topics"
+    }
+},
+{
+    "pk": 19, 
+    "model": "reports.field", 
+    "fields": {
+        "field_type": 1, 
+        "form": 1, 
+        "default": "", 
+        "required": true, 
+        "choices": "", 
+        "order": 21, 
+        "visible": true, 
+        "help_text": "", 
+        "placeholder_text": null, 
+        "label": "Year in which the assessment was published\n\u0413\u043e\u0434, \u0432 \u043a\u043e\u0442\u043e\u0440\u043e\u043c \u043e\u0446\u0435\u043d\u043a\u0430 \u0431\u044b\u043b\u0430 \u043e\u043f\u0443\u0431\u043b\u0438\u043a\u043e\u0432\u0430\u043d\u0430", 
+        "slug": "w_assessment-year"
+    }
+},
+{
+    "pk": 20, 
+    "model": "reports.field", 
+    "fields": {
+        "field_type": 5, 
+        "form": 1, 
+        "default": "", 
+        "required": true, 
+        "choices": "`Green economy\n\"\u0417\u0435\u043b\u0435\u043d\u0430\u044f\" \u044d\u043a\u043e\u043d\u043e\u043c\u0438\u043a\u0430`,`Water resources\n\u0412\u043e\u0434\u043d\u044b\u0435 \u0440\u0435\u0441\u0443\u0440\u0441\u044b`,`Water resource management\n\u0423\u043f\u0440\u0430\u0432\u043b\u0435\u043d\u0438\u0435 \u0432\u043e\u0434\u043d\u044b\u043c\u0438 \u0440\u0435\u0441\u0443\u0440\u0441\u0430\u043c\u0438`,`Resource efficiency\n\u042d\u0444\u0444\u0435\u043a\u0442\u0438\u0432\u043d\u043e\u0441\u0442\u044c \u0438\u0441\u043f\u043e\u043b\u044c\u0437\u043e\u0432\u0430\u043d\u0438\u044f \u0440\u0435\u0441\u0443\u0440\u0441\u043e\u0432`", 
+        "order": 71, 
+        "visible": true, 
+        "help_text": "", 
+        "placeholder_text": null, 
+        "label": "Theme\n\u0422\u0435\u043c\u0430", 
+        "slug": "w_theme"
+    }
+},
+{
+    "pk": 21, 
+    "model": "reports.field", 
+    "fields": {
+        "field_type": 1, 
+        "form": 1, 
+        "default": "", 
+        "required": true, 
+        "choices": "", 
+        "order": 200, 
+        "visible": true, 
+        "help_text": "", 
+        "placeholder_text": null, 
+        "label": "Country or international organisation\n\u0421\u0442\u0440\u0430\u043d\u0430 \u0438\u043b\u0438 \u043c\u0435\u0436\u0434\u0443\u043d\u0430\u0440\u043e\u0434\u043d\u0430\u044f \u043e\u0440\u0433\u0430\u043d\u0438\u0437\u0430\u0446\u0438\u044f", 
+        "slug": "w_country-or-international-organisation"
+    }
+},
+{
+    "pk": 22, 
+    "model": "reports.field", 
+    "fields": {
+        "field_type": 5, 
+        "form": 1, 
+        "default": "", 
+        "required": false, 
+        "choices": "`The assessment was published on paper only\n\u041e\u0446\u0435\u043d\u043a\u0430 \u0431\u044b\u043b\u0430 \u043e\u043f\u0443\u0431\u043b\u0438\u043a\u043e\u0432\u0430\u043d\u0430 \u0442\u043e\u043b\u044c\u043a\u043e \u043d\u0430 \u0431\u0443\u043c\u0430\u0433\u0435`", 
+        "order": 32, 
+        "visible": true, 
+        "help_text": "", 
+        "placeholder_text": null, 
+        "label": "Paper only\n\u0422\u043e\u043b\u044c\u043a\u043e \u043d\u0430 \u0431\u0443\u043c\u0430\u0433\u0435", 
+        "slug": "w_paper-only"
+    }
+},
+{
+    "pk": 23, 
+    "model": "reports.field", 
+    "fields": {
+        "field_type": 5, 
+        "form": 1, 
+        "default": "", 
+        "required": false, 
+        "choices": "`Albania\nAlbania`,`Andorra\nAndorra`,`Armenia\nArmenia`,`Austria\nAustria`,`Azerbaijan\nAzerbaijan`,`Belarus\nBelarus`,`Belgium\nBelgium`,`Bosnia and Herzegovina\nBosnia and Herzegovina`,`Bulgaria\nBulgaria`,`Croatia\nCroatia`,`Cyprus\nCyprus`,`Czech Republic\nCzech Republic`,`Denmark\nDenmark`,`Estonia\nEstonia`,`Finland\nFinland`,`France\nFrance`,`Georgia\nGeorgia`,`Germany\nGermany`,`Greece\nGreece`,`Hungary\nHungary`,`Iceland\nIceland`,`Ireland\nIreland`,`Italy\nItaly`,`Kazakhstan\nKazakhstan`,`Kyrgyzstan\nKyrgyzstan`,`Latvia\nLatvia`,`Liechtenstein\nLiechtenstein`,`Lithuania\nLithuania`,`Luxembourg\nLuxembourg`,`Former Yugoslav Republic of Macedonia\nFYR of Macedonia`,`Malta\nMalta`,`Republic of Moldova\nRepublic of Moldova`,`Monaco\nMonaco`,`Montenegro\nMontenegro`,`the Netherlands\nthe Netherlands`,`Norway\nNorway`,`Poland\nPoland`,`Portugal\nPortugal`,`Romania\nRomania`,`Russian Federation\nRussian Federation`,`San Marino\nSan Marino`,`Serbia\nSerbia`,`Slovakia\nSlovakia`,`Slovenia\nSlovenia`,`Spain\nSpain`,`Sweden\nSweden`,`Switzerland\nSwitzerland`,`Tajikistan\nTajikistan`,`Turkey\nTurkey`,`Turkmenistan\nTurkmenistan`,`Ukraine\nUkraine`,`the United Kingdom\nthe United Kingdom`,`Uzbekistan\nUzbekistan`,`Kosovo under UN Security Council Resolution 1244\nKosovo under un security council 1244/9950`,`Afghanistan\nAfghanistan`,`Algeria\nAlgeria`,`Australia\nAustralia`,`Brazil\nBrazil`,`Cambodia\nCambodia`,`Cameroun\nCameroun`,`Canada\nCanada`,`China\nChina`,`Costa Rica\nCosta Rica`,`Egypt\nEgypt`,`Honduras\nHonduras`,`India\nIndia`,`Indonesia\nIndonesia`,`Iran\nIran`,`Israel\nIsrael`,`Japan\nJapan`,`Jordan\nJordan`,`Kenya\nKenya`,`Korea\nKorea`,`Lebanon\nLebanon`,`Libya\nLibya`,`Mauritius\nMauritius`,`Morocco\nMorocco`,`Nepal\nNepal`,`Nigeria\nNigeria`,`Palestinian territory\nPalestinian territory`,`Singapore\nSingapore`,`Syria\nSyria`,`Tunisia\nTunisia`,`Uganda\nUganda`,`USA\nUSA`,`others\nothers`", 
+        "order": 22, 
+        "visible": true, 
+        "help_text": "", 
+        "placeholder_text": null, 
+        "label": "Geo-coverage: country\n\u0413\u0435\u043e\u0433\u0440\u0430\u0444\u0438\u0447\u0435\u0441\u043a\u0438\u0439 \u043e\u0445\u0432\u0430\u0442: c\u0442\u0440\u0430\u043d\u0430", 
+        "slug": "w_official-country-region"
+    }
+},
+{
+    "pk": 24, 
+    "model": "reports.field", 
+    "fields": {
+        "field_type": 5, 
+        "form": 1, 
+        "default": "", 
+        "required": false, 
+        "choices": "`Caucasus\nCaucasus`,`Central Asia\nCentral Asia`,`Eastern Europe\nEastern Europe`,`EEA member countries\nEEA member countries`,`Russian Federation\nRussian Federation`,`Western Balkans\nWestern Balkans`,`Africa\nAfrica`,`Asia\nAsia`,`Global\nGlobal`,`Middle East\nMiddle East`,`North America\nNorth America`,`Northen Africa\nNorthen Africa`,`Pacific countries\nPacific countries`,`other European\nother European`,`other OECD countries\nother OECD countries`", 
+        "order": 23, 
+        "visible": true, 
+        "help_text": "", 
+        "placeholder_text": null, 
+        "label": "Geo-coverage: region\n\u0413\u0435\u043e\u0433\u0440\u0430\u0444\u0438\u0447\u0435\u0441\u043a\u0438\u0439 \u043e\u0445\u0432\u0430\u0442: p\u0435\u0433\u0438\u043e\u043d", 
+        "slug": "w_geo-coverage-region"
+    }
+},
+{
+    "pk": 25, 
+    "model": "reports.field", 
+    "fields": {
+        "field_type": 5, 
+        "form": 1, 
+        "default": "", 
+        "required": false, 
+        "choices": "`Section in State of Environment report\nSection in State of Environment report`,`Section in environmental performance review\nSection in environmental performance review`,`State of water assessment/report \u2013 National level\nState of water assessment/report \u2013 National level`,`State of water assessment/report \u2013 Sub-national level\nState of water assessment/report \u2013 Sub-national level`,`State of water assessment/report \u2013 Regional/Global level\nState of water assessment/report \u2013 Regional level`,`State of green economy assessment/report \u2013 National level\nState of green economy assessment/report \u2013 National level`,`State of green economy assessment/report \u2013 Sub-national level\nState of green economy assessment/report \u2013 Sub-national level`,`State of green economy assessment/report \u2013 Regional/Global level\nState of green economy assessment/report \u2013 Regional level`,`Sectorial report\nSectorial report`,`Water sector or NGOs report\nWater sector or NGOs report`,`Water statistics\nWater statistics`,`Environmental statistics\nEnvironmental statistics`,`Environmental indicator set \u2013 National\nEnvironmental indicator set \u2013 National`,`Environmental indicator set \u2013 Sub-national\nEnvironmental indicator set \u2013 Sub-national`,`Environmental indicator set \u2013 Regional\nEnvironmental indicator set \u2013 Regional`,`Environmental compendium\nEnvironmental compendium`,`Water indicator set\nWater indicator set`", 
+        "order": 24, 
+        "visible": true, 
+        "help_text": "", 
+        "placeholder_text": null, 
+        "label": "Type of document\n\u0422\u0438\u043f \u0434\u043e\u043a\u0443\u043c\u0435\u043d\u0442\u0430", 
+        "slug": "w_type-document"
+    }
+},
+{
+    "pk": 26, 
+    "model": "reports.field", 
+    "fields": {
+        "field_type": 2, 
+        "form": 1, 
+        "default": "", 
+        "required": true, 
+        "choices": "", 
+        "order": 10, 
+        "visible": true, 
+        "help_text": "", 
+        "placeholder_text": null, 
+        "label": "Title in original language\n\u041d\u0430\u0437\u0432\u0430\u043d\u0438\u0435 \u043d\u0430 \u044f\u0437\u044b\u043a\u0435 \u043e\u0440\u0438\u0433\u0438\u043d\u0430\u043b\u0430", 
+        "slug": "w_title-original-language"
+    }
+},
+{
+    "pk": 27, 
+    "model": "reports.field", 
+    "fields": {
+        "field_type": 100, 
+        "form": 2, 
+        "default": "", 
+        "required": false, 
+        "choices": "", 
+        "order": 20, 
+        "visible": true, 
+        "help_text": "", 
+        "placeholder_text": null, 
+        "label": "Q.2\tName of the body conducting the assessment.\nQ.2 \u041d\u0430\u0437\u0432\u0430\u043d\u0438\u0435 \u043e\u0440\u0433\u0430\u043d\u0430, \u043f\u043e\u0434\u0433\u043e\u0442\u043e\u0432\u0438\u0432\u0448\u0435\u0433\u043e \u043e\u0446\u0435\u043d\u043e\u0447\u043d\u044b\u0439 \u0434\u043e\u043a\u043b\u0430\u0434", 
+        "slug": "w_q2-name-body-conducting-assessment"
+    }
+},
+{
+    "pk": 28, 
+    "model": "reports.field", 
+    "fields": {
+        "field_type": 1, 
+        "form": 2, 
+        "default": "", 
+        "required": false, 
+        "choices": "", 
+        "order": 31, 
+        "visible": true, 
+        "help_text": "", 
+        "placeholder_text": null, 
+        "label": "Online\n\u041e\u043d\u043b\u0430\u0439\u043d", 
+        "slug": "w_q3-publishing-year-assessment"
+    }
+},
+{
+    "pk": 29, 
+    "model": "reports.field", 
+    "fields": {
+        "field_type": 8, 
+        "form": 2, 
+        "default": "", 
+        "required": false, 
+        "choices": "`Yes\n\u0414\u0430`,`No\n\u041d\u0435\u0442`,`Information not available\n\u041d\u0435\u0442 \u0434\u043e\u0441\u0442\u0443\u043f\u043d\u043e\u0439 \u0438\u043d\u0444\u043e\u0440\u043c\u0430\u0446\u0438\u0438`", 
+        "order": 40, 
+        "visible": true, 
+        "help_text": "", 
+        "placeholder_text": null, 
+        "label": "Q.4\tIs the assessment part of a regular process for assessment?\nQ.4 \u042f\u0432\u043b\u044f\u0435\u0442\u0441\u044f \u043b\u0438 \u043e\u0446\u0435\u043d\u043e\u0447\u043d\u044b\u0439 \u0434\u043e\u043a\u043b\u0430\u0434 \u0447\u0430\u0441\u0442\u044c\u044e \u0440\u0435\u0433\u0443\u043b\u044f\u0440\u043d\u043e\u0433\u043e \u043f\u0440\u043e\u0446\u0435\u0441\u0441\u0430 \u0441\u043e\u0441\u0442\u0430\u0432\u043b\u0435\u043d\u0438\u044f \u043e\u0446\u0435\u043d\u043e\u0447\u043d\u044b\u0445 \u0434\u043e\u043a\u043b\u0430\u0434\u043e\u0432?", 
+        "slug": "w_q4-assessment-part-regular-process-if-yes-how"
+    }
+},
+{
+    "pk": 30, 
+    "model": "reports.field", 
+    "fields": {
+        "field_type": 100, 
+        "form": 2, 
+        "default": "", 
+        "required": false, 
+        "choices": "", 
+        "order": 45, 
+        "visible": true, 
+        "help_text": "", 
+        "placeholder_text": null, 
+        "label": "If Yes, specify the frequency in years\n\u0415\u0441\u043b\u0438 \"\u0414\u0430\", \u0443\u043a\u0430\u0436\u0438\u0442\u0435 \u0447\u0430\u0441\u0442\u043e\u0442\u0443 \u0432 \u0433\u043e\u0434\u0430\u0445", 
+        "slug": "w_if-yes-specify-frequency-years"
+    }
+},
+{
+    "pk": 31, 
+    "model": "reports.field", 
+    "fields": {
+        "field_type": 8, 
+        "form": 2, 
+        "default": "", 
+        "required": false, 
+        "choices": "`Yes\n\u0414\u0430`,`No\n\u041d\u0435\u0442`,`Information not available\n\u041d\u0435\u0442 \u0434\u043e\u0441\u0442\u0443\u043f\u043d\u043e\u0439 \u0438\u043d\u0444\u043e\u0440\u043c\u0430\u0446\u0438\u0438`", 
+        "order": 52, 
+        "visible": true, 
+        "help_text": "", 
+        "placeholder_text": null, 
+        "label": "Q.5\tWas the assessment the result of an initiative by the body who conducted the assessment? If not, was the assessment commissioned by another body or required by a piece of legislation?\nQ.5 \u042f\u0432\u043b\u044f\u043b\u0441\u044f \u043b\u0438 \u043e\u0446\u0435\u043d\u043e\u0447\u043d\u044b\u0439 \u0434\u043e\u043a\u043b\u0430\u0434 \u0440\u0435\u0437\u0443\u043b\u044c\u0442\u0430\u0442\u043e\u043c \u0438\u043d\u0438\u0446\u0438\u0430\u0442\u0438\u0432\u044b \u043f\u043e\u0434\u0433\u043e\u0442\u043e\u0432\u0438\u0432\u0448\u0435\u0439 \u0435\u0433\u043e \u043e\u0440\u0433\u0430\u043d\u0438\u0437\u0430\u0446\u0438\u0438? \u0415\u0441\u043b\u0438 \"\u041d\u0435\u0442\" \u0431\u044b\u043b \u043b\u0438 \u043e\u043d \u0437\u0430\u043a\u0430\u0437\u0430\u043d \u0434\u0440\u0443\u0433\u043e\u0439 \u043e\u0440\u0433\u0430\u043d\u0438\u0437\u0430\u0446\u0438\u0435\u0439 \u0438\u043b\u0438  \u044f\u0432\u043b\u044f\u043b\u0441\u044f \u0442\u0440\u0435\u0431\u043e\u0432\u0430\u043d\u0438\u0435\u043c \u0437\u0430\u043a\u043e\u043d\u043e\u0434\u0430\u0442\u0435\u043b\u044c\u0441\u0442\u0432\u0430?", 
+        "slug": "w_q5-was-assessment-result-initiative-body-carrying"
+    }
+},
+{
+    "pk": 32, 
+    "model": "reports.field", 
+    "fields": {
+        "field_type": 8, 
+        "form": 2, 
+        "default": "", 
+        "required": false, 
+        "choices": "`Another body\n\u0434\u0440\u0443\u0433\u043e\u0439 \u043e\u0440\u0433\u0430\u043d\u0438\u0437\u0430\u0446\u0438\u0435\u0439`,`Required by a piece of legislation\n\u044f\u0432\u043b\u044f\u043b\u0441\u044f \u0442\u0440\u0435\u0431\u043e\u0432\u0430\u043d\u0438\u0435\u043c \u0437\u0430\u043a\u043e\u043d\u043e\u0434\u0430\u0442\u0435\u043b\u044c\u0441\u0442\u0432\u0430`,`Other\n\u0434\u0440\u0443\u0433\u043e\u0435`", 
+        "order": 55, 
+        "visible": true, 
+        "help_text": "", 
+        "placeholder_text": null, 
+        "label": "If No, specify if commissioned by\n\u0415\u0441\u043b\u0438 \"\u041d\u0435\u0442\", \u0443\u043a\u0430\u0436\u0438\u0442\u0435, \u0431\u044b\u043b \u043b\u0438 \u043e\u0446\u0435\u043d\u043e\u0447\u043d\u044b\u0439 \u0434\u043e\u043a\u043b\u0430\u0434 \u0437\u0430\u043a\u0430\u0437\u0430\u043d", 
+        "slug": "w_if-no-specify-if-commissioned"
+    }
+},
+{
+    "pk": 33, 
+    "model": "reports.field", 
+    "fields": {
+        "field_type": 8, 
+        "form": 2, 
+        "default": "", 
+        "required": false, 
+        "choices": "`Yes\n\u0414\u0430`,`No\n\u041d\u0435\u0442`,`Information not available\n\u041d\u0435\u0442 \u0434\u043e\u0441\u0442\u0443\u043f\u043d\u043e\u0439 \u0438\u043d\u0444\u043e\u0440\u043c\u0430\u0446\u0438\u0438`", 
+        "order": 60, 
+        "visible": true, 
+        "help_text": "", 
+        "placeholder_text": null, 
+        "label": "Q.6\tWas more than one body involved in producing the assessment? If yes, specify which one(s) and whether these bodies are networked.\nQ.6 \u0423\u0447\u0430\u0441\u0442\u0432\u043e\u0432\u0430\u043b\u0430 \u043b\u0438 \u0432 \u0441\u043e\u0441\u0442\u0430\u0432\u043b\u0435\u043d\u0438\u0438 \u043e\u0446\u0435\u043d\u043e\u0447\u043d\u043e\u0433\u043e \u0434\u043e\u043a\u043b\u0430\u0434\u0430 \u0431\u043e\u043b\u0435\u0435 \u0447\u0435\u043c \u043e\u0434\u043d\u0430 \u043e\u0440\u0433\u0430\u043d\u0438\u0437\u0430\u0446\u0438\u044f? \u0415\u0441\u043b\u0438 \"\u0414\u0430\", \u0443\u043a\u0430\u0436\u0438\u0442\u0435, \u043a\u0430\u043a\u0438\u0435, \u0438 \u0441\u0432\u044f\u0437\u0430\u043d\u044b \u043b\u0438 \u043e\u043d\u0438 \u0441\u0435\u0442\u044c\u044e.", 
+        "slug": "w_q6-was-more-one-body-involved-producing"
+    }
+},
+{
+    "pk": 34, 
+    "model": "reports.field", 
+    "fields": {
+        "field_type": 100, 
+        "form": 2, 
+        "default": "", 
+        "required": false, 
+        "choices": "", 
+        "order": 63, 
+        "visible": true, 
+        "help_text": "", 
+        "placeholder_text": null, 
+        "label": "If Yes, specify the name(s) of the body(ies) involved\n\u0415\u0441\u043b\u0438 \"\u0414\u0430\", \u0443\u043a\u0430\u0436\u0438\u0442\u0435 \u043d\u0430\u0437\u0432\u0430\u043d\u0438\u0435 (-\u0438\u044f) \u0432\u043e\u0432\u043b\u0435\u0447\u0435\u043d\u043d\u043e\u0439(-\u044b\u0445)  \u043e\u0440\u0433\u0430\u043d\u0438\u0437\u0430\u0446\u0438\u0438(-\u0438\u0439)", 
+        "slug": "w_if-yes-specify-names-bodyies-involved"
+    }
+},
+{
+    "pk": 35, 
+    "model": "reports.field", 
+    "fields": {
+        "field_type": 8, 
+        "form": 2, 
+        "default": "", 
+        "required": false, 
+        "choices": "`Yes\n\u0414\u0430`,`No\n\u041d\u0435\u0442`,`Information not available\n\u041d\u0435\u0442 \u0434\u043e\u0441\u0442\u0443\u043f\u043d\u043e\u0439 \u0438\u043d\u0444\u043e\u0440\u043c\u0430\u0446\u0438\u0438`", 
+        "order": 66, 
+        "visible": true, 
+        "help_text": "", 
+        "placeholder_text": null, 
+        "label": "If Yes, specify whether these bodies are networked\n\u0415\u0441\u043b\u0438 \"\u0414\u0430\", \u0443\u043a\u0430\u0436\u0438\u0442\u0435, \u0441\u0432\u044f\u0437\u0430\u043d\u044b \u043b\u0438 \u044d\u0442\u0438 \u043e\u0440\u0433\u0430\u043d\u0438\u0437\u0430\u0446\u0438\u0438 \u0438\u043d\u0444\u043e\u0440\u043c\u0430\u0446\u0438\u043e\u043d\u043d\u043e\u0439 \u0441\u0435\u0442\u044c\u044e:", 
+        "slug": "w_if-yes-specify-whether-these-bodies-are-networked"
+    }
+},
+{
+    "pk": 36, 
+    "model": "reports.field", 
+    "fields": {
+        "field_type": 100, 
+        "form": 2, 
+        "default": "", 
+        "required": false, 
+        "choices": "", 
+        "order": 68, 
+        "visible": true, 
+        "help_text": "", 
+        "placeholder_text": null, 
+        "label": "If networked, provide the name or the type of the network\n\u0415\u0441\u043b\u0438 \u043e\u043d\u0438 \u0432\u0445\u043e\u0434\u044f\u0442 \u0432 \u0438\u043d\u0444\u043e\u0440\u043c\u0430\u0446\u0438\u043e\u043d\u043d\u0443\u044e \u0441\u0435\u0442\u044c, \u043f\u0440\u0438\u0432\u0435\u0434\u0438\u0442\u0435 \u043d\u0430\u0437\u0432\u0430\u043d\u0438\u0435 \u0438\u043b\u0438 \u0442\u0438\u043f \u0441\u0435\u0442\u0438", 
+        "slug": "w_if-networked-provide-details-nature-network"
+    }
+},
+{
+    "pk": 37, 
+    "model": "reports.field", 
+    "fields": {
+        "field_type": 100, 
+        "form": 2, 
+        "default": "", 
+        "required": false, 
+        "choices": "", 
+        "order": 75, 
+        "visible": true, 
+        "help_text": "", 
+        "placeholder_text": null, 
+        "label": "If Regional, specify the region\n\u0415\u0441\u043b\u0438 \"\u0420\u0435\u0433\u0438\u043e\u043d\u0430\u043b\u044c\u043d\u044b\u0439\", \u0443\u043a\u0430\u0436\u0438\u0442\u0435 \u0440\u0435\u0433\u0438\u043e\u043d", 
+        "slug": "w_if-regional-specify-region"
+    }
+},
+{
+    "pk": 38, 
+    "model": "reports.field", 
+    "fields": {
+        "field_type": 8, 
+        "form": 2, 
+        "default": "", 
+        "required": false, 
+        "choices": "`Yes\n\u0414\u0430`,`No\n\u041d\u0435\u0442`,`Information not available\n\u041d\u0435\u0442 \u0434\u043e\u0441\u0442\u0443\u043f\u043d\u043e\u0439 \u0438\u043d\u0444\u043e\u0440\u043c\u0430\u0446\u0438\u0438`", 
+        "order": 80, 
+        "visible": true, 
+        "help_text": "", 
+        "placeholder_text": null, 
+        "label": "Q.8\tWere there explicit objectives for the assessment?\nQ.8 \u0418\u043c\u0435\u043b\u0430 \u043b\u0438 \u043e\u0446\u0435\u043d\u043a\u0430 \u0447\u0435\u0442\u043a\u0438\u0435 \u0446\u0435\u043b\u0438?", 
+        "slug": "w_q8-were-there-explicit-objectives-assessment"
+    }
+},
+{
+    "pk": 39, 
+    "model": "reports.field", 
+    "fields": {
+        "field_type": 100, 
+        "form": 2, 
+        "default": "", 
+        "required": false, 
+        "choices": "", 
+        "order": 85, 
+        "visible": true, 
+        "help_text": "", 
+        "placeholder_text": null, 
+        "label": "If Yes, list the top main objectives\n\u0415\u0441\u043b\u0438 \"\u0414\u0430\", \u0443\u043a\u0430\u0436\u0438\u0442\u0435 \u043e\u0441\u043d\u043e\u0432\u043d\u044b\u0435 \u0446\u0435\u043b\u0438", 
+        "slug": "w_if-yes-specify"
+    }
+},
+{
+    "pk": 40, 
+    "model": "reports.field", 
+    "fields": {
+        "field_type": 5, 
+        "form": 2, 
+        "default": "", 
+        "required": false, 
+        "choices": "`Status and trend (or process) assessment\n\u041e\u0446\u0435\u043d\u043a\u0430 \u0441\u043e\u0441\u0442\u043e\u044f\u043d\u0438\u044f \u0438 \u0442\u0435\u043d\u0434\u0435\u043d\u0446\u0438\u0439 (\u0438\u043b\u0438 \u043f\u0440\u043e\u0446\u0435\u0441\u0441\u043e\u0432)`,`Thematic assessment\n\u0422\u0435\u043c\u0430\u0442\u0438\u0447\u0435\u0441\u043a\u0430\u044f \u043e\u0446\u0435\u043d\u043a\u0430`,`Response assessment\n\u041e\u0446\u0435\u043d\u043a\u0430 \u0440\u0435\u0430\u0433\u0438\u0440\u043e\u0432\u0430\u043d\u0438\u044f`,`Sectoral assessment\n\u0421\u0435\u043a\u0442\u043e\u0440\u0430\u043b\u044c\u043d\u0430\u044f \u043e\u0446\u0435\u043d\u043a\u0430`,`Impact assessment\n\u041e\u0446\u0435\u043d\u043a\u0430 \u0432\u043e\u0437\u0434\u0435\u0439\u0441\u0442\u0432\u0438\u044f`,`Project-related assessment\n\u041e\u0446\u0435\u043d\u043a\u0430, \u0441\u0432\u044f\u0437\u0430\u043d\u043d\u0430\u044f \u0441 \u043f\u0440\u043e\u0435\u043a\u0442\u043e\u043c`,`Integrated assessment\n\u0418\u043d\u0442\u0435\u0433\u0440\u0430\u043b\u044c\u043d\u0430\u044f o\u0446\u0435\u043d\u043a\u0430`", 
+        "order": 90, 
+        "visible": true, 
+        "help_text": "", 
+        "placeholder_text": null, 
+        "label": "Q.9\tSpecify the type of assessment report under review (tick as many boxes as necessary).\nQ.9 \u0423\u043a\u0430\u0436\u0438\u0442\u0435 \u0442\u0438\u043f \u0440\u0430\u0441\u0441\u043c\u0430\u0442\u0440\u0438\u0432\u0430\u0435\u043c\u043e\u0433\u043e \u043e\u0446\u0435\u043d\u043e\u0447\u043d\u043e\u0433\u043e \u0434\u043e\u043a\u043b\u0430\u0434\u0430 (\u043e\u0442\u043c\u0435\u0442\u044c\u0442\u0435 \u0432\u0441\u0435 \u043f\u043e\u0434\u0445\u043e\u0434\u044f\u0449\u0438\u0435 \u0432\u0430\u0440\u0438\u0430\u043d\u0442\u044b", 
+        "slug": "w_q9-specify-type-assessment-tick-many-boxes"
+    }
+},
+{
+    "pk": 41, 
+    "model": "reports.field", 
+    "fields": {
+        "field_type": 5, 
+        "form": 2, 
+        "default": "", 
+        "required": false, 
+        "choices": "`Environmental, economic and social aspects\n\u042d\u043a\u043e\u043b\u043e\u0433\u0438\u0447\u0435\u0441\u043a\u0438\u0435, \u044d\u043a\u043e\u043d\u043e\u043c\u0438\u0447\u0435\u0441\u043a\u0438\u0435 \u0438 \u0441\u043e\u0446\u0438\u0430\u043b\u044c\u043d\u044b\u0435 \u0430\u0441\u043f\u0435\u043a\u0442\u044b`,`Thematic areas\n\u0422\u0435\u043c\u0430\u0442\u0438\u0447\u0435\u0441\u043a\u0438\u0435 \u043e\u0431\u043b\u0430\u0441\u0442\u0438`,`Ecosystems\n\u042d\u043a\u043e\u0441\u0438\u0441\u0442\u0435\u043c\u044b`", 
+        "order": 99, 
+        "visible": true, 
+        "help_text": "", 
+        "placeholder_text": null, 
+        "label": "If you ticked Integrated assessment, specify if integration was across (tick as many boxes as necessary)\n\u0415\u0441\u043b\u0438 \u0412\u044b \u043e\u0442\u043c\u0435\u0442\u0438\u043b\u0438 \"\u0418\u043d\u0442\u0435\u0433\u0440\u0430\u043b\u044c\u043d\u0430\u044f \u043e\u0446\u0435\u043d\u043a\u0430\", \u0442\u043e \u0443\u043a\u0430\u0436\u0438\u0442\u0435, \u0435\u0441\u043b\u0438 \u043e\u0446\u0435\u043d\u043e\u0447\u043d\u044b\u0439 \u0434\u043e\u043a\u043b\u0430\u0434 \u043e\u0445\u0432\u0430\u0442\u044b\u0432\u0430\u043b (\u043e\u0442\u043c\u0435\u0442\u044c\u0442\u0435 \u0432\u0441\u0435 \u043f\u043e\u0434\u0445\u043e\u0434\u044f\u0449\u0438\u0435 \u0432\u0430\u0440\u0438\u0430\u043d\u0442\u044b):", 
+        "slug": "w_if-you-ticked-integrated-assessment-specify-if"
+    }
+},
+{
+    "pk": 42, 
+    "model": "reports.field", 
+    "fields": {
+        "field_type": 8, 
+        "form": 2, 
+        "default": "", 
+        "required": false, 
+        "choices": "`Using in-house expertise within the body(ies) involved in producing the assessment report.\n\u0418\u0441\u043f\u043e\u043b\u044c\u0437\u043e\u0432\u0430\u043d\u0438\u0435 \u0432\u043d\u0443\u0442\u0440\u0435\u043d\u043d\u0438\u0445 \u0440\u0435\u0441\u0443\u0440\u0441\u043e\u0432 \u043e\u0440\u0433\u0430\u043d\u0438\u0437\u0430\u0446\u0438\u0438(\u0438\u0439), \u0443\u0447\u0430\u0441\u0442\u0432\u0443\u044e\u0449\u0435\u0439(\u0438\u0445) \u0432 \u0441\u043e\u0441\u0442\u0430\u0432\u043b\u0435\u043d\u0438\u0438 \u043e\u0446\u0435\u043d\u043e\u0447\u043d\u043e\u0433\u043e \u0434\u043e\u043a\u043b\u0430\u0434\u0430.`,`Using expertise within available networks (see Q.6)\n\u0418\u0441\u043f\u043e\u043b\u044c\u0437\u043e\u0432\u0430\u043d\u0438\u0435 \u044d\u043a\u0441\u043f\u0435\u0440\u0442\u043e\u0432 \u0438\u0437 \u0434\u043e\u0441\u0442\u0443\u043f\u043d\u044b\u0445 \u0441\u0435\u0442\u0435\u0439 (\u0441\u043c\u043e\u0442\u0440\u0438 Q.6)`,`By means of open competition (tender or application, etc)\n\u0421\u0440\u0435\u0434\u0441\u0442\u0432\u0430\u043c\u0438 \u043e\u0442\u043a\u0440\u044b\u0442\u043e\u0439 \u043a\u043e\u043d\u043a\u0443\u0440\u0435\u043d\u0446\u0438\u0438 (\u0442\u0435\u043d\u0434\u0435\u0440 \u0438\u043b\u0438 \u043a\u043e\u043d\u043a\u0443\u0440\u0441\u043d\u043e\u0435 \u043f\u0440\u0435\u0434\u043b\u043e\u0436\u0435\u043d\u0438\u0435 \u0438 \u0442.\u043f.)`,`By direct agreement/selection\n\u041f\u0443\u0442\u0435\u043c \u043f\u0440\u044f\u043c\u043e\u0433\u043e \u043a\u043e\u043d\u0442\u0440\u0430\u043a\u0442\u0430/\u043e\u0442\u0431\u043e\u0440\u0430`,`Information not available\n\u0418\u043d\u0444\u043e\u0440\u043c\u0430\u0446\u0438\u044f \u043e\u0442\u0441\u0443\u0442\u0441\u0442\u0432\u0443\u0435\u0442`,`Other\n\u0414\u0440\u0443\u0433\u043e\u0435`", 
+        "order": 101, 
+        "visible": true, 
+        "help_text": "", 
+        "placeholder_text": null, 
+        "label": "Q.10 How was the expertise to carry out the assessment selected?\nQ.10 \u041a\u0430\u043a \u043e\u0442\u0431\u0438\u0440\u0430\u043b\u0438\u0441\u044c \u044d\u043a\u0441\u043f\u0435\u0440\u0442\u044b \u0434\u043b\u044f \u0441\u043e\u0441\u0442\u0430\u0432\u043b\u0435\u043d\u0438\u044f \u043e\u0446\u0435\u043d\u043e\u0447\u043d\u043e\u0433\u043e \u0434\u043e\u043a\u043b\u0430\u0434\u0430?", 
+        "slug": "w_q10-it-specified-how-scientific-expertise-was"
+    }
+},
+{
+    "pk": 43, 
+    "model": "reports.field", 
+    "fields": {
+        "field_type": 8, 
+        "form": 2, 
+        "default": "", 
+        "required": false, 
+        "choices": "`Yes\n\u0414\u0430`,`No\n\u041d\u0435\u0442`", 
+        "order": 110, 
+        "visible": true, 
+        "help_text": "", 
+        "placeholder_text": null, 
+        "label": "Q.11\tDoes the report indicate whether a consultation process (e.g. with policy makers and/or civil society organisations) was held during the preparation of the assessment?\nQ.11 \u0415\u0441\u0442\u044c \u043b\u0438 \u0432 \u0434\u043e\u043a\u043b\u0430\u0434\u0435 \u0438\u043d\u0444\u043e\u0440\u043c\u0430\u0446\u0438\u044f \u043e \u0442\u043e\u043c, \u043f\u0440\u043e\u0432\u043e\u0434\u0438\u043b\u0438\u0441\u044c \u043b\u0438 \u043a\u043e\u043d\u0441\u0443\u043b\u044c\u0442\u0430\u0446\u0438\u0438 (\u043d\u0430\u043f\u0440\u0438\u043c\u0435\u0440, \u0441 \u0440\u0430\u0437\u0440\u0430\u0431\u043e\u0442\u0447\u0438\u043a\u0430\u043c\u0438 \u043f\u043e\u043b\u0438\u0442\u0438\u043a\u0438 \u0438/\u0438\u043b\u0438 \u043e\u0431\u0449\u0435\u0441\u0442\u0432\u0435\u043d\u043d\u044b\u043c\u0438 \u043e\u0440\u0433\u0430\u043d\u0438\u0437\u0430\u0446\u0438\u044f\u043c\u0438) \u0432 \u043f\u0440\u043e\u0446\u0435\u0441\u0441\u0435 \u043f\u043e\u0434\u0433\u043e\u0442\u043e\u0432\u043a\u0438 \u043e\u0446\u0435\u043d\u043e\u0447\u043d\u043e\u0433\u043e \u0434\u043e\u043a\u043b\u0430\u0434\u0430?", 
+        "slug": "w_q11-was-interactionconsultation-policy-makers"
+    }
+},
+{
+    "pk": 44, 
+    "model": "reports.field", 
+    "fields": {
+        "field_type": 100, 
+        "form": 2, 
+        "default": "", 
+        "required": false, 
+        "choices": "", 
+        "order": 115, 
+        "visible": true, 
+        "help_text": "", 
+        "placeholder_text": null, 
+        "label": "If Yes, specify by what means this interaction/consultation was achieved\n\u0415\u0441\u043b\u0438 \"\u0414\u0430\", \u0443\u043a\u0430\u0436\u0438\u0442\u0435, \u043a\u0430\u043a\u0438\u043c\u0438 \u0441\u0440\u0435\u0434\u0441\u0442\u0432\u0430\u043c\u0438 \u0431\u044b\u043b \u0434\u043e\u0441\u0442\u0438\u0433\u043d\u0443\u0442 \u043e\u0431\u043c\u0435\u043d \u0438\u043d\u0444\u043e\u0440\u043c\u0430\u0446\u0438\u0435\u0439 \u0438 \u043f\u0440\u043e\u0432\u0435\u0434\u0435\u043d\u044b \u043a\u043e\u043d\u0441\u0443\u043b\u044c\u0442\u0430\u0446\u0438\u0438", 
+        "slug": "w_if-yes-how"
+    }
+},
+{
+    "pk": 45, 
+    "model": "reports.field", 
+    "fields": {
+        "field_type": 8, 
+        "form": 2, 
+        "default": "", 
+        "required": false, 
+        "choices": "`Yes\n\u0414\u0430`,`No\n\u041d\u0435\u0442`,`Information not available\n\u041d\u0435\u0442 \u0434\u043e\u0441\u0442\u0443\u043f\u043d\u043e\u0439 \u0438\u043d\u0444\u043e\u0440\u043c\u0430\u0446\u0438\u0438`", 
+        "order": 120, 
+        "visible": true, 
+        "help_text": "", 
+        "placeholder_text": null, 
+        "label": "Q.12 Was the assessment report reviewed by other experts than those writing the assessment, before the final text was published?\nQ.12 \u041f\u0440\u043e\u0432\u043e\u0434\u0438\u043b\u043e\u0441\u044c \u043b\u0438 \u0440\u0435\u0446\u0435\u043d\u0437\u0438\u0440\u043e\u0432\u0430\u043d\u0438\u0435 \u043e\u0446\u0435\u043d\u043e\u0447\u043d\u043e\u0433\u043e \u0434\u043e\u043a\u043b\u0430\u0434\u0430 \u0434\u0440\u0443\u0433\u0438\u043c\u0438 \u044d\u043a\u0441\u043f\u0435\u0440\u0442\u0430\u043c\u0438, \u043d\u0435 \u043f\u0440\u0438\u043d\u0438\u043c\u0430\u0432\u0448\u0438\u043c\u0438 \u0443\u0447\u0430\u0441\u0442\u0438\u0435 \u0432 \u0441\u043e\u0441\u0442\u0430\u0432\u043b\u0435\u043d\u0438\u0438 \u0434\u043e\u043a\u043b\u0430\u0434\u0430, \u0434\u043e \u043f\u0443\u0431\u043b\u0438\u043a\u0430\u0446\u0438\u0438 \u043e\u043a\u043e\u043d\u0447\u0430\u0442\u0435\u043b\u044c\u043d\u043e\u0433\u043e \u0442\u0435\u043a\u0441\u0442\u0430?", 
+        "slug": "w_q12-was-there-peer-review-assessment-during"
+    }
+},
+{
+    "pk": 46, 
+    "model": "reports.field", 
+    "fields": {
+        "field_type": 100, 
+        "form": 2, 
+        "default": "", 
+        "required": false, 
+        "choices": "", 
+        "order": 125, 
+        "visible": true, 
+        "help_text": "", 
+        "placeholder_text": null, 
+        "label": "If Yes, provide details\n\u0415\u0441\u043b\u0438 \"\u0414\u0430\", \u0443\u043a\u0430\u0436\u0438\u0442\u0435 \u043f\u043e\u0434\u0440\u043e\u0431\u043d\u043e\u0441\u0442\u0438", 
+        "slug": "w_if-yes-provide-details9388"
+    }
+},
+{
+    "pk": 47, 
+    "model": "reports.field", 
+    "fields": {
+        "field_type": 8, 
+        "form": 2, 
+        "default": "", 
+        "required": false, 
+        "choices": "`Yes\n\u0414\u0430`,`No\n\u041d\u0435\u0442`,`Information not available\n\u041d\u0435\u0442 \u0434\u043e\u0441\u0442\u0443\u043f\u043d\u043e\u0439 \u0438\u043d\u0444\u043e\u0440\u043c\u0430\u0446\u0438\u0438`", 
+        "order": 130, 
+        "visible": true, 
+        "help_text": "", 
+        "placeholder_text": null, 
+        "label": "Q.13\t Were any specific arrangements made to coordinate the preparation of the assessment report with other ongoing assessment processes?\nQ.13 \u0411\u044b\u043b\u0438 \u043b\u0438 \u043f\u0440\u0435\u0434\u043f\u0440\u0438\u043d\u044f\u0442\u044b \u043a\u043e\u043d\u043a\u0440\u0435\u0442\u043d\u044b\u0435 \u043c\u0435\u0440\u044b \u043f\u043e \u043a\u043e\u043e\u0440\u0434\u0438\u043d\u0430\u0446\u0438\u0438 \u0441\u043e\u0441\u0442\u0430\u0432\u043b\u0435\u043d\u0438\u044f \u043e\u0446\u0435\u043d\u043e\u0447\u043d\u043e\u0433\u043e \u0434\u043e\u043a\u043b\u0430\u0434\u0430 \u0441 \u0434\u0440\u0443\u0433\u0438\u043c\u0438 \u043f\u0440\u043e\u0438\u0441\u0445\u043e\u0434\u044f\u0449\u0438\u043c\u0438 \u0432 \u0442\u043e \u0436\u0435 \u0432\u0440\u0435\u043c\u044f \u043f\u0440\u043e\u0446\u0435\u0441\u0441\u0430\u043c\u0438 \u043e\u0446\u0435\u043d\u043e\u043a?", 
+        "slug": "w_q13-were-any-specific-arrangements-made"
+    }
+},
+{
+    "pk": 48, 
+    "model": "reports.field", 
+    "fields": {
+        "field_type": 100, 
+        "form": 2, 
+        "default": "", 
+        "required": false, 
+        "choices": "", 
+        "order": 135, 
+        "visible": true, 
+        "help_text": "", 
+        "placeholder_text": null, 
+        "label": "If Yes, provide details\n\u0415\u0441\u043b\u0438 \"\u0414\u0430\",  \u0443\u043a\u0430\u0436\u0438\u0442\u0435 \u043f\u043e\u0434\u0440\u043e\u0431\u043d\u043e\u0441\u0442\u0438", 
+        "slug": "w_if-yes-provide-details6433"
+    }
+},
+{
+    "pk": 49, 
+    "model": "reports.field", 
+    "fields": {
+        "field_type": 8, 
+        "form": 2, 
+        "default": "", 
+        "required": false, 
+        "choices": "`Yes\n\u0414\u0430`,`No\n\u041d\u0435\u0442`,`Information not available\n\u041d\u0435\u0442 \u0434\u043e\u0441\u0442\u0443\u043f\u043d\u043e\u0439 \u0438\u043d\u0444\u043e\u0440\u043c\u0430\u0446\u0438\u0438`", 
+        "order": 140, 
+        "visible": true, 
+        "help_text": "", 
+        "placeholder_text": null, 
+        "label": "Q.14 Were specific efforts made to strengthen the institutional, scientific and/or technical capacities for the assessment as part of the process?\nQ.14 \u0411\u044b\u043b\u0438 \u043b\u0438 \u043f\u0440\u0435\u0434\u043f\u0440\u0438\u043d\u044f\u0442\u044b \u043a\u043e\u043d\u043a\u0440\u0435\u0442\u043d\u044b\u0435 \u0434\u0435\u0439\u0441\u0442\u0432\u0438\u044f \u0434\u043b\u044f \u0443\u0441\u0438\u043b\u0435\u043d\u0438\u044f \u0438\u043d\u0441\u0442\u0438\u0442\u0443\u0446\u0438\u043e\u043d\u0430\u043b\u044c\u043d\u043e\u0433\u043e, \u043d\u0430\u0443\u0447\u043d\u043e\u0433\u043e \u0438/\u0438\u043b\u0438 \u0442\u0435\u0445\u043d\u0438\u0447\u0435\u0441\u043a\u043e\u0433\u043e \u043f\u043e\u0442\u0435\u043d\u0446\u0438\u0430\u043b\u0430 \u0434\u043b\u044f \u043f\u0440\u043e\u0446\u0435\u0441\u0441\u0430 \u0441\u043e\u0441\u0442\u0430\u0432\u043b\u0435\u043d\u0438\u044f \u043e\u0446\u0435\u043d\u043e\u0447\u043d\u043e\u0433\u043e \u0434\u043e\u043a\u043b\u0430\u0434\u0430?", 
+        "slug": "w_q14-were-specific-efforts-made-strengthen"
+    }
+},
+{
+    "pk": 50, 
+    "model": "reports.field", 
+    "fields": {
+        "field_type": 100, 
+        "form": 2, 
+        "default": "", 
+        "required": false, 
+        "choices": "", 
+        "order": 155, 
+        "visible": true, 
+        "help_text": "", 
+        "placeholder_text": null, 
+        "label": "If Other, specify\n\u0415\u0441\u043b\u0438 \"\u0414\u0440\u0443\u0433\u043e\u0435\", \u0443\u043a\u0430\u0436\u0438\u0442\u0435", 
+        "slug": "w_if-others-specify8707"
+    }
+},
+{
+    "pk": 51, 
+    "model": "reports.field", 
+    "fields": {
+        "field_type": 8, 
+        "form": 2, 
+        "default": "", 
+        "required": false, 
+        "choices": "`Yes\n\u0414\u0430`,`No\n\u041d\u0435\u0442`", 
+        "order": 180, 
+        "visible": true, 
+        "help_text": "", 
+        "placeholder_text": null, 
+        "label": "Q.18 Was a summary of the assessment produced as a separate output?\nQ.18 \u0411\u044b\u043b\u043e \u043b\u0438 \u043f\u043e\u0434\u0433\u043e\u0442\u043e\u0432\u043b\u0435\u043d\u043e \u0440\u0435\u0437\u044e\u043c\u0435 \u043e\u0446\u0435\u043d\u043e\u0447\u043d\u043e\u0433\u043e \u0434\u043e\u043a\u043b\u0430\u0434\u0430 \u0432 \u043a\u0430\u0447\u0435\u0441\u0442\u0432\u0435 \u043e\u0442\u0434\u0435\u043b\u044c\u043d\u043e\u0433\u043e \u0438\u0437\u0434\u0430\u043d\u0438\u044f?", 
+        "slug": "w_q17-was-summary-assessment-produced-separate"
+    }
+},
+{
+    "pk": 52, 
+    "model": "reports.field", 
+    "fields": {
+        "field_type": 100, 
+        "form": 2, 
+        "default": "", 
+        "required": false, 
+        "choices": "", 
+        "order": 170, 
+        "visible": true, 
+        "help_text": "", 
+        "placeholder_text": null, 
+        "label": "Q.17 In which languages is the assessment report available?\nQ.17 \u041d\u0430 \u043a\u0430\u043a\u0438\u0445 \u044f\u0437\u044b\u043a\u0430\u0445 \u0438\u043c\u0435\u0435\u0442\u0441\u044f \u043e\u0446\u0435\u043d\u043e\u0447\u043d\u044b\u0439 \u0434\u043e\u043a\u043b\u0430\u0434?", 
+        "slug": "w_q18-which-languages-main-report-assessment"
+    }
+},
+{
+    "pk": 53, 
+    "model": "reports.field", 
+    "fields": {
+        "field_type": 8, 
+        "form": 2, 
+        "default": "", 
+        "required": false, 
+        "choices": "`Not accessible/understandable\n\u041d\u0435\u0434\u043e\u0441\u0442\u0443\u043f\u043d\u0430/\u043d\u0435\u043f\u0440\u043e\u0441\u0442\u0430 \u0434\u043b\u044f \u043f\u043e\u043d\u0438\u043c\u0430\u043d\u0438\u044f`,`Averagely accessible/understandable\n\u0411\u043e\u043b\u0435\u0435 \u043b\u0438 \u043c\u0435\u043d\u0435\u0435 \u0434\u043e\u0441\u0442\u0443\u043f\u043d\u0430/\u043f\u043e\u043d\u044f\u0442\u043d\u0430`,`Easy to understand and accessible\n\u041f\u0440\u043e\u0441\u0442\u0430 \u0434\u043b\u044f \u043f\u043e\u043d\u0438\u043c\u0430\u043d\u0438\u044f \u0438 \u0434\u043e\u0441\u0442\u0443\u043f\u043d\u0430`", 
+        "order": 190, 
+        "visible": true, 
+        "help_text": "", 
+        "placeholder_text": null, 
+        "label": "Q.19 Does the assessment appear to be easy to understand and accessible to non-specialist readers?\nQ.19 \u041f\u0440\u043e\u0441\u0442\u0430 \u043b\u0438 \u043e\u0446\u0435\u043d\u043a\u0430 \u0434\u043b\u044f \u043f\u043e\u043d\u0438\u043c\u0430\u043d\u0438\u044f \u0438 \u0434\u043e\u0441\u0442\u0443\u043f\u043d\u0430 \u0434\u043b\u044f \u0447\u0438\u0442\u0430\u0442\u0435\u043b\u0435\u0439-\u043d\u0435\u0441\u043f\u0435\u0446\u0438\u0430\u043b\u0438\u0441\u0442\u043e\u0432?", 
+        "slug": "w_q19-does-assessment-appear-be-easy-understand-and"
+    }
+},
+{
+    "pk": 54, 
+    "model": "reports.field", 
+    "fields": {
+        "field_type": 8, 
+        "form": 2, 
+        "default": "", 
+        "required": false, 
+        "choices": "`Yes\n\u0414\u0430`,`No\n\u041d\u0435\u0442`,`Information not available\n\u041d\u0435\u0442 \u0434\u043e\u0441\u0442\u0443\u043f\u043d\u043e\u0439 \u0438\u043d\u0444\u043e\u0440\u043c\u0430\u0446\u0438\u0438`", 
+        "order": 202, 
+        "visible": true, 
+        "help_text": "", 
+        "placeholder_text": null, 
+        "label": "Q.20 Was there any information system supporting data management/sharing/exchange while preparing the assessment report?\nQ.20 \u0421\u0443\u0449\u0435\u0441\u0442\u0432\u043e\u0432\u0430\u043b\u0438 \u043b\u0438 \u043a\u0430\u043a\u0438\u0435-\u043b\u0438\u0431\u043e \u0438\u043d\u0444\u043e\u0440\u043c\u0430\u0446\u0438\u043e\u043d\u043d\u044b\u0435 \u0441\u0438\u0441\u0442\u0435\u043c\u044b \u0434\u043b\u044f \u043f\u043e\u0434\u0434\u0435\u0440\u0436\u043a\u0438 \u0443\u043f\u0440\u0430\u0432\u043b\u0435\u043d\u0438\u044f/\u0441\u043e\u0432\u043c\u0435\u0441\u0442\u043d\u043e\u0433\u043e \u043f\u043e\u043b\u044c\u0437\u043e\u0432\u0430\u043d\u0438\u044f/\u043e\u0431\u043c\u0435\u043d\u0430 \u0434\u0430\u043d\u043d\u044b\u043c\u0438 \u0432 \u043f\u0440\u043e\u0446\u0435\u0441\u0441\u0435 \u043f\u043e\u0434\u0433\u043e\u0442\u043e\u0432\u043a\u0438 \u043e\u0446\u0435\u043d\u043e\u0447\u043d\u043e\u0433\u043e \u0434\u043e\u043a\u043b\u0430\u0434\u0430?", 
+        "slug": "w_q20-there-any-support-information-systems-data"
+    }
+},
+{
+    "pk": 55, 
+    "model": "reports.field", 
+    "fields": {
+        "field_type": 100, 
+        "form": 2, 
+        "default": "", 
+        "required": false, 
+        "choices": "", 
+        "order": 205, 
+        "visible": true, 
+        "help_text": "", 
+        "placeholder_text": null, 
+        "label": "If Yes, provide details\n\u0415\u0441\u043b\u0438 \"\u0414\u0430\", \u0443\u043a\u0430\u0436\u0438\u0442\u0435 \u043f\u043e\u0434\u0440\u043e\u0431\u043d\u043e\u0441\u0442\u0438", 
+        "slug": "w_if-yes-provide-details1833"
+    }
+},
+{
+    "pk": 56, 
+    "model": "reports.field", 
+    "fields": {
+        "field_type": 8, 
+        "form": 2, 
+        "default": "", 
+        "required": false, 
+        "choices": "`Yes\n\u0414\u0430`,`No\n\u041d\u0435\u0442`,`Information not available\n\u041d\u0435\u0442 \u0434\u043e\u0441\u0442\u0443\u043f\u043d\u043e\u0439 \u0438\u043d\u0444\u043e\u0440\u043c\u0430\u0446\u0438\u0438`", 
+        "order": 211, 
+        "visible": true, 
+        "help_text": "", 
+        "placeholder_text": null, 
+        "label": "Q.21 Was there any service provider supporting data management/sharing/exchange while preparing the assessment report?\nQ.21 \u0418\u0441\u043f\u043e\u043b\u044c\u0437\u043e\u0432\u0430\u043b\u0438\u0441\u044c \u043b\u0438 \u043a\u0430\u043a\u0438\u0435-\u043b\u0438\u0431\u043e \u043f\u043e\u0441\u0442\u0430\u0432\u0449\u0438\u043a\u0438 \u0443\u0441\u043b\u0443\u0433, \u043f\u043e\u0434\u0434\u0435\u0440\u0436\u0438\u0432\u0430\u044e\u0449\u0438\u0435 \u0443\u043f\u0440\u0430\u0432\u043b\u0435\u043d\u0438\u0435/\u0441\u043e\u0432\u043c\u0435\u0441\u0442\u043d\u043e\u0435 \u043f\u043e\u043b\u044c\u0437\u043e\u0432\u0430\u043d\u0438\u0435/\u043e\u0431\u043c\u0435\u043d \u0434\u0430\u043d\u043d\u044b\u043c\u0438 \u0432 \u043f\u0440\u043e\u0446\u0435\u0441\u0441\u0435 \u043f\u043e\u0434\u0433\u043e\u0442\u043e\u0432\u043a\u0438 \u043e\u0446\u0435\u043d\u043e\u0447\u043d\u043e\u0433\u043e \u0434\u043e\u043a\u043b\u0430\u0434\u0430?", 
+        "slug": "w_q21-are-any-inspiregmesreportnet-compatible"
+    }
+},
+{
+    "pk": 57, 
+    "model": "reports.field", 
+    "fields": {
+        "field_type": 100, 
+        "form": 2, 
+        "default": "", 
+        "required": false, 
+        "choices": "", 
+        "order": 215, 
+        "visible": true, 
+        "help_text": "", 
+        "placeholder_text": null, 
+        "label": "If Yes, specify who has provided these service\n\u0415\u0441\u043b\u0438 \"\u0414\u0430\", \u0443\u043a\u0430\u0436\u0438\u0442\u0435, \u043a\u0442\u043e \u043f\u0440\u0435\u0434\u043e\u0441\u0442\u0430\u0432\u043b\u044f\u043b \u044d\u0442\u0438 \u0443\u0441\u043b\u0443\u0433\u0438", 
+        "slug": "w_if-yes-list-and-provide-details"
+    }
+},
+{
+    "pk": 58, 
+    "model": "reports.field", 
+    "fields": {
+        "field_type": 8, 
+        "form": 2, 
+        "default": "", 
+        "required": false, 
+        "choices": "`Yes\n\u0414\u0430`,`No\n\u041d\u0435\u0442`,`Information not available\n\u041d\u0435\u0442 \u0434\u043e\u0441\u0442\u0443\u043f\u043d\u043e\u0439 \u0438\u043d\u0444\u043e\u0440\u043c\u0430\u0446\u0438\u0438`", 
+        "order": 220, 
+        "visible": true, 
+        "help_text": "", 
+        "placeholder_text": null, 
+        "label": "Q.22 Are any INSPIRE/GMES/Reportnet compatible developments mentioned in the assessment report?\nQ.22 \u0423\u043f\u043e\u043c\u0438\u043d\u0430\u044e\u0442\u0441\u044f \u043b\u0438 \u0432 \u043e\u0446\u0435\u043d\u043e\u0447\u043d\u043e\u043c \u0434\u043e\u043a\u043b\u0430\u0434\u0435 \u0440\u0430\u0437\u0440\u0430\u0431\u043e\u0442\u043a\u0438, \u0441\u0445\u043e\u0434\u043d\u044b\u0435 \u0441 INSPIRE/GMES/Reportnet?", 
+        "slug": "w_q22-are-processes-data-managementsharingexchange"
+    }
+},
+{
+    "pk": 59, 
+    "model": "reports.field", 
+    "fields": {
+        "field_type": 100, 
+        "form": 2, 
+        "default": "", 
+        "required": false, 
+        "choices": "", 
+        "order": 225, 
+        "visible": true, 
+        "help_text": "", 
+        "placeholder_text": null, 
+        "label": "If Yes, briefly explain\n\u0415\u0441\u043b\u0438 \"\u0414\u0430\", \u043a\u043e\u0440\u043e\u0442\u043a\u043e \u043e\u043f\u0438\u0448\u0438\u0442\u0435", 
+        "slug": "w_if-yes-provide-details8215"
+    }
+},
+{
+    "pk": 60, 
+    "model": "reports.field", 
+    "fields": {
+        "field_type": 8, 
+        "form": 2, 
+        "default": "", 
+        "required": false, 
+        "choices": "`Yes\n\u0414\u0430`,`No\n\u041d\u0435\u0442`", 
+        "order": 232, 
+        "visible": true, 
+        "help_text": "", 
+        "placeholder_text": null, 
+        "label": "Q.23 Does the assessment report explicitly mention or acknowledge the type of information and sources of data used?\nQ.23 \u0415\u0441\u0442\u044c \u043b\u0438 \u0432 \u043e\u0446\u0435\u043d\u043e\u0447\u043d\u043e\u043c \u0434\u043e\u043a\u043b\u0430\u0434\u0435 \u0441\u0441\u044b\u043b\u043a\u0438 \u043d\u0430 \u0442\u0438\u043f \u0438\u043d\u0444\u043e\u0440\u043c\u0430\u0446\u0438\u0438 \u0438 \u0438\u0441\u0442\u043e\u0447\u043d\u0438\u043a\u0438 \u0438\u0441\u043f\u043e\u043b\u044c\u0437\u0443\u0435\u043c\u044b\u0445 \u0434\u0430\u043d\u043d\u044b\u0445 \u0438\u043b\u0438 \u0443\u043f\u043e\u043c\u044f\u043d\u0443\u0442\u044b \u043b\u0438 \u043e\u043d\u0438 \u0432 \u044f\u0432\u043d\u043e\u0439 \u0444\u043e\u0440\u043c\u0435?", 
+        "slug": "w_q23-were-type-information-and-sources-data"
+    }
+},
+{
+    "pk": 61, 
+    "model": "reports.field", 
+    "fields": {
+        "field_type": 5, 
+        "form": 2, 
+        "default": "", 
+        "required": false, 
+        "choices": "`data (wholly)\n\u0434\u0430\u043d\u043d\u044b\u0435 (\u043f\u043e\u043b\u043d\u043e\u0441\u0442\u044c\u044e)`,`data (partly)\n\u0434\u0430\u043d\u043d\u044b\u0435 (\u0447\u0430\u0441\u0442\u0438\u0447\u043d\u043e)`,`expert opinion (wholly)\n\u044d\u043a\u0441\u043f\u0435\u0440\u0442\u043d\u043e\u0435 \u043c\u043d\u0435\u043d\u0438\u0435 (\u043f\u043e\u043b\u043d\u043e\u0441\u0442\u044c\u044e)`,`expert opinion (partly)\n\u044d\u043a\u0441\u043f\u0435\u0440\u0442\u043d\u043e\u0435 \u043c\u043d\u0435\u043d\u0438\u0435 (\u0447\u0430\u0441\u0442\u0438\u0447\u043d\u043e)`,`'local knowledge' (wholly)\n\u043c\u0435\u0441\u0442\u043d\u044b\u0435 \u0437\u043d\u0430\u043d\u0438\u044f (\u043f\u043e\u043b\u043d\u043e\u0441\u0442\u044c\u044e)`,`'local knowledge' (partly)\n\u043c\u0435\u0441\u0442\u043d\u044b\u0435 \u0437\u043d\u0430\u043d\u0438\u044f (\u0447\u0430\u0441\u0442\u0438\u0447\u043d\u043e)`", 
+        "order": 240, 
+        "visible": true, 
+        "help_text": "", 
+        "placeholder_text": null, 
+        "label": "Q.24 On what information is the assessment based? (tick as many boxes as necessary)\nQ.24 \u041d\u0430 \u043a\u0430\u043a\u043e\u0439 \u0438\u043d\u0444\u043e\u0440\u043c\u0430\u0446\u0438\u0438 \u043e\u0441\u043d\u043e\u0432\u0430\u043d \u043e\u0446\u0435\u043d\u043e\u0447\u043d\u044b\u0439 \u0434\u043e\u043a\u043b\u0430\u0434? (\u043e\u0442\u043c\u0435\u0442\u044c\u0442\u0435 \u0432\u0441\u0435 \u043f\u043e\u0434\u0445\u043e\u0434\u044f\u0449\u0438\u0435 \u0432\u0430\u0440\u0438\u0430\u043d\u0442\u044b)", 
+        "slug": "w_q24-what-information-assessment-based-tick-many"
+    }
+},
+{
+    "pk": 62, 
+    "model": "reports.field", 
+    "fields": {
+        "field_type": 5, 
+        "form": 2, 
+        "default": "", 
+        "required": false, 
+        "choices": "`Regular data flows\n\u0420\u0435\u0433\u0443\u043b\u044f\u0440\u043d\u044b\u0435 \u043f\u043e\u0442\u043e\u043a\u0438 \u0434\u0430\u043d\u043d\u044b\u0445`,`Statistical publications\n\u0421\u0442\u0430\u0442\u0438\u0441\u0442\u0438\u0447\u0435\u0441\u043a\u0438\u0435 \u043f\u0443\u0431\u043b\u0438\u043a\u0430\u0446\u0438\u0438`,`Project-based initiatives\n\u0418\u043d\u0438\u0446\u0438\u0430\u0442\u0438\u0432\u044b, \u0441\u0432\u044f\u0437\u0430\u043d\u043d\u044b\u0435 \u0441 \u043f\u0440\u043e\u0435\u043a\u0442\u0430\u043c\u0438`,`Ad-hoc collection exercises\n\u0421\u043f\u0435\u0446\u0438\u0430\u043b\u044c\u043d\u044b\u0435 \u043c\u0435\u0440\u043e\u043f\u0440\u0438\u044f\u0442\u0438\u044f \u043f\u043e \u0441\u0431\u043e\u0440\u0443 \u0434\u0430\u043d\u043d\u044b\u0445`,`Other\n\u0414\u0440\u0443\u0433\u043e\u0435`", 
+        "order": 250, 
+        "visible": true, 
+        "help_text": "", 
+        "placeholder_text": null, 
+        "label": "Q.25 Which were the main sources of data? (tick as many boxes as necessary)\nQ.25 \u0427\u0442\u043e \u0431\u044b\u043b\u043e \u043e\u0441\u043d\u043e\u0432\u043d\u044b\u043c\u0438 \u0438\u0441\u0442\u043e\u0447\u043d\u0438\u043a\u0430\u043c\u0438 \u0434\u0430\u043d\u043d\u044b\u0445? (\u043e\u0442\u043c\u0435\u0442\u044c\u0442\u0435 \u0432\u0441\u0435 \u043f\u043e\u0434\u0445\u043e\u0434\u044f\u0449\u0438\u0435 \u0432\u0430\u0440\u0438\u0430\u043d\u0442\u044b)", 
+        "slug": "w_q25-which-were-main-sources-data"
+    }
+},
+{
+    "pk": 63, 
+    "model": "reports.field", 
+    "fields": {
+        "field_type": 100, 
+        "form": 2, 
+        "default": "", 
+        "required": false, 
+        "choices": "", 
+        "order": 255, 
+        "visible": true, 
+        "help_text": "", 
+        "placeholder_text": null, 
+        "label": "If Other, specify\n\u0415\u0441\u043b\u0438 \"\u0414\u0440\u0443\u0433\u043e\u0435\", \u0443\u043a\u0430\u0436\u0438\u0442\u0435", 
+        "slug": "w_if-others-specify1353"
+    }
+},
+{
+    "pk": 64, 
+    "model": "reports.field", 
+    "fields": {
+        "field_type": 8, 
+        "form": 2, 
+        "default": "", 
+        "required": false, 
+        "choices": "`Yes\n\u0414\u0430`,`Partially (i.e. not for all the data/information used)\n\u0427\u0430\u0441\u0442\u0438\u0447\u043d\u043e (\u0442.\u0435. \u043d\u0435 \u0434\u043b\u044f \u0432\u0441\u0435\u0445 \u0438\u0441\u043f\u043e\u043b\u044c\u0437\u0443\u0435\u043c\u044b\u0445 \u0434\u0430\u043d\u043d\u044b\u0445 \u0438 \u043d\u0435 \u0434\u043b\u044f \u0432\u0441\u0435\u0439 \u0438\u0441\u043f\u043e\u043b\u044c\u0437\u0443\u0435\u043c\u043e\u0439 \u0438\u043d\u0444\u043e\u0440\u043c\u0430\u0446\u0438\u0438)`,`No\n\u041d\u0435\u0442 \u0434\u043e\u0441\u0442\u0443\u043f\u043d\u043e\u0439 \u0438\u043d\u0444\u043e\u0440\u043c\u0430\u0446\u0438\u0438`", 
+        "order": 260, 
+        "visible": true, 
+        "help_text": "", 
+        "placeholder_text": null, 
+        "label": "Q.26 Were metadata available on the data/information used?\nQ.26 \u0411\u044b\u043b\u0438 \u043b\u0438 \u0434\u043e\u0441\u0442\u0443\u043f\u043d\u044b \u043c\u0435\u0442\u0430\u0434\u0430\u043d\u043d\u044b\u0435 \u043e\u0431 \u0438\u0441\u043f\u043e\u043b\u044c\u0437\u043e\u0432\u0430\u043d\u043d\u044b\u0445 \u0434\u0430\u043d\u043d\u044b\u0445/\u0438\u043d\u0444\u043e\u0440\u043c\u0430\u0446\u0438\u0438?", 
+        "slug": "w_q26-were-metadata-available-information-used"
+    }
+},
+{
+    "pk": 65, 
+    "model": "reports.field", 
+    "fields": {
+        "field_type": 100, 
+        "form": 2, 
+        "default": "", 
+        "required": false, 
+        "choices": "", 
+        "order": 265, 
+        "visible": true, 
+        "help_text": "", 
+        "placeholder_text": null, 
+        "label": "If Yes or Partially, provide details on the type of metadata included in the assessment report\n\u0415\u0441\u043b\u0438 \"\u0414\u0430\"\u0438\u043b\u0438 \"\u0427\u0430\u0441\u0442\u0438\u0447\u043d\u043e\", \u043f\u0440\u0435\u0434\u043e\u0441\u0442\u0430\u0432\u044c\u0442\u0435 \u043f\u043e\u0434\u0440\u043e\u0431\u043d\u043e\u0441\u0442\u0438 \u043e \u0442\u0438\u043f\u0435 \u043c\u0435\u0442\u0430\u0434\u0430\u043d\u043d\u044b\u0445, \u0432\u043a\u043b\u044e\u0447\u0435\u043d\u043d\u044b\u0445 \u0432 \u043e\u0446\u0435\u043d\u043e\u0447\u043d\u044b\u0439 \u0434\u043e\u043a\u043b\u0430\u0434", 
+        "slug": "w_if-yes-provide-details7874"
+    }
+},
+{
+    "pk": 66, 
+    "model": "reports.field", 
+    "fields": {
+        "field_type": 8, 
+        "form": 2, 
+        "default": "", 
+        "required": false, 
+        "choices": "`Yes\n\u0414\u0430`,`No\n\u041d\u0435\u0442`,`Information not available\n\u041d\u0435\u0442 \u0434\u043e\u0441\u0442\u0443\u043f\u043d\u043e\u0439 \u0438\u043d\u0444\u043e\u0440\u043c\u0430\u0446\u0438\u0438`", 
+        "order": 270, 
+        "visible": true, 
+        "help_text": "", 
+        "placeholder_text": null, 
+        "label": "Q.27 Were any legal agreements/institutional arrangements made for ensuring regular flows of the data/information included in the assessment report?\nQ.27 \u0411\u044b\u043b\u0438 \u043b\u0438 \u0437\u0430\u043a\u043b\u044e\u0447\u0435\u043d\u044b \u043a\u0430\u043a\u0438\u0435-\u043b\u0438\u0431\u043e \u044e\u0440\u0438\u0434\u0438\u0447\u0435\u0441\u043a\u0438\u0435/\u0438\u043d\u0441\u0442\u0438\u0442\u0443\u0446\u0438\u043e\u043d\u0430\u043b\u044c\u043d\u044b\u0435 \u0441\u043e\u0433\u043b\u0430\u0448\u0435\u043d\u0438\u044f \u0434\u043b\u044f \u043e\u0431\u0435\u0441\u043f\u0435\u0447\u0435\u043d\u0438\u044f \u0440\u0435\u0433\u0443\u043b\u044f\u0440\u043d\u044b\u0445 \u043f\u043e\u0442\u043e\u043a\u043e\u0432 \u0434\u0430\u043d\u043d\u044b\u0445/\u0438\u043d\u0444\u043e\u0440\u043c\u0430\u0446\u0438\u0438, \u0432\u043a\u043b\u044e\u0447\u0435\u043d\u043d\u044b\u0445 \u0432 \u043e\u0446\u0435\u043d\u043e\u0447\u043d\u044b\u0439 \u0434\u043e\u043a\u043b\u0430\u0434?", 
+        "slug": "w_q27-were-any-legal-institutional-agreements-made"
+    }
+},
+{
+    "pk": 67, 
+    "model": "reports.field", 
+    "fields": {
+        "field_type": 100, 
+        "form": 2, 
+        "default": "", 
+        "required": false, 
+        "choices": "", 
+        "order": 275, 
+        "visible": true, 
+        "help_text": "", 
+        "placeholder_text": null, 
+        "label": "If Yes, provide details\n\u0415\u0441\u043b\u0438 \"\u0414\u0430\", \u043f\u0440\u0435\u0434\u043e\u0441\u0442\u0430\u0432\u044c\u0442\u0435 \u043f\u043e\u0434\u0440\u043e\u0431\u043d\u043e\u0441\u0442\u0438", 
+        "slug": "w_if-yes-provide-details7707"
+    }
+},
+{
+    "pk": 68, 
+    "model": "reports.field", 
+    "fields": {
+        "field_type": 8, 
+        "form": 2, 
+        "default": "", 
+        "required": false, 
+        "choices": "`Yes\n\u0414\u0430`,`Partially (i.e. not for all the data/information used)\n\u0427\u0430\u0441\u0442\u0438\u0447\u043d\u043e (\u0442.\u0435. \u043d\u0435 \u0434\u043b\u044f \u0432\u0441\u0435\u0445 \u0438\u0441\u043f\u043e\u043b\u044c\u0437\u0443\u0435\u043c\u044b\u0445 \u0434\u0430\u043d\u043d\u044b\u0445 \u0438 \u0438\u0441\u043f\u043e\u043b\u044c\u0437\u0443\u0435\u043c\u043e\u0439 \u0438\u043d\u0444\u043e\u0440\u043c\u0430\u0446\u0438\u0438)`,`No\n\u041d\u0435\u0442`", 
+        "order": 280, 
+        "visible": true, 
+        "help_text": "", 
+        "placeholder_text": null, 
+        "label": "Q.28 Was any quality control/assurance of the data/expert opinion/local knowledge supporting the assessment explicitly mentioned in the report?\nQ.28 \u0423\u043f\u043e\u043c\u044f\u043d\u0443\u0442\u044b \u043b\u0438 \u0432 \u0434\u043e\u043a\u043b\u0430\u0434\u0435 \u0432 \u044f\u0432\u043d\u043e\u0439 \u0444\u043e\u0440\u043c\u0435 \u043c\u0435\u0442\u043e\u0434\u044b \u043a\u043e\u043d\u0442\u0440\u043e\u043b\u044f \u043a\u0430\u0447\u0435\u0441\u0442\u0432\u0430/\u0434\u043e\u0441\u0442\u043e\u0432\u0435\u0440\u043d\u043e\u0441\u0442\u0438 \u0434\u0430\u043d\u043d\u044b\u0445/\u043c\u043d\u0435\u043d\u0438\u0439 \u044d\u043a\u0441\u043f\u0435\u0440\u0442\u043e\u0432/\u043c\u0435\u0441\u0442\u043d\u044b\u0445 \u0437\u043d\u0430\u043d\u0438\u0439, \u043d\u0430 \u043a\u043e\u0442\u043e\u0440\u044b\u0445 \u043e\u0441\u043d\u043e\u0432\u0430\u043d\u0430 \u043e\u0446\u0435\u043d\u043a\u0430?", 
+        "slug": "w_q29-did-assessment-control-quality-dataexpert"
+    }
+},
+{
+    "pk": 69, 
+    "model": "reports.field", 
+    "fields": {
+        "field_type": 100, 
+        "form": 2, 
+        "default": "", 
+        "required": false, 
+        "choices": "", 
+        "order": 285, 
+        "visible": true, 
+        "help_text": "", 
+        "placeholder_text": null, 
+        "label": "If Yes or Partially, provide details on how quality was controlled/assured\n\u0415\u0441\u043b\u0438 \"\u0414\u0430\"\u0438\u043b\u0438 \"\u0427\u0430\u0441\u0442\u0438\u0447\u043d\u043e\", \u043f\u0440\u0435\u0434\u043e\u0441\u0442\u0430\u0432\u044c\u0442\u0435 \u043f\u043e\u0434\u0440\u043e\u0431\u043d\u043e\u0441\u0442\u0438 \u043e\u0441\u0443\u0449\u0435\u0441\u0442\u0432\u043b\u0435\u043d\u0438\u044f \u043a\u043e\u043d\u0442\u0440\u043e\u043b\u044f \u043a\u0430\u0447\u0435\u0441\u0442\u0432\u0430/\u0434\u043e\u0441\u0442\u043e\u0432\u0435\u0440\u043d\u043e\u0441\u0442\u0438", 
+        "slug": "w_if-yes-provide-details-how-quality-was-controlled"
+    }
+},
+{
+    "pk": 70, 
+    "model": "reports.field", 
+    "fields": {
+        "field_type": 8, 
+        "form": 2, 
+        "default": "", 
+        "required": false, 
+        "choices": "`Yes\n\u0414\u0430`,`No\n\u041d\u0435\u0442`", 
+        "order": 291, 
+        "visible": true, 
+        "help_text": "", 
+        "placeholder_text": null, 
+        "label": "Q.29 Did the assessment use any type of indicators?\nQ.29 \u0418\u0441\u043f\u043e\u043b\u044c\u0437\u043e\u0432\u0430\u043b\u0438\u0441\u044c \u043b\u0438 \u0432 \u043e\u0446\u0435\u043d\u043e\u0447\u043d\u043e\u043c \u0434\u043e\u043a\u043b\u0430\u0434\u0435 \u043a\u0430\u043a\u0438\u0435-\u043b\u0438\u0431\u043e \u0432\u0438\u0434\u044b \u043f\u043e\u043a\u0430\u0437\u0430\u0442\u0435\u043b\u0435\u0439/\u0438\u043d\u0434\u0438\u043a\u0430\u0442\u043e\u0440\u043e\u0432?", 
+        "slug": "w_q30-did-assessment-use-any-form-indicators"
+    }
+},
+{
+    "pk": 71, 
+    "model": "reports.field", 
+    "fields": {
+        "field_type": 8, 
+        "form": 2, 
+        "default": "", 
+        "required": false, 
+        "choices": "`Yes\n\u0414\u0430`,`Partially (i.e. not for all the indicators used)\n\u0427\u0430\u0441\u0442\u0438\u0447\u043d\u043e (\u0442.\u0435. \u043d\u0435 \u0434\u043b\u044f \u0432\u0441\u0435\u0445 \u0438\u0441\u043f\u043e\u043b\u044c\u0437\u0443\u0435\u043c\u044b\u0445 \u043f\u043e\u043a\u0430\u0437\u0430\u0442\u0435\u043b\u0435\u0439/\u0438\u043d\u0434\u0438\u043a\u0430\u0442\u043e\u0440\u043e\u0432)`,`No\n\u041d\u0435\u0442`,`Information not available\n\u041d\u0435\u0442 \u0434\u043e\u0441\u0442\u0443\u043f\u043d\u043e\u0439 \u0438\u043d\u0444\u043e\u0440\u043c\u0430\u0446\u0438\u0438`", 
+        "order": 300, 
+        "visible": true, 
+        "help_text": "", 
+        "placeholder_text": null, 
+        "label": "Q.30 Are the indicators used in the assessment report based on regular data/information reporting flows?\nQ. 30 \u0411\u0430\u0437\u0438\u0440\u0443\u044e\u0442\u0441\u044f \u043b\u0438 \u0438\u0441\u043f\u043e\u043b\u044c\u0437\u043e\u0432\u0430\u043d\u043d\u044b\u0435 \u0432 \u043e\u0446\u0435\u043d\u043e\u0447\u043d\u043e\u043c \u0434\u043e\u043a\u043b\u0430\u0434\u0435 \u043f\u043e\u043a\u0430\u0437\u0430\u0442\u0435\u043b\u0438/\u0438\u043d\u0434\u0438\u043a\u0430\u0442\u043e\u0440\u044b \u043d\u0430 \u0440\u0435\u0433\u0443\u043b\u044f\u0440\u043d\u044b\u0445 \u043f\u043e\u0442\u043e\u043a\u0430\u0445 \u043f\u0440\u0435\u0434\u043e\u0441\u0442\u0430\u0432\u043b\u0435\u043d\u0438\u044f \u043e\u0442\u0447\u0435\u0442\u043d\u044b\u0445 \u0434\u0430\u043d\u043d\u044b\u0445/\u0438\u043d\u0444\u043e\u0440\u043c\u0430\u0446\u0438\u0438?", 
+        "slug": "w_q31-are-any-indicators-produced-based-major"
+    }
+},
+{
+    "pk": 72, 
+    "model": "reports.field", 
+    "fields": {
+        "field_type": 100, 
+        "form": 2, 
+        "default": "", 
+        "required": false, 
+        "choices": "", 
+        "order": 305, 
+        "visible": true, 
+        "help_text": "", 
+        "placeholder_text": null, 
+        "label": "If Yes or Partially, provide details\n\u0415\u0441\u043b\u0438 \"\u0414\u0430\"\u0438\u043b\u0438 \"\u0427\u0430\u0441\u0442\u0438\u0447\u043d\u043e\", \u043f\u0440\u0435\u0434\u043e\u0441\u0442\u0430\u0432\u044c\u0442\u0435 \u043f\u043e\u0434\u0440\u043e\u0431\u043d\u043e\u0441\u0442\u0438", 
+        "slug": "w_if-yes-specify2554"
+    }
+},
+{
+    "pk": 73, 
+    "model": "reports.field", 
+    "fields": {
+        "field_type": 8, 
+        "form": 2, 
+        "default": "", 
+        "required": false, 
+        "choices": "`Yes\n\u0414\u0430`,`Partially (i.e. not for all the indicators used)\n\u0427\u0430\u0441\u0442\u0438\u0447\u043d\u043e (\u0442.\u0435. \u043d\u0435 \u0432\u0441\u0435 \u0438\u0441\u043f\u043e\u043b\u044c\u0437\u0443\u0435\u043c\u044b\u0435 \u043f\u043e\u043a\u0430\u0437\u0430\u0442\u0435\u043b\u0438/\u0438\u043d\u0434\u0438\u043a\u0430\u0442\u043e\u0440\u044b)`,`No\n\u041d\u0435\u0442`,`Information not available\n\u041d\u0435\u0442 \u0434\u043e\u0441\u0442\u0443\u043f\u043d\u043e\u0439 \u0438\u043d\u0444\u043e\u0440\u043c\u0430\u0446\u0438\u0438`", 
+        "order": 310, 
+        "visible": true, 
+        "help_text": "", 
+        "placeholder_text": null, 
+        "label": "Q.31 Are the indicators used in the assessment report produced on the basis of standard/agreed methodologies?\nQ.31 \u0420\u0430\u0437\u0440\u0430\u0431\u043e\u0442\u0430\u043d\u044b \u043b\u0438 \u0438\u0441\u043f\u043e\u043b\u044c\u0437\u043e\u0432\u0430\u043d\u043d\u044b\u0435 \u0432 \u043e\u0446\u0435\u043d\u043e\u0447\u043d\u043e\u043c \u0434\u043e\u043a\u043b\u0430\u0434\u0435 \u043f\u043e\u043a\u0430\u0437\u0430\u0442\u0435\u043b\u0438/\u0438\u043d\u0434\u0438\u043a\u0430\u0442\u043e\u0440\u044b \u043d\u0430 \u043e\u0441\u043d\u043e\u0432\u0435 \u0441\u0442\u0430\u043d\u0434\u0430\u0440\u0442\u043d\u044b\u0445/\u0441\u043e\u0433\u043b\u0430\u0441\u043e\u0432\u0430\u043d\u043d\u044b\u0445 \u043c\u0435\u0442\u043e\u0434\u0438\u043a?", 
+        "slug": "w_q32-are-there-common-methodologies-production"
+    }
+},
+{
+    "pk": 74, 
+    "model": "reports.field", 
+    "fields": {
+        "field_type": 100, 
+        "form": 2, 
+        "default": "", 
+        "required": false, 
+        "choices": "", 
+        "order": 318, 
+        "visible": true, 
+        "help_text": "", 
+        "placeholder_text": null, 
+        "label": "If Other, specify\n\u0415\u0441\u043b\u0438 \"\u0414\u0440\u0443\u0433\u043e\u0439\", \u0443\u043a\u0430\u0436\u0438\u0442\u0435", 
+        "slug": "w_if-yes-specify3390"
+    }
+},
+{
+    "pk": 75, 
+    "model": "reports.field", 
+    "fields": {
+        "field_type": 8, 
+        "form": 2, 
+        "default": "", 
+        "required": false, 
+        "choices": "`Yes\n\u0414\u0430`,`No\n\u041d\u0435\u0442`", 
+        "order": 320, 
+        "visible": true, 
+        "help_text": "", 
+        "placeholder_text": null, 
+        "label": "Q.32 Were modelling and scenarios tools used in the assessment report?\nQ.32 \u0418\u0441\u043f\u043e\u043b\u044c\u0437\u043e\u0432\u0430\u043b\u0438\u0441\u044c \u043b\u0438 \u0432 \u043e\u0446\u0435\u043d\u043e\u0447\u043d\u043e\u043c \u0434\u043e\u043a\u043b\u0430\u0434\u0435 \u0438\u043d\u0441\u0442\u0440\u0443\u043c\u0435\u043d\u0442\u044b \u043c\u043e\u0434\u0435\u043b\u0438\u0440\u043e\u0432\u0430\u043d\u0438\u044f \u0438 \u0440\u0430\u0437\u0440\u0430\u0431\u043e\u0442\u043a\u0438 \u0441\u0446\u0435\u043d\u0430\u0440\u0438\u0435\u0432?", 
+        "slug": "w_q33-were-modelling-and-scenarios-tools"
+    }
+},
+{
+    "pk": 76, 
+    "model": "reports.field", 
+    "fields": {
+        "field_type": 100, 
+        "form": 2, 
+        "default": "", 
+        "required": false, 
+        "choices": "", 
+        "order": 325, 
+        "visible": true, 
+        "help_text": "", 
+        "placeholder_text": null, 
+        "label": "If Yes, specify which tools\n\u0415\u0441\u043b\u0438 \"\u0414\u0430\", \u0443\u043a\u0430\u0436\u0438\u0442\u0435 \u043a\u0430\u043a\u0438\u0435 \u0438\u043d\u0441\u0442\u0440\u0443\u043c\u0435\u043d\u0442\u044b", 
+        "slug": "w_if-yes-specify9255"
+    }
+},
+{
+    "pk": 77, 
+    "model": "reports.field", 
+    "fields": {
+        "field_type": 8, 
+        "form": 2, 
+        "default": "", 
+        "required": false, 
+        "choices": "`Yes\n\u0414\u0430`,`No\n\u041d\u0435\u0442`,`Information not available\n\u041d\u0435\u0442 \u0434\u043e\u0441\u0442\u0443\u043f\u043d\u043e\u0439 \u0438\u043d\u0444\u043e\u0440\u043c\u0430\u0446\u0438\u0438`", 
+        "order": 330, 
+        "visible": true, 
+        "help_text": "", 
+        "placeholder_text": null, 
+        "label": "Q.33 Was a DPSIR-type of framework used to organise the assessment?\nQ.33 \u0418\u0441\u043f\u043e\u043b\u044c\u0437\u043e\u0432\u0430\u043b\u0430\u0441\u044c \u043b\u0438 \u0434\u043b\u044f \u0441\u043e\u0441\u0442\u0430\u0432\u043b\u0435\u043d\u0438\u044f \u043e\u0446\u0435\u043d\u043e\u0447\u043d\u043e\u0433\u043e \u0434\u043e\u043a\u043b\u0430\u0434\u0430 \u043a\u043e\u043d\u0446\u0435\u043f\u0442\u0443\u0430\u043b\u044c\u043d\u0430\u044f \u0441\u0442\u0440\u0443\u043a\u0442\u0443\u0440\u0430 \u043f\u043e\u0434\u043e\u0431\u043d\u0430\u044f \u0442\u0438\u043f\u0443 \u0414\u0421-\u0414-\u0421-\u0412-\u0420?", 
+        "slug": "w_q34-was-any-particular-conceptual-framework-used"
+    }
+},
+{
+    "pk": 78, 
+    "model": "reports.field", 
+    "fields": {
+        "field_type": 100, 
+        "form": 2, 
+        "default": "", 
+        "required": false, 
+        "choices": "", 
+        "order": 335, 
+        "visible": true, 
+        "help_text": "", 
+        "placeholder_text": null, 
+        "label": "If Yes, specify which type of framework\n\u0415\u0441\u043b\u0438 \"\u0414\u0430\", \u0443\u043a\u0430\u0436\u0438\u0442\u0435 \u043a\u0430\u043a\u0430\u044f \u043a\u043e\u043d\u043a\u0440\u0435\u0442\u043d\u043e \u043a\u043e\u043d\u0446\u0435\u043f\u0442\u0443\u0430\u043b\u044c\u043d\u0430\u044f \u0441\u0442\u0440\u0443\u043a\u0442\u0443\u0440\u0430", 
+        "slug": "w_if-yes-specify2297"
+    }
+},
+{
+    "pk": 79, 
+    "model": "reports.field", 
+    "fields": {
+        "field_type": 8, 
+        "form": 2, 
+        "default": "", 
+        "required": false, 
+        "choices": "`Yes\n\u0414\u0430`,`No\n\u041d\u0435\u0442`", 
+        "order": 341, 
+        "visible": true, 
+        "help_text": "", 
+        "placeholder_text": null, 
+        "label": "Q.34 Did the assessment identify priority concerns?\nQ.34 \u0418\u0434\u0435\u043d\u0442\u0438\u0444\u0438\u0446\u0438\u0440\u043e\u0432\u0430\u043b\u0430 \u043b\u0438 \u043e\u0446\u0435\u043d\u043a\u0430 \u043f\u0440\u0438\u043e\u0440\u0438\u0442\u0435\u0442\u043d\u044b\u0435 \u043f\u0440\u043e\u0431\u043b\u0435\u043c\u044b?", 
+        "slug": "w_q36-did-assessment-identify-priority-concerns"
+    }
+},
+{
+    "pk": 80, 
+    "model": "reports.field", 
+    "fields": {
+        "field_type": 8, 
+        "form": 2, 
+        "default": "", 
+        "required": false, 
+        "choices": "`Yes\n\u0414\u0430`,`No\n\u041d\u0435\u0442`", 
+        "order": 350, 
+        "visible": true, 
+        "help_text": "", 
+        "placeholder_text": null, 
+        "label": "Q.35 Did the assessment identify specific needs and/or emerging issues to be addressed?\nQ.35 \u0418\u0434\u0435\u043d\u0442\u0438\u0444\u0438\u0446\u0438\u0440\u043e\u0432\u0430\u043b\u0430 \u043b\u0438 \u043e\u0446\u0435\u043d\u043a\u0430 \u043a\u043e\u043d\u043a\u0440\u0435\u0442\u043d\u044b\u0435 \u043f\u043e\u0442\u0440\u0435\u0431\u043d\u043e\u0441\u0442\u0438 \u0438/\u0438\u043b\u0438 \u0432\u043e\u0437\u043d\u0438\u043a\u0448\u0438\u0435 \u043f\u0440\u043e\u0431\u043b\u0435\u043c\u044b, \u0442\u0440\u0435\u0431\u0443\u044e\u0449\u0438\u0435 \u0432\u043d\u0438\u043c\u0430\u043d\u0438\u044f?", 
+        "slug": "w_q37-did-assessment-identify-specific-needs-andor"
+    }
+},
+{
+    "pk": 81, 
+    "model": "reports.field", 
+    "fields": {
+        "field_type": 8, 
+        "form": 2, 
+        "default": "", 
+        "required": false, 
+        "choices": "`Yes\n\u0414\u0430`,`No\n\u041d\u0435\u0442`", 
+        "order": 360, 
+        "visible": true, 
+        "help_text": "", 
+        "placeholder_text": null, 
+        "label": "Q.36 Did the assessment indicate gaps in the information needed for the analysis or in the scientific understanding of relevant processes?\nQ.36 \u0412\u044b\u044f\u0432\u0438\u043b\u0430 \u043b\u0438 \u043e\u0446\u0435\u043d\u043a\u0430 \u043f\u0440\u043e\u0431\u0435\u043b\u044b \u0432 \u0438\u043d\u0444\u043e\u0440\u043c\u0430\u0446\u0438\u0438, \u043d\u0435\u043e\u0431\u0445\u043e\u0434\u0438\u043c\u043e\u0439 \u0434\u043b\u044f \u0430\u043d\u0430\u043b\u0438\u0437\u0430 \u0438\u043b\u0438 \u043d\u0430\u0443\u0447\u043d\u043e\u0433\u043e \u043f\u043e\u043d\u0438\u043c\u0430\u043d\u0438\u044f \u0441\u043e\u043e\u0442\u0432\u0435\u0442\u0441\u0442\u0441\u0442\u0432\u0443\u044e\u0449\u0438\u0445 \u043f\u0440\u043e\u0446\u0435\u0441\u0441\u043e\u0432?", 
+        "slug": "w_q38-did-assessment-indicate-gaps-information"
+    }
+},
+{
+    "pk": 82, 
+    "model": "reports.field", 
+    "fields": {
+        "field_type": 100, 
+        "form": 2, 
+        "default": "", 
+        "required": false, 
+        "choices": "", 
+        "order": 365, 
+        "visible": true, 
+        "help_text": "", 
+        "placeholder_text": null, 
+        "label": "If Yes, specify the major ones\n\u0415\u0441\u043b\u0438 \"\u0414\u0430\", \u0443\u043a\u0430\u0436\u0438\u0442\u0435 \u043e\u0441\u043d\u043e\u0432\u043d\u044b\u0435", 
+        "slug": "w_if-yes-specify2610"
+    }
+},
+{
+    "pk": 83, 
+    "model": "reports.field", 
+    "fields": {
+        "field_type": 8, 
+        "form": 2, 
+        "default": "", 
+        "required": false, 
+        "choices": "`Yes\n\u0414\u0430`,`No\n\u041d\u0435\u0442`", 
+        "order": 370, 
+        "visible": true, 
+        "help_text": "", 
+        "placeholder_text": null, 
+        "label": "Q.37 Did the assessment provide options for the future?\nQ.37 \u041f\u0440\u0435\u0434\u043b\u0430\u0433\u0430\u0435\u0442 \u043b\u0438 \u043e\u0446\u0435\u043d\u043a\u0430 \u0432\u0430\u0440\u0438\u0430\u043d\u0442\u044b \u043d\u0430 \u0431\u0443\u0434\u0443\u0449\u0435\u0435?", 
+        "slug": "w_q39-did-assessment-provide-options-future"
+    }
+},
+{
+    "pk": 84, 
+    "model": "reports.field", 
+    "fields": {
+        "field_type": 100, 
+        "form": 2, 
+        "default": "", 
+        "required": false, 
+        "choices": "", 
+        "order": 165, 
+        "visible": true, 
+        "help_text": "", 
+        "placeholder_text": null, 
+        "label": "If Other, specify\n\u0415\u0441\u043b\u0438 \"\u0414\u0440\u0443\u0433\u043e\u0435\", \u0443\u043a\u0430\u0436\u0438\u0442\u0435", 
+        "slug": "w_if-others-specify1421"
+    }
+},
+{
+    "pk": 85, 
+    "model": "reports.field", 
+    "fields": {
+        "field_type": 100, 
+        "form": 2, 
+        "default": "", 
+        "required": true, 
+        "choices": "", 
+        "order": 421, 
+        "visible": true, 
+        "help_text": "", 
+        "placeholder_text": null, 
+        "label": "Name\n\u0418\u043c\u044f", 
+        "slug": "w_name"
+    }
+},
+{
+    "pk": 86, 
+    "model": "reports.field", 
+    "fields": {
+        "field_type": 1, 
+        "form": 2, 
+        "default": "", 
+        "required": true, 
+        "choices": "", 
+        "order": 423, 
+        "visible": true, 
+        "help_text": "", 
+        "placeholder_text": null, 
+        "label": "Email\n\u042d\u043b\u0435\u043a\u0442\u0440\u043e\u043d\u043d\u0430\u044f \u043f\u043e\u0447\u0442\u0430", 
+        "slug": "w_email"
+    }
+},
+{
+    "pk": 87, 
+    "model": "reports.field", 
+    "fields": {
+        "field_type": 100, 
+        "form": 2, 
+        "default": "", 
+        "required": false, 
+        "choices": "", 
+        "order": 424, 
+        "visible": true, 
+        "help_text": "", 
+        "placeholder_text": null, 
+        "label": "Organisation\n\u041e\u0440\u0433\u0430\u043d\u0438\u0437\u0430\u0446\u0438\u044f", 
+        "slug": "w_organisation"
+    }
+},
+{
+    "pk": 88, 
+    "model": "reports.field", 
+    "fields": {
+        "field_type": 1, 
+        "form": 2, 
+        "default": "", 
+        "required": false, 
+        "choices": "", 
+        "order": 32, 
+        "visible": true, 
+        "help_text": "", 
+        "placeholder_text": null, 
+        "label": "As hardcopy:\n\u041f\u0435\u0447\u0430\u0442\u043d\u0430\u044f \u043a\u043e\u043f\u0438\u044f", 
+        "slug": "w_hardcopy"
+    }
+},
+{
+    "pk": 89, 
+    "model": "reports.field", 
+    "fields": {
+        "field_type": 5, 
+        "form": 2, 
+        "default": "", 
+        "required": false, 
+        "choices": "`Global\n\u0413\u043b\u043e\u0431\u0430\u043b\u044c\u043d\u044b\u0439`,`Regional(above national level)\n\u0420\u0435\u0433\u0438\u043e\u043d\u0430\u043b\u044c\u043d\u044b\u0439 (\u043d\u0430\u0434 \u043d\u0430\u0446\u0438\u043e\u043d\u0430\u043b\u044c\u043d\u044b\u043c \u0443\u0440\u043e\u0432\u043d\u0435\u043c)`,`National\n\u041d\u0430\u0446\u0438\u043e\u043d\u0430\u043b\u044c\u043d\u044b\u0439`,`Sub-national and/or local\n\u0421\u0443\u0431\u043d\u0430\u0446\u0438\u043e\u043d\u0430\u043b\u044c\u043d\u044b\u0439 \u0438/\u0438\u043b\u0438 \u043b\u043e\u043a\u0430\u043b\u044c\u043d\u044b\u0439`", 
+        "order": 71, 
+        "visible": true, 
+        "help_text": "", 
+        "placeholder_text": null, 
+        "label": "Q.7 Which is the geographical coverage of the assessment? (tick as many boxes as necessary)\nQ.7 \u041a\u0430\u043a\u043e\u0432 \u0433\u0435\u043e\u0433\u0440\u0430\u0444\u0438\u0447\u0435\u0441\u043a\u0438\u0439 \u043e\u0445\u0432\u0430\u0442 \u043e\u0446\u0435\u043d\u043e\u0447\u043d\u043e\u0433\u043e \u0434\u043e\u043a\u043b\u0430\u0434\u0430? (\u043e\u0442\u043c\u0435\u0442\u044c\u0442\u0435 \u0432\u0441\u0435 \u043f\u043e\u0434\u0445\u043e\u0434\u044f\u0449\u0438\u0435 \u0432\u0430\u0440\u0438\u0430\u043d\u0442\u044b)", 
+        "slug": "w_q7-which-geographical-coverage-assessment-tick"
+    }
+},
+{
+    "pk": 90, 
+    "model": "reports.field", 
+    "fields": {
+        "field_type": 5, 
+        "form": 2, 
+        "default": "", 
+        "required": false, 
+        "choices": "`5-year time series\n5-\u0442\u0438 \u043b\u0435\u0442\u043d\u0438\u0439 \u043f\u0435\u0440\u0438\u043e\u0434`,`10-year time series\n10-\u0442\u0438 \u043b\u0435\u0442\u043d\u0438\u0439 \u043f\u0435\u0440\u0438\u043e\u0434`,`20-year time series\n20-\u0442\u0438 \u043b\u0435\u0442\u043d\u0438\u0439 \u043f\u0435\u0440\u0438\u043e\u0434`,`over 20-year time series\n\u0431\u043e\u043b\u0435\u0435 \u0447\u0435\u043c 20-\u0442\u0438 \u043b\u0435\u0442\u043d\u0438\u0439 \u043f\u0435\u0440\u0438\u043e\u0434`", 
+        "order": 94, 
+        "visible": true, 
+        "help_text": "", 
+        "placeholder_text": null, 
+        "label": "PAST\n\u041f\u0420\u041e\u0428\u0415\u0414\u0428\u0418\u0419 \u041f\u0415\u0420\u0418\u041e\u0414", 
+        "slug": "w_past"
+    }
+},
+{
+    "pk": 91, 
+    "model": "reports.field", 
+    "fields": {
+        "field_type": 5, 
+        "form": 2, 
+        "default": "", 
+        "required": false, 
+        "choices": "`next 5 years\n\u0421\u043b\u0435\u0434\u0443\u044e\u0449\u0438\u0435 5 \u043b\u0435\u0442`,`next 10 years\n\u0421\u043b\u0435\u0434\u0443\u044e\u0449\u0438\u0435 10 \u043b\u0435\u0442`,`over next 10 years\n\u0421\u043b\u0435\u0434\u0443\u044e\u0449\u0438\u0435 \u0431\u043e\u043b\u0435\u0435 \u0447\u0435\u043c 10 \u043b\u0435\u0442`", 
+        "order": 98, 
+        "visible": true, 
+        "help_text": "", 
+        "placeholder_text": null, 
+        "label": "FUTURE\n\u0411\u0423\u0414\u0423\u0429\u0418\u0419 \u041f\u0415\u0420\u0418\u041e\u0414", 
+        "slug": "w_future"
+    }
+},
+{
+    "pk": 92, 
+    "model": "reports.field", 
+    "fields": {
+        "field_type": 5, 
+        "form": 2, 
+        "default": "", 
+        "required": false, 
+        "choices": "`Technical assistance\n\u0422\u0435\u0445\u043d\u0438\u0447\u0435\u0441\u043a\u043e\u0435 \u0441\u043e\u0434\u0435\u0439\u0441\u0442\u0432\u0438\u0435`,`Capacity building\n\u0423\u043a\u0440\u0435\u043f\u043b\u0435\u043d\u0438\u0435 \u0438\u043d\u0441\u0442\u0438\u0442\u0443\u0446\u0438\u043e\u043d\u0430\u043b\u044c\u043d\u043e\u0433\u043e \u043f\u043e\u0442\u0435\u043d\u0446\u0438\u0430\u043b\u0430`,`Financial\n\u0424\u0438\u043d\u0430\u043d\u0441\u043e\u0432\u044b\u0435`,`Technology\n\u0422\u0435\u0445\u043d\u043e\u043b\u043e\u0433\u0438\u0447\u0435\u0441\u043a\u0438\u0435`", 
+        "order": 143, 
+        "visible": true, 
+        "help_text": "", 
+        "placeholder_text": null, 
+        "label": "If Yes, specify the type of efforts (tick as many boxes as necessary)\n\u0415\u0441\u043b\u0438 \"\u0414\u0430\", \u0443\u043a\u0430\u0436\u0438\u0442\u0435 \u0442\u0438\u043f \u0434\u0435\u0439\u0441\u0442\u0432\u0438\u0439 (\u043e\u0442\u043c\u0435\u0442\u044c\u0442\u0435 \u0432\u0441\u0435 \u043f\u043e\u0434\u0445\u043e\u0434\u044f\u0449\u0438\u0435 \u0432\u0430\u0440\u0438\u0430\u043d\u0442\u044b):", 
+        "slug": "w_if-yes-specify-type-efforts-tick-many-boxes"
+    }
+},
+{
+    "pk": 93, 
+    "model": "reports.field", 
+    "fields": {
+        "field_type": 5, 
+        "form": 2, 
+        "default": "", 
+        "required": false, 
+        "choices": "`Press release(s)\n\u041f\u0440\u0435\u0441\u0441-\u0440\u0435\u043b\u0438\u0437(-\u044b)`,`Radio, TV or similar media\n\u0420\u0430\u0434\u0438\u043e, \u0442\u0435\u043b\u0435\u0432\u0438\u0434\u0435\u043d\u0438\u0435 \u0438\u043b\u0438 \u043f\u043e\u0434\u043e\u0431\u043d\u044b\u0435 \u0421\u041c\u0418`,`Conference(s) or similar event(s)\n\u041a\u043e\u043d\u0444\u0435\u0440\u0435\u043d\u0446\u0438\u044f(\u2013\u0438) \u0438\u043b\u0438 \u0430\u043d\u0430\u043b\u043e\u0433\u0438\u0447\u043d\u043e\u0435(-\u044b\u0435) \u043c\u0435\u0440\u043e\u043f\u0440\u0438\u044f\u0442\u0438\u0435(-\u044f)`,`Newsletter(s)\n\u0420\u0430\u0441\u0441\u044b\u043b\u043a\u0430(-\u0438) \u043d\u043e\u0432\u043e\u0441\u0442\u0435\u0439`,`Other\n\u0414\u0440\u0443\u0433\u043e\u0435`", 
+        "order": 151, 
+        "visible": true, 
+        "help_text": "", 
+        "placeholder_text": null, 
+        "label": "Q.15 How was the assessment report presented and the findings communicated? (tick as many boxes as necessary)\nQ.15 \u041a\u0430\u043a \u0431\u044b\u043b \u043f\u0440\u0435\u0434\u0441\u0442\u0430\u0432\u043b\u0435\u043d \u043e\u0446\u0435\u043d\u043e\u0447\u043d\u044b\u0439 \u0434\u043e\u043a\u043b\u0430\u0434 \u0438 \u0441\u043e\u043e\u0431\u0449\u0435\u043d\u044b \u0432\u044b\u0432\u043e\u0434\u044b? (\u043e\u0442\u043c\u0435\u0442\u044c\u0442\u0435 \u0432\u0441\u0435 \u043f\u043e\u0434\u0445\u043e\u0434\u044f\u0449\u0438\u0435 \u0432\u0430\u0440\u0438\u0430\u043d\u0442\u044b)", 
+        "slug": "w_q15-how-was-assessment-report-presented-and"
+    }
+},
+{
+    "pk": 94, 
+    "model": "reports.field", 
+    "fields": {
+        "field_type": 5, 
+        "form": 2, 
+        "default": "", 
+        "required": false, 
+        "choices": "`PDF file\nPDF \u0444\u0430\u0439\u043b`,`Other downloadable electronic file e.g. MS Word\n\u0414\u0440\u0443\u0433\u043e\u0439 \u0434\u043e\u0441\u0442\u0443\u043f\u043d\u044b\u0439 \u0434\u043b\u044f \u0441\u043a\u0430\u0447\u0438\u0432\u0430\u043d\u0438\u044f \u044d\u043b\u0435\u043a\u0442\u0440\u043e\u043d\u043d\u044b\u0439 \u0444\u0430\u0439\u043b, \u043d\u0430\u043f\u0440\u0438\u043c\u0435\u0440 MS Word \u0444\u0430\u0439\u043b`,`HTML page\nHTLM \u0441\u0442\u0440\u0430\u043d\u0438\u0446\u0430`,`Hardcopy\n\u041f\u0435\u0447\u0430\u0442\u043d\u0430\u044f \u043a\u043e\u043f\u0438\u044f`,`Other\n\u0414\u0440\u0443\u0433\u043e\u0435`", 
+        "order": 160, 
+        "visible": true, 
+        "help_text": "", 
+        "placeholder_text": null, 
+        "label": "Q.16 How is the assessment made available? (tick as many boxes as necessary)\nQ.16 \u041a\u0430\u043a \u0431\u044b\u043b \u043e\u0431\u0435\u0441\u043f\u0435\u0447\u0435\u043d \u0434\u043e\u0441\u0442\u0443\u043f \u043a \u043e\u0446\u0435\u043d\u043a\u0435?", 
+        "slug": "w_q16-how-assessment-made-available-tick-many-boxes"
+    }
+},
+{
+    "pk": 95, 
+    "model": "reports.field", 
+    "fields": {
+        "field_type": 5, 
+        "form": 2, 
+        "default": "", 
+        "required": false, 
+        "choices": "`Framing\n\u041e\u043f\u0440\u0435\u0434\u0435\u043b\u0435\u043d\u0438\u0435 \u043f\u0440\u043e\u0431\u043b\u0435\u043c \u0438 \u0446\u0435\u043b\u0435\u0439 \u043f\u043e\u043b\u0438\u0442\u0438\u043a\u0438`,`Formulation\n\u0420\u0430\u0437\u0440\u0430\u0431\u043e\u0442\u043a\u0430 \u043f\u043e\u043b\u0438\u0442\u0438\u043a\u0438`,`Adoption\n\u0423\u0442\u0432\u0435\u0440\u0436\u0434\u0435\u043d\u0438\u0435 \u043f\u043e\u043b\u0438\u0442\u0438\u043a\u0438`,`Implementation\n\u0420\u0435\u0430\u043b\u0438\u0437\u0430\u0446\u0438\u044f \u043f\u043e\u043b\u0438\u0442\u0438\u043a\u0438`,`Evaluation\n\u041e\u0446\u0435\u043d\u043a\u0430 \u043f\u043e\u043b\u0438\u0442\u0438\u043a\u0438`", 
+        "order": 375, 
+        "visible": true, 
+        "help_text": "", 
+        "placeholder_text": null, 
+        "label": "If Yes, specify if these options refer to one of the following policy-making stages (tick as many boxes as necessary)\n\u0415\u0441\u043b\u0438 \"\u0414\u0430\", \u0443\u043a\u0430\u0436\u0438\u0442\u0435, \u043e\u0442\u043d\u043e\u0441\u044f\u0442\u0441\u044f \u043b\u0438 \u044d\u0442\u0438 \u0432\u0430\u0440\u0438\u0430\u043d\u0442\u044b \u043a \u043e\u0434\u043d\u043e\u0439 \u0438\u0437 \u0441\u043b\u0435\u0434\u0443\u044e\u0449\u0438\u0445 \u0441\u0442\u0430\u0434\u0438\u0439 \u0440\u0430\u0437\u0440\u0430\u0431\u043e\u0442\u043a\u0438 \u043f\u043e\u043b\u0438\u0442\u0438\u043a\u0438 (\u043e\u0442\u043c\u0435\u0442\u044c\u0442\u0435 \u0432\u0441\u0435 \u043f\u043e\u0434\u0445\u043e\u0434\u044f\u0449\u0438\u0435 \u0432\u0430\u0440\u0438\u0430\u043d\u0442\u044b)", 
+        "slug": "w_if-yes-specify-if-these-options-refer-one"
+    }
+},
+{
+    "pk": 96, 
+    "model": "reports.field", 
+    "fields": {
+        "field_type": 100, 
+        "form": 2, 
+        "default": "", 
+        "required": false, 
+        "choices": "", 
+        "order": 425, 
+        "visible": true, 
+        "help_text": "", 
+        "placeholder_text": null, 
+        "label": "Country or international organisation\n\u0421\u0442\u0440\u0430\u043d\u0430 \u0438\u043b\u0438 \u043c\u0435\u0436\u0434\u0443\u043d\u0430\u0440\u043e\u0434\u043d\u0430\u044f \u043e\u0440\u0433\u0430\u043d\u0438\u0437\u0430\u0446\u0438\u044f", 
+        "slug": "w_country"
+    }
+},
+{
+    "pk": 97, 
+    "model": "reports.field", 
+    "fields": {
+        "field_type": 5, 
+        "form": 2, 
+        "default": "", 
+        "required": false, 
+        "choices": "`Policy\n\u041f\u043e\u043b\u0438\u0442\u0438\u043a\u0430`,`Legal\n\u0417\u0430\u043a\u043e\u043d\u043e\u0434\u0430\u0442\u0435\u043b\u044c\u0441\u0442\u0432\u043e`,`Drivers\n\u0414\u0432\u0438\u0436\u0443\u0449\u0438\u0435 \u0441\u0438\u043b\u044b`,`Pressure\n\u0414\u0430\u0432\u043b\u0435\u043d\u0438\u0435`,`State\n\u0421\u043e\u0441\u0442\u043e\u044f\u043d\u0438\u0435`,`Impact\n\u0412\u043e\u0437\u0434\u0435\u0439\u0441\u0442\u0432\u0438\u0435`,`Response\n\u0420\u0435\u0430\u0433\u0438\u0440\u043e\u0432\u0430\u043d\u0438\u0435`,`Trends\n\u0422\u0435\u043d\u0434\u0435\u043d\u0446\u0438\u0438`,`Hot spots\n\u0413\u043e\u0440\u044f\u0447\u0438\u0435 \u0442\u043e\u0447\u043a\u0438`,`Transboundary\n\u0422\u0440\u0430\u043d\u0441\u0433\u0440\u0430\u043d\u0438\u0447\u043d\u044b\u0435 \u043f\u0440\u043e\u0431\u043b\u0435\u043c\u044b`", 
+        "order": 385, 
+        "visible": true, 
+        "help_text": "", 
+        "placeholder_text": null, 
+        "label": "Water resources topics\n\u0422\u0435\u043c\u0430\u0442\u0438\u043a\u0430 \u043f\u043e \u0432\u043e\u0434\u043d\u044b\u043c \u0440\u0435\u0441\u0443\u0440\u0441\u0430\u043c", 
+        "slug": "w_water-resources-topics"
+    }
+},
+{
+    "pk": 98, 
+    "model": "reports.field", 
+    "fields": {
+        "field_type": 5, 
+        "form": 2, 
+        "default": "", 
+        "required": false, 
+        "choices": "`Policy\n\u041f\u043e\u043b\u0438\u0442\u0438\u043a\u0430`,`Legal\n\u0417\u0430\u043a\u043e\u043d\u043e\u0434\u0430\u0442\u0435\u043b\u044c\u0441\u0442\u0432\u043e`,`Drivers\n\u0414\u0432\u0438\u0436\u0443\u0449\u0438\u0435 \u0441\u0438\u043b\u044b`,`Pressure\n\u0414\u0430\u0432\u043b\u0435\u043d\u0438\u0435`,`State\n\u0421\u043e\u0441\u0442\u043e\u044f\u043d\u0438\u0435`,`Impact\n\u0412\u043e\u0437\u0434\u0435\u0439\u0441\u0442\u0432\u0438\u0435`,`Response\n\u0420\u0435\u0430\u0433\u0438\u0440\u043e\u0432\u0430\u043d\u0438\u0435`,`Trends\n\u0422\u0435\u043d\u0434\u0435\u043d\u0446\u0438\u0438`,`Hot spots\n\u0413\u043e\u0440\u044f\u0447\u0438\u0435 \u0442\u043e\u0447\u043a\u0438`,`Transboundary\n\u0422\u0440\u0430\u043d\u0441\u0433\u0440\u0430\u043d\u0438\u0447\u043d\u044b\u0435 \u043f\u0440\u043e\u0431\u043b\u0435\u043c\u044b`", 
+        "order": 390, 
+        "visible": true, 
+        "help_text": "", 
+        "placeholder_text": null, 
+        "label": "Water resource management topics\n\u0422\u0435\u043c\u0430\u0442\u0438\u043a\u0430 \u043f\u043e \u0443\u043f\u0440\u0430\u0432\u043b\u0435\u043d\u0438\u044e \u0432\u043e\u0434\u043d\u044b\u043c\u0438  \u0440\u0435\u0441\u0443\u0440\u0441\u0430\u043c\u0438", 
+        "slug": "w_water-resource-management-topics"
+    }
+},
+{
+    "pk": 99, 
+    "model": "reports.field", 
+    "fields": {
+        "field_type": 5, 
+        "form": 2, 
+        "default": "", 
+        "required": false, 
+        "choices": "`Policy\n\u041f\u043e\u043b\u0438\u0442\u0438\u043a\u0430`,`Legal\n\u0417\u0430\u043a\u043e\u043d\u043e\u0434\u0430\u0442\u0435\u043b\u044c\u0441\u0442\u0432\u043e`,`Drivers\n\u0414\u0432\u0438\u0436\u0443\u0449\u0438\u0435 \u0441\u0438\u043b\u044b`,`Pressure\n\u0414\u0430\u0432\u043b\u0435\u043d\u0438\u0435`,`State\n\u0421\u043e\u0441\u0442\u043e\u044f\u043d\u0438\u0435`,`Impact\n\u0412\u043e\u0437\u0434\u0435\u0439\u0441\u0442\u0432\u0438\u0435`,`Response\n\u0420\u0435\u0430\u0433\u0438\u0440\u043e\u0432\u0430\u043d\u0438\u0435`,`Trends\n\u0422\u0435\u043d\u0434\u0435\u043d\u0446\u0438\u0438`,`Hot spots\n\u0413\u043e\u0440\u044f\u0447\u0438\u0435 \u0442\u043e\u0447\u043a\u0438`,`Transboundary\n\u0422\u0440\u0430\u043d\u0441\u0433\u0440\u0430\u043d\u0438\u0447\u043d\u044b\u0435 \u043f\u0440\u043e\u0431\u043b\u0435\u043c\u044b`", 
+        "order": 400, 
+        "visible": true, 
+        "help_text": "", 
+        "placeholder_text": null, 
+        "label": "Green economy topics\n\u0422\u0435\u043c\u0430\u0442\u0438\u043a\u0430 \u043f\u043e \u201c\u0417\u0435\u043b\u0435\u043d\u043e\u0439\u201d \u044d\u043a\u043e\u043d\u043e\u043c\u0438\u043a\u0435", 
+        "slug": "w_green-economy-topics"
+    }
+},
+{
+    "pk": 100, 
+    "model": "reports.field", 
+    "fields": {
+        "field_type": 5, 
+        "form": 2, 
+        "default": "", 
+        "required": false, 
+        "choices": "`Policy\n\u041f\u043e\u043b\u0438\u0442\u0438\u043a\u0430`,`Legal\n\u0417\u0430\u043a\u043e\u043d\u043e\u0434\u0430\u0442\u0435\u043b\u044c\u0441\u0442\u0432\u043e`,`Drivers\n\u0414\u0432\u0438\u0436\u0443\u0449\u0438\u0435 \u0441\u0438\u043b\u044b`,`Pressure\n\u0414\u0430\u0432\u043b\u0435\u043d\u0438\u0435`,`State\n\u0421\u043e\u0441\u0442\u043e\u044f\u043d\u0438\u0435`,`Impact\n\u0412\u043e\u0437\u0434\u0435\u0439\u0441\u0442\u0432\u0438\u0435`,`Response\n\u0420\u0435\u0430\u0433\u0438\u0440\u043e\u0432\u0430\u043d\u0438\u0435`,`Trends\n\u0422\u0435\u043d\u0434\u0435\u043d\u0446\u0438\u0438`,`Hot spots\n\u0413\u043e\u0440\u044f\u0447\u0438\u0435 \u0442\u043e\u0447\u043a\u0438`,`Transboundary\n\u0422\u0440\u0430\u043d\u0441\u0433\u0440\u0430\u043d\u0438\u0447\u043d\u044b\u0435 \u043f\u0440\u043e\u0431\u043b\u0435\u043c\u044b`", 
+        "order": 410, 
+        "visible": true, 
+        "help_text": "", 
+        "placeholder_text": null, 
+        "label": "Resource efficiency topics\n\u0422\u0435\u043c\u0430\u0442\u0438\u043a\u0430 \u043f\u043e \u044d\u0444\u0444\u0435\u043a\u0442\u0438\u0432\u043d\u043e\u0441\u0442\u0438 \u0438\u0441\u043f\u043e\u043b\u044c\u0437\u043e\u0432\u0430\u043d\u0438\u044f \u0440\u0435\u0441\u0443\u0440\u0441\u043e\u0432", 
+        "slug": "w_resource-efficiency-topics"
+    }
+},
+{
+    "pk": 101, 
+    "model": "reports.field", 
+    "fields": {
+        "field_type": 101, 
+        "form": 2, 
+        "default": "", 
+        "required": false, 
+        "choices": "", 
+        "order": 355, 
+        "visible": true, 
+        "help_text": "", 
+        "placeholder_text": null, 
+        "label": "If Yes, list the main ones\n\u0415\u0441\u043b\u0438 \"\u0414\u0430\", \u043f\u0435\u0440\u0435\u0447\u0438\u0441\u043b\u0438\u0442\u0435 \u043e\u0441\u043d\u043e\u0432\u043d\u044b\u0435", 
+        "slug": "w_if-yes-list-main-ones"
+    }
+},
+{
+    "pk": 102, 
+    "model": "reports.field", 
+    "fields": {
+        "field_type": 101, 
+        "form": 2, 
+        "default": "", 
+        "required": false, 
+        "choices": "", 
+        "order": 345, 
+        "visible": true, 
+        "help_text": "", 
+        "placeholder_text": null, 
+        "label": "If Yes, specify the major priority concerns\n\u0415\u0441\u043b\u0438 \"\u0414\u0430\", \u0443\u043a\u0430\u0436\u0438\u0442\u0435 \u043e\u0441\u043d\u043e\u0432\u043d\u044b\u0435 \u043f\u0440\u0438\u043e\u0440\u0438\u0442\u0435\u0442\u043d\u044b\u0435 \u043f\u0440\u043e\u0431\u043b\u0435\u043c\u044b", 
+        "slug": "w_if-yes-specify-major-priority-concerns"
+    }
+},
+{
+    "pk": 103, 
+    "model": "reports.field", 
+    "fields": {
+        "field_type": 101, 
+        "form": 2, 
+        "default": "", 
+        "required": false, 
+        "choices": "", 
+        "order": 295, 
+        "visible": true, 
+        "help_text": "", 
+        "placeholder_text": null, 
+        "label": "If Yes, list main(s) one(s)\n\u0415\u0441\u043b\u0438 \"\u0414\u0430\", \u0443\u043a\u0430\u0436\u0438\u0442\u0435 \u043e\u0441\u043d\u043e\u0432\u043d\u043e\u0439(-\u044b\u0435)", 
+        "slug": "w_if-yes-list-mains-ones6917"
+    }
+},
+{
+    "pk": 104, 
+    "model": "reports.field", 
+    "fields": {
+        "field_type": 8, 
+        "form": 2, 
+        "default": "", 
+        "required": false, 
+        "choices": "`International\n\u041c\u0435\u0436\u0434\u0443\u043d\u0430\u0440\u043e\u0434\u043d\u044b\u0439`,`Regional\n\u0420\u0435\u0433\u0438\u043e\u043d\u0430\u043b\u044c\u043d\u044b\u0439`,`National\n\u041d\u0430\u0446\u0438\u043e\u043d\u0430\u043b\u044c\u043d\u044b\u0439`,`Other\n\u0414\u0440\u0443\u0433\u043e\u0439`", 
+        "order": 315, 
+        "visible": true, 
+        "help_text": "", 
+        "placeholder_text": null, 
+        "label": "If Yes or Partially, specify the level at which these methodologies are standardized/agreed:\n\u0415\u0441\u043b\u0438 \"\u0414\u0430\"\u0438\u043b\u0438 \"\u0427\u0430\u0441\u0442\u0438\u0447\u043d\u043e\", \u0443\u043a\u0430\u0436\u0438\u0442\u0435 \u0443\u0440\u043e\u0432\u0435\u043d\u044c, \u043d\u0430 \u043a\u043e\u0442\u043e\u0440\u043e\u043c \u044d\u0442\u0438 \u043c\u0435\u0442\u043e\u0434\u0438\u043a\u0438 \u0431\u044b\u043b\u0438 \u0441\u0442\u0430\u043d\u0434\u0430\u0442\u0438\u0437\u0438\u0440\u043e\u0432\u0430\u043d\u044b/\u0441\u043e\u0433\u043b\u0430\u0441\u043e\u0432\u0430\u043d\u044b", 
+        "slug": "w_if-yes-or-partially-specify-level-which-these"
+    }
+},
+{
+    "pk": 105, 
+    "model": "reports.field", 
+    "fields": {
+        "field_type": 100, 
+        "form": 2, 
+        "default": "", 
+        "required": false, 
+        "choices": "", 
+        "order": 185, 
+        "visible": true, 
+        "help_text": "", 
+        "placeholder_text": null, 
+        "label": "If Yes, specify in which languages it is available\n\u0415\u0441\u043b\u0438 \"\u0414\u0430\", \u0443\u043a\u0430\u0436\u0438\u0442\u0435 \u043d\u0430 \u043a\u0430\u043a\u0438\u0445 \u044f\u0437\u044b\u043a\u0430\u0445 \u043e\u043d\u043e \u0438\u043c\u0435\u0435\u0442\u0441\u044f?", 
+        "slug": "w_if-yes-specify-which-languages-it-available"
+    }
+},
+{
+    "pk": 106, 
+    "model": "reports.field", 
+    "fields": {
+        "field_type": 100, 
+        "form": 2, 
+        "default": "", 
+        "required": false, 
+        "choices": "", 
+        "order": 10, 
+        "visible": true, 
+        "help_text": "", 
+        "placeholder_text": null, 
+        "label": "Q.1 Name of the assessment report.\nQ.1 \u041d\u0430\u0437\u0432\u0430\u043d\u0438\u0435 \u043e\u0446\u0435\u043d\u043e\u0447\u043d\u043e\u0433\u043e \u0434\u043e\u043a\u043b\u0430\u0434\u0430.", 
+        "slug": "w_q1-name-assessment-report"
+    }
+},
+{
+    "pk": 107, 
+    "model": "reports.field", 
+    "fields": {
+        "field_type": 6, 
+        "form": 2, 
+        "default": "", 
+        "required": true, 
+        "choices": "`Please select\n\u041f\u043e\u0436\u0430\u043b\u0443\u0439\u0441\u0442\u0430 \u0432\u044b\u0431\u0435\u0440\u0438\u0442\u0435`,`YES, I want to continue and fill the Review Template for this report that has been selected for review within the EE-AoA process.\n\u0414\u0410, \u044f \u0445\u043e\u0447\u0443 \u043f\u0440\u043e\u0434\u043e\u043b\u0436\u0438\u0442\u044c \u0438 \u0437\u0430\u043f\u043e\u043b\u043d\u0438\u0442\u044c \u043e\u043f\u0440\u043e\u0441\u043d\u044b\u0439 \u043b\u0438\u0441\u0442 \u0434\u043b\u044f \u043e\u0431\u0437\u043e\u0440\u0430 \u0434\u043b\u044f \u044d\u0442\u043e\u0433\u043e \u0434\u043e\u043a\u043b\u0430\u0434\u0430, \u043a\u043e\u0442\u043e\u0440\u044b\u0439 \u0431\u044b\u043b \u0432\u044b\u0431\u0440\u0430\u043d \u0434\u043b\u044f \u043e\u0431\u0437\u043e\u0440\u0430 \u0432 \u0440\u0430\u043c\u043a\u0430\u0445 \u043f\u0440\u043e\u0446\u0435\u0441\u0441\u0430 EE-AoA`,`NO, I want to exit the Review Template for this report.\n\u041d\u0415\u0422, \u044f \u0445\u043e\u0447\u0443 \u0432\u044b\u0439\u0442\u0438 \u0438\u0437 \u043e\u043f\u0440\u043e\u0441\u043d\u043e\u0433\u043e \u043b\u0438\u0441\u0442\u0430 \u0434\u043b\u044f \u043e\u0431\u0437\u043e\u0440\u0430 \u0434\u043b\u044f \u044d\u0442\u043e\u0433\u043e \u0434\u043e\u043a\u043b\u0430\u0434\u0430`", 
+        "order": 15, 
+        "visible": true, 
+        "help_text": "", 
+        "placeholder_text": null, 
+        "label": "Confirmation\n\u041f\u043e\u0434\u0442\u0432\u0435\u0440\u0436\u0434\u0435\u043d\u0438\u0435", 
+        "slug": "w_confirmation"
+    }
+},
+{
+    "pk": 108, 
+    "model": "reports.field", 
+    "fields": {
+        "field_type": 1, 
+        "form": 2, 
+        "default": "", 
+        "required": false, 
+        "choices": "", 
+        "order": 22, 
+        "visible": true, 
+        "help_text": "", 
+        "placeholder_text": null, 
+        "label": "Geo-coverage: country\n", 
+        "slug": "w_official-country-region"
+    }
+},
+{
+    "pk": 109, 
+    "model": "reports.field", 
+    "fields": {
+        "field_type": 1, 
+        "form": 2, 
+        "default": "", 
+        "required": false, 
+        "choices": "", 
+        "order": 23, 
+        "visible": true, 
+        "help_text": "", 
+        "placeholder_text": null, 
+        "label": "Geo coverage: region\n", 
+        "slug": "w_geo-coverage-region"
+    }
+},
+{
+    "pk": 110, 
+    "model": "reports.field", 
+    "fields": {
+        "field_type": 1, 
+        "form": 2, 
+        "default": "", 
+        "required": false, 
+        "choices": "", 
+        "order": 11, 
+        "visible": true, 
+        "help_text": "", 
+        "placeholder_text": null, 
+        "label": "VL Assessment Report ID\n", 
+        "slug": "w_vlid"
+    }
+},
+{
+    "pk": 111, 
+    "model": "reports.field", 
+    "fields": {
+        "field_type": 100, 
+        "form": 3, 
+        "default": "", 
+        "required": true, 
+        "choices": "", 
+        "order": 10, 
+        "visible": true, 
+        "help_text": "", 
+        "placeholder_text": null, 
+        "label": "Title\n", 
+        "slug": "w_title"
+    }
+},
+{
+    "pk": 112, 
+    "model": "reports.field", 
+    "fields": {
+        "field_type": 1, 
+        "form": 3, 
+        "default": "", 
+        "required": false, 
+        "choices": "", 
+        "order": 20, 
+        "visible": true, 
+        "help_text": "", 
+        "placeholder_text": null, 
+        "label": "URL\n", 
+        "slug": "w_url"
+    }
+},
+{
+    "pk": 113, 
+    "model": "reports.field", 
+    "fields": {
+        "field_type": 100, 
+        "form": 3, 
+        "default": "", 
+        "required": false, 
+        "choices": "", 
+        "order": 30, 
+        "visible": true, 
+        "help_text": "", 
+        "placeholder_text": null, 
+        "label": "Author\n", 
+        "slug": "w_author"
+    }
+},
+{
+    "pk": 114, 
+    "model": "reports.field", 
+    "fields": {
+        "field_type": 5, 
+        "form": 3, 
+        "default": "", 
+        "required": true, 
+        "choices": "`Water sector or NGOs report\nWater sector or NGOs report`,`Water statistics\nWater statistics`,`Environmental statistics\nEnvironmental statistics`,`Environmental indicator set \u2013 National\nEnvironmental indicator set \u2013 National`,`Environmental indicator set \u2013 Sub-national\nEnvironmental indicator set \u2013 Sub-national`,`Environmental indicator set \u2013 Regional\nEnvironmental indicator set \u2013 Regional`,`Environmental compendium\nEnvironmental compendium`,`Water indicator set\nWater indicator set`,`Website\nWebsite`,`Library services\nLibrary services`,`Country profiles\nCountry profiles`,`National Institution dealing with water\nNational Institution dealing with water`,`National Institution dealing with green economy\nNational Institution dealing with green economy`", 
+        "order": 60, 
+        "visible": true, 
+        "help_text": "", 
+        "placeholder_text": null, 
+        "label": "Type of document\n", 
+        "slug": "w_type-document"
+    }
+},
+{
+    "pk": 115, 
+    "model": "reports.field", 
+    "fields": {
+        "field_type": 1, 
+        "form": 3, 
+        "default": "", 
+        "required": false, 
+        "choices": "", 
+        "order": 40, 
+        "visible": true, 
+        "help_text": "", 
+        "placeholder_text": null, 
+        "label": "Publication year\n", 
+        "slug": "w_publication-year"
+    }
+},
+{
+    "pk": 116, 
+    "model": "reports.field", 
+    "fields": {
+        "field_type": 5, 
+        "form": 3, 
+        "default": "", 
+        "required": true, 
+        "choices": "`Water\n\u0412\u043e\u0434\u044b`,`Green Economy\n\"\u0417\u0435\u043b\u0435\u043d\u0430\u044f\" \u044d\u043a\u043e\u043d\u043e\u043c\u0438\u043a\u0430`", 
+        "order": 50, 
+        "visible": true, 
+        "help_text": "", 
+        "placeholder_text": null, 
+        "label": "Theme\n", 
+        "slug": "w_theme"
+    }
+},
+{
+    "pk": 117, 
+    "model": "reports.field", 
+    "fields": {
+        "field_type": 5, 
+        "form": 3, 
+        "default": "", 
+        "required": true, 
+        "choices": "`Albania\nAlbania`,`Andorra\nAndorra`,`Armenia\nArmenia`,`Austria\nAustria`,`Azerbaijan\nAzerbaijan`,`Belarus\nBelarus`,`Belgium\nBelgium`,`Bosnia and Herzegovina\nBosnia and Herzegovina`,`Bulgaria\nBulgaria`,`Croatia\nCroatia`,`Cyprus\nCyprus`,`Czech Republic\nCzech Republic`,`Denmark\nDenmark`,`Estonia\nEstonia`,`Finland\nFinland`,`France\nFrance`,`Georgia\nGeorgia`,`Germany\nGermany`,`Greece\nGreece`,`Hungary\nHungary`,`Iceland\nIceland`,`Ireland\nIreland`,`Italy\nItaly`,`Kazakhstan\nKazakhstan`,`Kyrgyzstan\nKyrgyzstan`,`Latvia\nLatvia`,`Liechtenstein\nLiechtenstein`,`Lithuania\nLithuania`,`Luxembourg\nLuxembourg`,`Former Yugoslav Republic of Macedonia\nFYR of Macedonia`,`Malta\nMalta`,`Republic of Moldova\nRepublic of Moldova`,`Monaco\nMonaco`,`Montenegro\nMontenegro`,`the Netherlands\nthe Netherlands`,`Norway\nNorway`,`Poland\nPoland`,`Portugal\nPortugal`,`Romania\nRomania`,`Russian Federation\nRussian Federation`,`San Marino\nSan Marino`,`Serbia\nSerbia`,`Slovakia\nSlovakia`,`Slovenia\nSlovenia`,`Spain\nSpain`,`Sweden\nSweden`,`Switzerland\nSwitzerland`,`Tajikistan\nTajikistan`,`Turkey\nTurkey`,`Turkmenistan\nTurkmenistan`,`Ukraine\nUkraine`,`the United Kingdom\nthe United Kingdom`,`Uzbekistan\nUzbekistan`,`Kosovo under UN Security Council Resolution 1244\nKosovo under un security council 1244/9950`", 
+        "order": 70, 
+        "visible": true, 
+        "help_text": "", 
+        "placeholder_text": null, 
+        "label": "Country\n", 
+        "slug": "w_country"
+    }
+},
+{
+    "pk": 118, 
+    "model": "reports.field", 
+    "fields": {
+        "field_type": 6, 
+        "form": 3, 
+        "default": "", 
+        "required": false, 
+        "choices": "`Not applicable\n\u041d\u0435 \u043f\u0440\u0438\u043c\u0435\u043d\u044f\u0435\u0442\u0441\u044f`,`Energy (incl. Climate, renewable energy)\nEnergy (incl. Climate, renewable energy)`,`Housing\nHousing`,`Transport\nTransport`,`Water\nWater`,`Industry\nIndustry`,`Mining\nMining`,`Agriculture\nAgriculture`,`Other\nOther`", 
+        "order": 65, 
+        "visible": true, 
+        "help_text": "", 
+        "placeholder_text": null, 
+        "label": "Sector\n", 
+        "slug": "w_sector"
+    }
+},
+{
+    "pk": 119, 
+    "model": "reports.field", 
+    "fields": {
+        "field_type": 8, 
+        "form": 4, 
+        "default": "", 
+        "required": true, 
+        "choices": "`Global\n\u0413\u043b\u043e\u0431\u0430\u043b\u044c\u043d\u044b\u0439`,`Regional/Transboundary\n\u0420\u0435\u0433\u0438\u043e\u043d\u0430\u043b\u044c\u043d\u044b\u0439/\u0422\u0440\u0430\u043d\u0441\u0433\u0440\u0430\u043d\u0438\u0447\u043d\u044b\u0439`,`National/Local\n\u041d\u0430\u0446\u0438\u043e\u043d\u0430\u043b\u044c\u043d\u044b\u0439/\u041b\u043e\u043a\u0430\u043b\u044c\u043d\u044b\u0439`", 
+        "order": 70, 
+        "visible": true, 
+        "help_text": "", 
+        "placeholder_text": null, 
+        "label": "Report coverage\n\u041e\u0445\u0432\u0430\u0442 \u043e\u0442\u0447\u0435\u0442\u0430", 
+        "slug": "w_theme-coverage"
+    }
+},
+{
+    "pk": 120, 
+    "model": "reports.field", 
+    "fields": {
+        "field_type": 8, 
+        "form": 4, 
+        "default": "", 
+        "required": true, 
+        "choices": "`Yes\n\u0414\u0430`,`No\n\u041d\u0435\u0442`", 
+        "order": 65, 
+        "visible": true, 
+        "help_text": "", 
+        "placeholder_text": null, 
+        "label": "Other criteria\n\u0421\u0443\u0449\u0435\u0441\u0442\u0432\u0443\u044e\u0442 \u043b\u0438 \u0434\u0440\u0443\u0433\u0438\u0435 \u043a\u0440\u0438\u0442\u0435\u0440\u0438\u0438, \u043d\u0430 \u043e\u0441\u043d\u043e\u0432\u0430\u043d\u0438\u0438 \u043a\u043e\u0442\u043e\u0440\u044b\u0445 \u0412\u044b \u0431\u044b \u043d\u0430\u0437\u043d\u0430\u0447\u0438\u043b\u0438 \u043f\u0440\u0438\u043e\u0440\u0438\u0442\u0435\u0442 \u0432\u044b\u0431\u043e\u0440\u0430 \u044d\u0442\u043e\u0439 \u043e\u0446\u0435\u043d\u043a\u0438", 
+        "slug": "w_other-criteria"
+    }
+},
+{
+    "pk": 121, 
+    "model": "reports.field", 
+    "fields": {
+        "field_type": 8, 
+        "form": 4, 
+        "default": "", 
+        "required": true, 
+        "choices": "`Yes\n\u0414\u0430`,`No\n\u041d\u0435\u0442`", 
+        "order": 40, 
+        "visible": true, 
+        "help_text": "", 
+        "placeholder_text": null, 
+        "label": "Has the assessment been published for any specific scope or purpose\n\u0418\u043c\u0435\u0435\u0442 \u043b\u0438 \u043f\u0443\u0431\u043b\u0438\u043a\u0430\u0446\u0438\u044f \u043e\u0446\u0435\u043d\u043a\u0438 \u043a\u0430\u043a\u0438\u0435-\u043b\u0438\u0431\u043e \u043a\u043e\u043d\u043a\u0440\u0435\u0442\u043d\u044b\u0435 \u0440\u0430\u043c\u043a\u0438 \u0438\u043b\u0438 \u0446\u0435\u043b\u0438", 
+        "slug": "w_specific-scope-or-purpose"
+    }
+},
+{
+    "pk": 122, 
+    "model": "reports.field", 
+    "fields": {
+        "field_type": 8, 
+        "form": 4, 
+        "default": "", 
+        "required": true, 
+        "choices": "`Yes\n\u0414\u0430`,`No (NGO)\n\u041d\u0435\u0442 (\u041d\u041f\u041e)`,`No (Academic organization)\n\u041d\u0435\u0442 (\u0410\u043a\u0430\u0434\u0435\u043c\u0438\u0447\u0435\u0441\u043a\u0430\u044f \u043e\u0440\u0433\u0430\u043d\u0438\u0437\u0430\u0446\u0438\u044f)`,`No (Enterprise)\n\u041d\u0435\u0442 (\u041f\u0440\u0435\u0434\u043f\u0440\u0438\u044f\u0442\u0438\u0435)`,`No (Other)\n\u041d\u0435\u0442 (\u0414\u0440\u0443\u0433\u043e\u0435)`", 
+        "order": 50, 
+        "visible": true, 
+        "help_text": "", 
+        "placeholder_text": null, 
+        "label": "Assessment is formal\n\u041e\u0446\u0435\u043d\u043a\u0430 \u044f\u0432\u043b\u044f\u0435\u0442\u0441\u044f \u043e\u0444\u0438\u0446\u0438\u0430\u043b\u044c\u043d\u043e\u0439", 
+        "slug": "w_is-formal"
+    }
+},
+{
+    "pk": 123, 
+    "model": "reports.field", 
+    "fields": {
+        "field_type": 9, 
+        "form": 4, 
+        "default": "", 
+        "required": false, 
+        "choices": "", 
+        "order": 31, 
+        "visible": true, 
+        "help_text": "", 
+        "placeholder_text": null, 
+        "label": "Upload assessment\n\u0417\u0430\u0433\u0440\u0443\u0437\u0438\u0442\u044c \u043e\u0446\u0435\u043d\u043a\u0443", 
+        "slug": "w_assessment-upload"
+    }
+},
+{
+    "pk": 124, 
+    "model": "reports.field", 
+    "fields": {
+        "field_type": 100, 
+        "form": 4, 
+        "default": "", 
+        "required": false, 
+        "choices": "", 
+        "order": 68, 
+        "visible": true, 
+        "help_text": "", 
+        "placeholder_text": null, 
+        "label": "If yes, specify the main criterion\n\u0415\u0441\u043b\u0438 \u0434\u0430, \u0443\u043a\u0430\u0436\u0438\u0442\u0435 \u043e\u0441\u043d\u043e\u0432\u043d\u044b\u0435 \u043a\u0440\u0438\u0442\u0435\u0440\u0438\u0438", 
+        "slug": "w_main-criterion"
+    }
+},
+{
+    "pk": 125, 
+    "model": "reports.field", 
+    "fields": {
+        "field_type": 100, 
+        "form": 4, 
+        "default": "", 
+        "required": true, 
+        "choices": "", 
+        "order": 20, 
+        "visible": true, 
+        "help_text": "", 
+        "placeholder_text": null, 
+        "label": "Name of the Assessment\n\u041d\u0430\u0437\u0432\u0430\u043d\u0438\u0435 \u043e\u0446\u0435\u043d\u043a\u0438", 
+        "slug": "w_assessment-name"
+    }
+},
+{
+    "pk": 126, 
+    "model": "reports.field", 
+    "fields": {
+        "field_type": 100, 
+        "form": 4, 
+        "default": "", 
+        "required": true, 
+        "choices": "", 
+        "order": 25, 
+        "visible": true, 
+        "help_text": "", 
+        "placeholder_text": null, 
+        "label": "Name of the organisation conducting the assessment\n\u041d\u0430\u0437\u0432\u0430\u043d\u0438\u0435 \u043e\u0440\u0433\u0430\u043d\u0438\u0437\u0430\u0446\u0438\u0438, \u043a\u043e\u0442\u043e\u0440\u0430\u044f \u043f\u0440\u043e\u0432\u043e\u0434\u0438\u0442\u044c \u043e\u0446\u0435\u043d\u043a\u0443", 
+        "slug": "w_body-conducting-assessment"
+    }
+},
+{
+    "pk": 127, 
+    "model": "reports.field", 
+    "fields": {
+        "field_type": 8, 
+        "form": 4, 
+        "default": "", 
+        "required": true, 
+        "choices": "`Yes\n\u0414\u0430`,`No\n\u041d\u0435\u0442`", 
+        "order": 60, 
+        "visible": true, 
+        "help_text": "", 
+        "placeholder_text": null, 
+        "label": "Publicly available\n\u041f\u0443\u0431\u043b\u0438\u0447\u043d\u043e \u0434\u043e\u0441\u0442\u0443\u043f\u043d\u0430\u044f", 
+        "slug": "w_publicly-available"
+    }
+},
+{
+    "pk": 128, 
+    "model": "reports.field", 
+    "fields": {
+        "field_type": 1, 
+        "form": 4, 
+        "default": "", 
+        "required": true, 
+        "choices": "", 
+        "order": 27, 
+        "visible": true, 
+        "help_text": "", 
+        "placeholder_text": null, 
+        "label": "Address of the organisation\n\u041b\u043e\u043a\u0430\u043b\u0438\u0437\u043e\u0432\u0430\u0442\u044c \u0412\u0430\u0448\u0443 \u043e\u0446\u0435\u043d\u043a\u0443", 
+        "slug": "w_location"
+    }
+},
+{
+    "pk": 129, 
+    "model": "reports.field", 
+    "fields": {
+        "field_type": 1, 
+        "form": 4, 
+        "default": "", 
+        "required": false, 
+        "choices": "", 
+        "order": 30, 
+        "visible": true, 
+        "help_text": "", 
+        "placeholder_text": null, 
+        "label": "URL\nURL \u0430\u0434\u0440\u0435\u0441", 
+        "slug": "w_assessment-url"
+    }
+},
+{
+    "pk": 130, 
+    "model": "reports.field", 
+    "fields": {
+        "field_type": 1, 
+        "form": 4, 
+        "default": "", 
+        "required": true, 
+        "choices": "", 
+        "order": 21, 
+        "visible": true, 
+        "help_text": "", 
+        "placeholder_text": null, 
+        "label": "Year in which the assessment was published\n\u0413\u043e\u0434, \u0432 \u043a\u043e\u0442\u043e\u0440\u043e\u043c \u043e\u0446\u0435\u043d\u043a\u0430 \u0431\u044b\u043b\u0430 \u043e\u043f\u0443\u0431\u043b\u0438\u043a\u043e\u0432\u0430\u043d\u0430", 
+        "slug": "w_assessment-year"
+    }
+},
+{
+    "pk": 131, 
+    "model": "reports.field", 
+    "fields": {
+        "field_type": 5, 
+        "form": 4, 
+        "default": "", 
+        "required": true, 
+        "choices": "`Water\nB\u043e\u0434\u0430`,`Green economy and resource efficiency\n\u00ab\u0417\u0435\u043b\u0435\u043d\u0430\u044f\u00bb \u044d\u043a\u043e\u043d\u043e\u043c\u0438\u043a\u0430 \u0438 \u0443\u0441\u0442\u043e\u0439\u0447\u0438\u0432\u043e\u0435 \u0440\u0430\u0437\u0432\u0438\u0442\u0438\u0435`,`Biodiversity\n\u0431\u0438\u043e\u0440\u0430\u0437\u043d\u043e\u043e\u0431\u0440\u0430\u0437\u0438\u0435`,`Air\n\u0432\u043e\u0437\u0434\u0443\u0445`,`Waste\n\u043e\u0442\u0445\u043e\u0434\u044b`,`Climate change\n\u0438\u0437\u043c\u0435\u043d\u0435\u043d\u0438\u0435 \u043a\u043b\u0438\u043c\u0430\u0442\u0430`", 
+        "order": 71, 
+        "visible": true, 
+        "help_text": "", 
+        "placeholder_text": null, 
+        "label": "Theme\n\u0422\u0435\u043c\u0430", 
+        "slug": "w_theme"
+    }
+},
+{
+    "pk": 132, 
+    "model": "reports.field", 
+    "fields": {
+        "field_type": 5, 
+        "form": 4, 
+        "default": "", 
+        "required": false, 
+        "choices": "`The assessment was published on paper only\n\u041e\u0446\u0435\u043d\u043a\u0430 \u0431\u044b\u043b\u0430 \u043e\u043f\u0443\u0431\u043b\u0438\u043a\u043e\u0432\u0430\u043d\u0430 \u0442\u043e\u043b\u044c\u043a\u043e \u043d\u0430 \u0431\u0443\u043c\u0430\u0433\u0435`", 
+        "order": 32, 
+        "visible": true, 
+        "help_text": "", 
+        "placeholder_text": null, 
+        "label": "Paper only\n\u0422\u043e\u043b\u044c\u043a\u043e \u043d\u0430 \u0431\u0443\u043c\u0430\u0433\u0435", 
+        "slug": "w_paper-only"
+    }
+},
+{
+    "pk": 133, 
+    "model": "reports.field", 
+    "fields": {
+        "field_type": 5, 
+        "form": 4, 
+        "default": "", 
+        "required": false, 
+        "choices": "`Albania\nAlbania`,`Andorra\nAndorra`,`Armenia\nArmenia`,`Austria\nAustria`,`Azerbaijan\nAzerbaijan`,`Belarus\nBelarus`,`Belgium\nBelgium`,`Bosnia and Herzegovina\nBosnia and Herzegovina`,`Bulgaria\nBulgaria`,`Croatia\nCroatia`,`Cyprus\nCyprus`,`Czech Republic\nCzech Republic`,`Denmark\nDenmark`,`Estonia\nEstonia`,`Finland\nFinland`,`France\nFrance`,`Georgia\nGeorgia`,`Germany\nGermany`,`Greece\nGreece`,`Hungary\nHungary`,`Iceland\nIceland`,`Ireland\nIreland`,`Italy\nItaly`,`Kazakhstan\nKazakhstan`,`Kyrgyzstan\nKyrgyzstan`,`Latvia\nLatvia`,`Liechtenstein\nLiechtenstein`,`Lithuania\nLithuania`,`Luxembourg\nLuxembourg`,`Former Yugoslav Republic of Macedonia\nFYR of Macedonia`,`Malta\nMalta`,`Republic of Moldova\nRepublic of Moldova`,`Monaco\nMonaco`,`Montenegro\nMontenegro`,`the Netherlands\nthe Netherlands`,`Norway\nNorway`,`Poland\nPoland`,`Portugal\nPortugal`,`Romania\nRomania`,`Russian Federation\nRussian Federation`,`San Marino\nSan Marino`,`Serbia\nSerbia`,`Slovakia\nSlovakia`,`Slovenia\nSlovenia`,`Spain\nSpain`,`Sweden\nSweden`,`Switzerland\nSwitzerland`,`Tajikistan\nTajikistan`,`Turkey\nTurkey`,`Turkmenistan\nTurkmenistan`,`Ukraine\nUkraine`,`the United Kingdom\nthe United Kingdom`,`Uzbekistan\nUzbekistan`,`Kosovo under UN Security Council Resolution 1244\nKosovo under un security council 1244/9950`,`Afghanistan\nAfghanistan`,`Algeria\nAlgeria`,`Australia\nAustralia`,`Brazil\nBrazil`,`Cambodia\nCambodia`,`Cameroun\nCameroun`,`Canada\nCanada`,`China\nChina`,`Costa Rica\nCosta Rica`,`Egypt\nEgypt`,`Honduras\nHonduras`,`India\nIndia`,`Indonesia\nIndonesia`,`Iran\nIran`,`Israel\nIsrael`,`Japan\nJapan`,`Jordan\nJordan`,`Kenya\nKenya`,`Korea\nKorea`,`Lebanon\nLebanon`,`Libya\nLibya`,`Mauritius\nMauritius`,`Morocco\nMorocco`,`Nepal\nNepal`,`Nigeria\nNigeria`,`Palestinian territory\nPalestinian territory`,`Singapore\nSingapore`,`Syria\nSyria`,`Tunisia\nTunisia`,`Uganda\nUganda`,`USA\nUSA`,`others\nothers`", 
+        "order": 22, 
+        "visible": true, 
+        "help_text": "", 
+        "placeholder_text": null, 
+        "label": "Geo-coverage: country\n\u0413\u0435\u043e\u0433\u0440\u0430\u0444\u0438\u0447\u0435\u0441\u043a\u0438\u0439 \u043e\u0445\u0432\u0430\u0442: c\u0442\u0440\u0430\u043d\u0430", 
+        "slug": "w_official-country-region"
+    }
+},
+{
+    "pk": 134, 
+    "model": "reports.field", 
+    "fields": {
+        "field_type": 5, 
+        "form": 4, 
+        "default": "", 
+        "required": false, 
+        "choices": "`Caucasus\nCaucasus`,`Central Asia\nCentral Asia`,`Eastern Europe\nEastern Europe`,`EEA member countries\nEEA member countries`,`Russian Federation\nRussian Federation`,`Western Balkans\nWestern Balkans`,`Africa\nAfrica`,`Asia\nAsia`,`Global\nGlobal`,`Middle East\nMiddle East`,`North America\nNorth America`,`Northen Africa\nNorthen Africa`,`Pacific countries\nPacific countries`,`other European\nother European`,`other OECD countries\nother OECD countries`", 
+        "order": 23, 
+        "visible": true, 
+        "help_text": "", 
+        "placeholder_text": null, 
+        "label": "Geo-coverage: region\n\u0413\u0435\u043e\u0433\u0440\u0430\u0444\u0438\u0447\u0435\u0441\u043a\u0438\u0439 \u043e\u0445\u0432\u0430\u0442: p\u0435\u0433\u0438\u043e\u043d", 
+        "slug": "w_geo-coverage-region"
+    }
+},
+{
+    "pk": 135, 
+    "model": "reports.field", 
+    "fields": {
+        "field_type": 5, 
+        "form": 4, 
+        "default": "", 
+        "required": false, 
+        "choices": "`Section in State of Environment report\nSection in State of Environment report`,`Section in environmental performance review\nSection in environmental performance review`,`State of water assessment/report \u2013 National level\nState of water assessment/report \u2013 National level`,`State of water assessment/report \u2013 Sub-national level\nState of water assessment/report \u2013 Sub-national level`,`State of water assessment/report \u2013 Regional/Global level\nState of water assessment/report \u2013 Regional level`,`State of green economy assessment/report \u2013 National level\nState of green economy assessment/report \u2013 National level`,`State of green economy assessment/report \u2013 Sub-national level\nState of green economy assessment/report \u2013 Sub-national level`,`State of green economy assessment/report \u2013 Regional/Global level\nState of green economy assessment/report \u2013 Regional level`,`Sectorial report\nSectorial report`,`Water sector or NGOs report\nWater sector or NGOs report`,`Water statistics\nWater statistics`,`Environmental statistics\nEnvironmental statistics`,`Environmental indicator set \u2013 National\nEnvironmental indicator set \u2013 National`,`Environmental indicator set \u2013 Sub-national\nEnvironmental indicator set \u2013 Sub-national`,`Environmental indicator set \u2013 Regional\nEnvironmental indicator set \u2013 Regional`,`Environmental compendium\nEnvironmental compendium`,`Water indicator set\nWater indicator set`", 
+        "order": 24, 
+        "visible": true, 
+        "help_text": "", 
+        "placeholder_text": null, 
+        "label": "Type of document\n\u0422\u0438\u043f \u0434\u043e\u043a\u0443\u043c\u0435\u043d\u0442\u0430", 
+        "slug": "w_type-document"
+    }
+},
+{
+    "pk": 136, 
+    "model": "reports.field", 
+    "fields": {
+        "field_type": 2, 
+        "form": 4, 
+        "default": "", 
+        "required": true, 
+        "choices": "", 
+        "order": 10, 
+        "visible": true, 
+        "help_text": "", 
+        "placeholder_text": null, 
+        "label": "Title in original language\n\u041d\u0430\u0437\u0432\u0430\u043d\u0438\u0435 \u043d\u0430 \u044f\u0437\u044b\u043a\u0435 \u043e\u0440\u0438\u0433\u0438\u043d\u0430\u043b\u0430", 
+        "slug": "w_title-original-language"
+    }
+}
+]
