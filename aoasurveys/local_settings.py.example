@@ -12,7 +12,8 @@ ALLOWED_HOSTS = []
 
 FIELDS_SEPARATOR = ','
 
-# FRAME_URL = 'http://example.com/flis_templates/frame'
+FRAME_COOKIES = ['__ac', '_ZopeId', 'LOCALIZER_LANGUAGE']
+FRAME_URL = 'http://pbe.eionet.europa.eu/aoa/aoa_templates/frame'
 
 DOWNLOAD_URL = 'http://aoa.ew.eea.europa.eu'
 
@@ -20,3 +21,15 @@ CUSTOM_JS = {
     'bibliography-details-each-assessment': 'js/theme-topics.js',
     'general-template': 'js/theme-topics.js',
 }
+
+DATABASES = {
+    'default': {
+        'ENGINE': 'django.db.backends.mysql',
+        'NAME': 'aoasurveys',
+        'USER': 'db_user',
+        'PASSWORD': 'db_pass',
+    },
+}
+
+FORMS_BUILDER_CHOICES_MAX_LENGTH = 2000
+FORMS_BUILDER_LABEL_MAX_LENGTH = 400
