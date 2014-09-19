@@ -111,7 +111,8 @@ LOCALIZED_LANGUAGES = (
     "English",
     "Russian"
 )
-DEFAULT_LANGUAGE = "English"
+LOCALIZED_LANGUAGES_ABBR = ('en', 'ru')
+DEFAULT_LANGUAGE = 'en'
 FORMS_BUILDER_UPLOAD_ROOT = os.path.join(BASE_DIR, 'forms')
 
 # Custom settings
