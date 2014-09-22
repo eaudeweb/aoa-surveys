@@ -36,11 +36,25 @@ for answer in survey.objectValues():
 
         entry = {"id": attributes["id"], "respondent": attributes["respondent"],
                  "modification_time": attributes["modification_time"].ISO8601()}
+        
+        approved_date = attributes.get("approved_date", None)
+        if isinstance(approved_date, DateTime):
+            entry["creation_date"] = approved_date.ISO8601()
+        else:
+            entry["creation_date"] = None
+
+        creation_date = attributes.get("creation_date", None)
+        if isinstance(creation_date, DateTime):
+            entry["creation_date"] = creation_date.ISO8601()
+        else:
+            entry["creation_date"] = None
+
         if "draft" in attributes:
             entry["draft"] = attributes["draft"]
         else:
             entry["draft"] = False
         
+        entry["cf_approval_list"] = attributes.get("cf_approval_list", None)
         entry["answers"] = answers
         answer_sets.append(entry)
 
