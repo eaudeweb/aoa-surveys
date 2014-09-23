@@ -5,11 +5,11 @@ from aoasurveys.reports.utils import get_translation
 
 class FilteringForm(Form):
     def __init__(self, *args, **kwargs):
-        fields = kwargs.pop('fields', [])
         language = kwargs.pop('language')
+        self._fields = kwargs.pop('fields', [])
         super(FilteringForm, self).__init__(*args, **kwargs)
-        for field in fields:
-            field_name = '{0}_{1}'.format(field.id, field.slug)
+        for field in self._fields:
+            field_name = field.slug
             field_label = get_translation(field.label, language)
             if field.choices:
                 choices = [(idx, get_translation(choice, language))
@@ -25,3 +25,7 @@ class FilteringForm(Form):
                     max_length=255,
                     required=False,
                 )
+
+    def get_filter_query(self):
+        field_map = {field.slug: field.id for field in self._fields}
+        return {field_map[k]: v for k, v in self.cleaned_data.iteritems() if v}

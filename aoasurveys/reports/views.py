@@ -6,8 +6,8 @@ from django.views.generic import ListView
 from django.conf import settings
 from django.http import HttpResponse
 from django.db.models import Q
-from aoasurveys.aoaforms.filter import filter_entries
 
+from aoasurveys.aoaforms.filter import filter_entries
 from aoasurveys.aoaforms.views import DetailFormView
 from aoasurveys.aoaforms.models import Form, FieldEntry
 from aoasurveys.reports.forms import FilteringForm
@@ -62,8 +62,7 @@ class AnswersView(DetailFormView):
         return kwargs
 
     def form_valid(self, form):
-        self.filter_query = {int(k.split('_')[0]): v for k, v in
-                             form.cleaned_data.iteritems() if v}
+        self.filter_query = form.get_filter_query()
         self.object = self.get_object()
         return self.render_to_response(self.get_context_data(
             object=self.object, form=form))
