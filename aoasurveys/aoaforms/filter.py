@@ -24,6 +24,9 @@ def filter_entries(form, filters):
     query += "GROUP BY f.entry_id"
 
     if filters:
-        return FormEntry.objects.raw(query)
+        raw = FormEntry.objects.raw(query)
+        raw.count = lambda: len(list(raw))
+        raw.order_by = lambda b: raw # FIXME: actual ordering
+        return raw
 
     return form.entries.all()

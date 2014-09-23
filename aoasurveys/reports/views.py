@@ -69,7 +69,9 @@ class AnswersListJson(BaseDatatableView):
     order_columns = ['id']
 
     def get_initial_queryset(self):
-        return FormEntry.objects.filter(form__slug=self.kwargs['slug'])
+        #return FormEntry.objects.filter(form__slug=self.kwargs['slug'])
+        object = Form.objects.get(slug=self.kwargs['slug'])
+        return filter_entries(object, {})
 
     def filter_queryset(self, qs):
         # TODO: apply filters
