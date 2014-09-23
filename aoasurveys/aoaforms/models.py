@@ -78,5 +78,6 @@ class Label(Model):
         verbose_name = 'Label'
         verbose_name_plural = 'Labels'
 
+
 admin.site.register(Form)
 admin.site.register(Label)

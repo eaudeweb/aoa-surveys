@@ -3,28 +3,29 @@
 {% load extra_tags %}
 
 {% block content %}
-<h2>Surveys</h2>
+  <h2>Surveys</h2>
 
-{% if perms.aoasurveys.can_change_form %}
-  <ul>
-  {% for survey in object_list %}
-    <li>
-      <a href="{% url 'form_detail' survey.slug %}">
-          {{ survey.title | translate:request.language }}</a> -
-      <a href="{% url 'answers_list' slug=survey.slug %}">View answers</a> |
-      <a href="{% url 'manage_form' slug=survey.slug %}">Manage</a>
-    </li>
-  {% endfor %}
-  </ul>
-{% else %}
-  <ul>
-  {% for survey in object_list|published %}
-    <li>
-      <a href="{% url 'form_detail' survey.slug %}">
-          {{ survey.title | translate:request.language }}</a>
-    </li>
-  {% endfor %}
-  </ul>
-{% endif %}
+  {% if perms.aoasurveys.can_change_form %}
+    <ul>
+      {% for survey in object_list %}
+        <li>
+          <a href="{% url 'form_detail' survey.slug %}">
+            {{ survey.title | translate:request.language }}</a> -
+          <a href="{% url 'answers_list' slug=survey.slug %}">View answers</a>
+          |
+          <a href="{% url 'manage_form' slug=survey.slug %}">Manage</a>
+        </li>
+      {% endfor %}
+    </ul>
+  {% else %}
+    <ul>
+      {% for survey in object_list|published %}
+        <li>
+          <a href="{% url 'form_detail' survey.slug %}">
+            {{ survey.title | translate:request.language }}</a>
+        </li>
+      {% endfor %}
+    </ul>
+  {% endif %}
 
 {% endblock %}

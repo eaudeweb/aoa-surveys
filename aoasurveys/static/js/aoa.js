@@ -1,5 +1,5 @@
 $(function () {
-    $('#advanced-filtering-button').on('click', function(evt) {
+    $('#advanced-filtering-button').on('click', function (evt) {
         evt.preventDefault();
         var form = $('#advanced-filtering-form');
         var activate = 'Advanced filtering'

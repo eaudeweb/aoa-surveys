@@ -6,17 +6,17 @@
 
   <p>Available fields:</p>
   <ul>
-  {% for field in object.fields.all %}
-  <li>{{ field.label | translate:request.language }}: {{ field.slug }}</li>
-  {% endfor %}
+    {% for field in object.fields.all %}
+      <li>{{ field.label | translate:request.language }}: {{ field.slug }}</li>
+    {% endfor %}
   </ul>
 
   <p>Please enter the selected fields' slugs separated by "{{ separator }}" in
-  the textboxes below</p>
+    the textboxes below</p>
 
   <form action="" method="POST">{% csrf_token %}
-      {{ form.as_p }}
-      <input type="submit" value="Save" />
+    {{ form.as_p }}
+    <input type="submit" value="Save"/>
   </form>
 
 {% endblock %}

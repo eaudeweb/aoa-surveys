@@ -3,6 +3,7 @@ from forms_builder.forms.models import STATUS_CHOICES
 
 
 class SelectFieldsForm(Form):
+    # TODO: use ModelForm
     visible_fields = CharField(max_length=255, required=False,
                                widget=TextInput(attrs={'size': 40}))
     filtering_fields = CharField(max_length=255, required=False,

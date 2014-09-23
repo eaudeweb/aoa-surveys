@@ -81,7 +81,11 @@ be run as an unprivileged user in the product directory::
 
     ./manage.py syncdb
 
-9. Collect static assets::
+9. Load initial fixtures::
+
+    ./manage.py loaddata aoasurveys/fixtures/forms.json
+
+10. Collect static assets::
 
     ./manage.py collectstatic --no-input
 

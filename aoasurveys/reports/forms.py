@@ -4,7 +4,6 @@ from aoasurveys.reports.utils import get_translation
 
 
 class FilteringForm(Form):
-
     def __init__(self, *args, **kwargs):
         fields = kwargs.pop('fields', [])
         language = kwargs.pop('language')

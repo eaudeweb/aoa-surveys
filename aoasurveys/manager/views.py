@@ -1,13 +1,12 @@
 from django.core.urlresolvers import reverse
 from django.conf import settings
 
-from aoasurveys.manager.forms import SelectFieldsForm
+from aoasurveys.aoaforms.views import DetailFormView
 from aoasurveys.aoaforms.models import Form
-from aoasurveys.views import DetailFormView
+from aoasurveys.manager.forms import SelectFieldsForm
 
 
 class FormManagementView(DetailFormView):
-
     template_name = 'manage_form.html'
     model = Form
     slug_url_kwarg = 'slug'

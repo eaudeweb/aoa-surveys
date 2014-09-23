@@ -32,7 +32,8 @@ class LocalizedStringField(MultiValueField):
 
     def __init__(self, *args, **kwargs):
         list_fields = [CharField(), CharField()]
-        super(LocalizedStringField, self).__init__(list_fields, *args, **kwargs)
+        super(LocalizedStringField, self).__init__(list_fields, *args,
+                                                   **kwargs)
 
     def compress(self, values):
         return "\n".join(values)
@@ -43,6 +44,7 @@ class LocalizedTextAreaField(LocalizedStringField):
         labels=settings.LOCALIZED_LANGUAGES,
         widgets=[Textarea, Textarea]
     )
+
 
 class LabelWidget(Widget):
     def render(self, name, value, attrs=None):

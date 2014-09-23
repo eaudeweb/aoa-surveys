@@ -7,19 +7,17 @@ from django.conf import settings
 from django.http import HttpResponse
 from django.db.models import Q
 
-from aoasurveys.reports.forms import FilteringForm
+from aoasurveys.aoaforms.views import DetailFormView
 from aoasurveys.aoaforms.models import Form, FieldEntry
-from aoasurveys.views import DetailFormView
+from aoasurveys.reports.forms import FilteringForm
 
 
 class FormsIndex(ListView):
-
     template_name = 'index.html'
     model = Form
 
 
 class AnswersView(DetailFormView):
-
     template_name = 'answers.html'
     model = Form
     slug_url_kwarg = 'slug'
