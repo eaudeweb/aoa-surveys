@@ -80,4 +80,8 @@ class Label(Model):
 
 
 admin.site.register(Form)
-admin.site.register(Label)
+admin.site.register(Field, list_display=('slug', 'required', 'form'),
+                    list_filter=('form',))
+admin.site.register(FormEntry, list_display=('entry_time', 'form'))
+admin.site.register(FieldEntry, list_display=('entry', 'field_id', 'value'))
+admin.site.register(Label, list_display=('slug', 'label', 'form'))
