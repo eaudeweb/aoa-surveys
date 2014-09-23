@@ -4,8 +4,12 @@
 
 {% block scripts %}
   <script>
-    $(function () {
-      var dataTable = $('#answers-listing').dataTable();
+    $(document).ready(function () {
+      var dataTable = $('#answers-listing').dataTable({
+        "processing": true,
+        "serverSide": true,
+        "ajax": "{% url 'answers_data'  object.slug %}"
+      });
 
       $('#searchbox').keyup(function () {
         dataTable.fnFilter(this.value);
@@ -24,21 +28,24 @@
 {% block content %}
   <h2>{{ object.title | translate:request.language }}</h2>
 
-  <label>Search:
-    <input id="searchbox" type="text">
-  </label>
+  <div class="search-form">
+    <label>Search:
+      <input id="searchbox" type="text">
+    </label>
 
-  <a href="" id="advanced-filtering-button">{% if advanced_enabled %}Hide advanced filtering{% else %}Advanced filtering{% endif %}</a>
+    <a href="" id="advanced-filtering-button">{% if advanced_enabled %}Hide
+      advanced filtering{% else %}Advanced filtering{% endif %}</a>
 
-  <table id="advanced-filtering-form"
-         {% if not advanced_enabled %}style="display: none;"{% endif %}>
-    <form action="" method="POST">{% csrf_token %}
-      {{ form.as_table }}
-      <tr>
-        <td><input type="submit" value="Filter"/></td>
-      </tr>
-    </form>
-  </table>
+    <table id="advanced-filtering-form"
+           {% if not advanced_enabled %}style="display: none;"{% endif %}>
+      <form action="" method="POST">{% csrf_token %}
+        {{ form.as_table }}
+        <tr>
+          <td><input type="submit" value="Filter"/></td>
+        </tr>
+      </form>
+    </table>
+  </div>
 
   <table id="answers-listing" class="table table-condensed table-bordered">
     <thead>
@@ -48,20 +55,5 @@
       {% endfor %}
     </tr>
     </thead>
-    {% for answer in object.answers %}
-      <tr>
-        {% for field in answer.visible_fields %}
-          <td>
-            {% if field.url %}
-              <a href="{{ field.url }}">View attachment</a>
-            {% elif field.field.choices %}
-              {{ field | get_choices:request.language }}
-            {% else %}
-              {{ field.value | translate:request.language | default:'' }}
-            {% endif %}
-          </td>
-        {% endfor %}
-      </tr>
-    {% endfor %}
   </table>
 {% endblock %}

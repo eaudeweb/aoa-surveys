@@ -5,12 +5,13 @@ from django.shortcuts import get_object_or_404
 from django.views.generic import ListView
 from django.conf import settings
 from django.http import HttpResponse
-from django.db.models import Q
+from django_datatables_view.base_datatable_view import BaseDatatableView
 
 from aoasurveys.aoaforms.filter import filter_entries
 from aoasurveys.aoaforms.views import DetailFormView
-from aoasurveys.aoaforms.models import Form, FieldEntry
+from aoasurveys.aoaforms.models import Form, FieldEntry, FormEntry
 from aoasurveys.reports.forms import FilteringForm
+from aoasurveys.reports.templatetags.extra_tags import get_choices, translate
 
 
 class FormsIndex(ListView):
@@ -28,21 +29,6 @@ class AnswersView(DetailFormView):
 
     def get_matching_answers(self):
         return filter_entries(self.object, self.filter_query)
-
-    def get_matching_answers_old(self):
-        answers = set(list(self.object.entries.all()))
-        for filter_id, filter_value in self.filter_query.iteritems():
-            if isinstance(filter_value, list):
-                q_expression = Q()
-                for choice in filter_value:
-                    q_expression |= Q(fields__value__contains=choice)
-            else:
-                q_expression = Q(fields__value__contains=filter_value)
-            q_expression &= Q(fields__field_id=filter_id)
-            answers &= set(list(self.object.entries.filter(q_expression)))
-            if not answers:
-                break
-        return answers
 
     def get_context_data(self, **kwargs):
         self.object.answers = self.get_matching_answers()
@@ -77,3 +63,32 @@ def file_view(request, field_entry_id):
         response = HttpResponse(f.read(), content_type=content_type)
         response['Content-Disposition'] = 'attachment; filename=' + filename
     return response
+
+
+class AnswersListJson(BaseDatatableView):
+    order_columns = ['id']
+
+    def get_initial_queryset(self):
+        return FormEntry.objects.filter(form__slug=self.kwargs['slug'])
+
+    def filter_queryset(self, qs):
+        # TODO: apply filters
+        return qs
+
+    def prepare_results(self, qs):
+        json_data = []
+        for entry in qs:
+            row = []
+            for field in entry.visible_fields:
+                if not field:
+                    continue
+                if field.url:
+                    data = '<a href="{{ url }}">View attachment</a>'.format(
+                        url=field.url)
+                elif field.field.choices:
+                    data = get_choices(field, self.request.language)
+                else:
+                    data = translate(field.value, self.request.language) or ''
+                row.append(data)
+            json_data.append(row)
+        return json_data
