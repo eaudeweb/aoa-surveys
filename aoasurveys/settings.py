@@ -119,6 +119,8 @@ FORMS_BUILDER_UPLOAD_ROOT = os.path.join(BASE_DIR, 'forms')
 SITE_ID = 1
 FORMS_BUILDER_USE_SITES = False
 
+CUSTOM_JS = {}
+
 try:
     from local_settings import *
 except ImportError:
