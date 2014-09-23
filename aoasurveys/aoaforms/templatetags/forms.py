@@ -14,27 +14,33 @@ class CustomFormNode(template.Node):
         self.value = value
 
     def render(self, context):
-        request = context["request"]
-        post = getattr(request, "POST", None)
-        files = getattr(request, "FILES", None)
         form = template.Variable(self.value).resolve(context)
         t = get_template("forms/built_form.html")
         context["form"] = form
-        form_args = (form, context, post or None, files or None)
-        form_for_form = DisplayedForm(*form_args)
 
-        labels = [(label, label.order) for label in form.labels.all()]
-        fields = zip(
-            form_for_form.fields.values(),
-            range(0, 10 * len(form_for_form.fields), 10)
+        form_for_form = DisplayedForm(
+            form,
+            context,
+            getattr(context["request"], "POST", None),
+            getattr(context["request"], "FILES", None)
         )
+
+        labels = [
+            (label, label.order) for label in form.labels.all()
+        ]
+        fields_order = {
+            field.slug: field.order for field in form.fields.visible()
+        }
+        fields = [
+            (value, fields_order[key]) for key, value in
+            form_for_form.fields.iteritems()
+        ]
         fields_and_labels = [
-            f[0] for f in sorted(
+            elem for elem, order in sorted(
                 labels + fields,
-                key=lambda elem: elem[1]
+                key=lambda (f, o): o
             )
         ]
-        context['form_for_form'] = form_for_form
 
         class FakeForm(object):
             def __iter__(self):
@@ -44,6 +50,7 @@ class CustomFormNode(template.Node):
                     else:
                         yield BoundField(form_for_form, field, str(field))
 
+        context['form_for_form'] = form_for_form
         context['fields_and_labels'] = FakeForm()
         return t.render(context)
 
