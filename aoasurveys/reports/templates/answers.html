@@ -28,9 +28,7 @@
     <input id="searchbox" type="text">
   </label>
 
-  <a href="" id="advanced-filtering-button"
-      >{% if advanced_enabled %}Hide advanced filtering{% else %}Advanced
-    filtering{% endif %}</a>
+  <a href="" id="advanced-filtering-button">{% if advanced_enabled %}Hide advanced filtering{% else %}Advanced filtering{% endif %}</a>
 
   <table id="advanced-filtering-form"
          {% if not advanced_enabled %}style="display: none;"{% endif %}>
