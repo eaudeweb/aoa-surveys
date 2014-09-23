@@ -6,6 +6,7 @@ from django.views.generic import ListView
 from django.conf import settings
 from django.http import HttpResponse
 from django.db.models import Q
+from aoasurveys.aoaforms.filter import filter_entries
 
 from aoasurveys.aoaforms.views import DetailFormView
 from aoasurveys.aoaforms.models import Form, FieldEntry
@@ -26,6 +27,9 @@ class AnswersView(DetailFormView):
     filter_query = {}
 
     def get_matching_answers(self):
+        return filter_entries(self.object, self.filter_query)
+
+    def get_matching_answers_old(self):
         answers = set(list(self.object.entries.all()))
         for filter_id, filter_value in self.filter_query.iteritems():
             if isinstance(filter_value, list):
