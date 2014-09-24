@@ -2,14 +2,13 @@ import os
 import mimetypes
 
 from django.shortcuts import get_object_or_404
-from django.views.generic import ListView
+from django.views.generic import ListView, DetailView
 from django.conf import settings
 from django.http import HttpResponse
 from django_datatables_view.base_datatable_view import BaseDatatableView
 
 from aoasurveys.aoaforms.filter import filter_entries
-from aoasurveys.aoaforms.views import DetailFormView
-from aoasurveys.aoaforms.models import Form, FieldEntry, FormEntry
+from aoasurveys.aoaforms.models import Form, FieldEntry
 from aoasurveys.reports.forms import FilteringForm
 from aoasurveys.reports.templatetags.extra_tags import get_choices, translate
 
@@ -19,39 +18,29 @@ class FormsIndex(ListView):
     model = Form
 
 
-class AnswersView(DetailFormView):
+class AnswersView(DetailView):
     template_name = 'answers.html'
     model = Form
     slug_url_kwarg = 'slug'
-    form_class = FilteringForm
     context_object_name = 'survey'
-    filter_query = {}
-
-    def get_matching_answers(self):
-        return filter_entries(self.object, self.filter_query)
 
     def get_context_data(self, **kwargs):
-        self.object.answers = self.get_matching_answers()
         context = super(AnswersView, self).get_context_data(**kwargs)
         context.update({
-            'advanced_enabled': bool(self.filter_query),
             'custom_js': settings.CUSTOM_JS.get(self.object.slug),
         })
         return context
 
-    def get_form_kwargs(self):
-        kwargs = super(AnswersView, self).get_form_kwargs()
-        kwargs.update({
-            'fields': self.get_object().filtering_fields,
-            'language': self.request.language,
-        })
-        return kwargs
-
-    def form_valid(self, form):
-        self.filter_query = form.get_filter_query()
+    def get(self, request, *args, **kwargs):
         self.object = self.get_object()
-        return self.render_to_response(self.get_context_data(
-            object=self.object, form=form))
+        form_kwargs = {
+            'fields': self.object.filtering_fields,
+            'language': self.request.language,
+            'data': self.request.GET
+        }
+        form = FilteringForm(**form_kwargs)
+        context = self.get_context_data(object=self.object, form=form)
+        return self.render_to_response(context)
 
 
 def file_view(request, field_entry_id):
