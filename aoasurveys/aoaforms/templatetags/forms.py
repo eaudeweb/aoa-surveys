@@ -48,7 +48,10 @@ class CustomFormNode(template.Node):
                     if isinstance(field, Label):
                         yield field
                     else:
-                        yield BoundField(form_for_form, field, str(field))
+                        for key, value in form_for_form.fields.iteritems():
+                            if value == field:
+                                yield BoundField(form_for_form, field, key)
+                                break
 
         context['form_for_form'] = form_for_form
         context['fields_and_labels'] = FakeForm()
