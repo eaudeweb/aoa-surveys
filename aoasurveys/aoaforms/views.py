@@ -1,6 +1,6 @@
 from django.shortcuts import get_object_or_404, redirect
 from django.template import RequestContext
-from django.views.generic import DetailView, FormView as GenericFormView
+from django.views.generic import DetailView, FormView as GenericFormView, TemplateView
 
 from aoasurveys.aoaforms.forms import DisplayedForm
 from aoasurveys.aoaforms.models import Form
@@ -25,7 +25,7 @@ class FormView(DetailView):
             entry = form_for_form.save()
             form_valid.send(sender=request, form=form_for_form, entry=entry)
             if not request.is_ajax():
-                return redirect("homepage")
+                return redirect("form_sent", slug=form.slug)
         context = {"form": form, "form_for_form": form_for_form}
         return self.render_to_response(context)
 
@@ -39,3 +39,22 @@ class DetailFormView(DetailView, GenericFormView):
         self.object = self.get_object()
         context = self.get_context_data(object=self.object, form=form)
         return self.render_to_response(context)
+
+
+class FormSent(TemplateView):
+    template_name = "forms/form_sent.html"
+
+    def dispatch(self, request, *args, **kwargs):
+        self.user = request.user
+        self.slug = kwargs['slug']
+        return super(FormSent, self).dispatch(request, *args, **kwargs)
+
+    def get_context_data(self, **kwargs):
+        context = super(FormSent, self).get_context_data(**kwargs)
+        published = Form.objects.published(for_user=self.user)
+        context.update({
+            "form": get_object_or_404(published, slug=self.slug),
+        })
+        return context
+
+form_sent = FormSent.as_view()
