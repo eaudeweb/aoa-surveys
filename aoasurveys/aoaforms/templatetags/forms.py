@@ -8,6 +8,19 @@ from aoasurveys.aoaforms.models import Label
 register = template.Library()
 
 
+class FakeForm(object):
+    def __init__(self, form, fields_and_labels):
+        self.fields_and_labels = fields_and_labels
+        self.form = form
+
+    def __iter__(self):
+        for field, slug in self.fields_and_labels:
+            if isinstance(field, Label):
+                yield field
+            else:
+                yield BoundField(self.form, field, slug)
+
+
 class CustomFormNode(template.Node):
     def __init__(self, name, value):
         self.name = name
@@ -26,35 +39,25 @@ class CustomFormNode(template.Node):
         )
 
         labels = [
-            (label, label.order) for label in form.labels.all()
+            (label, label.order, None) for label in form.labels.all()
         ]
         fields_order = {
             field.slug: field.order for field in form.fields.visible()
         }
         fields = [
-            (value, fields_order[key]) for key, value in
+            (field, fields_order[slug], slug) for slug, field in
             form_for_form.fields.iteritems()
         ]
+
         fields_and_labels = [
-            elem for elem, order in sorted(
+            (field, slug) for field, order, slug in sorted(
                 labels + fields,
-                key=lambda (f, o): o
+                key=lambda (f, o, s): o
             )
         ]
 
-        class FakeForm(object):
-            def __iter__(self):
-                for field in fields_and_labels:
-                    if isinstance(field, Label):
-                        yield field
-                    else:
-                        for key, value in form_for_form.fields.iteritems():
-                            if value == field:
-                                yield BoundField(form_for_form, field, key)
-                                break
-
         context['form_for_form'] = form_for_form
-        context['fields_and_labels'] = FakeForm()
+        context['fields_and_labels'] = FakeForm(form_for_form, fields_and_labels)
         return t.render(context)
 
 
