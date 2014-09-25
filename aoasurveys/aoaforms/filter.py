@@ -3,6 +3,36 @@ from django.db import connection
 from aoasurveys.aoaforms.models import FormEntry
 
 
+class SmartRawQuery(object):
+    def __init__(self, query, model):
+        self.query = query
+        self.model = model
+        self._raw_query = None
+        print "AICI", query
+
+    def __iter__(self):
+        if self._raw_query is None:
+            self._raw_query = self.model.objects.raw(self.query)
+
+        return self._raw_query.__iter__()
+
+    def __getitem__(self, item):
+        return list(self)[item]
+
+    def count(self):
+        count_query = (
+            self.query
+            .replace('f.id', 'COUNT(f.id)', 1)
+            .replace('GROUP BY f.id', '')
+        )
+        cursor = connection.cursor()
+        cursor.execute(count_query)
+        return cursor.fetchone()[0]
+
+    def order_by(self, column):
+        return self
+
+
 def filter_entries(form, filters):
     query = "SELECT f.id FROM aoaforms_formentry f "
     index = 0
@@ -23,19 +53,9 @@ def filter_entries(form, filters):
 
         query = query.format(index=index, key=key, value=value)
         index += 1
-    query += "GROUP BY f.id"
+    query += " WHERE f.form_id='{form_id}' ".format(form_id=form.id)
 
     if filters:
-        raw = FormEntry.objects.raw(query)
-        cursor = connection.cursor()
-        cursor.execute(
-            query
-            .replace('f.id', 'COUNT(f.id)', 1)
-            .replace('GROUP BY f.id', '')
-        )
-        count = cursor.fetchone()[0]
-        raw.count = lambda: count
-        raw.order_by = lambda b: raw  # FIXME: actual ordering
-        return raw
+        query += "GROUP BY f.id"
 
-    return form.entries.all()
+    return SmartRawQuery(query, FormEntry)
