@@ -8,7 +8,7 @@
       var dataTable = $('#answers-listing').dataTable({
         "processing": true,
         "serverSide": true,
-        "ajax": "{% url 'answers_data'  object.slug %}"
+        "ajax": "{% url 'answers_data' object.slug %}?{{ filters }}"
       });
 
       $('#searchbox').keyup(function () {

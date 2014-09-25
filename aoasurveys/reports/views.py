@@ -1,5 +1,6 @@
 import os
 import mimetypes
+from urllib import urlencode
 
 from django.shortcuts import get_object_or_404
 from django.views.generic import ListView, DetailView
@@ -26,9 +27,6 @@ class AnswersView(DetailView):
 
     def get_context_data(self, **kwargs):
         context = super(AnswersView, self).get_context_data(**kwargs)
-        context.update({
-            'custom_js': settings.CUSTOM_JS.get(self.object.slug),
-        })
         return context
 
     def get(self, request, *args, **kwargs):
@@ -40,6 +38,10 @@ class AnswersView(DetailView):
         }
         form = FilteringForm(**form_kwargs)
         context = self.get_context_data(object=self.object, form=form)
+        context.update({
+            'custom_js': settings.CUSTOM_JS.get(self.object.slug),
+            'filters': urlencode({'filters': form.get_filter_query()}),
+        })
         return self.render_to_response(context)
 
 
@@ -58,9 +60,9 @@ class AnswersListJson(BaseDatatableView):
     order_columns = ['id']
 
     def get_initial_queryset(self):
-        #return FormEntry.objects.filter(form__slug=self.kwargs['slug'])
         object = Form.objects.get(slug=self.kwargs['slug'])
-        return filter_entries(object, {})
+        filters = eval(self.request.GET['filters'])
+        return filter_entries(object, filters)
 
     def filter_queryset(self, qs):
         # TODO: apply filters

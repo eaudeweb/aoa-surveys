@@ -12,12 +12,12 @@ def filter_entries(form, filters):
         if isinstance(value, list):
             query += "AND ("
             query += " OR ".join([
-                "f{index}.value LIKE '%{choice}%'".format(index=index,
+                "f{index}.value LIKE '%%{choice}%%'".format(index=index,
                                                           choice=choice)
                 for choice in value])
             query += ") "
         else:
-            query += "AND f{index}.value LIKE '%{value}%' "
+            query += "AND f{index}.value LIKE '%%{value}%%' "
 
         query = query.format(index=index, key=key, value=value)
         index += 1

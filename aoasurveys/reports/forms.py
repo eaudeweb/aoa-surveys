@@ -27,5 +27,7 @@ class FilteringForm(Form):
                 )
 
     def get_filter_query(self):
+        if not self.is_valid():
+            return {}
         field_map = {field.slug: field.id for field in self._fields}
         return {field_map[k]: v for k, v in self.cleaned_data.iteritems() if v}
