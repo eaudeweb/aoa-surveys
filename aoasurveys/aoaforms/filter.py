@@ -8,7 +8,6 @@ class SmartRawQuery(object):
         self.query = query
         self.model = model
         self._raw_query = None
-        print "AICI", query
 
     def __iter__(self):
         if self._raw_query is None:

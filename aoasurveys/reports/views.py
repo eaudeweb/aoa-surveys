@@ -57,12 +57,18 @@ def file_view(request, field_entry_id):
 
 
 class AnswersListJson(BaseDatatableView):
-    order_columns = ['id']
+
+    def get_object(self):
+        return Form.objects.get(slug=self.kwargs['slug'])
+
+    def get_order_columns(self):
+        form = self.get_object()
+        return [str(f.id) for f in form.visible_fields]
 
     def get_initial_queryset(self):
-        object = Form.objects.get(slug=self.kwargs['slug'])
+        form = self.get_object()
         filters = eval(self.request.GET['filters'])
-        return filter_entries(object, filters)
+        return filter_entries(form, filters)
 
     def filter_queryset(self, qs):
         # TODO: apply filters
