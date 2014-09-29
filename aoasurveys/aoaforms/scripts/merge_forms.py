@@ -1,5 +1,4 @@
-from aoasurveys.aoaforms.models import Form
-
+from aoasurveys.aoaforms.models import Form, FormEntry, FieldEntry
 
 form1_slug = "virtual-library-extended"
 form2_slug = "bibliography-details-each-assessment"
@@ -32,13 +31,32 @@ def merge_forms():
         slug=form3_slug
     )
 
-    for field in form1.fields.all():
-        if field.slug in fields_keep:
-            field.pk = None
-            field.form = form3
-            field.save()
+    #TODO handle diffent choices
+    for form in form1, form2:
+        for field in form.fields.all():
+            if field.slug in fields_keep and not form3.fields.filter(
+                    slug=field.slug).count():
+                field.pk = None
+                field.form = form3
+                field.save()
 
-    #TODO merge answers
+        for form_entry in FormEntry.objects.filter(form=form):
+            new_form_entry = FormEntry.objects.create(
+                form=form3,
+                entry_time=form_entry.entry_time
+            )
+
+            for field_entry in form_entry.fields.all():
+                form_field = form.fields.filter(pk=field_entry.field_id).first()
+                if form_field.slug in fields_keep:
+                    new_form_field = form3.fields.filter(
+                        slug=form_field.slug
+                    ).first()
+                    field_entry.pk = None
+                    field_entry.entry = new_form_entry
+                    field_entry.field_id = new_form_field.pk
+                    field_entry.save()
+
 
 merge_forms()
 
