@@ -3,29 +3,60 @@
 {% load extra_tags %}
 
 {% block content %}
-  <h2>Surveys</h2>
 
-  {% if perms.aoasurveys.can_change_form %}
-    <ul>
-      {% for survey in object_list %}
-        <li>
-          <a href="{% url 'form_detail' survey.slug %}">
-            {{ survey.title | translate:request.language }}</a> -
-          <a href="{% url 'answers_list' slug=survey.slug %}">View answers</a>
-          |
-          <a href="{% url 'manage_form' slug=survey.slug %}">Manage</a>
-        </li>
-      {% endfor %}
-    </ul>
-  {% else %}
-    <ul>
-      {% for survey in object_list|published %}
-        <li>
-          <a href="{% url 'form_detail' survey.slug %}">
-            {{ survey.title | translate:request.language }}</a>
-        </li>
-      {% endfor %}
-    </ul>
-  {% endif %}
+  <div class="row-fluid">
+    <div class="col-sm-10">
+      <h2>Open Surveys</h2>
+      <ul>
+        {% for survey in object_list|published %}
+          <li>
+            {{ survey.title | translate:request.language }} <br/>
+            <a href="{% url 'form_detail' survey.slug %}">Take survey</a> |
+            <a href="{% url 'answers_list' survey.slug %}">View answers</a>
+          </li>
+        {% empty %}
+          <p class="disabled">Sorry, there are no active surveys at the
+            moment.</p>
+        {% endfor %}
+      </ul>
+
+      {% if perms.aoasurveys.can_change_form %}
+        <h2>All Surveys (admin only)</h2>
+
+        <table class="table">
+          <thead>
+          <tr>
+            <th>Name</th>
+            <th>Answers</th>
+            <th>Actions</th>
+          </tr>
+          </thead>
+          {% for survey in object_list %}
+            <tr>
+              <td>
+                  {{ survey.title | translate:request.language }}
+              </td>
+              <td class="text-right">{{ survey.entries.count }}</td>
+              <td>
+                <a href="{% url 'answers_list' slug=survey.slug %}">View
+                  answers</a>
+                |
+                <a href="{% url 'manage_form' slug=survey.slug %}">Manage</a>
+              </td>
+            </tr>
+          {% endfor %}
+        </table>
+      {% endif %}
+    </div>
+
+    {% if perms.aoasurveys.can_change_form %}
+      <div class="col-sm-2">
+        <h2>Configuration</h2>
+        <ul class="list-unstyled">
+          <li><a href="#">Settings</a></li>
+        </ul>
+      </div>
+    {% endif %}
+  </div>
 
 {% endblock %}

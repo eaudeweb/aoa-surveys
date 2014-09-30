@@ -2,5 +2,7 @@
 {% load forms %}
 
 {% block content %}
+    <a class="pull-right" href="{% url 'homepage' %}">All surveys</a>
+
     {% render_built_form form %}
 {% endblock %}

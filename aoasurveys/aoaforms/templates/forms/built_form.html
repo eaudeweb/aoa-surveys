@@ -1,22 +1,22 @@
-<h1>{{ form.title }}</h1>
+<h2>{{ form.title }}</h2>
 {% if form.intro %}
-<p>{{ form.intro }}</p>
+  <p>{{ form.intro }}</p>
 {% endif %}
 <form action="{{ form.get_absolute_url }}" method="post"
-{% if form_for_form.is_multipart %}enctype="multipart/form-data"{% endif %}>
-{% csrf_token %}
+      {% if form_for_form.is_multipart %}enctype="multipart/form-data"{% endif %}>
+  {% csrf_token %}
 
-<!-- here comes bieber -->
-{% for field in fields_and_labels %}
-<div class="fieldWrapper">
-    {% if field.label_tag %}
-    {{ field.errors }}
-    {{ field.label_tag }} {{ field }}
-    {% else %}
-{{ field }}
-    {% endif %}
-</div>
-{% endfor %}
-<div style="clear:left;">&nbsp;</div>
-<input type="submit" value="{{ form.button_text }}">
+  <!-- here comes bieber -->
+  {% for field in fields_and_labels %}
+    <div class="fieldWrapper">
+      {% if field.label_tag %}
+        {{ field.errors }}
+        {{ field.label_tag }} {{ field }}
+      {% else %}
+        {{ field }}
+      {% endif %}
+    </div>
+  {% endfor %}
+  <div style="clear:left;">&nbsp;</div>
+  <input type="submit" value="{{ form.button_text }}">
 </form>

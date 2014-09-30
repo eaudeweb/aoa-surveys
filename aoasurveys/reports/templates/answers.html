@@ -26,6 +26,8 @@
 {% endblock %}
 
 {% block content %}
+  <a class="pull-right" href="{% url 'homepage' %}">All surveys</a>
+
   <h2>{{ object.title | translate:request.language }}</h2>
 
   <div class="search-form">
