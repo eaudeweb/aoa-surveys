@@ -1,6 +1,7 @@
 import os
 import mimetypes
 from urllib import urlencode
+from django.core.urlresolvers import reverse
 
 from django.shortcuts import get_object_or_404
 from django.views.generic import ListView, DetailView
@@ -9,7 +10,7 @@ from django.http import HttpResponse
 from django_datatables_view.base_datatable_view import BaseDatatableView
 
 from aoasurveys.aoaforms.filter import filter_entries
-from aoasurveys.aoaforms.models import Form, FieldEntry
+from aoasurveys.aoaforms.models import Form, FieldEntry, FormEntry
 from aoasurveys.reports.forms import FilteringForm
 from aoasurveys.reports.templatetags.extra_tags import get_choices, translate
 
@@ -57,7 +58,6 @@ def file_view(request, field_entry_id):
 
 
 class AnswersListJson(BaseDatatableView):
-
     def get_object(self):
         return Form.objects.get(slug=self.kwargs['slug'])
 
@@ -89,5 +89,19 @@ class AnswersListJson(BaseDatatableView):
                 else:
                     data = translate(field.value, self.request.language) or ''
                 row.append(data)
+            entry_url = reverse('entry-detail', kwargs=dict(id=entry.id))
+            row.append(
+                ('<a class="view-entry launch-modal" '
+                 'data-toggle="modal" data-action="{entry_url}" '
+                 'data-title="Entry #{entry_id}" data-target="#myModal" >'
+                 '<i class="glyphicon glyphicon-list"></i></a>'
+                ).format(entry_url=entry_url, entry_id=entry.id)
+            )
             json_data.append(row)
         return json_data
+
+
+class EntryDetail(DetailView):
+    template_name = 'entry.html'
+    model = FormEntry
+    pk_url_kwarg = 'id'

@@ -2,6 +2,7 @@ from django.conf.urls import patterns, url
 
 from aoasurveys.reports.views import (
     FormsIndex, AnswersView, file_view, AnswersListJson,
+    EntryDetail,
 )
 
 urlpatterns = patterns('',
@@ -11,4 +12,7 @@ urlpatterns = patterns('',
     url(r'^(?P<slug>.*)/data/$', AnswersListJson.as_view(),
         name='answers_data'),
     url(r'^file/(?P<field_entry_id>.*)/$', file_view, name='file_view'),
+
+    url(r'^entry/(?P<id>.\d+)/$', EntryDetail.as_view(),
+        name='entry-detail')
 )

@@ -1,0 +1,18 @@
+{% load extra_tags %}
+
+{% block content %}
+  <dl class="">
+    {% for field in object.fields.all %}
+      <dt>{{ field.field.label|translate:request.language }}</dt>
+      <dd>
+        {% if field.url %}
+          <a href="{{ field.url }}">View attachment</a>
+        {% elif field.field.choices %}
+          {{ field | get_choices:request.language }}
+        {% else %}
+          {{ field.value | translate:request.language | default:'' }}
+        {% endif %}
+      </dd>
+    {% endfor %}
+  </dl>
+{% endblock %}

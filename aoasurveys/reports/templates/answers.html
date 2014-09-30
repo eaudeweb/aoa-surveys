@@ -56,7 +56,11 @@
       {% for field in object.visible_fields %}
         <th>{{ field.label | translate:request.language }}</th>
       {% endfor %}
+      <th>
+      </th>
     </tr>
     </thead>
   </table>
+
+  {% include '_modal.html' %}
 {% endblock %}
