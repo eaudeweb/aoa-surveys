@@ -1,6 +1,7 @@
 import json
 
 from django.db import transaction
+from django.conf import settings
 from django.core.management.base import BaseCommand
 
 from aoasurveys.aoaforms.models import FormEntry, FieldEntry, Form, Field
@@ -12,12 +13,18 @@ class Command(BaseCommand):
 
     def _to_string(self, obj):
         if isinstance(obj, list):
-            return ",".join([str(x) for x in obj])
+            value = u",".join([str(x) for x in obj])
 
-        if isinstance(obj, dict):
-            return "%s\n%s" % (obj.get("en", ""), obj.get("ru", ""))
+        elif isinstance(obj, dict):
+            value = u"\n".join((obj.get("en", ""), obj.get("ru", "")))
+        else:
+            value = obj
+        value = unicode(value)
+        if len(value) > settings.FORMS_BUILDER_FIELD_MAX_LENGTH:
+            print "Truncating value for obj %s" % obj
+            value = value[:settings.FORMS_BUILDER_FIELD_MAX_LENGTH]
+        return value
 
-        return obj
 
     def _parseAnswers(self, data):
         transaction.set_autocommit(False)
