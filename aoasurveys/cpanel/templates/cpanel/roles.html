@@ -1,0 +1,26 @@
+{% extends 'cpanel/index.html' %}
+
+{% block cpanel_content %}
+  <h2>Roles and Permissions</h2>
+
+  You are logged in as: {{ user }}
+  {% if user.groups.all %}part of groups:
+    {% for group in user.groups.all %}{{ group }} {% endfor %}
+  {% endif %}.
+
+  <table class="table table-bordered table-condensed">
+    <tr>
+      <th>Role</th>
+      <th class="col-sm-1">Change settings</th>
+      <th class="col-sm-1">View</th>
+    </tr>
+    {% for role in roles %}
+      <tr>
+        <td>{{ role.name }}</td>
+        <td class="text-center">{% if role.config %}x{% endif %}</td>
+        <td class="text-center">{% if role.view %}x{% endif %}</td>
+      </tr>
+    {% endfor %}
+  </table>
+
+{% endblock %}

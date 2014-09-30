@@ -29,6 +29,7 @@ INSTALLED_APPS = (
     'aoasurveys.manager',
     'aoasurveys.reports',
     'aoasurveys.aoaforms',
+    'aoasurveys.cpanel',
     'forms_builder.forms',
 )
 

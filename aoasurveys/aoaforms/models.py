@@ -12,6 +12,11 @@ from forms_builder.forms.models import (
 
 
 class Form(AbstractForm):
+    class Meta:
+        permissions = (
+            ('config', 'Can change configuration'),
+        )
+
     visible_fields_slugs = CharField(max_length=255)
     filtering_fields_slugs = CharField(max_length=255)
 
