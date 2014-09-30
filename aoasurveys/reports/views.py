@@ -1,16 +1,17 @@
 import os
 import mimetypes
+from urllib import urlencode
 
 from django.shortcuts import get_object_or_404
-from django.views.generic import ListView
+from django.views.generic import ListView, DetailView
 from django.conf import settings
 from django.http import HttpResponse
-from django.db.models import Q
+from django_datatables_view.base_datatable_view import BaseDatatableView
 
 from aoasurveys.aoaforms.filter import filter_entries
-from aoasurveys.aoaforms.views import DetailFormView
 from aoasurveys.aoaforms.models import Form, FieldEntry
 from aoasurveys.reports.forms import FilteringForm
+from aoasurveys.reports.templatetags.extra_tags import get_choices, translate
 
 
 class FormsIndex(ListView):
@@ -18,54 +19,30 @@ class FormsIndex(ListView):
     model = Form
 
 
-class AnswersView(DetailFormView):
+class AnswersView(DetailView):
     template_name = 'answers.html'
     model = Form
     slug_url_kwarg = 'slug'
-    form_class = FilteringForm
     context_object_name = 'survey'
-    filter_query = {}
-
-    def get_matching_answers(self):
-        return filter_entries(self.object, self.filter_query)
-
-    def get_matching_answers_old(self):
-        answers = set(list(self.object.entries.all()))
-        for filter_id, filter_value in self.filter_query.iteritems():
-            if isinstance(filter_value, list):
-                q_expression = Q()
-                for choice in filter_value:
-                    q_expression |= Q(fields__value__contains=choice)
-            else:
-                q_expression = Q(fields__value__contains=filter_value)
-            q_expression &= Q(fields__field_id=filter_id)
-            answers &= set(list(self.object.entries.filter(q_expression)))
-            if not answers:
-                break
-        return answers
 
     def get_context_data(self, **kwargs):
-        self.object.answers = self.get_matching_answers()
         context = super(AnswersView, self).get_context_data(**kwargs)
-        context.update({
-            'advanced_enabled': bool(self.filter_query),
-            'custom_js': settings.CUSTOM_JS.get(self.object.slug),
-        })
         return context
 
-    def get_form_kwargs(self):
-        kwargs = super(AnswersView, self).get_form_kwargs()
-        kwargs.update({
-            'fields': self.get_object().filtering_fields,
-            'language': self.request.language,
-        })
-        return kwargs
-
-    def form_valid(self, form):
-        self.filter_query = form.get_filter_query()
+    def get(self, request, *args, **kwargs):
         self.object = self.get_object()
-        return self.render_to_response(self.get_context_data(
-            object=self.object, form=form))
+        form_kwargs = {
+            'fields': self.object.filtering_fields,
+            'language': self.request.language,
+            'data': self.request.GET
+        }
+        form = FilteringForm(**form_kwargs)
+        context = self.get_context_data(object=self.object, form=form)
+        context.update({
+            'custom_js': settings.CUSTOM_JS.get(self.object.slug),
+            'filters': urlencode({'filters': form.get_filter_query()}),
+        })
+        return self.render_to_response(context)
 
 
 def file_view(request, field_entry_id):
@@ -77,3 +54,40 @@ def file_view(request, field_entry_id):
         response = HttpResponse(f.read(), content_type=content_type)
         response['Content-Disposition'] = 'attachment; filename=' + filename
     return response
+
+
+class AnswersListJson(BaseDatatableView):
+
+    def get_object(self):
+        return Form.objects.get(slug=self.kwargs['slug'])
+
+    def get_order_columns(self):
+        form = self.get_object()
+        return [str(f.id) for f in form.visible_fields]
+
+    def get_initial_queryset(self):
+        form = self.get_object()
+        filters = eval(self.request.GET['filters'])
+        return filter_entries(form, filters)
+
+    def filter_queryset(self, qs):
+        # TODO: apply filters
+        return qs
+
+    def prepare_results(self, qs):
+        json_data = []
+        for entry in qs:
+            row = []
+            for field in entry.visible_fields:
+                if not field:
+                    continue
+                if field.url:
+                    data = '<a href="{{ url }}">View attachment</a>'.format(
+                        url=field.url)
+                elif field.field.choices:
+                    data = get_choices(field, self.request.language)
+                else:
+                    data = translate(field.value, self.request.language) or ''
+                row.append(data)
+            json_data.append(row)
+        return json_data
