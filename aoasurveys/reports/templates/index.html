@@ -20,7 +20,7 @@
         {% endfor %}
       </ul>
 
-      {% if perms.aoasurveys.can_change_form %}
+      {% if perms.aoaforms.config %}
         <h2>All Surveys (admin only)</h2>
 
         <table class="table">
@@ -49,7 +49,7 @@
       {% endif %}
     </div>
 
-    {% if perms.aoasurveys.can_change_form %}
+    {% if perms.aoaforms.config %}
       <div class="col-sm-2">
         <h2>Configuration</h2>
         <ul class="list-unstyled">
