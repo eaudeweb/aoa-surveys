@@ -33,3 +33,7 @@ DATABASES = {
 
 FORMS_BUILDER_CHOICES_MAX_LENGTH = 10000
 FORMS_BUILDER_LABEL_MAX_LENGTH = 400
+
+from settings import BASE_DIR
+import os.path
+FORMS_BUILDER_UPLOAD_ROOT = os.path.join(BASE_DIR, 'instance')

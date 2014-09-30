@@ -54,6 +54,10 @@ be run as an unprivileged user in the product directory::
 
     pip install -U setuptools
 
+2.3 Create an instance folder for file uploads::
+
+    mkdir instance
+
 3. Install dependencies::
 
     pip install -r requirements-dep.txt
@@ -90,16 +94,6 @@ be run as an unprivileged user in the product directory::
     ./manage.py collectstatic --no-input
 
 
-Build production
-----------------
-
-
-Build staging
--------------
-
-
-Configuration
--------------
 
 Development hints
 =================
