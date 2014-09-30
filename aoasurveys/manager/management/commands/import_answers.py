@@ -1,4 +1,5 @@
 import json
+import logging
 
 from django.db import transaction
 from django.conf import settings
@@ -42,11 +43,14 @@ class Command(BaseCommand):
                             Field.objects.filter(slug=slug, form=form).first()
                         )
                         if field:
-                            FieldEntry.objects.create(
-                                entry=formentry,
-                                value=self._to_string(value),
-                                field_id=field.pk
-                            )
+                            try:
+                                FieldEntry.objects.create(
+                                    entry=formentry,
+                                    value=self._to_string(value),
+                                    field_id=field.pk
+                                )
+                            except Exception as e:
+                                logging.exception(e)
                         else:
                             self.stdout.write(
                                 'Field with slug=%s doesnt exist' % slug)
