@@ -60,6 +60,7 @@ def filter_entries(form, filters):
             field_map[field_id] = index
             index += 1
     for key, value in filters.iteritems():
+        index = field_map[key]
         query += (
             "JOIN aoaforms_fieldentry f{index} ON f{index}.entry_id=f.id "
             "AND f{index}.field_id='{key}' "
@@ -74,7 +75,7 @@ def filter_entries(form, filters):
         else:
             query += "AND f{index}.value LIKE '%%{value}%%' "
 
-        query = query.format(index=field_map[key], key=key, value=value)
+        query = query.format(index=index, key=key, value=value)
     for field in extra_fields:
         query += (
             "JOIN aoaforms_fieldentry f{index} ON f{index}.entry_id=f.id "
