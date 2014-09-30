@@ -32,13 +32,11 @@
 
   <fieldset class="well">
     <div>
-      <label>Search:
-        <input id="searchbox" type="text">
-      </label>
-
+      <label for="searchbox">Search: <input id="searchbox" type="text"></label>
       <a href="" id="advanced-filtering-button"
          data-active="{% if not request.GET %}1{% endif %}"></a>
     </div>
+
     <table id="advanced-filtering-form" class="table" style="display: none">
       <form action="" method="GET">
         {{ form.as_table }}
