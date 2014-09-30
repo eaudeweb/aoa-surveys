@@ -25,3 +25,8 @@ ul#id_status {
 ul#id_status li {
     display: inline;
 }
+
+.paginate_button {
+    margin-left: 2px;
+    margin-right: 2px;
+}

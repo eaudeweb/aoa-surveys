@@ -1,18 +1,18 @@
 $(function () {
-    $('#advanced-filtering-button').on('click', function (evt) {
+    $('#advanced-filtering-button').on('click',function (evt) {
         evt.preventDefault();
         var form = $('#advanced-filtering-form');
-        var activate = 'Advanced filtering'
-        var deactivate = 'Hide advanced filtering'
-        switch ($(this).text()) {
-            case activate:
-                $(this).text(deactivate);
-                form.show();
-                break;
-            case deactivate:
-                $(this).text(activate);
-                form.hide();
-                break;
+        var active = $(this).data('active');
+        var activate = 'Advanced filtering';
+        var deactivate = 'Hide advanced filtering';
+        if (active) {
+            $(this).data('active', false);
+            $(this).text(activate);
+            form.hide();
+        } else {
+            $(this).data('active', true);
+            $(this).text(deactivate);
+            form.show();
         }
-    });
+    }).click();
 });
