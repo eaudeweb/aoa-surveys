@@ -20,10 +20,10 @@ class Command(BaseCommand):
             value = u"\n".join((obj.get("en", ""), obj.get("ru", "")))
         else:
             value = obj
-        value = unicode(value)
-        if len(value) > settings.FORMS_BUILDER_FIELD_MAX_LENGTH:
-            print "Truncating value for obj %s" % obj
-            value = value[:settings.FORMS_BUILDER_FIELD_MAX_LENGTH]
+        if isinstance(value, unicode):
+            if len(value) > settings.FORMS_BUILDER_FIELD_MAX_LENGTH:
+                print "Truncating value for obj %s" % obj
+                value = value[:settings.FORMS_BUILDER_FIELD_MAX_LENGTH]
         return value
 
 

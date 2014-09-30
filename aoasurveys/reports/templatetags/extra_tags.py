@@ -20,7 +20,11 @@ def translate(value, language):
 def get_choices(field_entry, language):
     if not field_entry.value:
         return ''
-    choice_ids = [int(c.strip()) for c in field_entry.value.split(',')]
+    try:
+        choice_ids = [int(c.strip()) for c in field_entry.value.split(',')]
+    except ValueError:
+        return field_entry.value
+
     choices = dict(field_entry.field.get_choices())
     return ', '.join(
         [get_translation(choices.get(id), language) for id in choice_ids]
