@@ -68,8 +68,9 @@ def filter_entries(form, filters):
         if isinstance(value, list):
             query += "AND ("
             query += " OR ".join([
-                "f{index}.value LIKE '%%{choice}%%'".format(index=index,
-                                                            choice=choice)
+                "CONCAT(',',f{index}.value,',') LIKE '%%,{choice},%%'".format(
+                    index=index,
+                    choice=choice)
                 for choice in value])
             query += ") "
         else:
