@@ -3,7 +3,7 @@ from django.contrib import admin
 from django.core.urlresolvers import reverse
 from django.conf import settings
 from django.db.models import (
-    CharField, ForeignKey, IntegerField, Model, SlugField,
+    CharField, ForeignKey, IntegerField, Model, SlugField, DateTimeField
 )
 from forms_builder.forms import fields as forms_builder_fields
 from forms_builder.forms.models import (
@@ -37,6 +37,11 @@ class Form(AbstractForm):
 
 class FormEntry(AbstractFormEntry):
     form = ForeignKey("Form", related_name="entries")
+    respondent = CharField(
+        _("Respondent"),
+        max_length=100
+    )
+    creation_time = DateTimeField(_("Creation time"), null=True)
 
     @property
     def visible_fields(self):

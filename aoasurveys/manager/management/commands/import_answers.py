@@ -35,7 +35,9 @@ class Command(BaseCommand):
                 for answer in data["answer_sets"]:
                     formentry = FormEntry.objects.create(
                         form=form,
-                        entry_time=answer["modification_time"]
+                        creation_time=answer["creation_date"],
+                        entry_time=answer["modification_time"],
+                        respondent=answer["respondent"]
                     )
                     #TODO set id, respondent, draft
                     for slug, value in answer["answers"].items():

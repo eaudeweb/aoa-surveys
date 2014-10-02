@@ -1,6 +1,11 @@
 {% load extra_tags %}
 
 {% block content %}
+  <p><b>Respondent:</b> {{ object.respondent }}</p>
+  <p><b>Modification time:</b> {{ object.entry_time }}</p>
+  {% if object.creation_time %}
+    <p><b>Creation time:</b> {{ object.creation_time }}</p>
+  {% endif %}
   <dl class="">
     {% for field in object.fields.all %}
       <dt>{{ field.field.label|translate:request.language }}</dt>
