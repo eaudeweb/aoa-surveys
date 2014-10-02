@@ -5,7 +5,7 @@ from django.db import transaction
 from django.conf import settings
 from django.core.management.base import BaseCommand
 
-from aoasurveys.aoaforms.models import FormEntry, FieldEntry, Form, Field
+from aoasurveys.aoaforms.models import FormEntry, FieldEntry, Form, Field, Label
 
 
 class Command(BaseCommand):
@@ -39,21 +39,23 @@ class Command(BaseCommand):
                     )
                     #TODO set id, respondent, draft
                     for slug, value in answer["answers"].items():
-                        field = (
-                            Field.objects.filter(slug=slug, form=form).first()
-                        )
-                        if field:
-                            try:
-                                FieldEntry.objects.create(
-                                    entry=formentry,
-                                    value=self._to_string(value),
-                                    field_id=field.pk
-                                )
-                            except Exception as e:
-                                logging.exception(e)
-                        else:
-                            self.stdout.write(
-                                'Field with slug=%s doesnt exist' % slug)
+                        if not Label.objects.filter(slug=slug).exists():
+                            field = (
+                                Field.objects.filter(slug=slug, form=form).first()
+                            )
+                            if field:
+                                try:
+                                    FieldEntry.objects.create(
+                                        entry=formentry,
+                                        value=self._to_string(value),
+                                        field_id=field.pk
+                                    )
+                                except Exception as e:
+                                    logging.exception(e)
+                            else:
+                                if value:
+                                    self.stdout.write(
+                                    'Field with slug=%s doesnt exist' % slug)
             else:
                 self.stdout.write('Form doesnt exist.')
 

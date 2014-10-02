@@ -1,4 +1,4 @@
-from aoasurveys.aoaforms.models import Form, FormEntry, FieldEntry
+from aoasurveys.aoaforms.models import Form, FormEntry
 
 form1_slug = "virtual-library-extended"
 form2_slug = "bibliography-details-each-assessment"
@@ -31,7 +31,7 @@ def merge_forms():
         slug=form3_slug
     )
 
-    #TODO handle diffent choices
+    #TODO handle diffrent choices for w_theme
     for form in form1, form2:
         for field in form.fields.all():
             if field.slug in fields_keep and not form3.fields.filter(
