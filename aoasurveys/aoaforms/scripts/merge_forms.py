@@ -43,7 +43,9 @@ def merge_forms():
         for form_entry in FormEntry.objects.filter(form=form):
             new_form_entry = FormEntry.objects.create(
                 form=form3,
-                entry_time=form_entry.entry_time
+                creation_time=form_entry.creation_time,
+                entry_time=form_entry.entry_time,
+                respondent=form_entry.respondent
             )
 
             for field_entry in form_entry.fields.all():
