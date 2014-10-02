@@ -1,15 +1,28 @@
-{% extends '_layout.html' %}
+{% extends 'manager/index.html' %}
 {% load extra_tags %}
 
-{% block content %}
-  <h2>Manage form</h2>
+{% block manager_content %}
+  <h2>Manage {{ object.title|translate:request.language }}</h2>
 
   <p>Available fields:</p>
-  <ul>
+  <table class="table table-condensed">
+    <thead>
+    <tr>
+      <th>Slug</th>
+      <th>Field</th>
+      <th>Type</th>
+    </tr>
+    </thead>
+    <tbody>
     {% for field in object.fields.all %}
-      <li>{{ field.label | translate:request.language }}: {{ field.slug }}</li>
+      <tr>
+        <td>{{ field.slug }}</td>
+        <td>{{ field.label | translate:request.language }}</td>
+        <td>{{ field.get_field_type_display }} ({{ field.field_type }})</td>
+      </tr>
     {% endfor %}
-  </ul>
+    </tbody>
+  </table>
 
   <p>Please enter the selected fields' slugs separated by "{{ separator }}" in
     the textboxes below</p>

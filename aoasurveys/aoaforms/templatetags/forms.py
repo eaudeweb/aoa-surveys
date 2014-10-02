@@ -1,4 +1,5 @@
 from django import template
+from django.forms import ChoiceField
 from django.forms.forms import BoundField
 from django.template.loader import get_template
 
@@ -10,16 +11,28 @@ register = template.Library()
 
 
 class FakeForm(object):
-    def __init__(self, form, fields_and_labels):
+    def __init__(self, form, fields_and_labels, language):
         self.fields_and_labels = fields_and_labels
         self.form = form
+        self.language = language
+
+    def _fix_choices(self, choices):
+        fixed_choices = []
+        for value, label in choices:
+            fixed_choices.append(
+                (value, get_translation(label, self.language))
+            )
+        return fixed_choices
 
     def __iter__(self):
         for field, slug in self.fields_and_labels:
             if isinstance(field, Label):
                 yield field
             else:
-                yield BoundField(self.form, field, slug)
+                bound_field = BoundField(self.form, field, slug)
+                if isinstance(field, ChoiceField):
+                    field.choices = self._fix_choices(field.choices)
+                yield bound_field
 
 
 class CustomFormNode(template.Node):
@@ -58,8 +71,10 @@ class CustomFormNode(template.Node):
         ]
 
         context['form_for_form'] = form_for_form
-        context['fields_and_labels'] = FakeForm(form_for_form,
-                                                fields_and_labels)
+        context['fields_and_labels'] = (
+            FakeForm(form_for_form, fields_and_labels,
+                     language=context["request"].language)
+        )
         return t.render(context)
 
 

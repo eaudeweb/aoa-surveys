@@ -104,6 +104,12 @@ STATIC_URL = '/static/'
 STATIC_ROOT = os.path.join(BASE_DIR, 'static')
 
 # Custom fields
+# CHECKBOX = 4
+# CHECKBOX_MULTIPLE = 5
+# SELECT = 6
+# SELECT_MULTIPLE = 7
+# RADIO_MULTIPLE = 8
+
 LOCALIZEDSTRING = 100
 LOCALIZEDTEXTAREA = 101
 
@@ -113,6 +119,10 @@ FORMS_BUILDER_EXTRA_FIELDS = (
     (LOCALIZEDTEXTAREA, "aoasurveys.aoaforms.fields.LocalizedTextAreaField",
      "LocalizedTextAreaField"),
 )
+
+# FORMS_BUILDER_EXTRA_WIDGETS = (
+#     (RADIO_MULTIPLE, "aoasurveys.aoaforms.widgets.LocalizedRadioSelect"),
+# )
 
 LOCALIZED_LANGUAGES = (
     "English",
