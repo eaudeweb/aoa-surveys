@@ -39,9 +39,9 @@ for answer in survey.objectValues():
         
         approved_date = attributes.get("approved_date", None)
         if isinstance(approved_date, DateTime):
-            entry["creation_date"] = approved_date.ISO8601()
+            entry["approval_date"] = approved_date.ISO8601()
         else:
-            entry["creation_date"] = None
+            entry["approval_date"] = None
 
         creation_date = attributes.get("creation_date", None)
         if isinstance(creation_date, DateTime):
