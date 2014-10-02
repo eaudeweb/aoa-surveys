@@ -7,4 +7,4 @@ class DisplayedForm(FormForForm):
 
     class Meta:
         model = FormEntry
-        exclude = ("form", "entry_time", "respondent")
+        exclude = ("form", "entry_time", "respondent", "creation_time")

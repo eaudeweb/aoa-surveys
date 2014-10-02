@@ -48,8 +48,8 @@ class CustomFormNode(template.Node):
         form_for_form = DisplayedForm(
             form,
             context,
-            getattr(context["request"], "POST", None),
-            getattr(context["request"], "FILES", None)
+            context["request"].POST or None,
+            context["request"].FILES or None,
         )
 
         labels = [
