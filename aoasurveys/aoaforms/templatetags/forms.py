@@ -4,6 +4,7 @@ from django.template.loader import get_template
 
 from aoasurveys.aoaforms.forms import DisplayedForm
 from aoasurveys.aoaforms.models import Label
+from aoasurveys.reports.utils import get_translation
 
 register = template.Library()
 
@@ -57,7 +58,8 @@ class CustomFormNode(template.Node):
         ]
 
         context['form_for_form'] = form_for_form
-        context['fields_and_labels'] = FakeForm(form_for_form, fields_and_labels)
+        context['fields_and_labels'] = FakeForm(form_for_form,
+                                                fields_and_labels)
         return t.render(context)
 
 
@@ -83,3 +85,9 @@ def render_built_form(parser, token):
         raise template.TemplateSyntaxError(render_built_form.__doc__)
 
     return CustomFormNode(name, value)
+
+
+@register.filter
+def label_translated(field, language):
+    return '<label for="{id}">{text}</label>'.format(
+        id=field.name, text=get_translation(field.label, language))

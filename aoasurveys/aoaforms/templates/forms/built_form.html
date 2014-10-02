@@ -1,6 +1,9 @@
-<h2>{{ form.title }}</h2>
+{% load forms %}
+{% load extra_tags %}
+
+<h2>{{ form.title|translate:request.language }}</h2>
 {% if form.intro %}
-  <p>{{ form.intro }}</p>
+  <p>{{ form.intro|translate:request.language }}</p>
 {% endif %}
 <form action="{{ form.get_absolute_url }}" method="post"
       {% if form_for_form.is_multipart %}enctype="multipart/form-data"{% endif %}>
@@ -10,8 +13,9 @@
   {% for field in fields_and_labels %}
     <div class="fieldWrapper">
       {% if field.label_tag %}
+        {{ field|label_translated:request.language|safe }}
         {{ field.errors }}
-        {{ field.label_tag }} {{ field }}
+        {{ field }}
       {% else %}
         {{ field }}
       {% endif %}

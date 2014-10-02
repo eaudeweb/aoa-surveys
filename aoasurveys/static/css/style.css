@@ -34,3 +34,7 @@ ul#id_status li {
 body .modal-dialog {
     width: 800px;
 }
+
+label {
+    display: block;
+}
