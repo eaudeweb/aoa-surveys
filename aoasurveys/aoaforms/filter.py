@@ -43,7 +43,7 @@ class SmartRawQuery(object):
         return self
 
 
-def filter_entries(form, filters):
+def filter_entries(form, filters, search_text='', search_fields=[]):
     query = "SELECT f.id FROM aoaforms_formentry f "
     field_map = {}
     index = 0
@@ -82,6 +82,16 @@ def filter_entries(form, filters):
             "JOIN aoaforms_fieldentry f{index} ON f{index}.entry_id=f.id "
             "AND f{index}.field_id='{field}' "
         ).format(index=field_map[field], field=field)
+    if search_fields and search_text:
+        query += (
+            "JOIN aoaforms_fieldentry f{index} ON f{index}.entry_id=f.id "
+            "AND f{index}.value LIKE '%%{value}%%' "
+            "AND f{index}.field_id IN ({field_ids}) "
+        ).format(
+            index=max(field_map.values()) + 1,
+            value=search_text,
+            field_ids=','.join(['{}'.format(f) for f in search_fields]),
+        )
 
     query += " WHERE f.form_id='{form_id}' ".format(form_id=form.id)
 

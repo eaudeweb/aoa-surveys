@@ -71,8 +71,15 @@ class AnswersListJson(BaseDatatableView):
         return filter_entries(form, filters)
 
     def filter_queryset(self, qs):
-        # TODO: apply filters
-        return qs
+        form = self.get_object()
+        search_text = self.request.GET.get('search[value]', '')
+        search_fields = [
+            f.id for f in filter(lambda f: not f.choices, form.visible_fields)]
+        if not (search_text or search_fields):
+            return qs
+
+        filters = eval(self.request.GET['filters'])
+        return filter_entries(form, filters, search_text, search_fields)
 
     def prepare_results(self, qs):
         json_data = []
