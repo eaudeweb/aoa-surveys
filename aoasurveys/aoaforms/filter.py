@@ -22,7 +22,7 @@ class SmartRawQuery(object):
     def count(self):
         count_query = (
             self.query
-            .replace('f.id', 'COUNT(f.id)', 1)
+            .replace('f.id', 'COUNT(DISTINCT f.id)', 1)
             .replace('GROUP BY f.id', '')
         )
         cursor = connection.cursor()
