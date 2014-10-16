@@ -84,11 +84,10 @@ def filter_entries(form, filters, search_text='', search_fields=[]):
         ).format(index=field_map[field], field=field)
     if search_fields and search_text:
         query += (
-            "JOIN aoaforms_fieldentry f{index} ON f{index}.entry_id=f.id "
-            "AND f{index}.value LIKE '%%{value}%%' "
-            "AND f{index}.field_id IN ({field_ids}) "
+            "JOIN aoaforms_fieldentry fsearch ON fsearch.entry_id=f.id "
+            "AND fsearch.value LIKE '%%{value}%%' "
+            "AND fsearch.field_id IN ({field_ids}) "
         ).format(
-            index=max(field_map.values()) + 1,
             value=search_text,
             field_ids=','.join(['{}'.format(f) for f in search_fields]),
         )
