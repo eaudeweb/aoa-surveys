@@ -22,7 +22,7 @@ class SmartRawQuery(object):
     def count(self):
         count_query = (
             self.query
-            .replace('f.id', 'COUNT(DISTINCT f.id)', 1)
+            .replace('DISTINCT f.id', 'COUNT(DISTINCT f.id)', 1)
             .replace('GROUP BY f.id', '')
         )
         cursor = connection.cursor()
@@ -44,7 +44,7 @@ class SmartRawQuery(object):
 
 
 def filter_entries(form, filters, search_text='', search_fields=[]):
-    query = "SELECT f.id FROM aoaforms_formentry f "
+    query = "SELECT DISTINCT f.id FROM aoaforms_formentry f "
     field_map = {}
     index = 0
     extra_fields = [
@@ -93,8 +93,5 @@ def filter_entries(form, filters, search_text='', search_fields=[]):
         )
 
     query += " WHERE f.form_id='{form_id}' ".format(form_id=form.id)
-
-    if filters:
-        query += "GROUP BY f.id"
 
     return SmartRawQuery(query, FormEntry, field_map)
