@@ -1,0 +1,19 @@
+{% extends '_layout.html' %}
+{% load extra_tags %}
+
+{% block content %}
+  <a class="pull-right" href="{% url 'homepage' %}">All surveys</a>
+
+  <h2>Manage {{ object.title|translate:request.language }}</h2>
+
+  <ul class="nav nav-tabs">
+    <li {% if tab == 'properties'%}class="active"{% endif %}>
+      <a href="{% url 'manage_properties' slug=object.slug %}">Properties</a>
+    </li>
+    <li {% if tab == 'fields'%}class="active"{% endif %}>
+      <a href="{% url 'manage_fields' slug=object.slug %}">Fields and Labels</a>
+    </li>
+  </ul>
+
+  {% block manager_content %}{% endblock %}
+{% endblock %}
