@@ -14,11 +14,15 @@
     </tr>
     </thead>
     <tbody>
-    {% for field in object.fields.all %}
+    {% for elem in fields_and_labels %}
       <tr>
-        <td>{{ field.slug }}</td>
-        <td>{{ field.label | translate:request.language }}</td>
-        <td>{{ field.get_field_type_display }} ({{ field.field_type }})</td>
+        <td>{{ elem.slug }}</td>
+        <td>{{ elem.label | translate:request.language }}</td>
+        {% if elem.field_type %}
+          <td>{{ elem.get_field_type_display }} ({{ elem.field_type }})</td>
+        {% else %}
+          <td>Label</td>
+        {% endif %}
       </tr>
     {% endfor %}
     </tbody>

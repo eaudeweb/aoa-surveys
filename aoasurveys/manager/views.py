@@ -33,7 +33,13 @@ class FormManagementView(DetailView, FormView):
 
     def get_context_data(self, **kwargs):
         context = super(FormManagementView, self).get_context_data(**kwargs)
+
+        form = context['object']
+        fields_and_labels = list(form.fields.all()) + list(form.labels.all())
+        fields_and_labels.sort(key=lambda x: x.order)
+
         context.update({
+            'fields_and_labels': fields_and_labels,
             'separator': settings.FIELDS_SEPARATOR,
         })
         return context
