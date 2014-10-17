@@ -8,4 +8,7 @@ class SelectFieldsForm(Form):
                                widget=TextInput(attrs={'size': 40}))
     filtering_fields = CharField(max_length=255, required=False,
                                  widget=TextInput(attrs={'size': 40}))
+
+
+class PropertiesForm(Form):
     status = ChoiceField(choices=STATUS_CHOICES, widget=RadioSelect)

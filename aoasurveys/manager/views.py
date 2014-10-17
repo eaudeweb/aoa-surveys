@@ -3,13 +3,12 @@ from django.views.generic import DetailView, FormView
 from django.conf import settings
 
 from aoasurveys.aoaforms.models import Form
-from aoasurveys.manager.forms import SelectFieldsForm
+from aoasurveys.manager.forms import SelectFieldsForm, PropertiesForm
 
 
 class FormManagementView(DetailView, FormView):
     model = Form
     slug_url_kwarg = 'slug'
-    form_class = SelectFieldsForm
     context_object_name = 'survey'
 
     def get(self, request, *args, **kwargs):
@@ -30,6 +29,7 @@ class FormManagementView(DetailView, FormView):
 
 class FormPropertiesView(FormManagementView):
     template_name = 'properties.html'
+    form_class = PropertiesForm
     tab = 'properties'
 
     def get_initial(self):
@@ -47,6 +47,7 @@ class FormPropertiesView(FormManagementView):
 
 class FormFieldsView(FormManagementView):
     template_name = 'fields.html'
+    form_class = SelectFieldsForm
     tab = 'fields'
 
     def get_initial(self):
