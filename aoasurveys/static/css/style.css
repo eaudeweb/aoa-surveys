@@ -38,3 +38,11 @@ body .modal-dialog {
 label {
     display: block;
 }
+
+.nav a {
+    color: #428bca;
+}
+
+.nav {
+    margin-bottom: 10px;
+}
