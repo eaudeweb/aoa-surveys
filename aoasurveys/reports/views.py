@@ -1,8 +1,9 @@
 import os
 import mimetypes
 from urllib import urlencode
-from django.core.urlresolvers import reverse
+from ast import literal_eval
 
+from django.core.urlresolvers import reverse
 from django.shortcuts import get_object_or_404
 from django.views.generic import ListView, DetailView
 from django.conf import settings
@@ -67,12 +68,19 @@ class AnswersListJson(BaseDatatableView):
 
     def get_initial_queryset(self):
         form = self.get_object()
-        filters = eval(self.request.GET['filters'])
+        filters = literal_eval(self.request.GET['filters'])
         return filter_entries(form, filters)
 
     def filter_queryset(self, qs):
-        # TODO: apply filters
-        return qs
+        form = self.get_object()
+        search_text = self.request.GET.get('search[value]', '')
+        search_fields = [
+            f.id for f in filter(lambda f: not f.choices, form.visible_fields)]
+        if not (search_text or search_fields):
+            return qs
+
+        filters = literal_eval(self.request.GET['filters'])
+        return filter_entries(form, filters, search_text, search_fields)
 
     def prepare_results(self, qs):
         json_data = []
