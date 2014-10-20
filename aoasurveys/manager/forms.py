@@ -1,5 +1,6 @@
-from django.forms import Form, CharField, ChoiceField, RadioSelect, TextInput
-from forms_builder.forms.models import STATUS_CHOICES
+from django.forms import Form, CharField, TextInput, ModelForm
+
+from aoasurveys.aoaforms.models import Form as Survey
 
 
 class SelectFieldsForm(Form):
@@ -10,5 +11,11 @@ class SelectFieldsForm(Form):
                                  widget=TextInput(attrs={'size': 40}))
 
 
-class PropertiesForm(Form):
-    status = ChoiceField(choices=STATUS_CHOICES, widget=RadioSelect)
+class PropertiesForm(ModelForm):
+    def __init__(self, *args, **kwargs):
+        super(PropertiesForm, self).__init__(*args, **kwargs)
+        self.fields['title'].widget.attrs['size'] = 50
+
+    class Meta:
+        model = Survey
+        fields = ['status', 'title']

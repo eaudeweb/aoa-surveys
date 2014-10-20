@@ -4,6 +4,7 @@ from django.conf import settings
 
 from aoasurveys.aoaforms.models import Form
 from aoasurveys.manager.forms import SelectFieldsForm, PropertiesForm
+from aoasurveys.reports.utils import get_translation, set_translation
 
 
 class FormManagementView(DetailView, FormView):
@@ -36,11 +37,14 @@ class FormPropertiesView(FormManagementView):
         survey = self.get_object()
         return {
             'status': survey.status,
+            'title': get_translation(survey.title, self.request.language),
         }
 
     def form_valid(self, form):
         survey = self.get_object()
         survey.status = form.cleaned_data['status']
+        set_translation(survey, 'title', form.cleaned_data['title'],
+                        self.request.language)
         survey.save()
         return super(FormPropertiesView, self).form_valid(form)
 
