@@ -1,0 +1,53 @@
+{% extends '_common.html' %}
+{% load extra_tags %}
+
+{% block scripts %}
+  <script>
+  $(function() {
+    $(".sortable").sortable({
+      items: 'tbody > tr',
+      cursor: 'crosshair',
+      connectWith: '.sortable',
+      axis: 'y',
+      dropOnEmpty: true,
+      receive: function(e, ui) {
+        $(this).find("tbody").append(ui.item);
+      }
+    });
+  });
+  </script>
+{% endblock %}
+
+{% block manager_content %}
+
+  <div class="col-xs-6">
+    <h2 class="sub-header" tab={{ tab }}>Available fields</h2>
+    {% include '_fields_table.html' %}
+  </div>
+
+  <div class="col-xs-6">
+    <h2 class="sub-header">Selected fields</h2>
+    <div class="table-responsive">
+      <table class="table table-condensed sortable" id="selected">
+        <thead>
+        <tr>
+          <th>Slug</th>
+          <th>Field</th>
+          <th>Type</th>
+        </tr>
+        </thead>
+        <tbody>
+        {% for field in object.visible_fields %}
+          <tr>
+            <td>{{ field.slug }}</td>
+            <td>{{ field.label | translate:request.language }}</td>
+            <td>{{ field.get_field_type_display }} ({{ field.field_type }})</td>
+          </tr>
+        {% endfor %}
+        </tbody>
+      </table>
+    </div>
+  </div>
+
+  {% include '_orderfields_form.html' %}
+{% endblock %}

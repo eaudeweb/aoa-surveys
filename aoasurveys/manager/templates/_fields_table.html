@@ -1,0 +1,27 @@
+{% load extra_tags %}
+
+<div class="table-responsive">
+  <table class="table table-condensed sortable"
+      {% if tab == 'fields' %}id="selected"{% endif %}>
+    <thead>
+    <tr>
+      <th>Slug</th>
+      <th>Field</th>
+      <th>Type</th>
+    </tr>
+    </thead>
+    <tbody class="sortable-tb">
+    {% for field in fields %}
+      <tr>
+        <td>{{ field.slug }}</td>
+        <td>{{ field.label | translate:request.language }}</td>
+        {% if field.field_type %}
+          <td>{{ field.get_field_type_display }} ({{ field.field_type }})</td>
+        {% else %}
+          <td>Label</td>
+        {% endif %}
+      </tr>
+    {% endfor %}
+    </tbody>
+  </table>
+</div>

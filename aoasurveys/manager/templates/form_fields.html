@@ -1,59 +1,20 @@
 {% extends '_common.html' %}
-{% load extra_tags %}
 
 {% block scripts %}
   <script>
   $(function () {
     $( ".sortable" ).sortable();
     $( ".sortable" ).disableSelection();
-
-    $('form').on('submit', function (e) {
-      e.preventDefault();
-      var url = $(this).attr('action');
-      var slugs = [];
-      $('table tr td:first-child').each(function() {
-          slugs.push($(this).text());
-      });
-      var data = $(this).serializeArray();
-      data.push({name: "slugs", value: slugs});
-
-      $.post(url, data, function(resp) {}, "json");
-    });
   });
   </script>
 {% endblock %}
 
 {% block manager_content %}
 
-  <h4>Re-order form fields</h4>
-  <table class="table table-condensed">
-    <thead>
-    <tr>
-      <th>Slug</th>
-      <th>Field</th>
-      <th>Type</th>
-    </tr>
-    </thead>
-    <tbody class="sortable">
-    {% for elem in fields_and_labels %}
-      <tr>
-        <td>{{ elem.slug }}</td>
-        <td>{{ elem.label | translate:request.language }}</td>
-        {% if elem.field_type %}
-          <td>{{ elem.get_field_type_display }} ({{ elem.field_type }})</td>
-        {% else %}
-          <td>Label</td>
-        {% endif %}
-      </tr>
-    {% endfor %}
-    </tbody>
-  </table>
-  <div class="clearfix">
-    <div class="text-right" style="padding: 0px 15px 15px 0px;">
-      <form method="POST" action="{% url 'order_fields' slug=object.slug %}">
-        {% csrf_token %}
-        <button class="btn btn-sm btn-primary">Save</button>
-      </form>
-    </div>
+  <div class="col-xs-12">
+    <h2 class="sub-header" tab="{{ tab }}">Re-order form fields</h2>
+    {% include '_fields_table.html' %}
   </div>
+
+  {% include '_orderfields_form.html' %}
 {% endblock %}

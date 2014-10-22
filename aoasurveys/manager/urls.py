@@ -1,7 +1,8 @@
 from django.conf.urls import patterns, url
 
 from aoasurveys.manager.views import (
-    FormPropertiesView, FormFieldsView, FieldsOrderView,
+    FormPropertiesView, FormFieldsView, FormVisibleFieldsView,
+    FormFilterFieldsView, FieldsOrderView,
 )
 
 urlpatterns = patterns('',
@@ -9,6 +10,10 @@ urlpatterns = patterns('',
         name='manage_properties'),
     url(r'^(?P<slug>.*)/fields/$', FormFieldsView.as_view(),
         name='manage_fields'),
+    url(r'^(?P<slug>.*)/visiblefields/$', FormVisibleFieldsView.as_view(),
+        name='manage_visible_fields'),
+    url(r'^(?P<slug>.*)/filterfields/$', FormFilterFieldsView.as_view(),
+        name='manage_filter_fields'),
     url(r'^(?P<slug>.*)/orderfields/$', FieldsOrderView.as_view(),
         name='order_fields'),
 )

@@ -7,11 +7,17 @@
   <h2>Manage {{ object.title|translate:request.language }}</h2>
 
   <ul class="nav nav-tabs">
-    <li {% if tab == 'properties'%}class="active"{% endif %}>
+    <li {% if tab == 'properties' %}class="active"{% endif %}>
       <a href="{% url 'manage_properties' slug=object.slug %}">Properties</a>
     </li>
-    <li {% if tab == 'fields'%}class="active"{% endif %}>
+    <li {% if tab == 'fields' %}class="active"{% endif %}>
       <a href="{% url 'manage_fields' slug=object.slug %}">Fields and Labels</a>
+    </li>
+    <li {% if tab == 'visible_fields' %}class="active"{% endif %}>
+      <a href="{% url 'manage_visible_fields' slug=object.slug %}">Visible fields</a>
+    </li>
+    <li {% if tab == 'filter_fields' %}class="active"{% endif %}>
+      <a href="{% url 'manage_filter_fields' slug=object.slug %}">Filtering fields</a>
     </li>
   </ul>
 
