@@ -1,9 +1,10 @@
 from django.core.urlresolvers import reverse
-from django.views.generic import DetailView, FormView
+from django.views.generic import DetailView, FormView, View
 from django.conf import settings
+from django.http import HttpResponse
 
 from aoasurveys.aoaforms.models import Form
-from aoasurveys.manager.forms import SelectFieldsForm, PropertiesForm
+from aoasurveys.manager.forms import PropertiesForm
 from aoasurveys.reports.utils import get_translation, set_translation
 
 
@@ -49,24 +50,10 @@ class FormPropertiesView(FormManagementView):
         return super(FormPropertiesView, self).form_valid(form)
 
 
-class FormFieldsView(FormManagementView):
-    template_name = 'fields.html'
-    form_class = SelectFieldsForm
+class FormFieldsView(DetailView):
+    template_name = 'form_fields.html'
     tab = 'fields'
-
-    def get_initial(self):
-        survey = self.get_object()
-        return {
-            'visible_fields': survey.visible_fields_slugs,
-            'filtering_fields': survey.filtering_fields_slugs,
-        }
-
-    def form_valid(self, form):
-        survey = self.get_object()
-        survey.visible_fields_slugs = form.cleaned_data['visible_fields']
-        survey.filtering_fields_slugs = form.cleaned_data['filtering_fields']
-        survey.save()
-        return super(FormFieldsView, self).form_valid(form)
+    model = Form
 
     def get_context_data(self, **kwargs):
         context = super(FormFieldsView, self).get_context_data(**kwargs)
@@ -78,5 +65,20 @@ class FormFieldsView(FormManagementView):
         context.update({
             'fields_and_labels': fields_and_labels,
             'separator': settings.FIELDS_SEPARATOR,
+            'tab': self.tab,
         })
         return context
+
+
+class FieldsOrderView(View):
+    def post(self, request, *args, **kwargs):
+        form = Form.objects.filter(slug=kwargs['slug']).first()
+        ordered_slugs = self.request.POST['slugs'].split(',')
+        order_nr = 10
+        for slug in ordered_slugs:
+            field = form.fields.filter(slug=slug).first() or \
+                form.labels.filter(slug=slug).first()
+            field.order = order_nr
+            order_nr += 10
+            field.save()
+        return HttpResponse({'succes': True})
