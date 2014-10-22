@@ -45,6 +45,10 @@ $(function () {
       data.push({name: "slugs", value: slugs});
       data.push({name: "tab", value: tab});
 
-      $.post(url, data, function(resp) {}, "json");
+      $.post(url, data, function(resp) {
+          if (resp.success == true) {
+              $('.alert').show();
+          }
+      }, "json");
     });
 });

@@ -123,4 +123,4 @@ class FieldsOrderView(View):
                 form.filtering_fields_slugs = slugs_str
             form.save()
 
-        return HttpResponse({'succes': True})
+        return HttpResponse('{"success": true}')
