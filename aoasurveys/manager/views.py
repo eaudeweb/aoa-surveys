@@ -8,10 +8,13 @@ from aoasurveys.manager.forms import PropertiesForm
 from aoasurveys.reports.utils import get_translation, set_translation
 
 
-class FormManagementView(DetailView, FormView):
+class FormPropertiesView(DetailView, FormView):
     model = Form
     slug_url_kwarg = 'slug'
     context_object_name = 'survey'
+    template_name = 'properties.html'
+    form_class = PropertiesForm
+    tab = 'properties'
 
     def get(self, request, *args, **kwargs):
         form_class = self.get_form_class()
@@ -19,20 +22,6 @@ class FormManagementView(DetailView, FormView):
         self.object = self.get_object()
         context = self.get_context_data(object=self.object, form=form)
         return self.render_to_response(context)
-
-    def get_success_url(self):
-        return reverse('homepage')
-
-    def get_context_data(self, **kwargs):
-        context = super(FormManagementView, self).get_context_data(**kwargs)
-        context['tab'] = self.tab
-        return context
-
-
-class FormPropertiesView(FormManagementView):
-    template_name = 'properties.html'
-    form_class = PropertiesForm
-    tab = 'properties'
 
     def get_initial(self):
         survey = self.get_object()
@@ -48,6 +37,14 @@ class FormPropertiesView(FormManagementView):
                         self.request.language)
         survey.save()
         return super(FormPropertiesView, self).form_valid(form)
+
+    def get_success_url(self):
+        return reverse('homepage')
+
+    def get_context_data(self, **kwargs):
+        context = super(FormPropertiesView, self).get_context_data(**kwargs)
+        context['tab'] = self.tab
+        return context
 
 
 class FormFieldsView(DetailView):
