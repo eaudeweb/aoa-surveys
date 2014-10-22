@@ -1,14 +1,6 @@
-from django.forms import Form, CharField, TextInput, ModelForm
+from django.forms import ModelForm
 
 from aoasurveys.aoaforms.models import Form as Survey
-
-
-class SelectFieldsForm(Form):
-    # TODO: use ModelForm
-    visible_fields = CharField(max_length=255, required=False,
-                               widget=TextInput(attrs={'size': 40}))
-    filtering_fields = CharField(max_length=255, required=False,
-                                 widget=TextInput(attrs={'size': 40}))
 
 
 class PropertiesForm(ModelForm):
