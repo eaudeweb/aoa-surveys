@@ -1,0 +1,14 @@
+<script>
+$(function() {
+  $(".sortable").sortable({
+    items: 'tbody > tr',
+    cursor: 'crosshair',
+    connectWith: '.sortable',
+    axis: 'y',
+    dropOnEmpty: true,
+    receive: function(e, ui) {
+      $(this).find("tbody").append(ui.item);
+    }
+  });
+});
+</script>

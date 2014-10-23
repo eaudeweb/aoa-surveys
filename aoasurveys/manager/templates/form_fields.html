@@ -15,7 +15,7 @@
 
   <div class="col-xs-12">
     <h2 class="sub-header" tab="{{ tab }}">Re-order form fields</h2>
-    {% include '_fields_table.html' %}
+    {% include '_fields_table.html' with selected=True %}
   </div>
 
   {% include '_orderfields_form.html' %}
