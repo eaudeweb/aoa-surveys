@@ -105,9 +105,8 @@ class FieldsOrderView(View):
     def post(self, request, *args, **kwargs):
         form = Form.objects.filter(slug=kwargs['slug']).first()
         ordered_slugs = self.request.POST['slugs'].split(',')
-        tab = self.request.POST['tab']
 
-        if tab == 'fields':
+        if kwargs['tab'] == 'fields':
             order_nr = 10
             for slug in ordered_slugs:
                 field = form.fields.filter(slug=slug).first() or \
@@ -117,9 +116,9 @@ class FieldsOrderView(View):
                 field.save()
         else:
             slugs_str = settings.FIELDS_SEPARATOR.join(ordered_slugs)
-            if tab == 'visible_fields':
+            if kwargs['tab'] == 'visible_fields':
                 form.visible_fields_slugs = slugs_str
-            elif tab == 'filter_fields':
+            elif kwargs['tab'] == 'filter_fields':
                 form.filtering_fields_slugs = slugs_str
             form.save()
 

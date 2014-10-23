@@ -14,6 +14,6 @@ urlpatterns = patterns('',
         name='manage_visible_fields'),
     url(r'^(?P<slug>.*)/filterfields/$', FormFilterFieldsView.as_view(),
         name='manage_filter_fields'),
-    url(r'^(?P<slug>.*)/orderfields/$', FieldsOrderView.as_view(),
+    url(r'^(?P<slug>.*)/(?P<tab>.*)/order/$', FieldsOrderView.as_view(),
         name='order_fields'),
 )

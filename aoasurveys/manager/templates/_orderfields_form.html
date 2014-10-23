@@ -1,6 +1,7 @@
 <div class="clearfix">
   <div class="text-right" style="padding: 0px 15px 15px 0px;">
-    <form id="orderfields" method="POST" action="{% url 'order_fields' slug=object.slug %}">
+    <form id="orderfields" method="POST"
+        action="{% url 'order_fields' slug=object.slug tab=tab %}">
       {% csrf_token %}
       <button class="btn btn-sm btn-primary">Save</button>
     </form>
