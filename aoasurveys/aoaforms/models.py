@@ -5,10 +5,13 @@ from django.conf import settings
 from django.db.models import (
     CharField, ForeignKey, IntegerField, Model, SlugField, DateTimeField
 )
+from django.utils.html import format_html
 from forms_builder.forms import fields as forms_builder_fields
 from forms_builder.forms.models import (
     AbstractForm, AbstractFormEntry, AbstractField, AbstractFieldEntry,
 )
+
+from aoasurveys.reports.utils import get_translation
 
 
 class Form(AbstractForm):
@@ -87,6 +90,10 @@ class Label(Model):
         ordering = ("order",)
         verbose_name = 'Label'
         verbose_name_plural = 'Labels'
+
+    def __unicode__(self):
+        return format_html('<label>{0}</label>', get_translation(
+            self.label, getattr(self, 'language', settings.DEFAULT_LANGUAGE)))
 
 
 admin.site.register(Form)

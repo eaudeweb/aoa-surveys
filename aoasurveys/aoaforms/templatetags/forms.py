@@ -27,6 +27,7 @@ class FakeForm(object):
     def __iter__(self):
         for field, slug in self.fields_and_labels:
             if isinstance(field, Label):
+                field.language = self.language
                 yield field
             else:
                 bound_field = BoundField(self.form, field, slug)
