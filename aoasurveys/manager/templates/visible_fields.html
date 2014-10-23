@@ -1,0 +1,23 @@
+{% extends '_common.html' %}
+{% load extra_tags %}
+
+{% block scripts %}
+  {% include '_sortable_tables_js.html' %}
+{% endblock %}
+
+{% block manager_content %}
+
+  {% include '_alert.html' %}
+
+  <div class="col-xs-6">
+    <h2 class="sub-header">Available fields</h2>
+    {% include '_fields_table.html' %}
+  </div>
+
+  <div class="col-xs-6">
+    <h2 class="sub-header">Selected fields</h2>
+    {% include '_fields_table.html' with fields=object.visible_fields selected=True %}
+  </div>
+
+  {% include '_orderfields_form.html' %}
+{% endblock %}

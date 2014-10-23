@@ -10,3 +10,11 @@ def get_translation(value, language=settings.DEFAULT_LANGUAGE):
                          .index(settings.DEFAULT_LANGUAGE)]
         )
     return value
+
+
+def set_translation(obj, attr, value, language=settings.DEFAULT_LANGUAGE):
+    languages = settings.LOCALIZED_LANGUAGES_ABBR
+    translations = getattr(obj, attr).split('\n')
+    translations += [''] * (len(languages) - len(translations))
+    translations[languages.index(language)] = value
+    setattr(obj, attr, '\n'.join(translations))

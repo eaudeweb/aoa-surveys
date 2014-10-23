@@ -1,0 +1,22 @@
+{% extends '_common.html' %}
+
+{% block scripts %}
+  <script>
+  $(function () {
+    $( ".sortable-tb" ).sortable();
+    $( ".sortable-tb" ).disableSelection();
+  });
+  </script>
+{% endblock %}
+
+{% block manager_content %}
+
+  {% include '_alert.html' %}
+
+  <div class="col-xs-12">
+    <h2 class="sub-header">Re-order form fields</h2>
+    {% include '_fields_table.html' with selected=True %}
+  </div>
+
+  {% include '_orderfields_form.html' %}
+{% endblock %}
