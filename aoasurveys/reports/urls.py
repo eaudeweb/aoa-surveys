@@ -13,6 +13,6 @@ urlpatterns = patterns('',
         name='answers_data'),
     url(r'^file/(?P<field_entry_id>.*)/$', file_view, name='file_view'),
 
-    url(r'^entry/(?P<id>.\d+)/$', EntryDetail.as_view(),
+    url(r'^entry/(?P<id>\d+)/$', EntryDetail.as_view(),
         name='entry-detail')
 )
