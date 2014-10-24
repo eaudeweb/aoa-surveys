@@ -50,9 +50,15 @@ $(function () {
       }, "json");
     });
 
-
-    $('.multiplechoicefield').parents('li').hide();
     $('.multiplechoicefield').parents('ul').each(function() {
+      var items = $(this).children();
+      if (items.length >= 10) {
+        items.children().children().addClass('multichoicewidget');
+      }
+    });
+
+    $('.multichoicewidget').parents('li').hide();
+    $('.multichoicewidget').parents('ul').each(function() {
       var select = $('<select>').attr('class', 'multichoice')
       $(this).children().children().each(function() {
         select.append($('<option>')
@@ -69,9 +75,9 @@ $(function () {
       label.parent().show();
     });
 
-    $('.multiplechoicefield').on('change', function() {
+    $('.multichoicewidget').on('change', function() {
       if (!$(this).is(':selected')) {
-          $(this).parents('li').hide();
+        $(this).parents('li').hide();
       }
     });
 });
