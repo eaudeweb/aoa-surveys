@@ -46,3 +46,7 @@ label {
 .nav {
     margin-bottom: 10px;
 }
+
+.ui-sortable-handle.ui-sortable-helper {
+    background-color: #eee;
+}
