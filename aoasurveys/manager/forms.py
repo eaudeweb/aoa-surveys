@@ -10,4 +10,5 @@ class PropertiesForm(ModelForm):
 
     class Meta:
         model = Survey
-        fields = ['status', 'title']
+        fields = ['title', 'intro', 'publish_date', 'expiry_date',
+                  'send_email', 'login_required', 'status']
