@@ -35,7 +35,7 @@ body .modal-dialog {
     width: 800px;
 }
 
-label {
+.content label {
     display: block;
 }
 
@@ -49,4 +49,22 @@ label {
 
 .ui-sortable-handle.ui-sortable-helper {
     background-color: #eee;
+}
+/* Tables */
+table.table td, table.table th {
+    padding: 4px;
+}
+
+/* Forms */
+.fieldWrapper ul {
+    list-style-type: none;
+    padding-left: 0;
+}
+
+/* Bootstrap forms fixup */
+#search label {
+    margin-bottom: 0;
+}
+#search input#query {
+    line-height: 10px;
 }
