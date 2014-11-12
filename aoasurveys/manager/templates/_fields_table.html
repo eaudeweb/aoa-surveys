@@ -2,23 +2,29 @@
 
 <div class="table-responsive">
   <table class="table table-condensed sortable"
-      {% if selected %}id="selected"{% endif %}>
+         {% if selected %}id="selected"{% endif %}>
     <thead>
     <tr>
-      <th>Slug</th>
+      <th></th>
       <th>Field</th>
       <th>Type</th>
+      {% if not no_slug %}
+      <th>Slug</th>
+      {% endif %}
     </tr>
     </thead>
     <tbody class="sortable-tb">
     {% for field in fields %}
       <tr>
-        <td>{{ field.slug }}</td>
+        <td class="handler"><span class="glyphicon glyphicon-align-justify"></span></td>
         <td>{{ field.label | translate:request.language }}</td>
         {% if field.field_type %}
-          <td>{{ field.get_field_type_display }} ({{ field.field_type }})</td>
+          <td>{{ field.get_field_type_display }}</td>
         {% else %}
           <td>Label</td>
+        {% endif %}
+        {% if not no_slug %}
+        <td>{{ field.slug }}</td>
         {% endif %}
       </tr>
     {% endfor %}

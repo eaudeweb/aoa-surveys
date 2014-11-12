@@ -8,7 +8,7 @@ from aoasurveys.manager.forms import PropertiesForm
 from aoasurveys.reports.utils import get_translation, set_translation
 
 
-class FormPropertiesView(DetailView, FormView):
+class FormPropertiesView(FormView, DetailView):
     model = Form
     slug_url_kwarg = 'slug'
     context_object_name = 'survey'

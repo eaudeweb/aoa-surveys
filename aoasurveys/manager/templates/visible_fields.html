@@ -9,14 +9,16 @@
 
   {% include '_alert.html' %}
 
+  <p>Use drag and drop to move fields from Available to Selected. Selected
+    fields appear in the default table view.</p>
   <div class="col-xs-6">
     <h2 class="sub-header">Available fields</h2>
-    {% include '_fields_table.html' %}
+    {% include '_fields_table.html' with no_slug=1 %}
   </div>
 
   <div class="col-xs-6">
     <h2 class="sub-header">Selected fields</h2>
-    {% include '_fields_table.html' with fields=object.visible_fields selected=True %}
+    {% include '_fields_table.html' with fields=object.visible_fields selected=True no_slug=1 %}
   </div>
 
   {% include '_orderfields_form.html' %}

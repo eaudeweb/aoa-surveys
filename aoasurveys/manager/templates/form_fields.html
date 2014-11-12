@@ -2,10 +2,10 @@
 
 {% block scripts %}
   <script>
-  $(function () {
-    $( ".sortable-tb" ).sortable();
-    $( ".sortable-tb" ).disableSelection();
-  });
+    $(function () {
+      $(".sortable-tb").sortable();
+      $(".sortable-tb").disableSelection();
+    });
   </script>
 {% endblock %}
 
@@ -15,6 +15,10 @@
 
   <div class="col-xs-12">
     <h2 class="sub-header">Re-order form fields</h2>
+
+    <p>Use the handles in the left side of the table to reorder form fields, by
+      drag and drop.</p>
+
     {% include '_fields_table.html' with selected=True %}
   </div>
 
