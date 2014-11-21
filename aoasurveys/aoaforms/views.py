@@ -29,9 +29,6 @@ class FormView(DetailView):
         return self.render_to_response(context)
 
 
-form_view = FormView.as_view()
-
-
 class FormSent(TemplateView):
     template_name = "forms/form_sent.html"
 
@@ -47,6 +44,3 @@ class FormSent(TemplateView):
             "form": get_object_or_404(published, slug=self.slug),
         })
         return context
-
-
-form_sent = FormSent.as_view()
