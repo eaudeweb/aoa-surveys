@@ -42,6 +42,8 @@
                   answers</a>
                 |
                 <a href="{% url 'manage_properties' slug=survey.slug %}">Manage</a>
+                |
+                <a href="{% url 'delete_form' slug=survey.slug %}">Delete</a>
               </td>
             </tr>
           {% endfor %}
