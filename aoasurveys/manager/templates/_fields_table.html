@@ -26,9 +26,9 @@
           <td>Label</td>
         {% endif %}
         {% if not no_slug %}
-        <td>{{ field.slug }}</td>
-        <td><a href="{% url 'edit_field' form.slug field.pk %}">Edit</a></td>
-        <td><a href="{% url 'delete_field' form.slug field.pk %}">Delete</a></td>
+          <td>{{ field.slug }}</td>
+          <td><a href="{% url 'edit_field' form.slug field.pk %}">Edit</a></td>
+          <td><a href="{% url 'delete_field' form.slug field.pk %}">Delete</a></td>
         {% endif %}
       </tr>
     {% endfor %}
