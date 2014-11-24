@@ -1,5 +1,6 @@
 from django.core.urlresolvers import reverse
 from django.views.generic import DetailView, FormView, View
+from django.views.generic.edit import CreateView, DeleteView
 from django.http import HttpResponse
 from django.conf import settings
 
@@ -123,3 +124,21 @@ class FieldsOrderView(View):
             form.save()
 
         return HttpResponse('{"success": true}')
+
+
+class CreateSurvey(CreateView):
+    model = Form
+    fields = ['title', 'intro', 'publish_date', 'expiry_date',
+              'send_email', 'login_required', 'status']
+    template_name = 'new_form.html'
+
+    def get_success_url(self):
+        return reverse('homepage')
+
+
+class DeleteSurvey(DeleteView):
+    model = Form
+    template_name = 'delete_form.html'
+
+    def get_success_url(self):
+        return reverse('homepage')

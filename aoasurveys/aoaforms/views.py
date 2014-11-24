@@ -1,8 +1,6 @@
 from django.shortcuts import get_object_or_404, redirect
-from django.core.urlresolvers import reverse
 from django.template import RequestContext
 from django.views.generic import DetailView, TemplateView
-from django.views.generic.edit import CreateView, DeleteView
 
 from forms_builder.forms.signals import form_invalid, form_valid
 from aoasurveys.aoaforms.forms import DisplayedForm
@@ -46,21 +44,3 @@ class FormSent(TemplateView):
             "form": get_object_or_404(published, slug=self.slug),
         })
         return context
-
-
-class CreateSurvey(CreateView):
-    model = Form
-    fields = ['title', 'intro', 'publish_date', 'expiry_date',
-              'send_email', 'login_required', 'status']
-    template_name = 'forms/new_form.html'
-
-    def get_success_url(self):
-        return reverse('homepage')
-
-
-class DeleteSurvey(DeleteView):
-    model = Form
-    template_name = 'forms/delete_form.html'
-
-    def get_success_url(self):
-        return reverse('homepage')
