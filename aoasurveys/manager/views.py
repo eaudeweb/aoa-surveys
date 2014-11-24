@@ -4,7 +4,7 @@ from django.views.generic.edit import CreateView, DeleteView
 from django.http import HttpResponse
 from django.conf import settings
 
-from aoasurveys.aoaforms.models import Form
+from aoasurveys.aoaforms.models import Form, Field
 from aoasurveys.manager.forms import PropertiesForm
 from aoasurveys.reports.utils import get_translation, set_translation
 
@@ -142,3 +142,11 @@ class DeleteSurvey(DeleteView):
 
     def get_success_url(self):
         return reverse('homepage')
+
+
+class DeleteField(DeleteView):
+    model = Field
+    template_name = 'delete_field.html'
+
+    def get_success_url(self):
+        return reverse('manage_fields', args=[self.get_object().form.slug])

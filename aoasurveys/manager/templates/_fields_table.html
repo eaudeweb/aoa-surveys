@@ -10,6 +10,8 @@
       <th>Type</th>
       {% if not no_slug %}
       <th>Slug</th>
+      <th></th>
+      <th></th>
       {% endif %}
     </tr>
     </thead>
@@ -25,6 +27,8 @@
         {% endif %}
         {% if not no_slug %}
         <td>{{ field.slug }}</td>
+        <td>Edit</td>
+        <td><a href="{% url 'delete_field' form.slug field.pk %}">Delete</a></td>
         {% endif %}
       </tr>
     {% endfor %}
