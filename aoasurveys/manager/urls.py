@@ -3,12 +3,14 @@ from django.conf.urls import patterns, url
 from aoasurveys.manager.views import (
     FormPropertiesView, FormFieldsView, FormVisibleFieldsView,
     FormFilterFieldsView, FieldsOrderView, CreateSurvey, DeleteSurvey,
-    DeleteField,
+    DeleteField, EditField,
 )
 
 urlpatterns = patterns('',
     url(r'^(?P<formslug>.*)/(?P<pk>.*)/delete/$', DeleteField.as_view(),
         name='delete_field'),
+    url(r'^(?P<formslug>.*)/(?P<pk>.*)/edit/$', EditField.as_view(),
+        name='edit_field'),
     url(r'^(?P<slug>.*)/properties/$', FormPropertiesView.as_view(),
         name='manage_properties'),
     url(r'^(?P<slug>.*)/fields/$', FormFieldsView.as_view(),

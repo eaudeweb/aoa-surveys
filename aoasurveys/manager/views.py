@@ -1,6 +1,6 @@
 from django.core.urlresolvers import reverse
 from django.views.generic import DetailView, FormView, View
-from django.views.generic.edit import CreateView, DeleteView
+from django.views.generic.edit import CreateView, DeleteView, UpdateView
 from django.http import HttpResponse
 from django.conf import settings
 
@@ -147,6 +147,15 @@ class DeleteSurvey(DeleteView):
 class DeleteField(DeleteView):
     model = Field
     template_name = 'delete_field.html'
+
+    def get_success_url(self):
+        return reverse('manage_fields', args=[self.get_object().form.slug])
+
+
+class EditField(UpdateView):
+    model = Field
+    template_name = 'edit_field.html'
+    fields = ['label']
 
     def get_success_url(self):
         return reverse('manage_fields', args=[self.get_object().form.slug])
