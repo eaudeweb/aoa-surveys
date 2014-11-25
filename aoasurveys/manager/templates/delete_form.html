@@ -4,6 +4,6 @@
   <form method="POST">
     {% csrf_token %}
     <p>Are you sure you want to delete "{{ object }}"?</p>
-    <input class="btn btn-sm btn-primary" type="submit" value="Confirm" />
+    <button class="btn btn-sm btn-primary" type="submit">Confirm</button>
   </form>
 {% endblock %}
