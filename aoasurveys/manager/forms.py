@@ -1,6 +1,6 @@
 from django.forms import ModelForm
 
-from aoasurveys.aoaforms.models import Form as Survey, Field
+from aoasurveys.aoaforms.models import Form as Survey, Field, Label
 
 
 class PropertiesForm(ModelForm):
@@ -29,3 +29,9 @@ class FieldForm(ModelForm):
         field.form_id = self.form_id
         field.save()
         return field
+
+
+class LabelForm(FieldForm):
+    class Meta:
+        model = Label
+        fields = ['label']

@@ -6,7 +6,7 @@ from django.conf import settings
 from django.shortcuts import get_object_or_404
 
 from aoasurveys.aoaforms.models import Form, Field
-from aoasurveys.manager.forms import PropertiesForm, FieldForm
+from aoasurveys.manager.forms import PropertiesForm, FieldForm, LabelForm
 from aoasurveys.reports.utils import get_translation, set_translation
 
 
@@ -175,3 +175,7 @@ class CreateField(CreateView):
 
     def get_success_url(self):
         return reverse('manage_fields', args=[self.form_slug])
+
+
+class CreateLabel(CreateField):
+    form_class = LabelForm

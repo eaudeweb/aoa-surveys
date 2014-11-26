@@ -12,6 +12,7 @@ from forms_builder.forms import fields as forms_builder_fields
 from forms_builder.forms.models import (
     AbstractForm, AbstractFormEntry, AbstractField, AbstractFieldEntry,
 )
+from forms_builder.forms.utils import slugify, unique_slug
 
 from aoasurveys.reports.utils import get_translation
 
@@ -99,11 +100,19 @@ class Label(Model):
             self.label, getattr(self, 'language', settings.DEFAULT_LANGUAGE)))
 
 
+@receiver(pre_save, sender=Label)
 @receiver(pre_save, sender=Field)
 def my_callback(sender, instance, *args, **kwargs):
     max_order = max(instance.form.fields.aggregate(Max('order')).values() +
                     instance.form.labels.aggregate(Max('order')).values())
     instance.order = max_order + 1
+
+
+@receiver(pre_save, sender=Label)
+def callback(sender, instance, *args, **kwargs):
+    if not instance.slug:
+        slug = slugify(instance.label)
+        instance.slug = unique_slug(instance.__class__.objects, "slug", slug)
 
 
 admin.site.register(Form)
