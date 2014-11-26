@@ -37,7 +37,7 @@ $(function () {
       e.preventDefault();
       var url = $(this).attr('action');
       var slugs = [];
-      $('#selected tr td:first-child').each(function() {
+      $('#selected tr td:nth-child(4)').each(function() {
           slugs.push($(this).text());
       });
       var data = $(this).serializeArray();
