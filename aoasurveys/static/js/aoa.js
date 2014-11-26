@@ -80,4 +80,14 @@ $(function () {
         $(this).parents('li').hide();
       }
     });
+
+    $('#id_choices').parent().hide();
+    $('#id_field_type').on('change', function() {
+      var choice_ids = [4, 5, 6, 7, 8]
+      var id = parseInt($(this).children(':selected').val());
+      if (choice_ids.indexOf(id) > -1)
+        $('#id_choices').parent().show();
+      else
+        $('#id_choices').parent().hide();
+    });
 });
