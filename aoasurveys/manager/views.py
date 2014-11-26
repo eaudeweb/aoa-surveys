@@ -153,6 +153,10 @@ class DeleteField(DeleteView):
         return reverse('manage_fields', args=[self.kwargs['formslug']])
 
 
+class DeleteLabel(DeleteField):
+    model = Label
+
+
 class EditField(UpdateView):
     model = Field
     template_name = 'edit_field.html'
