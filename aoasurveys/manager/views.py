@@ -150,7 +150,7 @@ class DeleteField(DeleteView):
     template_name = 'delete_field.html'
 
     def get_success_url(self):
-        return reverse('manage_fields', args=[self.get_object().form.slug])
+        return reverse('manage_fields', args=[self.kwargs['formslug']])
 
 
 class EditField(UpdateView):
@@ -159,7 +159,7 @@ class EditField(UpdateView):
     fields = ['label']
 
     def get_success_url(self):
-        return reverse('manage_fields', args=[self.get_object().form.slug])
+        return reverse('manage_fields', args=[self.kwargs['formslug']])
 
 
 class CreateField(CreateView):
