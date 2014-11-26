@@ -3,8 +3,10 @@ from django.contrib import admin
 from django.core.urlresolvers import reverse
 from django.conf import settings
 from django.db.models import (
-    CharField, ForeignKey, IntegerField, Model, SlugField, DateTimeField
+    CharField, ForeignKey, IntegerField, Model, SlugField, DateTimeField, Max,
 )
+from django.db.models.signals import pre_save
+from django.dispatch import receiver
 from django.utils.html import format_html
 from forms_builder.forms import fields as forms_builder_fields
 from forms_builder.forms.models import (
@@ -58,6 +60,7 @@ class Field(AbstractField):
 
     class Meta(AbstractField.Meta):
         ordering = ("order",)
+        unique_together = ('form', 'slug')
 
     def get_choices(self):
         choices = super(Field, self).get_choices()
@@ -94,6 +97,13 @@ class Label(Model):
     def __unicode__(self):
         return format_html('<label>{0}</label>', get_translation(
             self.label, getattr(self, 'language', settings.DEFAULT_LANGUAGE)))
+
+
+@receiver(pre_save, sender=Field)
+def my_callback(sender, instance, *args, **kwargs):
+    max_order = max(instance.form.fields.aggregate(Max('order')).values() +
+                    instance.form.labels.aggregate(Max('order')).values())
+    instance.order = max_order + 1
 
 
 admin.site.register(Form)

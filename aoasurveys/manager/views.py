@@ -3,7 +3,7 @@ from django.views.generic import DetailView, FormView, View
 from django.views.generic.edit import CreateView, DeleteView, UpdateView
 from django.http import HttpResponse
 from django.conf import settings
-from django.db.models import Max
+from django.shortcuts import get_object_or_404
 
 from aoasurveys.aoaforms.models import Form, Field
 from aoasurveys.manager.forms import PropertiesForm, FieldForm
@@ -109,12 +109,12 @@ class FieldsOrderView(View):
         ordered_slugs = self.request.POST['slugs'].split(',')
 
         if kwargs['tab'] == 'fields':
-            order_nr = 10
+            order_nr = 1
             for slug in ordered_slugs:
                 field = form.fields.filter(slug=slug).first() or \
                     form.labels.filter(slug=slug).first()
                 field.order = order_nr
-                order_nr += 10
+                order_nr += 1
                 field.save()
         else:
             slugs_str = settings.FIELDS_SEPARATOR.join(ordered_slugs)
@@ -168,16 +168,9 @@ class CreateField(CreateView):
 
     def get_form_kwargs(self):
         form_kwargs = super(CreateField, self).get_form_kwargs()
-
         self.form_slug = self.kwargs['formslug']
-        survey = Form.objects.get(slug=self.form_slug)
-        max_order = max(survey.fields.aggregate(Max('order')).values() +
-                        survey.labels.aggregate(Max('order')).values())
-
-        form_kwargs.update({
-            'form_id': survey.id,
-            'order': max_order + 10,
-        })
+        survey = get_object_or_404(Form, slug=self.form_slug)
+        form_kwargs['form_id'] = survey.id
         return form_kwargs
 
     def get_success_url(self):
