@@ -5,7 +5,7 @@ from django.http import HttpResponse
 from django.conf import settings
 from django.shortcuts import get_object_or_404
 
-from aoasurveys.aoaforms.models import Form, Field
+from aoasurveys.aoaforms.models import Form, Field, Label
 from aoasurveys.manager.forms import PropertiesForm, FieldForm, LabelForm
 from aoasurveys.reports.utils import get_translation, set_translation
 
@@ -160,6 +160,10 @@ class EditField(UpdateView):
 
     def get_success_url(self):
         return reverse('manage_fields', args=[self.kwargs['formslug']])
+
+
+class EditLabel(EditField):
+    model = Label
 
 
 class CreateField(CreateView):

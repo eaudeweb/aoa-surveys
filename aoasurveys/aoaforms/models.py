@@ -103,9 +103,10 @@ class Label(Model):
 @receiver(pre_save, sender=Label)
 @receiver(pre_save, sender=Field)
 def my_callback(sender, instance, *args, **kwargs):
-    max_order = max(instance.form.fields.aggregate(Max('order')).values() +
-                    instance.form.labels.aggregate(Max('order')).values())
-    instance.order = max_order + 1
+    if not instance.order:
+        max_order = max(instance.form.fields.aggregate(Max('order')).values() +
+                        instance.form.labels.aggregate(Max('order')).values())
+        instance.order = max_order + 1
 
 
 @receiver(pre_save, sender=Label)
