@@ -153,6 +153,12 @@ class EditField(UpdateView):
     template_name = 'edit_field.html'
     fields = ['label']
 
+    def get_initial(self):
+        initial = super(EditField, self).get_initial()
+        initial['label'] = get_translation(self.object.label,
+                                           self.request.language)
+        return initial
+
     def get_success_url(self):
         return reverse('manage_fields', args=[self.kwargs['formslug']])
 
