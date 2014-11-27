@@ -110,6 +110,12 @@ Command line tools
 
 Use ``./manage.py import_form <file.json>`` to import a survey definition.
 
+Note
+----
+
+Hard-coded value used in ``aoasurveys/static/js/aoa.js`` line ``87`` to identify fields that have choices.
+Please consider replacing this with a computed value.
+
 
 Contacts
 ========
