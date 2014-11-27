@@ -1,6 +1,7 @@
 from django.forms import ModelForm
 
 from aoasurveys.aoaforms.models import Form as Survey, Field, Label
+from aoasurveys.aoaforms.fields import LocalizedStringField
 
 
 class PropertiesForm(ModelForm):
@@ -14,7 +15,18 @@ class PropertiesForm(ModelForm):
         self.fields['title'].widget.attrs['size'] = 50
 
 
+class SurveyForm(ModelForm):
+    title = LocalizedStringField()
+
+    class Meta:
+        model = Survey
+        fields = ['title', 'intro', 'publish_date', 'expiry_date', 'send_email',
+                  'login_required', 'status']
+
+
 class FieldForm(ModelForm):
+    label = LocalizedStringField()
+
     class Meta:
         model = Field
         fields = ['label', 'required', 'visible', 'field_type', 'choices',
@@ -32,6 +44,8 @@ class FieldForm(ModelForm):
 
 
 class LabelForm(FieldForm):
+    label = LocalizedStringField()
+
     class Meta:
         model = Label
         fields = ['label']

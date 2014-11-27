@@ -102,19 +102,21 @@ class Label(Model):
 
 @receiver(pre_save, sender=Label)
 @receiver(pre_save, sender=Field)
-def my_callback(sender, instance, *args, **kwargs):
+def callback_field(sender, instance, *args, **kwargs):
+    if not instance.slug or len(instance.slug) == len(instance.label):
+        slug = slugify(get_translation(instance.label))
+        instance.slug = unique_slug(instance.__class__.objects, "slug", slug)
     if not instance.order:
         max_order = max(instance.form.fields.aggregate(Max('order')).values() +
                         instance.form.labels.aggregate(Max('order')).values())
-        instance.order = max_order + 1
+        instance.order = max_order or 0 + 1
 
 
-@receiver(pre_save, sender=Label)
-def callback(sender, instance, *args, **kwargs):
-    if not instance.slug:
-        slug = slugify(instance.label)
+@receiver(pre_save, sender=Form)
+def callback_form(sender, instance, *args, **kwargs):
+    if not instance.slug or len(instance.slug) == len(instance.title):
+        slug = slugify(get_translation(instance.title))
         instance.slug = unique_slug(instance.__class__.objects, "slug", slug)
-
 
 admin.site.register(Form)
 admin.site.register(Field, list_display=('slug', 'required', 'form'),

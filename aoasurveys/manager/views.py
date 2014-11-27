@@ -6,7 +6,9 @@ from django.conf import settings
 from django.shortcuts import get_object_or_404
 
 from aoasurveys.aoaforms.models import Form, Field, Label
-from aoasurveys.manager.forms import PropertiesForm, FieldForm, LabelForm
+from aoasurveys.manager.forms import (
+    PropertiesForm, FieldForm, LabelForm, SurveyForm,
+)
 from aoasurveys.reports.utils import get_translation, set_translation
 
 
@@ -128,9 +130,7 @@ class FieldsOrderView(View):
 
 
 class CreateSurvey(CreateView):
-    model = Form
-    fields = ['title', 'intro', 'publish_date', 'expiry_date',
-              'send_email', 'login_required', 'status']
+    form_class = SurveyForm
     template_name = 'new_form.html'
 
     def get_success_url(self):
