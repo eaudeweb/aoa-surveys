@@ -17,19 +17,19 @@ class FormPropertiesView(UpdateView):
     template_name = 'properties.html'
     form_class = PropertiesForm
     tab = 'properties'
+    trans_attrs = ['title', 'intro']
 
     def get_initial(self):
         initial = super(FormPropertiesView, self).get_initial()
-        initial['title'] = get_translation(self.object.title,
-                                           self.request.language)
+        for attr in self.trans_attrs:
+            initial[attr] = get_translation(getattr(self.object, attr),
+                                            self.request.language)
         return initial
 
     def form_valid(self, form):
-        self.object.status = form.cleaned_data['status']
-        set_translation(self.object,
-                        'title',
-                        form.cleaned_data['title'],
-                        self.request.language)
+        for attr in self.trans_attrs:
+            value = form.cleaned_data[attr].replace('\n', '')
+            set_translation(self.object, attr, value, self.request.language)
         self.object.save()
         return super(FormPropertiesView, self).form_valid(form)
 

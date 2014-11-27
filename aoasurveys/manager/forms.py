@@ -1,7 +1,9 @@
 from django.forms import ModelForm, TextInput
 
 from aoasurveys.aoaforms.models import Form as Survey, Field, Label
-from aoasurveys.aoaforms.fields import LocalizedStringField
+from aoasurveys.aoaforms.fields import (
+    LocalizedStringField, LocalizedTextAreaField,
+)
 
 
 class PropertiesForm(ModelForm):
@@ -14,6 +16,7 @@ class PropertiesForm(ModelForm):
 
 class SurveyForm(PropertiesForm):
     title = LocalizedStringField()
+    intro = LocalizedTextAreaField()
 
 
 class FieldForm(ModelForm):
