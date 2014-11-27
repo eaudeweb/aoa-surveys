@@ -81,13 +81,14 @@ $(function () {
       }
     });
 
-    $('#id_choices').parent().hide();
+    var choices_tr = $('#id_choices').parent().parent()
+    choices_tr.hide();
     $('#id_field_type').on('change', function() {
       var choice_ids = [4, 5, 6, 7, 8]
       var id = parseInt($(this).children(':selected').val());
       if (choice_ids.indexOf(id) > -1)
-        $('#id_choices').parent().show();
+        choices_tr.show();
       else
-        $('#id_choices').parent().hide();
+        choices_tr.hide();
     });
 });
