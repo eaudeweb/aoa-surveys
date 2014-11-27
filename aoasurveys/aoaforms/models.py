@@ -3,13 +3,16 @@ from django.contrib import admin
 from django.core.urlresolvers import reverse
 from django.conf import settings
 from django.db.models import (
-    CharField, ForeignKey, IntegerField, Model, SlugField, DateTimeField
+    CharField, ForeignKey, IntegerField, Model, SlugField, DateTimeField, Max,
 )
+from django.db.models.signals import pre_save
+from django.dispatch import receiver
 from django.utils.html import format_html
 from forms_builder.forms import fields as forms_builder_fields
 from forms_builder.forms.models import (
     AbstractForm, AbstractFormEntry, AbstractField, AbstractFieldEntry,
 )
+from forms_builder.forms.utils import slugify, unique_slug
 
 from aoasurveys.reports.utils import get_translation
 
@@ -58,6 +61,7 @@ class Field(AbstractField):
 
     class Meta(AbstractField.Meta):
         ordering = ("order",)
+        unique_together = ('form', 'slug')
 
     def get_choices(self):
         choices = super(Field, self).get_choices()
@@ -95,6 +99,24 @@ class Label(Model):
         return format_html('<label>{0}</label>', get_translation(
             self.label, getattr(self, 'language', settings.DEFAULT_LANGUAGE)))
 
+
+@receiver(pre_save, sender=Label)
+@receiver(pre_save, sender=Field)
+def callback_field(sender, instance, *args, **kwargs):
+    if not instance.slug or len(instance.slug) == len(instance.label):
+        slug = slugify(get_translation(instance.label))
+        instance.slug = unique_slug(instance.__class__.objects, "slug", slug)
+    if not instance.order:
+        max_order = max(instance.form.fields.aggregate(Max('order')).values() +
+                        instance.form.labels.aggregate(Max('order')).values())
+        instance.order = max_order or 0 + 1
+
+
+@receiver(pre_save, sender=Form)
+def callback_form(sender, instance, *args, **kwargs):
+    if not instance.slug or len(instance.slug) == len(instance.title):
+        slug = slugify(get_translation(instance.title))
+        instance.slug = unique_slug(instance.__class__.objects, "slug", slug)
 
 admin.site.register(Form)
 admin.site.register(Field, list_display=('slug', 'required', 'form'),

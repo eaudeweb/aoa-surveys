@@ -23,4 +23,10 @@
   </div>
 
   {% include '_orderfields_form.html' %}
+
+  <div class='col-xs-12'>
+    <a class="btn btn-sm btn-primary" href="{% url 'new_field' form.slug %}">Add field</a>
+    <a class="btn btn-sm btn-primary" href="{% url 'new_label' form.slug %}">Add label</a>
+  </div>
+
 {% endblock %}

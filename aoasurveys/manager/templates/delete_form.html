@@ -1,0 +1,9 @@
+{% extends '_layout.html' %}
+
+{% block content %}
+  <form method="POST">
+    {% csrf_token %}
+    <p>Are you sure you want to delete "{{ object }}"?</p>
+    <button class="btn btn-sm btn-primary" type="submit">Confirm</button>
+  </form>
+{% endblock %}

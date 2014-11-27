@@ -1,5 +1,6 @@
-from aoasurveys.aoaforms.models import FieldEntry, FormEntry
 from forms_builder.forms.forms import FormForForm
+
+from aoasurveys.aoaforms.models import FieldEntry, FormEntry
 
 
 class DisplayedForm(FormForForm):
