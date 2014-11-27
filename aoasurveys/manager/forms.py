@@ -1,4 +1,4 @@
-from django.forms import ModelForm
+from django.forms import ModelForm, TextInput
 
 from aoasurveys.aoaforms.models import Form as Survey, Field, Label
 from aoasurveys.aoaforms.fields import LocalizedStringField
@@ -9,19 +9,11 @@ class PropertiesForm(ModelForm):
         model = Survey
         fields = ['title', 'intro', 'publish_date', 'expiry_date', 'send_email',
                   'login_required', 'status']
-
-    def __init__(self, *args, **kwargs):
-        super(PropertiesForm, self).__init__(*args, **kwargs)
-        self.fields['title'].widget.attrs['size'] = 50
+        widgets = {'title': TextInput(attrs={'size': 100})}
 
 
-class SurveyForm(ModelForm):
+class SurveyForm(PropertiesForm):
     title = LocalizedStringField()
-
-    class Meta:
-        model = Survey
-        fields = ['title', 'intro', 'publish_date', 'expiry_date', 'send_email',
-                  'login_required', 'status']
 
 
 class FieldForm(ModelForm):

@@ -1,5 +1,5 @@
 from django.core.urlresolvers import reverse
-from django.views.generic import DetailView, FormView, View
+from django.views.generic import DetailView, View
 from django.views.generic.edit import CreateView, DeleteView, UpdateView
 from django.http import HttpResponse
 from django.conf import settings
@@ -12,34 +12,25 @@ from aoasurveys.manager.forms import (
 from aoasurveys.reports.utils import get_translation, set_translation
 
 
-class FormPropertiesView(FormView, DetailView):
+class FormPropertiesView(UpdateView):
     model = Form
-    slug_url_kwarg = 'slug'
-    context_object_name = 'survey'
     template_name = 'properties.html'
     form_class = PropertiesForm
     tab = 'properties'
 
-    def get(self, request, *args, **kwargs):
-        form_class = self.get_form_class()
-        form = self.get_form(form_class)
-        self.object = self.get_object()
-        context = self.get_context_data(object=self.object, form=form)
-        return self.render_to_response(context)
-
     def get_initial(self):
-        survey = self.get_object()
-        return {
-            'status': survey.status,
-            'title': get_translation(survey.title, self.request.language),
-        }
+        initial = super(FormPropertiesView, self).get_initial()
+        initial['title'] = get_translation(self.object.title,
+                                           self.request.language)
+        return initial
 
     def form_valid(self, form):
-        survey = self.get_object()
-        survey.status = form.cleaned_data['status']
-        set_translation(survey, 'title', form.cleaned_data['title'],
+        self.object.status = form.cleaned_data['status']
+        set_translation(self.object,
+                        'title',
+                        form.cleaned_data['title'],
                         self.request.language)
-        survey.save()
+        self.object.save()
         return super(FormPropertiesView, self).form_valid(form)
 
     def get_success_url(self):
