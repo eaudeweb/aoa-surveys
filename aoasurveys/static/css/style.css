@@ -73,3 +73,7 @@ table .handler {
 #search input#query {
     line-height: 10px;
 }
+
+.helptext {
+    font-style: italic;
+}

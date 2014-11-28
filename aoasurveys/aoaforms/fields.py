@@ -36,7 +36,7 @@ class LocalizedStringField(MultiValueField):
                                                    **kwargs)
 
     def compress(self, values):
-        return "\n".join(values)
+        return "\n".join([value.replace('\n', '') for value in values])
 
 
 class LocalizedTextAreaField(LocalizedStringField):
