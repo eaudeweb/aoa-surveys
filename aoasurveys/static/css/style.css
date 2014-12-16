@@ -77,3 +77,11 @@ table .handler {
 .helptext {
     font-style: italic;
 }
+
+.dataTables_processing {
+  background-color: rgba(230, 230, 230, 0.7);
+  border: 2px solid #bbb;
+  color: #555;
+  font-weight: bold;
+  height: 50px;
+}
