@@ -34,7 +34,10 @@ class Form(AbstractForm):
 
     @property
     def visible_fields(self):
-        return self.get_ordered_fields(self.visible_fields_slugs)
+        if self.visible_fields_slugs:
+            return self.get_ordered_fields(self.visible_fields_slugs)
+        else:
+            return self.fields.all()
 
     @property
     def filtering_fields(self):
