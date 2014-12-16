@@ -17,7 +17,7 @@
     </thead>
     <tbody class="sortable-tb">
     {% for field in fields %}
-      <tr>
+      <tr data-slug="{{ field.slug }}">
         <td class="handler"><span class="glyphicon glyphicon-align-justify"></span></td>
         <td>{{ field.label | translate:request.language }}</td>
         {% if field.field_type %}

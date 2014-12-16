@@ -37,8 +37,8 @@ $(function () {
       e.preventDefault();
       var url = $(this).attr('action');
       var slugs = [];
-      $('#selected tr td:nth-child(4)').each(function() {
-          slugs.push($(this).text());
+      $('#selected tr:not(:first)').each(function() {
+          slugs.push($(this).data('slug'));
       });
       var data = $(this).serializeArray();
       data.push({name: "slugs", value: slugs});
