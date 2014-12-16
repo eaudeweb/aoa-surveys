@@ -57,6 +57,12 @@ class FormEntry(AbstractFormEntry):
         return [self.fields.filter(field_id=field.id).first()
                 for field in self.form.visible_fields]
 
+    @property
+    def all_fields(self):
+        fields = list(self.fields.all())
+        fields.sort(key=lambda fe: fe.field.order)
+        return fields
+
 
 class Field(AbstractField):
     form = ForeignKey("Form", related_name="fields")

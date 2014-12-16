@@ -7,7 +7,7 @@
     <p><b>Creation time:</b> {{ object.creation_time }}</p>
   {% endif %}
   <dl class="">
-    {% for field in object.fields.all %}
+    {% for field in object.all_fields %}
       <dt>{{ field.field.label|translate:request.language }}</dt>
       <dd>
         {% if field.url %}
