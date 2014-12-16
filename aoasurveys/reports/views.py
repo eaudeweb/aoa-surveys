@@ -103,7 +103,7 @@ class AnswersListJson(BaseDatatableView):
                  'data-toggle="modal" data-action="{entry_url}" '
                  'data-title="Entry #{entry_id}" data-target="#myModal" >'
                  '<i class="glyphicon glyphicon-list"></i></a>'
-                ).format(entry_url=entry_url, entry_id=entry.id)
+                 ).format(entry_url=entry_url, entry_id=entry.id)
             )
             json_data.append(row)
         return json_data
