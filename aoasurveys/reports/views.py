@@ -88,8 +88,8 @@ class AnswersListJson(BaseDatatableView):
             row = []
             for field in entry.visible_fields:
                 if not field:
-                    continue
-                if field.url:
+                    data = ''
+                elif field.url:
                     data = '<a href="{{ url }}">View attachment</a>'.format(
                         url=field.url)
                 elif field.field.choices:
@@ -97,16 +97,19 @@ class AnswersListJson(BaseDatatableView):
                 else:
                     data = translate(field.value, self.request.language) or ''
                 row.append(data)
-            entry_url = reverse('entry-detail', kwargs=dict(id=entry.id))
-            row.append(
-                ('<a class="view-entry launch-modal" '
-                 'data-toggle="modal" data-action="{entry_url}" '
-                 'data-title="Entry #{entry_id}" data-target="#myModal" >'
-                 '<i class="glyphicon glyphicon-list"></i></a>'
-                 ).format(entry_url=entry_url, entry_id=entry.id)
-            )
+            row.append(self._get_detail_link(entry))
             json_data.append(row)
         return json_data
+
+    def _get_detail_link(self, entry):
+        entry_url = reverse('entry-detail', kwargs=dict(id=entry.id))
+        link = (
+            '<a class="view-entry launch-modal" '
+            'data-toggle="modal" data-action="{entry_url}" '
+            'data-title="Entry #{entry_id}" data-target="#myModal" >'
+            '<i class="glyphicon glyphicon-list"></i></a>'
+        ).format(entry_url=entry_url, entry_id=entry.id)
+        return link
 
 
 class EntryDetail(DetailView):
