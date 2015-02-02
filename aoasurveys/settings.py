@@ -131,7 +131,6 @@ LOCALIZED_LANGUAGES = (
 LOCALIZED_LANGUAGES_ABBR = ('en', 'ru')
 DEFAULT_LANGUAGE = 'en'
 FORMS_BUILDER_UPLOAD_ROOT = os.path.join(BASE_DIR, 'forms')
-DOCUMENT_DOWNLOAD_ROOT = "http://aoa.ew.eea.europa.eu"
 
 # Custom settings
 SITE_ID = 1
