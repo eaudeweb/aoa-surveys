@@ -26,7 +26,6 @@ class Command(BaseCommand):
                 value = value[:settings.FORMS_BUILDER_FIELD_MAX_LENGTH]
         return value
 
-
     def _parseAnswers(self, data):
         transaction.set_autocommit(False)
         try:
@@ -41,6 +40,9 @@ class Command(BaseCommand):
                     )
                     #TODO set id, respondent, draft
                     for slug, value in answer["answers"].items():
+                        if slug == "w_assessment-upload":
+                            value = None
+
                         if not Label.objects.filter(slug=slug).exists():
                             field = (
                                 Field.objects.filter(slug=slug, form=form).first()

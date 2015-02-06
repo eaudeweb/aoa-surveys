@@ -86,11 +86,10 @@ class FieldEntry(AbstractFieldEntry):
 
     @property
     def url(self):
-        if self.field and self.field.is_a(forms_builder_fields.FILE):
-            if hasattr(settings, 'DOWNLOAD_URL'):
-                return settings.DOWNLOAD_URL + self.value
-            else:
-                return reverse('file_view', args=(self.id,))
+        if self.field and self.field.is_a(forms_builder_fields.FILE) and self.value:
+            return reverse('file_view', args=(self.id,))
+        else:
+            return None
 
 
 class Label(Model):

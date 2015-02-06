@@ -90,7 +90,7 @@ class AnswersListJson(BaseDatatableView):
                 if not field:
                     data = ''
                 elif field.url:
-                    data = '<a href="{{ url }}">View attachment</a>'.format(
+                    data = u'<a href="{url}">View attachment</a>'.format(
                         url=field.url)
                 elif field.field.choices:
                     data = get_choices(field, self.request.language)
