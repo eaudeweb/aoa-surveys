@@ -110,6 +110,8 @@ Command line tools
 
 Use ``./manage.py import_form <file.json>`` to import a survey definition.
 
+Use ``./manage.py import_answers <file.json>`` to import a survey answers from json.
+
 Use ``python contrib/scripts/merge_forms.py`` for one time merging of VLE and VL surveys.
 
 Note
