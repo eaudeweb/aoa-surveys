@@ -30,6 +30,7 @@ INSTALLED_APPS = (
     'aoasurveys.reports',
     'aoasurveys.aoaforms',
     'aoasurveys.cpanel',
+    'aoasurveys.mapapi',
     'forms_builder.forms',
 )
 
