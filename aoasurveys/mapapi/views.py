@@ -1,5 +1,6 @@
 import json, calendar
 from django.http import HttpResponse
+from django.conf import settings
 from aoasurveys.aoaforms.models import FormEntry
 from aoasurveys.reports.templatetags.extra_tags import translate, get_choices_list
 
@@ -72,7 +73,7 @@ def get_documents(short_names_mapping):
 
 def json_map(request):
     short_names_mapping = {}
-    json_data = parse_json_file('/Users/ana/test/json_data',
+    json_data = parse_json_file(settings.JSON_MAP_FILE_PATH,
                                 short_names_mapping)
     json_data['documents'] = get_documents(short_names_mapping)
     response = json.dumps(json_data)
