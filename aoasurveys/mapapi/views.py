@@ -61,7 +61,8 @@ def get_documents(short_names_mapping):
                     value = list(set([short_names_mapping[field_name][v]
                              for v in value]))
                 if field_name in BILINGUAL_FIELDS:
-                    value = {'ru': '', 'en': value}
+                    value = {'ru': translate(field_entry.value, 'ru'),
+                             'en': value}
                 form_dict[field_name] = value
 
         documents.append(form_dict)
