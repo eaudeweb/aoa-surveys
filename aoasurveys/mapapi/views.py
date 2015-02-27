@@ -59,7 +59,8 @@ def get_documents(short_names_mapping):
                 if field_name == 'country' or field_name == 'region'\
                         or field_name == 'theme':
                     value = list(set([short_names_mapping[field_name][v]
-                             for v in value]))
+                             for v in value
+                             if v in short_names_mapping[field_name]]))
                 if field_name in BILINGUAL_FIELDS:
                     value = {'ru': translate(field_entry.value, 'ru'),
                              'en': value}
