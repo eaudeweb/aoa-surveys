@@ -10,4 +10,5 @@ urlpatterns = patterns('',
     url(r'^manage/', include('aoasurveys.manager.urls')),
     url(r'^settings/', include('aoasurveys.cpanel.urls', namespace='cpanel')),
     url(r'', include('aoasurveys.reports.urls')),
+    url(r'', include('aoasurveys.mapapi.urls')),
 )

@@ -30,6 +30,7 @@ INSTALLED_APPS = (
     'aoasurveys.reports',
     'aoasurveys.aoaforms',
     'aoasurveys.cpanel',
+    'aoasurveys.mapapi',
     'forms_builder.forms',
 )
 
@@ -131,6 +132,8 @@ LOCALIZED_LANGUAGES = (
 LOCALIZED_LANGUAGES_ABBR = ('en', 'ru')
 DEFAULT_LANGUAGE = 'en'
 FORMS_BUILDER_UPLOAD_ROOT = os.path.join(BASE_DIR, 'forms')
+
+JSON_MAP_FILE_PATH = os.path.join(BASE_DIR, 'aoasurveys/mapapi/conf/json_data')
 
 # Custom settings
 SITE_ID = 1
