@@ -85,4 +85,3 @@ class Command(BaseCommand):
                 return
 
             self._parseAnswers(data)
-            datafile.close()

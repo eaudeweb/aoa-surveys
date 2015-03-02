@@ -109,13 +109,11 @@ class Command(BaseCommand):
             self.stdout.write('Expecting a filename.')
             return
 
-        datafile = open(args[0])
-        try:
-            data = json.load(datafile)
-        except ValueError:
-            self.stdout.write('File is not in JSON format.')
-            return
+        with open(args[0]) as datafile:
+            try:
+                data = json.load(datafile)
+            except ValueError:
+                self.stdout.write('File is not in JSON format.')
+                return
 
-        self._parseForm(data)
-
-        datafile.close()
+            self._parseForm(data)

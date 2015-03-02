@@ -7,22 +7,24 @@ from aoasurveys.reports.templatetags.extra_tags import translate, get_choices_li
 
 def parse_json_file(json_filename, short_names_mapping):
     result_dict = {}
-    json_file = open(json_filename)
-    json_data = json.load(json_file)
+    with open(json_filename) as json_file:
+        try:
+            json_data = json.load(json_file)
 
-    result_dict.update((k, v) for k, v in json_data.items()
-                       if k != 'documents')
-    short_names_mapping['country'] = dict((v['en'], k) for k, v
-                                          in json_data['country_name'].items())
-    short_names_mapping['region'] = dict((v['en'], k) for k, v
-                                          in json_data['region_name'].items())
-    short_names_mapping['theme'] = {
-        'Water resources': 'water',
-        'Water resource management': 'water',
-        'Green economy': 'green-economy',
-        'Resource efficiency': 'green-economy',
-    }
-    json_file.close()
+            result_dict.update((k, v) for k, v in json_data.items()
+                               if k != 'documents')
+            short_names_mapping['country'] = dict((v['en'], k) for k, v
+                                                  in json_data['country_name'].items())
+            short_names_mapping['region'] = dict((v['en'], k) for k, v
+                                                  in json_data['region_name'].items())
+            short_names_mapping['theme'] = {
+                'Water resources': 'water',
+                'Water resource management': 'water',
+                'Green economy': 'green-economy',
+                'Resource efficiency': 'green-economy',
+            }
+        except ValueError:
+                return
     return result_dict
 
 
