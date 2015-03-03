@@ -91,7 +91,7 @@ be run as an unprivileged user in the product directory::
 
 10. Collect static assets::
 
-    ./manage.py collectstatic --no-input
+    ./manage.py collectstatic --noinput
 
 
 
