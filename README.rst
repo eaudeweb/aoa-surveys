@@ -112,7 +112,11 @@ Use ``./manage.py import_form <file.json>`` to import a survey definition.
 
 Use ``./manage.py import_answers <file.json>`` to import a survey answers from json.
 
+Use ``./manage.py import_files <file.json>`` to download and import a survey files from json.
+You must set FORMS_BUILDER_UPLOAD_ROOT and DOWNLOAD_URL before running this command.
+
 Use ``python contrib/scripts/merge_forms.py`` for one time merging of VLE and VL surveys.
+Do this after importing both answers and files.
 
 Note
 ----
