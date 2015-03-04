@@ -4,10 +4,11 @@ import requests
 import logging
 
 from django.db import transaction
-from aoasurveys.settings import FORMS_BUILDER_UPLOAD_ROOT
-from aoasurveys.local_settings import DOWNLOAD_URL
+from django.conf import settings
 from django.core.management.base import BaseCommand
-from aoasurveys.aoaforms.models import FormEntry, FieldEntry, Form, Field, Label
+from aoasurveys.aoaforms.models import (
+    FormEntry, FieldEntry, Form, Field, Label,
+)
 
 
 class Command(BaseCommand):
@@ -64,17 +65,18 @@ class Command(BaseCommand):
 
     def _download_file(self, url, filename):
         try:
-            r = requests.get(DOWNLOAD_URL + url, stream=True,
+            r = requests.get(settings.DOWNLOAD_URL + url, stream=True,
                              verify=True)
             if r.status_code == requests.codes.ok:
-                path = os.path.join(FORMS_BUILDER_UPLOAD_ROOT, filename)
+                path = os.path.join(settings.FORMS_BUILDER_UPLOAD_ROOT,
+                                    filename)
                 with open(path, 'wb') as fd:
                     for chunk in r.iter_content(512):
                         fd.write(chunk)
                 return filename
             else:
                 logging.error("For url: {url} status code is {code}".format(
-                    url=DOWNLOAD_URL + url,
+                    url=settings.DOWNLOAD_URL + url,
                     code=r.status_code
                 ))
         except Exception as e:
