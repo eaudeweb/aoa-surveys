@@ -5,6 +5,7 @@
         form2 overrides form1 (important for choices).
 """
 import sys, os
+
 sys.path.append('.')
 os.environ.setdefault("DJANGO_SETTINGS_MODULE", "aoasurveys.settings")
 
@@ -52,6 +53,12 @@ values_translate = {
 
 _titles = []
 
+visible_fields = (
+    'w_assessment-name,w_theme,w_assessment-upload,'
+    'w_official-country-region,w_geo-coverage-region'
+)
+filtering_fields = 'w_title-original-language,w_theme'
+
 
 def has_review(entry):
     global _titles
@@ -82,6 +89,9 @@ def merge_forms():
     )
     form3.entries.get_queryset().delete()
     form3.fields.get_queryset().delete()
+    form3.visible_fields_slugs = visible_fields
+    form3.filtering_fields_slugs = filtering_fields
+    form3.save()
     # Two new fields
     field_preastana = Field.objects.create(
         form=form3, slug='w_answer-preastana', field_type=CHECKBOX,
@@ -133,6 +143,7 @@ def merge_forms():
                 FieldEntry.objects.create(entry=new_form_entry,
                                           field_id=field_review.pk,
                                           value=review)
+
 
 if __name__ == '__main__':
     merge_forms()
