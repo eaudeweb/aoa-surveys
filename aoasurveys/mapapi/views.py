@@ -13,8 +13,7 @@ def parse_json_file(json_filename, short_names_mapping):
         try:
             json_data = json.load(json_file)
 
-            result_dict.update((k, v) for k, v in json_data.items()
-                               if k != 'documents')
+            result_dict.update((k, v) for k, v in json_data.items())
             short_names_mapping['country'] = dict(
                 (v['en'], k) for k, v in json_data['country_name'].items()
             )
