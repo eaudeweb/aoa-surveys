@@ -62,7 +62,7 @@ def filter_entries(form, filters, search_text='', search_fields=[]):
     for key, value in filters.iteritems():
         index = field_map[key]
         query += (
-            "LEFT JOIN aoaforms_fieldentry f{index} ON f{index}.entry_id=f.id "
+            "JOIN aoaforms_fieldentry f{index} ON f{index}.entry_id=f.id "
             "AND f{index}.field_id='{key}' "
         )
         if isinstance(value, list):
@@ -79,12 +79,12 @@ def filter_entries(form, filters, search_text='', search_fields=[]):
         query = query.format(index=index, key=key, value=value)
     for field in extra_fields:
         query += (
-            "LEFT JOIN aoaforms_fieldentry f{index} ON f{index}.entry_id=f.id "
+            "JOIN aoaforms_fieldentry f{index} ON f{index}.entry_id=f.id "
             "AND f{index}.field_id='{field}' "
         ).format(index=field_map[field], field=field)
     if search_fields and search_text:
         query += (
-            "LEFT JOIN aoaforms_fieldentry fsearch ON fsearch.entry_id=f.id "
+            "JOIN aoaforms_fieldentry fsearch ON fsearch.entry_id=f.id "
             "AND fsearch.value LIKE '%%{value}%%' "
             "AND fsearch.field_id IN ({field_ids}) "
         ).format(
