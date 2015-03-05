@@ -28,6 +28,18 @@ def get_choices_list(field_entry, language):
     return [get_translation(choices.get(id), language) for id in choice_ids]
 
 
+def get_choices_list_field(field, value, language):
+    if not value:
+        return []
+    try:
+        choice_ids = [int(c.strip()) for c in value.split(',')]
+    except ValueError:
+        return value
+
+    choices = dict(field.get_choices())
+    return [get_translation(choices.get(id), language) for id in choice_ids]
+
+
 @register.filter
 def get_choices(field_entry, language):
     return ', '.join(get_choices_list(field_entry, language))
