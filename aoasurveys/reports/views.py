@@ -5,7 +5,7 @@ from ast import literal_eval
 
 from django.core.urlresolvers import reverse
 from django.shortcuts import get_object_or_404
-from django.views.generic import ListView, DetailView
+from django.views.generic import ListView, DetailView, DeleteView
 from django.conf import settings
 from django.http import HttpResponse
 from django_datatables_view.base_datatable_view import BaseDatatableView
@@ -45,6 +45,21 @@ class AnswersView(DetailView):
             'filters': urlencode({'filters': form.get_filter_query()}),
         })
         return self.render_to_response(context)
+
+
+class AnswerDelete(DeleteView):
+    model = Form
+    template_name = 'delete_answer.html'
+    slug_url_kwarg = 'slug'
+    context_object_name = 'survey'
+
+    def get_object(self):
+        object = Form.objects.get(
+            slug=self.kwargs['slug']).entries.get(pk=self.kwargs['pk'])
+        return object
+
+    def get_success_url(self):
+        return reverse('homepage')
 
 
 def file_view(request, field_entry_id):
@@ -98,6 +113,7 @@ class AnswersListJson(BaseDatatableView):
                     data = translate(field.value, self.request.language) or ''
                 row.append(data)
             row.append(self._get_detail_link(entry))
+            row.append(self._get_delete_link(entry))
             json_data.append(row)
         return json_data
 
@@ -109,6 +125,15 @@ class AnswersListJson(BaseDatatableView):
             'data-title="Entry #{entry_id}" data-target="#myModal" >'
             '<i class="glyphicon glyphicon-list"></i></a>'
         ).format(entry_url=entry_url, entry_id=entry.id)
+        return link
+
+    def _get_delete_link(self, entry):
+        delete_url = reverse('delete_answer',
+                             kwargs=dict(
+                                 slug=self.kwargs['slug'], pk=entry.pk))
+        link = (
+            '<a href="{delete_url}">Delete</a>'
+        ).format(delete_url=delete_url)
         return link
 
 
