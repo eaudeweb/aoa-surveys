@@ -1,0 +1,10 @@
+{% extends '_layout.html' %}
+
+{% block content %}
+  <form method="POST">
+    {% csrf_token %}
+    <p>Are you sure you want to delete the answer?</p>
+    <button class="btn btn-primary" type="submit">Confirm</button>
+    <a class="btn btn-default" href="{% url 'homepage' %}">Cancel</a>
+  </form>
+{% endblock %}
